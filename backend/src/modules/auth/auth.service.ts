@@ -38,6 +38,7 @@ export class AuthService {
 
   private issueToken(userId: string) {
     const token = jwt.sign({ userId }, env.jwtSecret, {
+      algorithm: 'HS256',
       expiresIn: env.jwtExpiresIn as jwt.SignOptions['expiresIn'],
     });
     return { token };

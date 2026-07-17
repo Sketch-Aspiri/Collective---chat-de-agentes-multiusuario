@@ -139,7 +139,9 @@ model Message {
 
 ---
 
-### 3️⃣ **Middleware de Autenticación (JWT + básico)** [2 días]
+### 3️⃣ **Middleware de Autenticación (JWT + básico)** [2 días] — ✅ COMPLETADA
+
+**Estado verificado (2026-07-17):** JWT restringido a HS256, contexto de usuario adjunto al request, rate limiter Redis atómico por usuario y manejo global de errores con logging estructurado. Build, lint y 6 suites de tests correctos.
 
 **Entregable:**
 - ✅ Middleware JWT en `middleware/auth.ts`
@@ -271,7 +273,7 @@ backend/
 - [ ] Docker-compose corre Postgres + Redis sin problemas
 - [ ] Migrations aplicadas localmente y en CI
 - [x] Todos los tests pasan (`npm run test`)
-- [ ] Rate limiter rechaza >100 req/min
+- [x] Rate limiter rechaza >100 req/min
 - [ ] Socket.io messages llegan <100ms en local
 - [x] Variables de entorno validadas al startup
 - [ ] Logging funciona en todos los módulos

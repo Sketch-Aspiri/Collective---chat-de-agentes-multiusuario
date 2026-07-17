@@ -1,8 +1,7 @@
 import express, { Express } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
-import { requestLogger } from './middleware/logging';
-import { rateLimiter } from './middleware/rateLimiter';
+import { requestLogger } from './middleware/logger';
 import { errorHandler } from './middleware/errorHandler';
 import { authRoutes } from './modules/auth/auth.routes';
 import { usersRoutes } from './modules/users/users.routes';
@@ -19,7 +18,6 @@ export function createApp(): Express {
   app.use(helmet());
   app.use(cors());
   app.use(requestLogger);
-  app.use(rateLimiter);
 
   // Stripe webhooks need the raw body for signature verification.
   app.use('/webhooks', express.raw({ type: 'application/json' }), webhooksRoutes);

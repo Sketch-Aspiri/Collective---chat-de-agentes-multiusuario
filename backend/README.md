@@ -34,3 +34,11 @@ El health check queda disponible en `GET http://localhost:4000/health`.
 - Cada chat contiene miembros y mensajes.
 - `ChatAgentLink` representa la relación muchos-a-muchos entre chats y agentes.
 - Al eliminar un chat se eliminan en cascada sus membresías, mensajes y enlaces de agentes.
+
+## Seguridad HTTP base
+
+- Las rutas protegidas validan tokens JWT `HS256` enviados como `Authorization: Bearer <token>`.
+- El payload autenticado queda disponible como `req.user` y `req.userId`.
+- Redis limita cada usuario a 100 solicitudes por minuto y devuelve `429` con `Retry-After` al exceder la cuota.
+- Los endpoints públicos de autenticación se limitan a 10 intentos por minuto y dirección IP.
+- Si Redis no está disponible, las rutas protegidas responden `503` para evitar que el límite falle de forma abierta.
