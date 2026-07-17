@@ -1,5 +1,6 @@
 import express, { Express } from 'express';
 import cors from 'cors';
+import helmet from 'helmet';
 import { requestLogger } from './middleware/logging';
 import { rateLimiter } from './middleware/rateLimiter';
 import { errorHandler } from './middleware/errorHandler';
@@ -14,6 +15,8 @@ import { webhooksRoutes } from './modules/webhooks/webhooks.routes';
 export function createApp(): Express {
   const app = express();
 
+  app.disable('x-powered-by');
+  app.use(helmet());
   app.use(cors());
   app.use(requestLogger);
   app.use(rateLimiter);
