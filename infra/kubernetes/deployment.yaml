@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agentes-chat-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: agentes-chat-backend
+  template:
+    metadata:
+      labels:
+        app: agentes-chat-backend
+    spec:
+      containers:
+        - name: backend
+          image: agentes-chat-backend:latest
+          ports:
+            - containerPort: 4000
+          envFrom:
+            - secretRef:
+                name: agentes-chat-secrets

@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String        @id @default(uuid())
+  email        String        @unique
+  passwordHash String
+  name         String
+  chatMembers  ChatMember[]
+  chatsOwned   Chat[]        @relation("ChatOwner")
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Chat {
+  id        String       @id @default(uuid())
+  name      String
+  ownerId   String
+  owner     User         @relation("ChatOwner", fields: [ownerId], references: [id])
+  members   ChatMember[]
+  agents    Agent[]
+  messages  Message[]
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+}
+
+model ChatMember {
+  chatId   String
+  userId   String
+  role     String   @default("member")
+  joinedAt DateTime @default(now())
+  chat     Chat     @relation(fields: [chatId], references: [id])
+  user     User     @relation(fields: [userId], references: [id])
+
+  @@id([chatId, userId])
+}
+
+model Agent {
+  id            String   @id @default(uuid())
+  chatId        String
+  chat          Chat     @relation(fields: [chatId], references: [id])
+  name          String
+  mentionHandle String
+  provider      String
+  systemPrompt  String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@unique([chatId, mentionHandle])
+}
+
+model Message {
+  id         String   @id @default(uuid())
+  chatId     String
+  chat       Chat     @relation(fields: [chatId], references: [id])
+  authorId   String
+  authorType String
+  content    String
+  createdAt  DateTime @default(now())
+}

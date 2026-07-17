@@ -1,0 +1,13 @@
+name: Security Scan
+
+on:
+  pull_request:
+  schedule:
+    - cron: '0 6 * * 1'
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "TODO: run dependency and secret scanning (e.g. npm audit, gitleaks)"
