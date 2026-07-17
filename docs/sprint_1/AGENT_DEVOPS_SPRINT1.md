@@ -606,7 +606,7 @@ curl http://localhost:3000/health
 
 ---
 
-### 5️⃣ **Health Checks y Monitoring Base** [1-2 días]
+### 5️⃣ **Health Checks y Monitoring Base** [1-2 días] — ✅ COMPLETADO
 
 **Entregable:**
 - ✅ Endpoint `/health` en backend

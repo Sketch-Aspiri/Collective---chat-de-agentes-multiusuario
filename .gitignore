@@ -5,6 +5,7 @@ build/
 .env.backend
 .env.frontend
 *.log
+logs/
 coverage/
 .DS_Store
 backend/prisma/*.db

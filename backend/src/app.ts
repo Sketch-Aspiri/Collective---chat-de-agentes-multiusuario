@@ -2,7 +2,9 @@ import express, { Express } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import { requestLogger } from './middleware/logger';
+import { metricsMiddleware, getMetrics } from './middleware/metrics';
 import { errorHandler } from './middleware/errorHandler';
+import { healthRoutes } from './modules/health/health.routes';
 import { authRoutes } from './modules/auth/auth.routes';
 import { usersRoutes } from './modules/users/users.routes';
 import { chatsRoutes } from './modules/chats/chats.routes';
@@ -18,12 +20,15 @@ export function createApp(): Express {
   app.use(helmet());
   app.use(cors());
   app.use(requestLogger);
+  app.use(metricsMiddleware);
 
   // Stripe webhooks need the raw body for signature verification.
   app.use('/webhooks', express.raw({ type: 'application/json' }), webhooksRoutes);
 
   app.use(express.json());
-  app.get('/health', (_req, res) => res.status(200).json({ success: true, data: { status: 'ok' } }));
+  // Health: liveness en /health, readiness (BD + Redis) en /health/ready.
+  app.use('/health', healthRoutes);
+  app.get('/metrics', (_req, res) => res.status(200).json({ success: true, data: getMetrics() }));
   app.use('/auth', authRoutes);
   app.use('/users', usersRoutes);
   app.use('/chats', chatsRoutes);
