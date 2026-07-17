@@ -16,25 +16,38 @@ const SENSITIVE_KEYS = [
 
 const REDACTED = '[REDACTED]';
 
-function redact(value: unknown): unknown {
+// Redacta in-place las claves sensibles. Mutar (en vez de reconstruir con
+// Object.fromEntries) preserva las props con clave Symbol que winston usa
+// internamente (LEVEL/MESSAGE/SPLAT) y no descarta message/stack de los Error.
+function redactInPlace(value: unknown, seen: WeakSet<object>): void {
+  if (value === null || typeof value !== 'object') {
+    return;
+  }
+  if (seen.has(value)) {
+    return; // evita ciclos
+  }
+  seen.add(value);
+
   if (Array.isArray(value)) {
-    return value.map(redact);
+    value.forEach((item) => redactInPlace(item, seen));
+    return;
   }
-  if (value && typeof value === 'object') {
-    return Object.fromEntries(
-      Object.entries(value as Record<string, unknown>).map(([key, val]) => {
-        if (SENSITIVE_KEYS.includes(key.toLowerCase())) {
-          return [key, REDACTED];
-        }
-        return [key, redact(val)];
-      }),
-    );
+
+  const record = value as Record<string, unknown>;
+  for (const key of Object.keys(record)) {
+    if (SENSITIVE_KEYS.includes(key.toLowerCase())) {
+      record[key] = REDACTED;
+    } else {
+      redactInPlace(record[key], seen);
+    }
   }
-  return value;
 }
 
 // Formato que redacta claves sensibles en la metadata de cada log.
-const redactFormat = winston.format((info) => redact(info) as winston.Logform.TransformableInfo);
+const redactFormat = winston.format((info) => {
+  redactInPlace(info, new WeakSet<object>());
+  return info;
+});
 
 const transports: winston.transport[] = [new winston.transports.Console()];
 
