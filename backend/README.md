@@ -19,6 +19,20 @@ Base Node.js + Express escrita en TypeScript.
 
 El health check queda disponible en `GET http://localhost:4000/health`.
 
+## Chat en tiempo real
+
+Socket.io usa la misma URL del backend. El cliente debe enviar el JWT `HS256` en
+`auth.token` (o como `Authorization: Bearer <token>`). Los eventos disponibles son:
+
+- `join:chat` con `{ chatId }`: valida que el usuario sea miembro y entra a `chat:<chatId>`.
+- `send:message` con `{ chatId, content }`: persiste el mensaje y emite `message:new` a la sala.
+- `leave:chat` con `{ chatId }`: sale de la sala y emite `user:left` a los demás miembros.
+
+`join:chat` también emite `user:joined`. Los tres eventos aceptan un acknowledgement con
+`{ success, data }` o `{ success: false, error: { code, message } }`. Socket.io conserva el
+estado ante desconexiones breves de hasta dos minutos; tras una reconexión no recuperable,
+el cliente debe volver a emitir `join:chat`.
+
 ## Comandos
 
 - `npm run build:backend`: compila TypeScript.

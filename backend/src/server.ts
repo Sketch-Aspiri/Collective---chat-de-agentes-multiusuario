@@ -4,17 +4,19 @@ import { env } from './config/environment';
 import { connectDatabase, disconnectDatabase } from './config/database';
 import { connectRedis, disconnectRedis } from './config/redis';
 import { logger } from './utils/logger';
+import { createSocketServer } from './websocket/socket-server';
 
 async function main(): Promise<void> {
   await connectDatabase();
   await connectRedis();
 
   const httpServer = http.createServer(createApp());
+  const socketServer = createSocketServer(httpServer);
   httpServer.listen(env.port, () => logger.info('Backend started', { port: env.port }));
 
   const shutdown = async (signal: string): Promise<void> => {
     logger.info('Backend stopping', { signal });
-    httpServer.close();
+    await new Promise<void>((resolve) => socketServer.close(() => resolve()));
     await Promise.all([disconnectRedis(), disconnectDatabase()]);
   };
 

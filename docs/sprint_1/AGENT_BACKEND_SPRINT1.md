@@ -180,7 +180,9 @@ export const verifyJwt = (req, res, next) => {
 
 ---
 
-### 4️⃣ **Socket.io Base + Eventos de Chat** [2 días]
+### 4️⃣ **Socket.io Base + Eventos de Chat** [2 días] — ✅ COMPLETADA
+
+**Estado verificado (2026-07-17):** Socket.io integrado con el servidor HTTP, autenticación JWT HS256, autorización por membresía, salas, persistencia y broadcast de mensajes, presencia, recuperación de conexión y pruebas de integración correctas.
 
 **Entregable:**
 - ✅ Socket.io server integrado con Express
@@ -274,9 +276,9 @@ backend/
 - [ ] Migrations aplicadas localmente y en CI
 - [x] Todos los tests pasan (`npm run test`)
 - [x] Rate limiter rechaza >100 req/min
-- [ ] Socket.io messages llegan <100ms en local
+- [x] Socket.io messages llegan <100ms en local
 - [x] Variables de entorno validadas al startup
-- [ ] Logging funciona en todos los módulos
+- [x] Logging funciona en todos los módulos
 - [x] README actualizado con instrucciones de setup
 
 ---
