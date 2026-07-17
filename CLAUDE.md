@@ -8,7 +8,6 @@ Este archivo guía a Claude Code (claude.ai/code) cuando trabaja en este reposit
 
 Documentos de referencia del proyecto (si existen en `/docs`):
 - `REQUISITOS_AGENTES_CHAT.md` — especificación funcional completa
-- `PREGUNTAS_ABIERTAS.md` — decisiones arquitectónicas pendientes/tomadas
 - `ESTRUCTURA_PROYECTO.md` — árbol de carpetas y dependencias
 
 ## Stack tecnológico
@@ -21,7 +20,7 @@ Documentos de referencia del proyecto (si existen en `/docs`):
 - React Router, React Markdown (render de respuestas del LLM)
 
 **Backend**
-- Node.js 20+ con Express o Fastify (elegir uno, no mezclar), TypeScript
+- Node.js 20+ con **Express** y TypeScript
 - PostgreSQL 15+ (Prisma como ORM) — datos de usuarios, chats, agentes
 - Redis — sesiones, rate limiting, memoria de agente
 - Bull/BullMQ — ejecución async de agentes (job queue)
@@ -98,16 +97,12 @@ docs(readme): update API endpoints
 | Encriptación | AES-256 para API keys guardadas, TLS en tránsito |
 | Testing | Jest + Cypress, objetivo 80% coverage |
 | Mobile | Fuera de alcance del MVP (web only) |
-
-## Decisiones pendientes (⏳ — no asumir, preguntar si es relevante al task)
-
-- Comunicación entre agentes (agente → agente): recomendado NO en MVP
-- Límites de timeout/tokens/retries por ejecución de agente: propuesto 60s / 10k tokens / 3 retries, sin validar
-- Webhooks/triggers externos: NO en MVP
-- Confirmación en tiempo real antes de que un agente ejecute una acción: NO en MVP (solo logs post-ejecución)
-- Versionado de agentes con rollback: NO en MVP
-
-Si una tarea toca alguno de estos puntos, señalarlo explícitamente en vez de asumir un comportamiento.
+| Comunicación entre agentes | **SÍ: agentes pueden comunicarse/coordinarse entre sí** |
+| Límites de ejecución de agente | **Timeout: 60s | Tokens: 10k | Reintentos: 3** |
+| Webhooks/triggers externos | **SÍ: ejecución automática de agentes por eventos externos** |
+| Confirmación en tiempo real | **SÍ (Opción A): pausa y espera confirmación antes de acciones críticas** |
+| Versionado y rollback de agentes | **SÍ: permitir rollback a versiones anteriores** |
+| Framework backend | **Express** (no Fastify) |
 
 ## Requisitos no funcionales a tener en cuenta
 
@@ -115,3 +110,35 @@ Si una tarea toca alguno de estos puntos, señalarlo explícitamente en vez de a
 - Sanitizar inputs (XSS) y usar el ORM para evitar SQL injection
 - Chat debe responder <200ms p99; WebSocket <100ms de latencia
 - Logging centralizado; no loguear API keys ni datos sensibles en texto plano
+
+## Detalles de implementación (basado en decisiones confirmadas)
+
+### Comunicación entre agentes
+- Los agentes pueden enviarse mensajes dentro de un chat y coordinarse
+- Implementar mediante un sistema de eventos dentro de BullMQ (job queue)
+- Agente A crea un job → Agente B lo consume y ejecuta
+- Historial de comunicación agente-agente se guarda en PostgreSQL
+
+### Ejecución de agentes
+- **Timeout**: 60 segundos máximo por ejecución
+- **Límite de tokens**: 10,000 tokens por respuesta del LLM
+- **Reintentos**: Máximo 3 intentos automáticos en caso de fallo
+- Implementar con Bull/BullMQ con `delayed` y `attempts` options
+
+### Webhooks y triggers externos
+- Agentes pueden registrar webhooks en servicios externos (Google Drive, etc.)
+- Cuando ocurre un evento, se crea un job en BullMQ para ejecutar el agente
+- Ejemplo: cambio en Google Drive → webhook → ejecuta agente automáticamente
+- Almacenar webhooks registrados en tabla `AgentWebhooks` (PostgreSQL)
+
+### Confirmación en tiempo real (Opción A)
+- Antes de ejecutar acciones críticas (eliminar, modificar permisos), el agente pausa y envía un mensaje al chat pidiendo confirmación
+- El usuario confirma/rechaza vía UI interactiva (botones)
+- Si no hay confirmación en 5 minutos (o timeout configurable), la acción se cancela
+- Implementar con Socket.io para comunicación bidireccional en tiempo real
+
+### Versionado y rollback de agentes
+- Cada vez que se modifica la configuración de un agente, crear una versión en la tabla `AgentVersions`
+- Guardar: versión, timestamp, cambios, usuario que lo hizo
+- UI debe permitir ver historial de versiones y rollback a cualquier versión anterior
+- La versión "actual" es un foreign key en la tabla `Agents` que apunta a `AgentVersions`
