@@ -1,0 +1,32 @@
+# Dependencias y artefactos de build (se instalan/compilan dentro de la imagen)
+**/node_modules
+**/dist
+**/build
+**/coverage
+
+# Entornos y secretos — NUNCA copiar al contexto de build
+**/.env
+**/.env.*
+!**/.env.example
+
+# Logs y temporales
+**/*.log
+**/.DS_Store
+
+# VCS y metadatos
+.git
+.gitignore
+.github
+
+# Docs e infra no necesaria para runtime
+docs
+infra/kubernetes
+infra/terraform
+
+# Prisma local dev DB
+backend/prisma/*.db
+
+# Editor / IDE
+.vscode
+.idea
+.agents

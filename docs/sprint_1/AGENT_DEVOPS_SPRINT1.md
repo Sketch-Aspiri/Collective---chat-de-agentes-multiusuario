@@ -7,7 +7,7 @@ Construir base de infraestructura local con Docker, scripts de setup, CI/CD inic
 
 ## 📋 Tareas Prioritarias
 
-### 1️⃣ **Docker & docker-compose para desarrollo local** [2 días]
+### 1️⃣ **Docker & docker-compose para desarrollo local** [2 días] — ✅ COMPLETADO
 
 **Entregable:**
 - ✅ `docker-compose.yml` con PostgreSQL 15+ y Redis
