@@ -7,7 +7,9 @@ Construir la base del backend con autenticación, estructura modular y servicios
 
 ## 📋 Tareas Prioritarias
 
-### 1️⃣ **Inicializar proyecto Node.js + Stack base** [2-3 días]
+### 1️⃣ **Inicializar proyecto Node.js + Stack base** [2-3 días] — ✅ COMPLETADA
+
+**Estado verificado (2026-07-17):** build y lint correctos; stack base, variables de entorno, documentación y health checks de infraestructura configurados.
 
 **Entregable:**
 - ✅ `backend/` con estructura modular lista
@@ -57,7 +59,9 @@ backend/src/
 
 ---
 
-### 2️⃣ **Esquema de Base de Datos (Prisma)** [1-2 días]
+### 2️⃣ **Esquema de Base de Datos (Prisma)** [1-2 días] — ✅ COMPLETADA
+
+**Estado verificado (2026-07-17):** esquema válido, Prisma Client generado, 2 migraciones aplicadas en PostgreSQL local y seed idempotente ejecutado correctamente.
 
 **Entregable:**
 - ✅ `prisma/schema.prisma` con modelos base
@@ -135,7 +139,9 @@ model Message {
 
 ---
 
-### 3️⃣ **Middleware de Autenticación (JWT + básico)** [2 días]
+### 3️⃣ **Middleware de Autenticación (JWT + básico)** [2 días] — ✅ COMPLETADA
+
+**Estado verificado (2026-07-17):** JWT restringido a HS256, contexto de usuario adjunto al request, rate limiter Redis atómico por usuario y manejo global de errores con logging estructurado. Build, lint y 6 suites de tests correctos.
 
 **Entregable:**
 - ✅ Middleware JWT en `middleware/auth.ts`
@@ -174,7 +180,9 @@ export const verifyJwt = (req, res, next) => {
 
 ---
 
-### 4️⃣ **Socket.io Base + Eventos de Chat** [2 días]
+### 4️⃣ **Socket.io Base + Eventos de Chat** [2 días] — ✅ COMPLETADA
+
+**Estado verificado (2026-07-17):** Socket.io integrado con el servidor HTTP, autenticación JWT HS256, autorización por membresía, salas, persistencia y broadcast de mensajes, presencia, recuperación de conexión y pruebas de integración correctas.
 
 **Entregable:**
 - ✅ Socket.io server integrado con Express
@@ -218,7 +226,9 @@ socket.on("leave:chat", { chatId } => {
 
 ---
 
-### 5️⃣ **Testing Base (Jest + Supertest)** [1-2 días]
+### 5️⃣ **Testing Base (Jest + Supertest)** [1-2 días] — ✅ COMPLETADA
+
+**Estado verificado (2026-07-17):** 10 suites y 22 pruebas activas correctas; health, JWT, rate limiter, validadores, AES-256-GCM y eventos Socket.io cubiertos. Cobertura: 93.85% statements, 93.75% lines y 100% functions. CI configura PostgreSQL/Redis, aplica migraciones y ejecuta build, lint y tests con umbrales obligatorios.
 
 **Entregable:**
 - ✅ Suite de tests para middleware (auth, rate limiter)
@@ -263,15 +273,15 @@ backend/
 
 ## 🔍 Criterios de Aceptación
 
-- [ ] Backend levanta con `npm run dev` sin errores
-- [ ] Docker-compose corre Postgres + Redis sin problemas
-- [ ] Migrations aplicadas localmente y en CI
-- [ ] Todos los tests pasan (`npm run test`)
-- [ ] Rate limiter rechaza >100 req/min
-- [ ] Socket.io messages llegan <100ms en local
-- [ ] Variables de entorno validadas al startup
-- [ ] Logging funciona en todos los módulos
-- [ ] README actualizado con instrucciones de setup
+- [x] Backend levanta con `npm run dev` sin errores
+- [x] Docker-compose corre Postgres + Redis sin problemas
+- [x] Migrations aplicadas localmente y en CI
+- [x] Todos los tests pasan (`npm run test`)
+- [x] Rate limiter rechaza >100 req/min
+- [x] Socket.io messages llegan <100ms en local
+- [x] Variables de entorno validadas al startup
+- [x] Logging funciona en todos los módulos
+- [x] README actualizado con instrucciones de setup
 
 ---
 

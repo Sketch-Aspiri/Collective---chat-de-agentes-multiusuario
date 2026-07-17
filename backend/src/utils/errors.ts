@@ -21,8 +21,20 @@ export class UnauthorizedError extends AppError {
   }
 }
 
+export class TooManyRequestsError extends AppError {
+  constructor(retryAfterSeconds: number) {
+    super('Too many requests', 429, { retryAfterSeconds });
+  }
+}
+
+export class ServiceUnavailableError extends AppError {
+  constructor(message = 'Service unavailable') {
+    super(message, 503);
+  }
+}
+
 export class ValidationError extends AppError {
   constructor(details: unknown) {
-    super('Validation failed', 422, details);
+    super('Validation failed', 400, details);
   }
 }

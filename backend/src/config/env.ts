@@ -1,24 +1,41 @@
 import dotenv from 'dotenv';
+import { z } from 'zod';
 
 dotenv.config();
 
-function requireEnv(name: string): string {
-  const value = process.env[name];
-  if (!value) {
-    throw new Error(`Missing required environment variable: ${name}`);
-  }
-  return value;
+const environmentSchema = z.object({
+  NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
+  PORT: z.coerce.number().int().positive().max(65535).default(4000),
+  DATABASE_URL: z.string().url(),
+  REDIS_URL: z.string().url(),
+  JWT_SECRET: z.string().min(8),
+  JWT_EXPIRES_IN: z.string().default('1d'),
+  ENCRYPTION_KEY: z.string().min(16),
+  SENDGRID_API_KEY: z.string().default(''),
+  STRIPE_SECRET_KEY: z.string().default(''),
+  STRIPE_WEBHOOK_SECRET: z.string().default(''),
+});
+
+const parsedEnvironment = environmentSchema.safeParse(process.env);
+
+if (!parsedEnvironment.success) {
+  const details = parsedEnvironment.error.issues
+    .map(({ path, message }) => `${path.join('.')}: ${message}`)
+    .join(', ');
+  throw new Error(`Invalid environment configuration: ${details}`);
 }
 
+const environment = parsedEnvironment.data;
+
 export const env = {
-  nodeEnv: process.env.NODE_ENV ?? 'development',
-  port: Number(process.env.PORT ?? 4000),
-  databaseUrl: requireEnv('DATABASE_URL'),
-  redisUrl: requireEnv('REDIS_URL'),
-  jwtSecret: requireEnv('JWT_SECRET'),
-  jwtExpiresIn: process.env.JWT_EXPIRES_IN ?? '1d',
-  encryptionKey: requireEnv('ENCRYPTION_KEY'),
-  sendgridApiKey: process.env.SENDGRID_API_KEY ?? '',
-  stripeSecretKey: process.env.STRIPE_SECRET_KEY ?? '',
-  stripeWebhookSecret: process.env.STRIPE_WEBHOOK_SECRET ?? '',
+  nodeEnv: environment.NODE_ENV,
+  port: environment.PORT,
+  databaseUrl: environment.DATABASE_URL,
+  redisUrl: environment.REDIS_URL,
+  jwtSecret: environment.JWT_SECRET,
+  jwtExpiresIn: environment.JWT_EXPIRES_IN,
+  encryptionKey: environment.ENCRYPTION_KEY,
+  sendgridApiKey: environment.SENDGRID_API_KEY,
+  stripeSecretKey: environment.STRIPE_SECRET_KEY,
+  stripeWebhookSecret: environment.STRIPE_WEBHOOK_SECRET,
 };
