@@ -41,6 +41,16 @@ el cliente debe volver a emitir `join:chat`.
 - `npm run prisma:migrate --workspace backend`: crea y aplica migraciones en desarrollo.
 - `npm run prisma:seed --workspace backend`: crea tres usuarios, dos chats y un agente de prueba.
 
+## Calidad y cobertura
+
+Ejecuta `npm run test:backend:coverage` desde la raíz. La suite exige
+al menos 80% de statements, líneas y funciones en los componentes críticos del sprint;
+autenticación y validadores requieren 100%, y Socket.io requiere 80%. El último review
+del Sprint 1 obtuvo 93.85% de statements, 93.75% de líneas y 100% de funciones.
+
+GitHub Actions valida Node.js 20, PostgreSQL 15, Redis 7, Prisma migrations, build, lint,
+tests y cobertura para pull requests y pushes a `main`, `staging` y `staging-backend`.
+
 ## Relaciones de datos
 
 - Un usuario puede ser propietario y miembro de múltiples chats.

@@ -2,6 +2,8 @@ import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 
 const prisma = new PrismaClient();
+const PRODUCT_CHAT_ID = '11111111-1111-4111-8111-111111111111';
+const RESEARCH_CHAT_ID = '22222222-2222-4222-8222-222222222222';
 
 async function main(): Promise<void> {
   const passwordHash = await bcrypt.hash('LocalDev123!', 10);
@@ -21,10 +23,10 @@ async function main(): Promise<void> {
   );
 
   const productChat = await prisma.chat.upsert({
-    where: { id: 'seed-chat-product' },
+    where: { id: PRODUCT_CHAT_ID },
     update: {},
     create: {
-      id: 'seed-chat-product',
+      id: PRODUCT_CHAT_ID,
       name: 'Producto Sprint 1',
       ownerId: andre.id,
       members: {
@@ -37,10 +39,10 @@ async function main(): Promise<void> {
   });
 
   await prisma.chat.upsert({
-    where: { id: 'seed-chat-research' },
+    where: { id: RESEARCH_CHAT_ID },
     update: {},
     create: {
-      id: 'seed-chat-research',
+      id: RESEARCH_CHAT_ID,
       name: 'Investigacion de agentes',
       ownerId: sofia.id,
       members: {

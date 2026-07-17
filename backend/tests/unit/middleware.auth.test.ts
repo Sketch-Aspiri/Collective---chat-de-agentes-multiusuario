@@ -53,4 +53,24 @@ describe('authMiddleware', () => {
 
     expect(() => authMiddleware(request, response, next)).toThrow(UnauthorizedError);
   });
+
+  it('rejects requests without a bearer token', () => {
+    const request = { headers: {}, path: '/protected' } as AuthenticatedRequest;
+
+    expect(() => authMiddleware(request, response, next)).toThrow('Missing bearer token');
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  it('rejects expired tokens', () => {
+    const token = jwt.sign({ userId: 'user-1' }, env.jwtSecret, {
+      algorithm: 'HS256',
+      expiresIn: -1,
+    });
+    const request = {
+      headers: { authorization: `Bearer ${token}` },
+      path: '/protected',
+    } as AuthenticatedRequest;
+
+    expect(() => authMiddleware(request, response, next)).toThrow('Invalid or expired token');
+  });
 });

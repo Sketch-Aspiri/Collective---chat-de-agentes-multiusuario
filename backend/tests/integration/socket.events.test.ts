@@ -119,4 +119,69 @@ describe('Socket.io chat events', () => {
       error: { code: 'CHAT_ACCESS_DENIED' },
     });
   });
+
+  it('validates payloads and requires joining before sending', async () => {
+    const client = connect();
+    await once(client, 'connect');
+
+    const invalidJoin = await new Promise<Record<string, unknown>>((resolve) =>
+      client.emit('join:chat', { chatId: 'invalid' }, resolve),
+    );
+    expect(invalidJoin).toMatchObject({ success: false, error: { code: 'INVALID_PAYLOAD' } });
+
+    const sendWithoutJoining = await new Promise<Record<string, unknown>>((resolve) =>
+      client.emit('send:message', { chatId, content: 'hello' }, resolve),
+    );
+    expect(sendWithoutJoining).toMatchObject({
+      success: false,
+      error: { code: 'CHAT_ACCESS_DENIED' },
+    });
+
+    const invalidMessage = await new Promise<Record<string, unknown>>((resolve) =>
+      client.emit('send:message', { chatId, content: '   ' }, resolve),
+    );
+    expect(invalidMessage).toMatchObject({
+      success: false,
+      error: { code: 'INVALID_PAYLOAD' },
+    });
+  });
+
+  it('broadcasts presence when users leave explicitly or disconnect', async () => {
+    const observer = connect();
+    const member = connect();
+    await Promise.all([once(observer, 'connect'), once(member, 'connect')]);
+
+    const join = (client: ClientSocket) =>
+      new Promise<Record<string, unknown>>((resolve) =>
+        client.emit('join:chat', { chatId }, resolve),
+      );
+    await join(observer);
+    const joined = once<Record<string, unknown>>(observer, 'user:joined');
+    await join(member);
+    await expect(joined).resolves.toMatchObject({ chatId, userId });
+
+    const explicitlyLeft = once<Record<string, unknown>>(observer, 'user:left');
+    const leaveResult = new Promise<Record<string, unknown>>((resolve) =>
+      member.emit('leave:chat', { chatId }, resolve),
+    );
+    await expect(leaveResult).resolves.toMatchObject({ success: true });
+    await expect(explicitlyLeft).resolves.toMatchObject({ chatId, userId });
+
+    await join(member);
+    const disconnected = once<Record<string, unknown>>(observer, 'user:left');
+    member.disconnect();
+    await expect(disconnected).resolves.toMatchObject({ chatId, userId });
+  });
+
+  it('returns an internal error when persistence fails', async () => {
+    const client = connect();
+    await once(client, 'connect');
+    await new Promise((resolve) => client.emit('join:chat', { chatId }, resolve));
+    createMessage.mockRejectedValue(new Error('database unavailable'));
+
+    const result = await new Promise<Record<string, unknown>>((resolve) =>
+      client.emit('send:message', { chatId, content: 'hello' }, resolve),
+    );
+    expect(result).toMatchObject({ success: false, error: { code: 'INTERNAL_ERROR' } });
+  });
 });

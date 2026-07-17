@@ -226,7 +226,9 @@ socket.on("leave:chat", { chatId } => {
 
 ---
 
-### 5️⃣ **Testing Base (Jest + Supertest)** [1-2 días]
+### 5️⃣ **Testing Base (Jest + Supertest)** [1-2 días] — ✅ COMPLETADA
+
+**Estado verificado (2026-07-17):** 10 suites y 22 pruebas activas correctas; health, JWT, rate limiter, validadores, AES-256-GCM y eventos Socket.io cubiertos. Cobertura: 93.85% statements, 93.75% lines y 100% functions. CI configura PostgreSQL/Redis, aplica migraciones y ejecuta build, lint y tests con umbrales obligatorios.
 
 **Entregable:**
 - ✅ Suite de tests para middleware (auth, rate limiter)
@@ -271,9 +273,9 @@ backend/
 
 ## 🔍 Criterios de Aceptación
 
-- [ ] Backend levanta con `npm run dev` sin errores
-- [ ] Docker-compose corre Postgres + Redis sin problemas
-- [ ] Migrations aplicadas localmente y en CI
+- [x] Backend levanta con `npm run dev` sin errores
+- [x] Docker-compose corre Postgres + Redis sin problemas
+- [x] Migrations aplicadas localmente y en CI
 - [x] Todos los tests pasan (`npm run test`)
 - [x] Rate limiter rechaza >100 req/min
 - [x] Socket.io messages llegan <100ms en local

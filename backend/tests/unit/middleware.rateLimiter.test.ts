@@ -5,6 +5,8 @@ import {
   AUTH_RATE_LIMIT_MAX_REQUESTS,
   enforceRateLimit,
   enforcePublicAuthRateLimit,
+  publicAuthRateLimiter,
+  rateLimiter,
 } from '../../src/middleware/rateLimiter';
 import { ServiceUnavailableError, TooManyRequestsError } from '../../src/utils/errors';
 import { redisClient } from '../../src/config/redis';
@@ -83,5 +85,28 @@ describe('rateLimiter', () => {
     });
     expect(setHeader).toHaveBeenCalledWith('RateLimit-Limit', 10);
     expect(next).not.toHaveBeenCalled();
+  });
+
+  it('forwards asynchronous errors from the protected middleware wrapper', async () => {
+    Object.defineProperty(redisClient, 'isReady', { value: false, configurable: true });
+
+    rateLimiter(request, response, next);
+    await new Promise((resolve) => setImmediate(resolve));
+
+    expect(next).toHaveBeenCalledWith(expect.any(ServiceUnavailableError));
+  });
+
+  it('runs the public authentication middleware wrapper', async () => {
+    evalMock.mockResolvedValue([1, 60_000]);
+    const publicRequest = {
+      ip: '203.0.113.10',
+      path: '/login',
+      socket: {},
+    } as Request;
+
+    publicAuthRateLimiter(publicRequest, response, next);
+    await new Promise((resolve) => setImmediate(resolve));
+
+    expect(next).toHaveBeenCalledTimes(1);
   });
 });

@@ -3,19 +3,50 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [main, staging]
+    branches: [main, staging, staging-backend]
 
 jobs:
   backend:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: agentes_chat_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres -d agentes_chat_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+      redis:
+        image: redis:7-alpine
+        ports: ['6379:6379']
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+    env:
+      NODE_ENV: test
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/agentes_chat_test
+      REDIS_URL: redis://localhost:6379
+      JWT_SECRET: ci-only-jwt-secret
+      ENCRYPTION_KEY: ci-only-encryption-key-at-least-32-bytes
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install --prefix backend
-      - run: npm run lint --prefix backend
-      - run: npm run test --prefix backend
+          cache: npm
+      - run: npm ci
+      - run: npm run prisma:generate --workspace backend
+      - run: npm exec --workspace backend -- prisma migrate deploy
+      - run: npm run build:backend
+      - run: npm run lint --workspace backend
+      - run: npm run test:backend:coverage
 
   frontend:
     runs-on: ubuntu-latest
@@ -24,6 +55,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install --prefix frontend
-      - run: npm run lint --prefix frontend
-      - run: npm run test --prefix frontend
+      - run: npm ci
+      - run: npm run lint --workspace frontend
+      - run: npm run test:frontend
