@@ -8,26 +8,30 @@ datasource db {
 }
 
 model User {
-  id           String        @id @default(uuid())
-  email        String        @unique
-  passwordHash String
-  name         String
-  chatMembers  ChatMember[]
-  chatsOwned   Chat[]        @relation("ChatOwner")
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
+  id            String       @id @default(uuid())
+  email         String       @unique
+  passwordHash  String
+  name          String
+  chatMembers   ChatMember[]
+  chatsOwned    Chat[]       @relation("ChatOwner")
+  agentsCreated Agent[]      @relation("AgentCreator")
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
 }
 
 model Chat {
-  id        String       @id @default(uuid())
-  name      String
-  ownerId   String
-  owner     User         @relation("ChatOwner", fields: [ownerId], references: [id])
-  members   ChatMember[]
-  agents    Agent[]
-  messages  Message[]
-  createdAt DateTime     @default(now())
-  updatedAt DateTime     @updatedAt
+  id         String          @id @default(uuid())
+  name       String
+  ownerId    String
+  owner      User            @relation("ChatOwner", fields: [ownerId], references: [id])
+  members    ChatMember[]
+  agents     Agent[]         @relation("PrimaryChatAgents")
+  agentLinks ChatAgentLink[]
+  messages   Message[]
+  createdAt  DateTime        @default(now())
+  updatedAt  DateTime        @updatedAt
+
+  @@index([ownerId])
 }
 
 model ChatMember {
@@ -35,32 +39,58 @@ model ChatMember {
   userId   String
   role     String   @default("member")
   joinedAt DateTime @default(now())
-  chat     Chat     @relation(fields: [chatId], references: [id])
-  user     User     @relation(fields: [userId], references: [id])
+  chat     Chat     @relation(fields: [chatId], references: [id], onDelete: Cascade)
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@id([chatId, userId])
+  @@index([userId])
 }
 
 model Agent {
-  id            String   @id @default(uuid())
+  id            String          @id @default(uuid())
   chatId        String
-  chat          Chat     @relation(fields: [chatId], references: [id])
+  chat          Chat            @relation("PrimaryChatAgents", fields: [chatId], references: [id], onDelete: Cascade)
+  creatorId     String
+  creator       User            @relation("AgentCreator", fields: [creatorId], references: [id], onDelete: Cascade)
   name          String
+  description   String?
   mentionHandle String
   provider      String
   systemPrompt  String
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  llmConfig     Json?
+  integrations  Json?
+  chatLinks     ChatAgentLink[]
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
 
   @@unique([chatId, mentionHandle])
+  @@index([chatId])
+  @@index([creatorId])
+}
+
+/// Explicit M:N relation so an agent can participate in more than one chat.
+model ChatAgentLink {
+  id       String   @id @default(cuid())
+  chatId   String
+  chat     Chat     @relation(fields: [chatId], references: [id], onDelete: Cascade)
+  agentId  String
+  agent    Agent    @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  joinedAt DateTime @default(now())
+
+  @@unique([chatId, agentId])
+  @@index([chatId])
+  @@index([agentId])
 }
 
 model Message {
   id         String   @id @default(uuid())
   chatId     String
-  chat       Chat     @relation(fields: [chatId], references: [id])
+  chat       Chat     @relation(fields: [chatId], references: [id], onDelete: Cascade)
   authorId   String
   authorType String
   content    String
+  metadata   Json?
   createdAt  DateTime @default(now())
+
+  @@index([chatId])
 }

@@ -7,7 +7,9 @@ Construir la base del backend con autenticación, estructura modular y servicios
 
 ## 📋 Tareas Prioritarias
 
-### 1️⃣ **Inicializar proyecto Node.js + Stack base** [2-3 días]
+### 1️⃣ **Inicializar proyecto Node.js + Stack base** [2-3 días] — ✅ COMPLETADA
+
+**Estado verificado (2026-07-17):** build y lint correctos; stack base, variables de entorno, documentación y health checks de infraestructura configurados.
 
 **Entregable:**
 - ✅ `backend/` con estructura modular lista
@@ -57,7 +59,9 @@ backend/src/
 
 ---
 
-### 2️⃣ **Esquema de Base de Datos (Prisma)** [1-2 días]
+### 2️⃣ **Esquema de Base de Datos (Prisma)** [1-2 días] — ✅ COMPLETADA
+
+**Estado verificado (2026-07-17):** esquema válido, Prisma Client generado, 2 migraciones aplicadas en PostgreSQL local y seed idempotente ejecutado correctamente.
 
 **Entregable:**
 - ✅ `prisma/schema.prisma` con modelos base
@@ -266,12 +270,12 @@ backend/
 - [ ] Backend levanta con `npm run dev` sin errores
 - [ ] Docker-compose corre Postgres + Redis sin problemas
 - [ ] Migrations aplicadas localmente y en CI
-- [ ] Todos los tests pasan (`npm run test`)
+- [x] Todos los tests pasan (`npm run test`)
 - [ ] Rate limiter rechaza >100 req/min
 - [ ] Socket.io messages llegan <100ms en local
-- [ ] Variables de entorno validadas al startup
+- [x] Variables de entorno validadas al startup
 - [ ] Logging funciona en todos los módulos
-- [ ] README actualizado con instrucciones de setup
+- [x] README actualizado con instrucciones de setup
 
 ---
 
