@@ -1,11 +1,11 @@
-import { ILLMProvider, LLMContext } from './llm.interface';
+import { ILLMProvider } from './llm.interface';
 
 export class AnthropicService implements ILLMProvider {
-  async sendMessage(prompt: string, _context?: LLMContext): Promise<string> {
+  async sendMessage(): Promise<string> {
     throw new Error('AnthropicService.sendMessage not implemented');
   }
 
-  async callTool(_toolName: string, _args: unknown): Promise<unknown> {
+  async callTool(): Promise<unknown> {
     throw new Error('AnthropicService.callTool not implemented');
   }
 
