@@ -15,7 +15,12 @@
     "test:backend:coverage": "npm run test:coverage --workspace backend",
     "test:frontend": "npm run test --workspace frontend",
     "lint": "npm run lint --workspace backend && npm run lint --workspace frontend",
-    "format": "prettier --write \"backend/src/**/*.ts\" \"frontend/src/**/*.{ts,tsx}\""
+    "format": "prettier --write \"backend/src/**/*.ts\" \"frontend/src/**/*.{ts,tsx}\"",
+    "format:check": "prettier --check \"backend/src/**/*.ts\" \"frontend/src/**/*.{ts,tsx}\"",
+    "setup": "bash scripts/setup.sh",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f"
   },
   "devDependencies": {
     "prettier": "^3.0.0"

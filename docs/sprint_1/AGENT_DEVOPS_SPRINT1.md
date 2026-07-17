@@ -194,7 +194,7 @@ VITE_API_URL=http://localhost:3000
 
 ---
 
-### 2️⃣ **Scripts de Setup y Utilidad** [1 día]
+### 2️⃣ **Scripts de Setup y Utilidad** [1 día] — ✅ COMPLETADO
 
 **Entregable:**
 - ✅ `scripts/` con shell scripts de utilidad

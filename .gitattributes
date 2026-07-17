@@ -1,0 +1,11 @@
+# Normaliza saltos de línea. Los scripts de shell DEBEN mantener LF
+# aunque se clonen en Windows, o bash fallará con "\r: command not found".
+* text=auto eol=lf
+*.sh text eol=lf
+Makefile text eol=lf
+
+# Binarios: sin conversión
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
