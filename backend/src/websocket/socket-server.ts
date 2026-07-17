@@ -143,7 +143,7 @@ export function createSocketServer(httpServer: HttpServer): ChatSocketServer {
   const io = new SocketServer<ClientToServerEvents, ServerToClientEvents, object, SocketData>(
     httpServer,
     {
-      cors: { origin: true, credentials: true },
+      cors: { origin: env.frontendUrl, credentials: true },
       connectionStateRecovery: { maxDisconnectionDuration: 2 * 60_000 },
     },
   );

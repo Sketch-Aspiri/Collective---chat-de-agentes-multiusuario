@@ -1,6 +1,7 @@
 import express, { Express } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+import { env } from './config/env';
 import { requestLogger } from './middleware/logger';
 import { metricsMiddleware, getMetrics } from './middleware/metrics';
 import { errorHandler } from './middleware/errorHandler';
@@ -18,7 +19,8 @@ export function createApp(): Express {
 
   app.disable('x-powered-by');
   app.use(helmet());
-  app.use(cors());
+  // CORS restringido al frontend configurado (no reflejar cualquier origen).
+  app.use(cors({ origin: env.frontendUrl, credentials: true }));
   app.use(requestLogger);
   app.use(metricsMiddleware);
 
