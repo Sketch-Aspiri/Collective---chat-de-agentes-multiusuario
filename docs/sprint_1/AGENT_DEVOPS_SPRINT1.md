@@ -461,7 +461,7 @@ jobs:
 
 ---
 
-### 4️⃣ **Documentación de Infraestructura** [1-2 días]
+### 4️⃣ **Documentación de Infraestructura** [1-2 días] — ✅ COMPLETADO
 
 **Entregable:**
 - ✅ `/docs/SETUP.md` — desarrollo local

@@ -24,6 +24,9 @@ Rate limiting y seguridad — Protección contra abuso, sanitización de inputs
 
 🚀 Inicio rápido
 
+> **Guía completa y actualizada:** [`docs/SETUP.md`](docs/SETUP.md) — quickstart con Docker (`make setup`), puertos, variables de entorno y troubleshooting.
+> Otros docs: [Arquitectura](docs/ARCHITECTURE.md) · [Deployment](docs/DEPLOYMENT.md) · [Runbook](docs/RUNBOOK.md) · [Contribuir](docs/CONTRIBUTING.md)
+
 Requisitos previos
 
 
