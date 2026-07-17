@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [main, staging, staging-backend]
+    branches: [main, staging, staging-backend, staging-devops]
 
 jobs:
   backend:

@@ -1,0 +1,48 @@
+name: Build
+
+# Verifica que backend y frontend compilan y que las imágenes Docker de
+# producción se construyen sin errores al hacer merge a main.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-apps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run prisma:generate --workspace backend
+      - run: npm run build:backend
+      - run: npm run build:frontend
+
+  build-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - name: Build backend image (production)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: infra/docker/Dockerfile.backend
+          target: production
+          tags: agentes-chat-backend:latest
+          push: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: Build frontend image (production)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: infra/docker/Dockerfile.frontend
+          target: production
+          tags: agentes-chat-frontend:latest
+          push: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

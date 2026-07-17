@@ -1,3 +1,9 @@
+# agentes-chat
+
+[![CI](https://github.com/Sketch-Aspiri/Collective---chat-de-agentes-multiusuario/actions/workflows/ci.yml/badge.svg)](https://github.com/Sketch-Aspiri/Collective---chat-de-agentes-multiusuario/actions/workflows/ci.yml)
+[![Build](https://github.com/Sketch-Aspiri/Collective---chat-de-agentes-multiusuario/actions/workflows/build.yml/badge.svg)](https://github.com/Sketch-Aspiri/Collective---chat-de-agentes-multiusuario/actions/workflows/build.yml)
+[![Format Check](https://github.com/Sketch-Aspiri/Collective---chat-de-agentes-multiusuario/actions/workflows/format.yml/badge.svg)](https://github.com/Sketch-Aspiri/Collective---chat-de-agentes-multiusuario/actions/workflows/format.yml)
+
 Una plataforma de chat multiusuario que integra agentes de IA inteligentes. Invita agentes personalizables mediante @mención para ejecutar tareas complejas usando LLMs conectados a integraciones externas como Google Drive.
 
 📖 Documentación • 🚀 Inicio rápido • 🏗️ Arquitectura • 📋 Requisitos • 🤝 Contribuir
