@@ -7,6 +7,8 @@ import { Header } from './Header';
 import { ChatWindow } from '@/components/chat/ChatWindow';
 import { NewChatModal } from '@/components/modals/NewChatModal';
 import { InviteAgentModal } from '@/components/modals/InviteAgentModal';
+import { ConnectionBadge } from '@/components/common/ConnectionBadge';
+import { useSocket } from '@/hooks/useSocket';
 
 interface MainLayoutProps {
   children?: ReactNode;
@@ -26,6 +28,8 @@ export function MainLayout({ children }: MainLayoutProps) {
   const toggleSidebar = useUIStore((state) => state.toggleSidebar);
   const setSidebarOpen = useUIStore((state) => state.setSidebarOpen);
   const openModal = useUIStore((state) => state.openModal);
+
+  const { isConnected } = useSocket();
 
   const currentChat = chats.find((chat) => chat.id === currentChatId) ?? null;
 
@@ -63,6 +67,7 @@ export function MainLayout({ children }: MainLayoutProps) {
           title={currentChat?.name ?? 'agentes-chat'}
           onToggleSidebar={toggleSidebar}
           onInviteAgent={() => openModal('inviteAgent')}
+          connectionSlot={<ConnectionBadge isConnected={isConnected} />}
         />
         <main className="flex-1 overflow-hidden">
           {children ??
