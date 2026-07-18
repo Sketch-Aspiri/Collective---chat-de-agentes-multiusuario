@@ -1,25 +1,21 @@
-import { type ReactNode } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { useChatStore } from '@/store/chatStore';
 import { useUIStore } from '@/store/uiStore';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
-import { ChatWindow } from '@/components/chat/ChatWindow';
 import { NewChatModal } from '@/components/modals/NewChatModal';
 import { InviteAgentModal } from '@/components/modals/InviteAgentModal';
 import { ConnectionBadge } from '@/components/common/ConnectionBadge';
 import { useSocket } from '@/hooks/useSocket';
 
-interface MainLayoutProps {
-  children?: ReactNode;
-}
-
 /**
  * Layout principal responsivo: sidebar fija en desktop y drawer en mobile,
- * cabecera superior y área de contenido scrollable. El estado vive en los
- * stores de Zustand (chatStore + uiStore).
+ * cabecera superior y área de contenido (Outlet del router). El estado vive
+ * en los stores de Zustand (chatStore + uiStore).
  */
-export function MainLayout({ children }: MainLayoutProps) {
+export function MainLayout() {
+  const navigate = useNavigate();
   const chats = useChatStore((state) => state.chats);
   const currentChatId = useChatStore((state) => state.currentChatId);
   const setCurrentChat = useChatStore((state) => state.setCurrentChat);
@@ -36,6 +32,7 @@ export function MainLayout({ children }: MainLayoutProps) {
   const handleSelectChat = (chatId: string) => {
     setCurrentChat(chatId);
     setSidebarOpen(false);
+    navigate(`/chat/${chatId}`);
   };
 
   return (
@@ -70,14 +67,7 @@ export function MainLayout({ children }: MainLayoutProps) {
           connectionSlot={<ConnectionBadge isConnected={isConnected} />}
         />
         <main className="flex-1 overflow-hidden">
-          {children ??
-            (currentChatId ? (
-              <ChatWindow chatId={currentChatId} />
-            ) : (
-              <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
-                Selecciona un chat para empezar
-              </div>
-            ))}
+          <Outlet />
         </main>
       </div>
 
