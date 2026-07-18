@@ -1,18 +1,19 @@
-import { Route, Routes } from 'react-router-dom';
-import { LoginPage } from './pages/LoginPage';
-import { DashboardPage } from './pages/DashboardPage';
-import { ChatPage } from './pages/ChatPage';
-import { AgentSetupPage } from './pages/AgentSetupPage';
-import { SettingsPage } from './pages/SettingsPage';
-
+/**
+ * Shell base de la aplicación.
+ *
+ * El árbol de rutas real (HomePage / ChatPage / NotFoundPage) se incorpora
+ * en la Tarea 6 del sprint. Por ahora rendea un placeholder para mantener
+ * el build verde mientras se construyen layout, stores y componentes.
+ */
 export default function App() {
   return (
-    <Routes>
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/" element={<DashboardPage />} />
-      <Route path="/chats/:chatId" element={<ChatPage />} />
-      <Route path="/agents/new" element={<AgentSetupPage />} />
-      <Route path="/settings" element={<SettingsPage />} />
-    </Routes>
+    <div className="flex min-h-screen items-center justify-center bg-background text-foreground">
+      <div className="text-center">
+        <h1 className="text-2xl font-semibold">agentes-chat</h1>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Interfaz en construcción — Sprint 1 Frontend
+        </p>
+      </div>
+    </div>
   );
 }
