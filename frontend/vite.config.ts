@@ -19,5 +19,11 @@ export default defineConfig({
     setupFiles: ['./tests/setup.ts'],
     css: false,
     exclude: ['tests/e2e/**', 'node_modules/**'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html'],
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/**/*.d.ts', 'src/main.tsx', 'src/vite-env.d.ts'],
+    },
   },
 });
