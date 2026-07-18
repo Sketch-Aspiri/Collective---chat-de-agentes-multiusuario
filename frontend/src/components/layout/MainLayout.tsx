@@ -4,6 +4,9 @@ import { useChatStore } from '@/store/chatStore';
 import { useUIStore } from '@/store/uiStore';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
+import { ChatWindow } from '@/components/chat/ChatWindow';
+import { NewChatModal } from '@/components/modals/NewChatModal';
+import { InviteAgentModal } from '@/components/modals/InviteAgentModal';
 
 interface MainLayoutProps {
   children?: ReactNode;
@@ -61,14 +64,20 @@ export function MainLayout({ children }: MainLayoutProps) {
           onToggleSidebar={toggleSidebar}
           onInviteAgent={() => openModal('inviteAgent')}
         />
-        <main className="flex-1 overflow-y-auto">
-          {children ?? (
-            <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
-              Selecciona un chat para empezar
-            </div>
-          )}
+        <main className="flex-1 overflow-hidden">
+          {children ??
+            (currentChatId ? (
+              <ChatWindow chatId={currentChatId} />
+            ) : (
+              <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
+                Selecciona un chat para empezar
+              </div>
+            ))}
         </main>
       </div>
+
+      <NewChatModal />
+      <InviteAgentModal />
     </div>
   );
 }
