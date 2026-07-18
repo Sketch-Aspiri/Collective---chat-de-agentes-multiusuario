@@ -1,22 +1,3 @@
-const MINUTE = 60;
-const HOUR = 60 * MINUTE;
-const DAY = 24 * HOUR;
-
-/**
- * Formatea una fecha ISO como tiempo relativo en español
- * ("ahora", "hace 2 min", "hace 3 h", "hace 4 d").
- */
-export function formatRelativeTime(iso: string, now: Date = new Date()): string {
-  const date = new Date(iso);
-  const seconds = Math.floor((now.getTime() - date.getTime()) / 1000);
-
-  if (Number.isNaN(seconds)) return '';
-  if (seconds < MINUTE) return 'ahora';
-  if (seconds < HOUR) return `hace ${Math.floor(seconds / MINUTE)} min`;
-  if (seconds < DAY) return `hace ${Math.floor(seconds / HOUR)} h`;
-  return `hace ${Math.floor(seconds / DAY)} d`;
-}
-
 /** Formatea la hora local como HH:mm. */
 export function formatTime(iso: string): string {
   const date = new Date(iso);

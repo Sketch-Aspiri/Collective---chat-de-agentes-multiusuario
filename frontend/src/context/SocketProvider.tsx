@@ -26,6 +26,12 @@ export function SocketProvider({ children }: { children: ReactNode }) {
     const activeSocket = getSocket(token);
     setSocket(activeSocket);
 
+    // Sin token no intentamos conectar: evita reintentos ruidosos antes del login.
+    if (!token) {
+      setIsConnected(false);
+      return;
+    }
+
     const handleConnect = () => setIsConnected(true);
     const handleDisconnect = () => setIsConnected(false);
     const handleError = (error: Error) => {

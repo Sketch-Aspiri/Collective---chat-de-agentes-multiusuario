@@ -34,9 +34,11 @@ export function Message({ message, avatarColor }: MessageProps) {
         </div>
         <div
           className={cn(
-            'prose prose-sm mt-1 max-w-none break-words text-sm',
-            'prose-p:my-1 prose-pre:my-2 prose-ol:my-1 prose-ul:my-1',
-            isAgent ? 'text-foreground' : 'text-foreground',
+            'mt-1 break-words text-sm leading-relaxed text-foreground',
+            // Estilos ligeros para el markdown (sin plugin de typography).
+            '[&_p]:my-1 [&_ul]:my-1 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:my-1 [&_ol]:list-decimal [&_ol]:pl-5',
+            '[&_pre]:my-2 [&_pre]:overflow-x-auto [&_pre]:rounded [&_pre]:bg-muted [&_pre]:p-2 [&_code]:text-xs',
+            '[&_a]:text-primary [&_a]:underline',
           )}
         >
           <ReactMarkdown>{message.content}</ReactMarkdown>

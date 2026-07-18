@@ -66,6 +66,9 @@ export function useChat(chatId: string): UseChatResult {
       if (!trimmed) return;
 
       if (isConnected && socket) {
+        // Con backend: emitimos y esperamos el eco. El servidor DEBE reenviar
+        // message:new a toda la sala incluyendo al emisor (io.to(room).emit),
+        // no socket.broadcast, o el emisor no vería su propio mensaje.
         socket.emit('send:message', { chatId, content: trimmed });
         return;
       }

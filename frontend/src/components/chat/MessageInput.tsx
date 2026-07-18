@@ -41,7 +41,8 @@ export function MessageInput({ onSend, onTyping, disabled = false }: MessageInpu
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
-    if (event.key === 'Enter' && !event.shiftKey) {
+    // Ignora Enter mientras se compone con IME (evita enviar a medias).
+    if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) {
       event.preventDefault();
       handleSend();
     }
