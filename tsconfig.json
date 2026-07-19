@@ -8,9 +8,5 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
-  },
-  "references": [
-    { "path": "./backend" },
-    { "path": "./frontend" }
-  ]
+  }
 }
