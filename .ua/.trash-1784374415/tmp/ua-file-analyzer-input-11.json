@@ -1,0 +1,35 @@
+{
+  "projectRoot": "C:/Users/Andre/OneDrive/Escritorio/CHAT_AGENTES",
+  "batchFiles": [
+    {
+      "path": "backend/.env.example",
+      "language": "config",
+      "sizeLines": 10,
+      "fileCategory": "config"
+    },
+    {
+      "path": "backend/README.md",
+      "language": "markdown",
+      "sizeLines": 68,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "backend/package.json",
+      "language": "json",
+      "sizeLines": 56,
+      "fileCategory": "config"
+    },
+    {
+      "path": "backend/tsconfig.json",
+      "language": "json",
+      "sizeLines": 21,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    "backend/.env.example": [],
+    "backend/README.md": [],
+    "backend/package.json": [],
+    "backend/tsconfig.json": []
+  }
+}

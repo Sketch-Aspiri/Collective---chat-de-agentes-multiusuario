@@ -1,0 +1,54 @@
+{
+  "nodes": [
+    {
+      "id": "service:infra/kubernetes/deployment.yaml",
+      "type": "service",
+      "name": "deployment.yaml",
+      "filePath": "infra/kubernetes/deployment.yaml",
+      "summary": "Manifiesto de Deployment de Kubernetes que despliega 2 réplicas del backend agentes-chat-backend, exponiendo el puerto 4000 e inyectando variables de entorno desde el secret agentes-chat-secrets.",
+      "tags": ["orchestration", "infrastructure", "kubernetes", "deployment", "backend"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:infra/kubernetes/ingress.yaml",
+      "type": "service",
+      "name": "ingress.yaml",
+      "filePath": "infra/kubernetes/ingress.yaml",
+      "summary": "Ingress de Kubernetes que enruta el tráfico HTTP del host api.agentes-chat.example.com hacia el Service agentes-chat-backend en el puerto 80.",
+      "tags": ["orchestration", "infrastructure", "kubernetes", "routing", "ingress"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:infra/kubernetes/service.yaml",
+      "type": "service",
+      "name": "service.yaml",
+      "filePath": "infra/kubernetes/service.yaml",
+      "summary": "Service de Kubernetes que expone el puerto 80 y enruta hacia el puerto 4000 de los pods con la etiqueta app: agentes-chat-backend.",
+      "tags": ["orchestration", "infrastructure", "kubernetes", "networking", "backend"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "service:infra/kubernetes/ingress.yaml",
+      "target": "service:infra/kubernetes/service.yaml",
+      "type": "routes",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "service:infra/kubernetes/service.yaml",
+      "target": "service:infra/kubernetes/deployment.yaml",
+      "type": "serves",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "service:infra/kubernetes/deployment.yaml",
+      "target": "service:infra/docker/Dockerfile.backend",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

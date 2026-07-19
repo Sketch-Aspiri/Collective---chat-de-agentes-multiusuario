@@ -1,0 +1,141 @@
+{
+  "nodes": [
+    {
+      "id": "pipeline:.github/workflows/build.yml",
+      "type": "pipeline",
+      "name": "build.yml",
+      "filePath": ".github/workflows/build.yml",
+      "summary": "Workflow de GitHub Actions que verifica que backend y frontend compilan y construye las imágenes Docker de producción al hacer merge a main.",
+      "tags": ["ci-cd", "deployment", "containerization"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:.github/workflows/build.yml:build-apps",
+      "type": "resource",
+      "name": "build-apps",
+      "filePath": ".github/workflows/build.yml",
+      "summary": "Job que instala dependencias, genera el cliente Prisma y compila backend y frontend con npm.",
+      "tags": ["ci-cd", "build"],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:.github/workflows/build.yml:build-docker",
+      "type": "resource",
+      "name": "build-docker",
+      "filePath": ".github/workflows/build.yml",
+      "summary": "Job que construye las imágenes Docker de producción del backend y el frontend usando docker/build-push-action.",
+      "tags": ["ci-cd", "containerization", "build"],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/ci.yml",
+      "type": "pipeline",
+      "name": "ci.yml",
+      "filePath": ".github/workflows/ci.yml",
+      "summary": "Workflow principal de integración continua que ejecuta lint, build y tests con cobertura para backend y frontend, levantando Postgres y Redis como servicios efímeros.",
+      "tags": ["ci-cd", "testing", "database"],
+      "complexity": "complex"
+    },
+    {
+      "id": "step:.github/workflows/ci.yml:backend",
+      "type": "resource",
+      "name": "backend",
+      "filePath": ".github/workflows/ci.yml",
+      "summary": "Job que levanta Postgres y Redis como servicios, aplica migraciones de Prisma, hace lint, build y corre tests del backend con cobertura.",
+      "tags": ["ci-cd", "testing", "database"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:.github/workflows/ci.yml:frontend",
+      "type": "resource",
+      "name": "frontend",
+      "filePath": ".github/workflows/ci.yml",
+      "summary": "Job que instala dependencias, hace lint y corre los tests del frontend.",
+      "tags": ["ci-cd", "testing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/deploy-production.yml",
+      "type": "pipeline",
+      "name": "deploy-production.yml",
+      "filePath": ".github/workflows/deploy-production.yml",
+      "summary": "Workflow de despliegue a producción que se dispara al hacer push a main; actualmente contiene un placeholder para construir imágenes y desplegar al entorno de producción.",
+      "tags": ["ci-cd", "deployment"],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:.github/workflows/deploy-production.yml:deploy",
+      "type": "resource",
+      "name": "deploy",
+      "filePath": ".github/workflows/deploy-production.yml",
+      "summary": "Job placeholder (TODO) que debería construir imágenes y desplegarlas al entorno de producción.",
+      "tags": ["ci-cd", "deployment", "todo"],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/deploy-staging.yml",
+      "type": "pipeline",
+      "name": "deploy-staging.yml",
+      "filePath": ".github/workflows/deploy-staging.yml",
+      "summary": "Workflow de despliegue a staging que se dispara al hacer push a la rama staging; actualmente contiene un placeholder para construir imágenes y desplegar al entorno de staging.",
+      "tags": ["ci-cd", "deployment"],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:.github/workflows/deploy-staging.yml:deploy",
+      "type": "resource",
+      "name": "deploy",
+      "filePath": ".github/workflows/deploy-staging.yml",
+      "summary": "Job placeholder (TODO) que debería construir imágenes y desplegarlas al entorno de staging.",
+      "tags": ["ci-cd", "deployment", "todo"],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/format.yml",
+      "type": "pipeline",
+      "name": "format.yml",
+      "filePath": ".github/workflows/format.yml",
+      "summary": "Workflow que verifica que el código respeta el formato de Prettier en cada pull request.",
+      "tags": ["ci-cd", "formatting", "code-quality"],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:.github/workflows/format.yml:format",
+      "type": "resource",
+      "name": "format",
+      "filePath": ".github/workflows/format.yml",
+      "summary": "Job que instala dependencias y ejecuta la verificación de formato con Prettier (npm run format:check).",
+      "tags": ["ci-cd", "formatting"],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/security-scan.yml",
+      "type": "pipeline",
+      "name": "security-scan.yml",
+      "filePath": ".github/workflows/security-scan.yml",
+      "summary": "Workflow de escaneo de seguridad programado semanalmente y en pull requests; actualmente contiene un placeholder para escaneo de dependencias y secretos.",
+      "tags": ["ci-cd", "security", "todo"],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:.github/workflows/security-scan.yml:scan",
+      "type": "resource",
+      "name": "scan",
+      "filePath": ".github/workflows/security-scan.yml",
+      "summary": "Job placeholder (TODO) que debería ejecutar escaneo de dependencias y secretos (npm audit, gitleaks).",
+      "tags": ["ci-cd", "security", "todo"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "pipeline:.github/workflows/build.yml", "target": "step:.github/workflows/build.yml:build-apps", "type": "triggers", "direction": "forward", "weight": 0.6},
+    {"source": "pipeline:.github/workflows/build.yml", "target": "step:.github/workflows/build.yml:build-docker", "type": "triggers", "direction": "forward", "weight": 0.6},
+    {"source": "pipeline:.github/workflows/ci.yml", "target": "step:.github/workflows/ci.yml:backend", "type": "triggers", "direction": "forward", "weight": 0.6},
+    {"source": "pipeline:.github/workflows/ci.yml", "target": "step:.github/workflows/ci.yml:frontend", "type": "triggers", "direction": "forward", "weight": 0.6},
+    {"source": "pipeline:.github/workflows/deploy-production.yml", "target": "step:.github/workflows/deploy-production.yml:deploy", "type": "triggers", "direction": "forward", "weight": 0.6},
+    {"source": "pipeline:.github/workflows/deploy-staging.yml", "target": "step:.github/workflows/deploy-staging.yml:deploy", "type": "triggers", "direction": "forward", "weight": 0.6},
+    {"source": "pipeline:.github/workflows/format.yml", "target": "step:.github/workflows/format.yml:format", "type": "triggers", "direction": "forward", "weight": 0.6},
+    {"source": "pipeline:.github/workflows/security-scan.yml", "target": "step:.github/workflows/security-scan.yml:scan", "type": "triggers", "direction": "forward", "weight": 0.6},
+    {"source": "pipeline:.github/workflows/ci.yml", "target": "file:backend/tests/unit/utils.validators.test.ts", "type": "triggers", "direction": "forward", "weight": 0.6}
+  ]
+}

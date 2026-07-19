@@ -1,0 +1,2112 @@
+{
+  "scriptCompleted": true,
+  "entryPointCandidates": [
+    {
+      "id": "file:backend/src/server.ts",
+      "score": 5,
+      "name": "server.ts",
+      "summary": "Punto de arranque del backend: conecta base de datos y Redis, crea el servidor HTTP y de WebSocket, y gestiona el apagado ordenado ante señales del proceso."
+    },
+    {
+      "id": "document:README.md",
+      "score": 5,
+      "name": "README.md",
+      "summary": "Documentación principal del proyecto con instrucciones de instalación, levantamiento de servicios (Postgres, Redis), ejecución de backend y frontend, tests E2E y cobertura."
+    },
+    {
+      "id": "file:backend/src/app.ts",
+      "score": 4,
+      "name": "app.ts",
+      "summary": "Ensambla la aplicación Express: aplica seguridad (helmet, cors), parseo de cuerpo, middleware de metricas y logging, y monta todas las rutas de los modulos junto al manejador de errores."
+    },
+    {
+      "id": "file:backend/src/index.ts",
+      "score": 4,
+      "name": "index.ts",
+      "summary": "Punto de entrada del backend que reexporta la función createApp desde el módulo de aplicación Express."
+    },
+    {
+      "id": "file:backend/src/types/index.ts",
+      "score": 4,
+      "name": "index.ts",
+      "summary": "Barrel que reexporta todos los tipos del dominio (User, Chat, Agent, Message, api-responses) para importación centralizada."
+    }
+  ],
+  "fanInRanking": [
+    {
+      "id": "file:backend/src/config/env.ts",
+      "fanIn": 14,
+      "name": "env.ts"
+    },
+    {
+      "id": "file:backend/src/utils/errors.ts",
+      "fanIn": 13,
+      "name": "errors.ts"
+    },
+    {
+      "id": "file:frontend/src/lib/utils.ts",
+      "fanIn": 12,
+      "name": "utils.ts"
+    },
+    {
+      "id": "file:frontend/src/types/index.ts",
+      "fanIn": 12,
+      "name": "index.ts"
+    },
+    {
+      "id": "file:backend/src/config/database.ts",
+      "fanIn": 11,
+      "name": "database.ts"
+    },
+    {
+      "id": "file:backend/src/utils/logger.ts",
+      "fanIn": 10,
+      "name": "logger.ts"
+    },
+    {
+      "id": "file:backend/src/middleware/auth.ts",
+      "fanIn": 10,
+      "name": "auth.ts"
+    },
+    {
+      "id": "file:frontend/src/components/common/Button.tsx",
+      "fanIn": 9,
+      "name": "Button.tsx"
+    },
+    {
+      "id": "file:frontend/src/store/chatStore.ts",
+      "fanIn": 8,
+      "name": "chatStore.ts"
+    },
+    {
+      "id": "file:backend/src/middleware/rateLimiter.ts",
+      "fanIn": 7,
+      "name": "rateLimiter.ts"
+    },
+    {
+      "id": "file:frontend/src/components/common/icons.tsx",
+      "fanIn": 6,
+      "name": "icons.tsx"
+    },
+    {
+      "id": "file:frontend/src/lib/mockData.ts",
+      "fanIn": 6,
+      "name": "mockData.ts"
+    },
+    {
+      "id": "file:frontend/src/store/uiStore.ts",
+      "fanIn": 6,
+      "name": "uiStore.ts"
+    },
+    {
+      "id": "file:backend/src/config/redis.ts",
+      "fanIn": 6,
+      "name": "redis.ts"
+    },
+    {
+      "id": "file:frontend/src/store/authStore.ts",
+      "fanIn": 5,
+      "name": "authStore.ts"
+    },
+    {
+      "id": "file:frontend/src/styles/globals.css",
+      "fanIn": 5,
+      "name": "globals.css"
+    },
+    {
+      "id": "file:frontend/tests/unit/stores.test.ts",
+      "fanIn": 4,
+      "name": "stores.test.ts"
+    },
+    {
+      "id": "file:backend/src/app.ts",
+      "fanIn": 4,
+      "name": "app.ts"
+    },
+    {
+      "id": "file:backend/src/services/llm/llm.interface.ts",
+      "fanIn": 4,
+      "name": "llm.interface.ts"
+    },
+    {
+      "id": "file:frontend/src/utils/mentions.ts",
+      "fanIn": 4,
+      "name": "mentions.ts"
+    }
+  ],
+  "fanOutRanking": [
+    {
+      "id": "file:backend/src/app.ts",
+      "fanOut": 17,
+      "name": "app.ts"
+    },
+    {
+      "id": "file:backend/src/middleware/rateLimiter.ts",
+      "fanOut": 14,
+      "name": "rateLimiter.ts"
+    },
+    {
+      "id": "file:backend/src/utils/errors.ts",
+      "fanOut": 12,
+      "name": "errors.ts"
+    },
+    {
+      "id": "file:frontend/src/components/layout/MainLayout.tsx",
+      "fanOut": 11,
+      "name": "MainLayout.tsx"
+    },
+    {
+      "id": "file:frontend/src/components/modals/NewChatModal.tsx",
+      "fanOut": 10,
+      "name": "NewChatModal.tsx"
+    },
+    {
+      "id": "file:frontend/src/hooks/useChat.ts",
+      "fanOut": 8,
+      "name": "useChat.ts"
+    },
+    {
+      "id": "file:frontend/src/store/chatStore.ts",
+      "fanOut": 8,
+      "name": "chatStore.ts"
+    },
+    {
+      "id": "file:frontend/src/components/chat/MessageInput.tsx",
+      "fanOut": 8,
+      "name": "MessageInput.tsx"
+    },
+    {
+      "id": "file:frontend/src/App.tsx",
+      "fanOut": 7,
+      "name": "App.tsx"
+    },
+    {
+      "id": "file:frontend/src/components/chat/ChatWindow.tsx",
+      "fanOut": 7,
+      "name": "ChatWindow.tsx"
+    },
+    {
+      "id": "file:backend/src/server.ts",
+      "fanOut": 7,
+      "name": "server.ts"
+    },
+    {
+      "id": "file:backend/src/websocket/socket-server.ts",
+      "fanOut": 7,
+      "name": "socket-server.ts"
+    },
+    {
+      "id": "file:frontend/src/components/chat/Message.tsx",
+      "fanOut": 6,
+      "name": "Message.tsx"
+    },
+    {
+      "id": "file:frontend/src/components/chat/MessageList.tsx",
+      "fanOut": 6,
+      "name": "MessageList.tsx"
+    },
+    {
+      "id": "file:frontend/src/components/layout/Sidebar.tsx",
+      "fanOut": 6,
+      "name": "Sidebar.tsx"
+    },
+    {
+      "id": "file:frontend/src/components/modals/InviteAgentModal.tsx",
+      "fanOut": 6,
+      "name": "InviteAgentModal.tsx"
+    },
+    {
+      "id": "file:frontend/src/pages/HomePage.tsx",
+      "fanOut": 6,
+      "name": "HomePage.tsx"
+    },
+    {
+      "id": "file:backend/src/config/redis.ts",
+      "fanOut": 6,
+      "name": "redis.ts"
+    },
+    {
+      "id": "file:backend/src/modules/auth/auth.service.ts",
+      "fanOut": 6,
+      "name": "auth.service.ts"
+    },
+    {
+      "id": "file:backend/src/modules/webhooks/webhooks.controller.ts",
+      "fanOut": 6,
+      "name": "webhooks.controller.ts"
+    }
+  ],
+  "bfsTraversal": {
+    "startNode": "file:backend/src/server.ts",
+    "order": [
+      "file:backend/src/server.ts",
+      "file:backend/src/app.ts",
+      "file:backend/src/config/database.ts",
+      "file:backend/src/config/environment.ts",
+      "file:backend/src/config/redis.ts",
+      "file:backend/src/utils/logger.ts",
+      "file:backend/src/websocket/socket-server.ts",
+      "file:backend/src/config/env.ts",
+      "file:backend/src/middleware/errorHandler.ts",
+      "file:backend/src/middleware/logger.ts",
+      "file:backend/src/middleware/metrics.ts",
+      "file:backend/src/modules/agents/agents.routes.ts",
+      "file:backend/src/modules/auth/auth.routes.ts",
+      "file:backend/src/modules/billing/billing.routes.ts",
+      "file:backend/src/modules/chats/chats.routes.ts",
+      "file:backend/src/modules/health/health.routes.ts",
+      "file:backend/src/modules/messages/messages.routes.ts",
+      "file:backend/src/modules/users/users.routes.ts",
+      "file:backend/src/modules/webhooks/webhooks.routes.ts",
+      "file:backend/src/utils/errors.ts",
+      "file:backend/src/middleware/auth.ts",
+      "file:backend/src/middleware/rateLimiter.ts",
+      "file:backend/src/modules/agents/agents.controller.ts",
+      "file:backend/src/modules/auth/auth.controller.ts",
+      "file:backend/src/modules/billing/billing.controller.ts",
+      "file:backend/src/modules/chats/chats.controller.ts",
+      "file:backend/src/modules/health/health.service.ts",
+      "file:backend/src/modules/messages/messages.controller.ts",
+      "file:backend/src/modules/users/users.controller.ts",
+      "file:backend/src/modules/webhooks/webhooks.controller.ts",
+      "file:backend/src/modules/agents/agent-execution.ts",
+      "file:backend/src/modules/agents/agents.service.ts",
+      "file:backend/src/modules/auth/auth.service.ts",
+      "file:backend/src/modules/billing/billing.service.ts",
+      "file:backend/src/modules/chats/chats.service.ts",
+      "file:backend/src/modules/messages/messages.service.ts",
+      "file:backend/src/utils/validators.ts",
+      "file:backend/src/modules/users/users.service.ts",
+      "file:backend/src/modules/billing/stripe.integration.ts",
+      "file:backend/src/services/llm/llm.interface.ts",
+      "file:backend/src/types/Agent.ts",
+      "file:backend/src/modules/agents/agents.model.ts",
+      "file:backend/src/modules/auth/auth.model.ts",
+      "file:backend/src/modules/chats/chats.model.ts",
+      "file:backend/src/modules/messages/messages.model.ts",
+      "file:backend/src/modules/users/users.model.ts",
+      "file:backend/src/services/llm/anthropic.service.ts",
+      "file:backend/src/services/llm/google.service.ts",
+      "file:backend/src/services/llm/openai.service.ts"
+    ],
+    "depthMap": {
+      "file:backend/src/server.ts": 0,
+      "file:backend/src/app.ts": 1,
+      "file:backend/src/config/database.ts": 1,
+      "file:backend/src/config/environment.ts": 1,
+      "file:backend/src/config/redis.ts": 1,
+      "file:backend/src/utils/logger.ts": 1,
+      "file:backend/src/websocket/socket-server.ts": 1,
+      "file:backend/src/config/env.ts": 2,
+      "file:backend/src/middleware/errorHandler.ts": 2,
+      "file:backend/src/middleware/logger.ts": 2,
+      "file:backend/src/middleware/metrics.ts": 2,
+      "file:backend/src/modules/agents/agents.routes.ts": 2,
+      "file:backend/src/modules/auth/auth.routes.ts": 2,
+      "file:backend/src/modules/billing/billing.routes.ts": 2,
+      "file:backend/src/modules/chats/chats.routes.ts": 2,
+      "file:backend/src/modules/health/health.routes.ts": 2,
+      "file:backend/src/modules/messages/messages.routes.ts": 2,
+      "file:backend/src/modules/users/users.routes.ts": 2,
+      "file:backend/src/modules/webhooks/webhooks.routes.ts": 2,
+      "file:backend/src/utils/errors.ts": 3,
+      "file:backend/src/middleware/auth.ts": 3,
+      "file:backend/src/middleware/rateLimiter.ts": 3,
+      "file:backend/src/modules/agents/agents.controller.ts": 3,
+      "file:backend/src/modules/auth/auth.controller.ts": 3,
+      "file:backend/src/modules/billing/billing.controller.ts": 3,
+      "file:backend/src/modules/chats/chats.controller.ts": 3,
+      "file:backend/src/modules/health/health.service.ts": 3,
+      "file:backend/src/modules/messages/messages.controller.ts": 3,
+      "file:backend/src/modules/users/users.controller.ts": 3,
+      "file:backend/src/modules/webhooks/webhooks.controller.ts": 3,
+      "file:backend/src/modules/agents/agent-execution.ts": 4,
+      "file:backend/src/modules/agents/agents.service.ts": 4,
+      "file:backend/src/modules/auth/auth.service.ts": 4,
+      "file:backend/src/modules/billing/billing.service.ts": 4,
+      "file:backend/src/modules/chats/chats.service.ts": 4,
+      "file:backend/src/modules/messages/messages.service.ts": 4,
+      "file:backend/src/utils/validators.ts": 4,
+      "file:backend/src/modules/users/users.service.ts": 4,
+      "file:backend/src/modules/billing/stripe.integration.ts": 4,
+      "file:backend/src/services/llm/llm.interface.ts": 5,
+      "file:backend/src/types/Agent.ts": 5,
+      "file:backend/src/modules/agents/agents.model.ts": 5,
+      "file:backend/src/modules/auth/auth.model.ts": 5,
+      "file:backend/src/modules/chats/chats.model.ts": 5,
+      "file:backend/src/modules/messages/messages.model.ts": 5,
+      "file:backend/src/modules/users/users.model.ts": 5,
+      "file:backend/src/services/llm/anthropic.service.ts": 6,
+      "file:backend/src/services/llm/google.service.ts": 6,
+      "file:backend/src/services/llm/openai.service.ts": 6
+    },
+    "byDepth": {
+      "0": [
+        "file:backend/src/server.ts"
+      ],
+      "1": [
+        "file:backend/src/app.ts",
+        "file:backend/src/config/database.ts",
+        "file:backend/src/config/environment.ts",
+        "file:backend/src/config/redis.ts",
+        "file:backend/src/utils/logger.ts",
+        "file:backend/src/websocket/socket-server.ts"
+      ],
+      "2": [
+        "file:backend/src/config/env.ts",
+        "file:backend/src/middleware/errorHandler.ts",
+        "file:backend/src/middleware/logger.ts",
+        "file:backend/src/middleware/metrics.ts",
+        "file:backend/src/modules/agents/agents.routes.ts",
+        "file:backend/src/modules/auth/auth.routes.ts",
+        "file:backend/src/modules/billing/billing.routes.ts",
+        "file:backend/src/modules/chats/chats.routes.ts",
+        "file:backend/src/modules/health/health.routes.ts",
+        "file:backend/src/modules/messages/messages.routes.ts",
+        "file:backend/src/modules/users/users.routes.ts",
+        "file:backend/src/modules/webhooks/webhooks.routes.ts"
+      ],
+      "3": [
+        "file:backend/src/utils/errors.ts",
+        "file:backend/src/middleware/auth.ts",
+        "file:backend/src/middleware/rateLimiter.ts",
+        "file:backend/src/modules/agents/agents.controller.ts",
+        "file:backend/src/modules/auth/auth.controller.ts",
+        "file:backend/src/modules/billing/billing.controller.ts",
+        "file:backend/src/modules/chats/chats.controller.ts",
+        "file:backend/src/modules/health/health.service.ts",
+        "file:backend/src/modules/messages/messages.controller.ts",
+        "file:backend/src/modules/users/users.controller.ts",
+        "file:backend/src/modules/webhooks/webhooks.controller.ts"
+      ],
+      "4": [
+        "file:backend/src/modules/agents/agent-execution.ts",
+        "file:backend/src/modules/agents/agents.service.ts",
+        "file:backend/src/modules/auth/auth.service.ts",
+        "file:backend/src/modules/billing/billing.service.ts",
+        "file:backend/src/modules/chats/chats.service.ts",
+        "file:backend/src/modules/messages/messages.service.ts",
+        "file:backend/src/utils/validators.ts",
+        "file:backend/src/modules/users/users.service.ts",
+        "file:backend/src/modules/billing/stripe.integration.ts"
+      ],
+      "5": [
+        "file:backend/src/services/llm/llm.interface.ts",
+        "file:backend/src/types/Agent.ts",
+        "file:backend/src/modules/agents/agents.model.ts",
+        "file:backend/src/modules/auth/auth.model.ts",
+        "file:backend/src/modules/chats/chats.model.ts",
+        "file:backend/src/modules/messages/messages.model.ts",
+        "file:backend/src/modules/users/users.model.ts"
+      ],
+      "6": [
+        "file:backend/src/services/llm/anthropic.service.ts",
+        "file:backend/src/services/llm/google.service.ts",
+        "file:backend/src/services/llm/openai.service.ts"
+      ]
+    }
+  },
+  "nonCodeFiles": {
+    "documentation": [
+      {
+        "id": "document:CHANGELOG.md",
+        "name": "CHANGELOG.md",
+        "summary": "Registro de cambios del proyecto siguiendo el formato Keep a Changelog, actualmente con una sección Unreleased vacía."
+      },
+      {
+        "id": "document:CLAUDE.md",
+        "name": "CLAUDE.md",
+        "summary": "Guía para Claude Code con el resumen del proyecto, stack tecnológico, estructura del repositorio, convenciones de commits/ramas y decisiones arquitectónicas confirmadas (comunicación entre agentes, límites de ejecución, webhooks, confirmaciones en tiempo real y versionado de agentes)."
+      },
+      {
+        "id": "document:README.md",
+        "name": "README.md",
+        "summary": "Documentación principal del proyecto con instrucciones de instalación, levantamiento de servicios (Postgres, Redis), ejecución de backend y frontend, tests E2E y cobertura."
+      },
+      {
+        "id": "document:backend/README.md",
+        "name": "README.md",
+        "summary": "Guía de inicio del backend: requisitos, arranque local, chat en tiempo real, comandos habituales, calidad/cobertura de tests, relaciones de datos y seguridad HTTP base."
+      },
+      {
+        "id": "document:docs/API.md",
+        "name": "API.md",
+        "summary": "Referencia de la API REST del proyecto, organizada por dominio: autenticación, usuarios, chats, agentes, mensajes, billing y webhooks."
+      },
+      {
+        "id": "document:docs/ARCHITECTURE.md",
+        "name": "ARCHITECTURE.md",
+        "summary": "Documento de arquitectura que describe los componentes principales, el diagrama de infraestructura local, los puertos usados y el flujo de ejecución de un agente."
+      },
+      {
+        "id": "document:docs/CONTRIBUTING.md",
+        "name": "CONTRIBUTING.md",
+        "summary": "Guía de contribución con flujo de ramas, convenciones de commits, estilo de código, requisitos de tests y checklist previo a abrir un PR."
+      },
+      {
+        "id": "document:docs/DEPLOYMENT.md",
+        "name": "DEPLOYMENT.md",
+        "summary": "Guía de despliegue que cubre entornos y ramas, build de imágenes Docker, staging en Vercel/Railway, producción y pipeline de CI/CD."
+      },
+      {
+        "id": "document:docs/ESTRUCTURA_PROYECTO.md",
+        "name": "ESTRUCTURA_PROYECTO.md",
+        "summary": "Documento de referencia extenso con el árbol de carpetas recomendado, descripción de directorios clave, dependencias del MVP y flujo de trabajo de Git."
+      },
+      {
+        "id": "document:docs/REQUISITOS_AGENTES_CHAT.md",
+        "name": "REQUISITOS_AGENTES_CHAT.md",
+        "summary": "Especificación funcional completa de la plataforma: actores, casos de uso, requisitos funcionales y no funcionales, stack tecnológico, roadmap y criterios de éxito."
+      },
+      {
+        "id": "document:docs/RUNBOOK.md",
+        "name": "RUNBOOK.md",
+        "summary": "Runbook operativo con procedimientos para verificar el estado del stack, revisar logs, health checks, recuperación de servicios caídos, backup/restore de base de datos y rollback."
+      },
+      {
+        "id": "document:docs/SECURITY.md",
+        "name": "SECURITY.md",
+        "summary": "Documento de seguridad que cubre gestión de secretos, GitHub Secrets, CORS, rate limiting, headers de seguridad y HTTPS/TLS."
+      },
+      {
+        "id": "document:docs/SETUP.md",
+        "name": "SETUP.md",
+        "summary": "Guía de configuración de entorno de desarrollo con quickstart vía Docker, servicios y puertos, variables de entorno, comandos útiles, Prisma y troubleshooting."
+      },
+      {
+        "id": "document:docs/cyber-neo-report-CHAT_AGENTES-2026-07-17.md",
+        "name": "cyber-neo-report-CHAT_AGENTES-2026-07-17.md",
+        "summary": "Informe de auditoría de seguridad (Cyber Neo) con hallazgos priorizados (medium/low/informational), vulnerabilidades de dependencias, evaluación de supply chain/CI-CD y controles positivos observados."
+      },
+      {
+        "id": "document:docs/setup-local.sh",
+        "name": "setup-local.sh",
+        "summary": "Script shell de configuración local que automatiza el arranque del entorno de desarrollo (dependencias, servicios, variables de entorno) sin funciones top-level, ejecutado linealmente."
+      },
+      {
+        "id": "document:docs/sprint_1/AGENT_BACKEND_SPRINT1.md",
+        "name": "AGENT_BACKEND_SPRINT1.md",
+        "summary": "Plan de tareas del Sprint 1 para el agente de backend: inicialización del proyecto Node.js, esquema Prisma, middleware de autenticación JWT, base de Socket.io y testing con Jest/Supertest, todas marcadas como completadas."
+      },
+      {
+        "id": "document:docs/sprint_1/AGENT_DEVOPS_SPRINT1.md",
+        "name": "AGENT_DEVOPS_SPRINT1.md",
+        "summary": "Plan de tareas del Sprint 1 para el agente DevOps/infraestructura: Docker y docker-compose, scripts de setup, CI/CD con GitHub Actions, documentación de infraestructura, health checks/monitoring y seguridad de red/secretos, todas completadas."
+      },
+      {
+        "id": "document:docs/sprint_1/AGENT_FRONTEND_SPRINT1.md",
+        "name": "AGENT_FRONTEND_SPRINT1.md",
+        "summary": "Plan de tareas del Sprint 1 para el agente frontend: inicialización de React, layout principal, estado global con Zustand, componentes de chat, hooks custom con Socket.io, routing y testing/Storybook."
+      },
+      {
+        "id": "document:docs/sprint_2/AGENT_BACKEND_SPRINT2.md",
+        "name": "AGENT_BACKEND_SPRINT2.md",
+        "summary": "Plan de tareas del Sprint 2 para el agente backend: modelo de datos de chats/mensajes, servicio y controlador de chats, mensajería vía Socket.io, historial/paginación, rate limiting/validación y testing."
+      },
+      {
+        "id": "document:docs/sprint_2/AGENT_DEVOPS_SPRINT2.md",
+        "name": "AGENT_DEVOPS_SPRINT2.md",
+        "summary": "Plan de tareas del Sprint 2 para el agente DevOps: escalabilidad de Socket.io, CI/CD para el módulo de chats, observabilidad, pruebas de carga y entorno de staging."
+      },
+      {
+        "id": "document:docs/sprint_2/AGENT_FRONTEND_SPRINT2.md",
+        "name": "AGENT_FRONTEND_SPRINT2.md",
+        "summary": "Plan de tareas del Sprint 2 para el agente frontend: chatStore de Zustand, cliente Socket.io, sidebar de lista de chats, vista de conversación, input de mensaje con threads, miembros del chat y testing."
+      },
+      {
+        "id": "document:frontend/README.md",
+        "name": "README.md",
+        "summary": "Guía de inicio del frontend: requisitos, puesta en marcha, variables de entorno, scripts npm, estructura de carpetas, convenciones y testing."
+      },
+      {
+        "id": "document:.github/ISSUE_TEMPLATE/bug_report.md",
+        "name": "bug_report.md",
+        "summary": "Plantilla de GitHub Issues para reportar bugs, con secciones estructuradas para pasos de reproducción y comportamiento esperado."
+      },
+      {
+        "id": "document:docs/git/GIT_SETUP_RAPIDO.md",
+        "name": "GIT_SETUP_RAPIDO.md",
+        "summary": "Guía rápida de 5 minutos con comandos exactos para configurar las ramas locales de Git conectadas al repositorio remoto, incluyendo checklist y solución de problemas comunes."
+      },
+      {
+        "id": "document:docs/git/GIT_WORKFLOW.md",
+        "name": "GIT_WORKFLOW.md",
+        "summary": "Documento extenso que define el flujo de trabajo Git del proyecto agentes-chat: estructura de ramas, setup inicial, flujo por rol (backend, frontend, DevOps), sincronización, protecciones de rama y convenciones de commits."
+      }
+    ],
+    "infrastructure": [
+      {
+        "id": "pipeline:.github/workflows/build.yml",
+        "name": "build.yml",
+        "type": "pipeline",
+        "summary": "Workflow de GitHub Actions que verifica que backend y frontend compilan y construye las imágenes Docker de producción al hacer merge a main."
+      },
+      {
+        "id": "step:.github/workflows/build.yml:build-apps",
+        "name": "build-apps",
+        "type": "resource",
+        "summary": "Job que instala dependencias, genera el cliente Prisma y compila backend y frontend con npm."
+      },
+      {
+        "id": "step:.github/workflows/build.yml:build-docker",
+        "name": "build-docker",
+        "type": "resource",
+        "summary": "Job que construye las imágenes Docker de producción del backend y el frontend usando docker/build-push-action."
+      },
+      {
+        "id": "pipeline:.github/workflows/ci.yml",
+        "name": "ci.yml",
+        "type": "pipeline",
+        "summary": "Workflow principal de integración continua que ejecuta lint, build y tests con cobertura para backend y frontend, levantando Postgres y Redis como servicios efímeros."
+      },
+      {
+        "id": "step:.github/workflows/ci.yml:backend",
+        "name": "backend",
+        "type": "resource",
+        "summary": "Job que levanta Postgres y Redis como servicios, aplica migraciones de Prisma, hace lint, build y corre tests del backend con cobertura."
+      },
+      {
+        "id": "step:.github/workflows/ci.yml:frontend",
+        "name": "frontend",
+        "type": "resource",
+        "summary": "Job que instala dependencias, hace lint y corre los tests del frontend."
+      },
+      {
+        "id": "pipeline:.github/workflows/deploy-production.yml",
+        "name": "deploy-production.yml",
+        "type": "pipeline",
+        "summary": "Workflow de despliegue a producción que se dispara al hacer push a main; actualmente contiene un placeholder para construir imágenes y desplegar al entorno de producción."
+      },
+      {
+        "id": "step:.github/workflows/deploy-production.yml:deploy",
+        "name": "deploy",
+        "type": "resource",
+        "summary": "Job placeholder (TODO) que debería construir imágenes y desplegarlas al entorno de producción."
+      },
+      {
+        "id": "pipeline:.github/workflows/deploy-staging.yml",
+        "name": "deploy-staging.yml",
+        "type": "pipeline",
+        "summary": "Workflow de despliegue a staging que se dispara al hacer push a la rama staging; actualmente contiene un placeholder para construir imágenes y desplegar al entorno de staging."
+      },
+      {
+        "id": "step:.github/workflows/deploy-staging.yml:deploy",
+        "name": "deploy",
+        "type": "resource",
+        "summary": "Job placeholder (TODO) que debería construir imágenes y desplegarlas al entorno de staging."
+      },
+      {
+        "id": "pipeline:.github/workflows/format.yml",
+        "name": "format.yml",
+        "type": "pipeline",
+        "summary": "Workflow que verifica que el código respeta el formato de Prettier en cada pull request."
+      },
+      {
+        "id": "step:.github/workflows/format.yml:format",
+        "name": "format",
+        "type": "resource",
+        "summary": "Job que instala dependencias y ejecuta la verificación de formato con Prettier (npm run format:check)."
+      },
+      {
+        "id": "pipeline:.github/workflows/security-scan.yml",
+        "name": "security-scan.yml",
+        "type": "pipeline",
+        "summary": "Workflow de escaneo de seguridad programado semanalmente y en pull requests; actualmente contiene un placeholder para escaneo de dependencias y secretos."
+      },
+      {
+        "id": "step:.github/workflows/security-scan.yml:scan",
+        "name": "scan",
+        "type": "resource",
+        "summary": "Job placeholder (TODO) que debería ejecutar escaneo de dependencias y secretos (npm audit, gitleaks)."
+      },
+      {
+        "id": "service:Makefile",
+        "name": "Makefile",
+        "type": "service",
+        "summary": "Conjunto de targets make para simplificar tareas comunes de desarrollo: setup, levantar/parar servicios Docker, ver logs, resetear/seedear la base de datos, correr tests, lint y format."
+      },
+      {
+        "id": "service:docker-compose.yml",
+        "name": "docker-compose.yml",
+        "type": "service",
+        "summary": "Orquestación local de desarrollo con cuatro servicios (postgres, redis, backend, frontend), healthchecks, dependencias entre servicios y hot-reload de código mediante bind mounts."
+      },
+      {
+        "id": "service:docker-compose.yml:postgres",
+        "name": "postgres",
+        "type": "service",
+        "summary": "Servicio de base de datos PostgreSQL 15 con healthcheck vía pg_isready y volumen persistente, incluyendo script de inicialización."
+      },
+      {
+        "id": "service:docker-compose.yml:redis",
+        "name": "redis",
+        "type": "service",
+        "summary": "Servicio de caché/broker Redis 7 con healthcheck vía redis-cli ping y volumen persistente."
+      },
+      {
+        "id": "service:docker-compose.yml:backend",
+        "name": "backend",
+        "type": "service",
+        "summary": "Servicio del backend Node.js construido desde Dockerfile.backend en target development, con hot-reload, migraciones automáticas de Prisma al iniciar y dependencia de salud de postgres y redis."
+      },
+      {
+        "id": "service:docker-compose.yml:frontend",
+        "name": "frontend",
+        "type": "service",
+        "summary": "Servicio del frontend Vite construido desde Dockerfile.frontend en target development, con hot-reload y dependencia de salud del backend."
+      },
+      {
+        "id": "service:infra/docker/Dockerfile.backend",
+        "name": "Dockerfile.backend",
+        "type": "service",
+        "summary": "Dockerfile multi-stage para el backend Node.js/TypeScript: compila con Prisma en la etapa builder, ofrece un entorno de desarrollo con hot-reload (ts-node-dev) y produce una imagen mínima de producción que ejecuta dist/server.js."
+      },
+      {
+        "id": "service:infra/docker/Dockerfile.frontend",
+        "name": "Dockerfile.frontend",
+        "type": "service",
+        "summary": "Dockerfile multi-stage para el frontend Vite/React: compila los estáticos en la etapa builder, expone un servidor de desarrollo con hot-reload y sirve los estáticos de producción a través de nginx."
+      },
+      {
+        "id": "service:infra/docker/Dockerfile.nginx",
+        "name": "Dockerfile.nginx",
+        "type": "service",
+        "summary": "Dockerfile mínimo basado en nginx:alpine que copia nginx.conf y sirve como imagen standalone de proxy/servidor estático para el stack."
+      },
+      {
+        "id": "service:infra/kubernetes/deployment.yaml",
+        "name": "deployment.yaml",
+        "type": "service",
+        "summary": "Manifiesto de Deployment de Kubernetes que despliega 2 réplicas del backend agentes-chat-backend, exponiendo el puerto 4000 e inyectando variables de entorno desde el secret agentes-chat-secrets."
+      },
+      {
+        "id": "service:infra/kubernetes/ingress.yaml",
+        "name": "ingress.yaml",
+        "type": "service",
+        "summary": "Ingress de Kubernetes que enruta el tráfico HTTP del host api.agentes-chat.example.com hacia el Service agentes-chat-backend en el puerto 80."
+      },
+      {
+        "id": "service:infra/kubernetes/service.yaml",
+        "name": "service.yaml",
+        "type": "service",
+        "summary": "Service de Kubernetes que expone el puerto 80 y enruta hacia el puerto 4000 de los pods con la etiqueta app: agentes-chat-backend."
+      },
+      {
+        "id": "resource:infra/terraform/iam.tf",
+        "name": "iam.tf",
+        "type": "resource",
+        "summary": "Define el rol IAM de AWS (agentes-chat-<environment>-task) que ECS Tasks puede asumir, usado como rol de ejecución para las tareas del backend."
+      },
+      {
+        "id": "resource:infra/terraform/iam.tf:aws_iam_role.agentes_chat_task",
+        "name": "aws_iam_role.agentes_chat_task",
+        "type": "resource",
+        "summary": "Rol IAM que otorga a ecs-tasks.amazonaws.com permiso para asumir el rol de ejecución del backend de agentes-chat."
+      },
+      {
+        "id": "resource:infra/terraform/main.tf",
+        "name": "main.tf",
+        "type": "resource",
+        "summary": "Configuración raíz de Terraform: declara el provider de AWS (~> 5.0) y fija la región a partir de la variable aws_region."
+      },
+      {
+        "id": "resource:infra/terraform/rds.tf",
+        "name": "rds.tf",
+        "type": "resource",
+        "summary": "Provisiona la instancia RDS de PostgreSQL 15 (db.t3.micro, 20GB) de agentes-chat, con contraseña maestra gestionada por AWS y sin snapshot final al destruir."
+      },
+      {
+        "id": "resource:infra/terraform/rds.tf:aws_db_instance.agentes_chat",
+        "name": "aws_db_instance.agentes_chat",
+        "type": "resource",
+        "summary": "Instancia de base de datos RDS PostgreSQL para agentes-chat, usada para persistir usuarios, chats y configuración de agentes."
+      },
+      {
+        "id": "resource:infra/terraform/redis.tf",
+        "name": "redis.tf",
+        "type": "resource",
+        "summary": "Provisiona el cluster de AWS ElastiCache (Redis 7, cache.t3.micro, un solo nodo) usado por agentes-chat para sesiones, rate limiting y memoria de agentes."
+      },
+      {
+        "id": "resource:infra/terraform/redis.tf:aws_elasticache_cluster.agentes_chat",
+        "name": "aws_elasticache_cluster.agentes_chat",
+        "type": "resource",
+        "summary": "Cluster de ElastiCache Redis de un solo nodo para agentes-chat."
+      },
+      {
+        "id": "resource:infra/terraform/variables.tf",
+        "name": "variables.tf",
+        "type": "resource",
+        "summary": "Declara las variables de entrada de Terraform aws_region (default us-east-1) y environment (default staging), reutilizadas por el resto de los recursos del módulo."
+      },
+      {
+        "id": "service:infra/docker/nginx.conf",
+        "name": "nginx.conf",
+        "type": "service",
+        "summary": "Configuración de nginx para producción que sirve el frontend SPA con fallback a index.html, hace proxy de /api y /socket.io hacia el backend, aplica rate limiting (100 req/min) y cabeceras de seguridad."
+      }
+    ],
+    "data": [
+      {
+        "id": "table:backend/prisma/migrations/20260717124954_init/migration.sql:User",
+        "name": "User",
+        "type": "table",
+        "summary": "Tabla inicial de usuarios con email, hash de contraseña, nombre y timestamps de auditoría."
+      },
+      {
+        "id": "table:backend/prisma/migrations/20260717124954_init/migration.sql:Chat",
+        "name": "Chat",
+        "type": "table",
+        "summary": "Tabla de chats que referencia al usuario propietario y almacena metadata básica del chat."
+      },
+      {
+        "id": "table:backend/prisma/migrations/20260717124954_init/migration.sql:ChatMember",
+        "name": "ChatMember",
+        "type": "table",
+        "summary": "Tabla intermedia que relaciona usuarios con chats y define su rol de membresía."
+      },
+      {
+        "id": "table:backend/prisma/migrations/20260717124954_init/migration.sql:Agent",
+        "name": "Agent",
+        "type": "table",
+        "summary": "Tabla de agentes de IA asociados a un chat, con handle de mención, proveedor LLM y prompt de sistema."
+      },
+      {
+        "id": "table:backend/prisma/migrations/20260717124954_init/migration.sql:Message",
+        "name": "Message",
+        "type": "table",
+        "summary": "Tabla de mensajes de chat, con autor tipado (usuario o agente) y contenido del mensaje."
+      },
+      {
+        "id": "table:backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql:ChatAgentLink",
+        "name": "ChatAgentLink",
+        "type": "table",
+        "summary": "Tabla de relación muchos-a-muchos entre chats y agentes, permitiendo que un agente participe en varios chats."
+      },
+      {
+        "id": "schema:backend/prisma/schema.prisma",
+        "name": "schema.prisma",
+        "type": "schema",
+        "summary": "Esquema de Prisma que define los modelos de datos (User, Chat, ChatMember, Agent, ChatAgentLink, Message) y sus relaciones para PostgreSQL."
+      }
+    ],
+    "config": [
+      {
+        "id": "config:.dockerignore",
+        "name": ".dockerignore",
+        "summary": "Lista de archivos y carpetas excluidos del contexto de build de Docker (node_modules, artefactos de build, archivos de entorno, etc.) para acelerar y asegurar las imágenes."
+      },
+      {
+        "id": "config:.env.example",
+        "name": ".env.example",
+        "summary": "Plantilla de variables de entorno requeridas por el proyecto: base de datos, Redis, JWT, encriptación, integraciones (SendGrid, Stripe, Google Drive) y URLs del frontend."
+      },
+      {
+        "id": "config:package.json",
+        "name": "package.json",
+        "summary": "Manifiesto raíz del monorepo (workspaces backend/frontend) con scripts npm para desarrollo, build, lint, tests y generación de Prisma."
+      },
+      {
+        "id": "config:tsconfig.json",
+        "name": "tsconfig.json",
+        "summary": "Configuración raíz de TypeScript con referencias de proyecto (project references) hacia los tsconfig de backend y frontend del monorepo."
+      },
+      {
+        "id": "config:backend/.env.example",
+        "name": ".env.example",
+        "summary": "Plantilla de variables de entorno del backend: entorno, puerto, conexiones a base de datos y Redis, secretos JWT, clave de encriptación e integraciones con SendGrid y Stripe."
+      },
+      {
+        "id": "config:backend/package.json",
+        "name": "package.json",
+        "summary": "Manifiesto npm del backend: define scripts de build/dev/test, dependencias (Express, Prisma, etc.) y configuración de Prisma."
+      },
+      {
+        "id": "config:backend/tsconfig.json",
+        "name": "tsconfig.json",
+        "summary": "Configuración del compilador TypeScript para el backend, incluyendo rutas incluidas/excluidas del build."
+      },
+      {
+        "id": "config:frontend/.env.example",
+        "name": ".env.example",
+        "summary": "Plantilla de variables de entorno del frontend Vite: URL de la API y URL del servidor de Socket.io."
+      },
+      {
+        "id": "config:frontend/package.json",
+        "name": "package.json",
+        "summary": "Manifiesto npm del frontend: scripts de build/dev/test y dependencias (React, Vite, Zustand, Socket.io-client, etc.)."
+      },
+      {
+        "id": "config:frontend/tsconfig.json",
+        "name": "tsconfig.json",
+        "summary": "Configuración del compilador TypeScript para el frontend, con rutas incluidas y excluidas del build."
+      },
+      {
+        "id": "config:.ua/config.json",
+        "name": "config.json",
+        "summary": "Configuración de la herramienta Understand-Anything que define el idioma de salida para el contenido textual generado (español)."
+      },
+      {
+        "id": "config:backend/jest.config.js",
+        "name": "jest.config.js",
+        "summary": "Configuración de Jest para el backend, definiendo el entorno de pruebas, transformadores TypeScript y rutas de test."
+      },
+      {
+        "id": "config:backend/prisma/migrations/migration_lock.toml",
+        "name": "migration_lock.toml",
+        "summary": "Archivo de bloqueo de Prisma Migrate que fija el proveedor de base de datos (PostgreSQL) usado por las migraciones."
+      },
+      {
+        "id": "config:frontend/postcss.config.cjs",
+        "name": "postcss.config.cjs",
+        "summary": "Configuración de PostCSS del frontend que habilita los plugins Tailwind CSS y Autoprefixer en el pipeline de build de Vite."
+      },
+      {
+        "id": "config:frontend/tailwind.config.cjs",
+        "name": "tailwind.config.cjs",
+        "summary": "Configuración de Tailwind CSS que define las rutas de contenido a escanear, extensiones del tema y plugins usados en el frontend."
+      },
+      {
+        "id": "config:frontend/vite.config.ts",
+        "name": "vite.config.ts",
+        "summary": "Configuración de Vite para el frontend: plugin de React, alias de rutas y ajustes del servidor de desarrollo."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "nodes": [
+        "file:backend/src/services/llm/anthropic.service.ts",
+        "file:backend/src/services/llm/llm.interface.ts",
+        "file:backend/src/services/llm/google.service.ts",
+        "file:backend/src/services/llm/openai.service.ts",
+        "class:backend/src/services/llm/anthropic.service.ts:AnthropicService"
+      ],
+      "edgeCount": 8
+    }
+  ],
+  "layers": {
+    "count": 10,
+    "list": [
+      {
+        "id": "layer:api",
+        "name": "Capa de API",
+        "description": "Rutas Express, controladores REST, el bootstrap del servidor (app.ts, server.ts, index.ts), el servidor WebSocket de Socket.io y el middleware de autenticación, rate limiting, logging y manejo de errores que envuelve cada request."
+      },
+      {
+        "id": "layer:service",
+        "name": "Capa de Servicios",
+        "description": "Lógica de negocio y orquestación: servicios de dominio (auth, chats, users, messages, billing), ejecución de agentes de IA, integraciones con proveedores LLM (Anthropic, Google, OpenAI), cola de jobs con BullMQ, memoria de agentes, cifrado, email y almacenamiento en la nube (Google Drive, S3)."
+      },
+      {
+        "id": "layer:data",
+        "name": "Capa de Datos",
+        "description": "Modelos Prisma por módulo, el esquema de base de datos (schema.prisma), migraciones SQL con sus tablas (User, Chat, Message, Agent, ChatAgentLink) y el script de inicialización de la base de datos."
+      },
+      {
+        "id": "layer:utility",
+        "name": "Utilidades y Tipos Compartidos",
+        "description": "Helpers transversales de backend y frontend: configuración de entorno (env, database, redis), utilidades (errores, validadores, formateo, encriptación), definiciones de tipos TypeScript compartidas y el punto de entrada del frontend (main.tsx, index.html, estilos globales)."
+      },
+      {
+        "id": "layer:ui",
+        "name": "Componentes de Interfaz",
+        "description": "Componentes React reutilizables, layouts, páginas y modales que conforman la interfaz del chat: ventana de mensajes, sidebar, header, formularios de invitación de agentes y componentes comunes (botones, diálogos, inputs)."
+      },
+      {
+        "id": "layer:state",
+        "name": "Estado y Hooks",
+        "description": "Stores de Zustand (auth, chat, agentes, UI), hooks personalizados (useAuth, useChat, useMentions, useSocket) y el proveedor de contexto de Socket.io que gestionan el estado del cliente y la conexión en tiempo real."
+      },
+      {
+        "id": "layer:test",
+        "name": "Pruebas",
+        "description": "Suites de pruebas unitarias, de integración y end-to-end tanto de frontend (Vitest/RTL, Cypress-style specs) como de backend (Jest/Supertest), incluyendo fixtures de datos semilla."
+      },
+      {
+        "id": "layer:infrastructure",
+        "name": "Infraestructura y CI/CD",
+        "description": "Definiciones de despliegue y automatización: Dockerfiles y docker-compose, manifiestos de Kubernetes, módulos de Terraform en AWS, scripts de operación (backup, deploy, rollback, setup) y los workflows de GitHub Actions para build, test, deploy y escaneo de seguridad."
+      },
+      {
+        "id": "layer:config",
+        "name": "Configuración del Proyecto",
+        "description": "Archivos de configuración de build y tooling (package.json, tsconfig.json, vite.config.ts, tailwind, postcss, jest.config.js), variables de entorno de ejemplo y metadatos de repositorio (.gitattributes, configuración de understand-anything)."
+      },
+      {
+        "id": "layer:documentation",
+        "name": "Documentación",
+        "description": "Documentación del proyecto: README de cada paquete, guías de arquitectura, API, despliegue, seguridad, runbook, requisitos funcionales, notas de sprint y changelog."
+      }
+    ]
+  },
+  "nodeSummaryIndex": {
+    "file:frontend/src/App.tsx": {
+      "name": "App.tsx",
+      "type": "file",
+      "summary": "Componente raíz que define el enrutado de la aplicación con React Router y protege las rutas privadas mediante RequireAuth."
+    },
+    "file:frontend/src/components/auth/RequireAuth.tsx": {
+      "name": "RequireAuth.tsx",
+      "type": "file",
+      "summary": "Componente guard que bloquea el acceso y muestra el login cuando el usuario no está autenticado."
+    },
+    "file:frontend/src/components/chat/ChatWindow.tsx": {
+      "name": "ChatWindow.tsx",
+      "type": "file",
+      "summary": "Contenedor del chat que combina la lista de mensajes y el input, conectándose al chatStore y al hook useChat."
+    },
+    "file:frontend/src/components/chat/Message.tsx": {
+      "name": "Message.tsx",
+      "type": "file",
+      "summary": "Renderiza un mensaje individual del chat con avatar, autor y hora formateada."
+    },
+    "file:frontend/src/components/chat/MessageList.tsx": {
+      "name": "MessageList.tsx",
+      "type": "file",
+      "summary": "Lista scrollable de mensajes con autoscroll al final y resolución de color de avatar por agente."
+    },
+    "file:frontend/src/components/common/Avatar.tsx": {
+      "name": "Avatar.tsx",
+      "type": "file",
+      "summary": "Componente de avatar que muestra las iniciales del usuario o agente sobre un color de fondo."
+    },
+    "file:frontend/src/components/common/Button.tsx": {
+      "name": "Button.tsx",
+      "type": "file",
+      "summary": "Botón reutilizable con variantes de estilo y tamaños, base del sistema de UI del frontend."
+    },
+    "file:frontend/src/components/common/ConnectionBadge.tsx": {
+      "name": "ConnectionBadge.tsx",
+      "type": "file",
+      "summary": "Indicador visual del estado de conexión del WebSocket (conectado/desconectado)."
+    },
+    "file:frontend/src/components/common/Dialog.tsx": {
+      "name": "Dialog.tsx",
+      "type": "file",
+      "summary": "Modal accesible con gestión de foco, cierre por tecla Escape y roles ARIA."
+    },
+    "file:frontend/src/components/common/ErrorBanner.tsx": {
+      "name": "ErrorBanner.tsx",
+      "type": "file",
+      "summary": "Banner de error descartable para mostrar mensajes de fallo al usuario."
+    },
+    "file:frontend/src/components/common/Input.tsx": {
+      "name": "Input.tsx",
+      "type": "file",
+      "summary": "Campo de entrada de texto reutilizable con estilos del sistema de diseño."
+    },
+    "file:frontend/src/components/common/LoadingSpinner.tsx": {
+      "name": "LoadingSpinner.tsx",
+      "type": "file",
+      "summary": "Indicador de carga animado con etiqueta accesible."
+    },
+    "file:frontend/src/components/common/icons.tsx": {
+      "name": "icons.tsx",
+      "type": "file",
+      "summary": "Colección de iconos SVG reutilizables (menú, cerrar, ajustes, usuarios, tema, etc.) construidos sobre una función base común."
+    },
+    "file:frontend/src/components/layout/Header.tsx": {
+      "name": "Header.tsx",
+      "type": "file",
+      "summary": "Cabecera de la aplicación con título del chat, alternador de tema claro/oscuro y acciones de sidebar e invitar agente."
+    },
+    "file:frontend/src/components/layout/MainLayout.tsx": {
+      "name": "MainLayout.tsx",
+      "type": "file",
+      "summary": "Layout principal que orquesta sidebar, header, modales y la conexión de socket para la vista de chat."
+    },
+    "file:frontend/src/components/layout/Sidebar.tsx": {
+      "name": "Sidebar.tsx",
+      "type": "file",
+      "summary": "Barra lateral con la lista de chats y acción para crear un chat nuevo."
+    },
+    "file:frontend/src/components/modals/InviteAgentModal.tsx": {
+      "name": "InviteAgentModal.tsx",
+      "type": "file",
+      "summary": "Modal para invitar agentes disponibles a un chat, filtrando los que ya están presentes."
+    },
+    "file:frontend/src/components/modals/NewChatModal.tsx": {
+      "name": "NewChatModal.tsx",
+      "type": "file",
+      "summary": "Modal para crear un chat nuevo, generando su id y estableciéndolo como chat actual."
+    },
+    "file:frontend/src/hooks/useAuth.ts": {
+      "name": "useAuth.ts",
+      "type": "file",
+      "summary": "Hook que expone el estado de autenticación y las acciones de login/logout desde el authStore."
+    },
+    "file:frontend/src/hooks/useChat.ts": {
+      "name": "useChat.ts",
+      "type": "file",
+      "summary": "Hook que gestiona los eventos de socket del chat, el envío de mensajes y las notificaciones de entrada/salida."
+    },
+    "file:frontend/src/lib/mockData.ts": {
+      "name": "mockData.ts",
+      "type": "file",
+      "summary": "Datos simulados (usuario, token, chats, agentes y mensajes) usados durante el desarrollo del frontend antes de conectar el backend."
+    },
+    "file:frontend/src/lib/utils.ts": {
+      "name": "utils.ts",
+      "type": "file",
+      "summary": "Utilidades del frontend; expone cn para combinar clases de Tailwind de forma segura."
+    },
+    "file:frontend/src/pages/ChatPage.tsx": {
+      "name": "ChatPage.tsx",
+      "type": "file",
+      "summary": "Página de chat que sincroniza el parámetro de ruta con el chat actual y renderiza ChatWindow."
+    },
+    "file:frontend/src/pages/HomePage.tsx": {
+      "name": "HomePage.tsx",
+      "type": "file",
+      "summary": "Página de inicio que invita a crear el primer chat cuando no existe ninguno."
+    },
+    "file:frontend/src/pages/NotFoundPage.tsx": {
+      "name": "NotFoundPage.tsx",
+      "type": "file",
+      "summary": "Página 404 con enlace de regreso al inicio."
+    },
+    "file:frontend/src/store/agentStore.ts": {
+      "name": "agentStore.ts",
+      "type": "file",
+      "summary": "Store de Zustand para los agentes disponibles y los agentes presentes en cada chat."
+    },
+    "file:frontend/src/store/authStore.ts": {
+      "name": "authStore.ts",
+      "type": "file",
+      "summary": "Store de Zustand que persiste el usuario y el token de autenticación."
+    },
+    "file:frontend/src/store/chatStore.ts": {
+      "name": "chatStore.ts",
+      "type": "file",
+      "summary": "Store de Zustand para chats, mensajes y chat actual, con selector de mensajes por chat."
+    },
+    "file:frontend/src/store/uiStore.ts": {
+      "name": "uiStore.ts",
+      "type": "file",
+      "summary": "Store de Zustand para el estado de UI: sidebar, modales y notificaciones."
+    },
+    "file:frontend/src/types/index.ts": {
+      "name": "index.ts",
+      "type": "file",
+      "summary": "Definiciones de tipos compartidas del frontend (User, Chat, Agent, Message y afines)."
+    },
+    "file:frontend/src/utils/formatting.ts": {
+      "name": "formatting.ts",
+      "type": "file",
+      "summary": "Utilidades de formato: hora localizada e iniciales a partir de un nombre."
+    },
+    "file:frontend/tests/unit/ChatWindow.test.tsx": {
+      "name": "ChatWindow.test.tsx",
+      "type": "file",
+      "summary": "Pruebas unitarias del componente ChatWindow con React Testing Library, usando datos simulados y el SocketProvider."
+    },
+    "file:frontend/tests/unit/stores.test.ts": {
+      "name": "stores.test.ts",
+      "type": "file",
+      "summary": "Pruebas unitarias de los stores de Zustand (agent, auth, chat y ui) verificando sus acciones y estado."
+    },
+    "file:backend/src/app.ts": {
+      "name": "app.ts",
+      "type": "file",
+      "summary": "Ensambla la aplicación Express: aplica seguridad (helmet, cors), parseo de cuerpo, middleware de metricas y logging, y monta todas las rutas de los modulos junto al manejador de errores."
+    },
+    "file:backend/src/config/database.ts": {
+      "name": "database.ts",
+      "type": "file",
+      "summary": "Expone el cliente Prisma compartido y las funciones de ciclo de vida para conectar y desconectar la base de datos PostgreSQL."
+    },
+    "file:backend/src/config/env.ts": {
+      "name": "env.ts",
+      "type": "file",
+      "summary": "Centraliza y valida las variables de entorno de la aplicacion exponiendo un objeto tipado de configuracion."
+    },
+    "file:backend/src/config/environment.ts": {
+      "name": "environment.ts",
+      "type": "file",
+      "summary": "Modulo puente que reexporta la configuracion de entorno para mantener compatibilidad de importaciones."
+    },
+    "file:backend/src/config/redis.ts": {
+      "name": "redis.ts",
+      "type": "file",
+      "summary": "Provee el cliente Redis compartido y las funciones de conexion y desconexion usadas para sesiones, rate limiting y memoria de agente."
+    },
+    "file:backend/src/middleware/errorHandler.ts": {
+      "name": "errorHandler.ts",
+      "type": "file",
+      "summary": "Middleware central de manejo de errores que distingue errores operacionales de la aplicacion de los inesperados y evita filtrar detalles sensibles en las respuestas."
+    },
+    "file:backend/src/middleware/logger.ts": {
+      "name": "logger.ts",
+      "type": "file",
+      "summary": "Middleware que registra cada peticion HTTP con su metodo, ruta, estado y latencia al completarse la respuesta."
+    },
+    "file:backend/src/middleware/metrics.ts": {
+      "name": "metrics.ts",
+      "type": "file",
+      "summary": "Acumula metricas de peticiones (conteo, latencia, uptime) mediante un middleware y expone un extractor para el endpoint de metricas."
+    },
+    "file:backend/src/modules/auth/auth.controller.ts": {
+      "name": "auth.controller.ts",
+      "type": "file",
+      "summary": "Controlador HTTP del modulo de autenticacion que expone los handlers de registro e inicio de sesion delegando la logica al servicio."
+    },
+    "file:backend/src/modules/auth/auth.model.ts": {
+      "name": "auth.model.ts",
+      "type": "file",
+      "summary": "Define los tipos y esquemas de datos del dominio de autenticacion usados por el servicio y el controlador."
+    },
+    "file:backend/src/modules/auth/auth.routes.ts": {
+      "name": "auth.routes.ts",
+      "type": "file",
+      "summary": "Define el router de autenticacion aplicando rate limiting a los endpoints publicos de registro e inicio de sesion."
+    },
+    "file:backend/src/modules/auth/auth.service.ts": {
+      "name": "auth.service.ts",
+      "type": "file",
+      "summary": "Implementa la logica de negocio de autenticacion: registro con hash de contrasena, verificacion de credenciales y emision de tokens JWT."
+    },
+    "file:backend/src/modules/billing/stripe.integration.ts": {
+      "name": "stripe.integration.ts",
+      "type": "file",
+      "summary": "Inicializa y exporta el cliente de Stripe configurado a partir de las variables de entorno para el modulo de facturacion."
+    },
+    "file:backend/src/modules/health/health.routes.ts": {
+      "name": "health.routes.ts",
+      "type": "file",
+      "summary": "Define los endpoints de salud (liveness y readiness) que reportan el estado del servicio y sus dependencias."
+    },
+    "file:backend/src/modules/health/health.service.ts": {
+      "name": "health.service.ts",
+      "type": "file",
+      "summary": "Comprueba en paralelo la disponibilidad de la base de datos y Redis, y compone el estado de readiness con uptime y timestamp."
+    },
+    "file:backend/src/modules/webhooks/webhooks.controller.ts": {
+      "name": "webhooks.controller.ts",
+      "type": "file",
+      "summary": "Controlador que recibe y verifica los webhooks entrantes de Stripe validando la firma antes de procesar los eventos."
+    },
+    "file:backend/src/modules/webhooks/webhooks.routes.ts": {
+      "name": "webhooks.routes.ts",
+      "type": "file",
+      "summary": "Define el router de webhooks que expone el endpoint de recepcion de eventos de Stripe."
+    },
+    "file:backend/src/server.ts": {
+      "name": "server.ts",
+      "type": "file",
+      "summary": "Punto de arranque del backend: conecta base de datos y Redis, crea el servidor HTTP y de WebSocket, y gestiona el apagado ordenado ante señales del proceso."
+    },
+    "file:backend/src/services/email/sendgrid.service.ts": {
+      "name": "sendgrid.service.ts",
+      "type": "file",
+      "summary": "Servicio de envio de correo basado en SendGrid con degradacion controlada cuando no hay configuracion disponible."
+    },
+    "file:backend/src/services/encryption/crypto.service.ts": {
+      "name": "crypto.service.ts",
+      "type": "file",
+      "summary": "Servicio de cifrado AES-256-GCM que deriva la clave desde la configuracion y protege datos sensibles como las API keys de LLM."
+    },
+    "file:backend/src/services/job-queue/bull.service.ts": {
+      "name": "bull.service.ts",
+      "type": "file",
+      "summary": "Configura la cola BullMQ para la ejecucion asincrona de agentes y provee una fabrica de workers para procesar los jobs."
+    },
+    "file:backend/src/services/memory/agent-memory.service.ts": {
+      "name": "agent-memory.service.ts",
+      "type": "file",
+      "summary": "Gestiona la memoria persistente de los agentes en Redis con operaciones de lectura, escritura con TTL y limpieza por agente."
+    },
+    "file:backend/src/services/memory/memory.interface.ts": {
+      "name": "memory.interface.ts",
+      "type": "file",
+      "summary": "Define el contrato de la memoria de agente que las implementaciones concretas deben cumplir."
+    },
+    "file:backend/src/utils/encryption.ts": {
+      "name": "encryption.ts",
+      "type": "file",
+      "summary": "Utilidad de cifrado AES-256-GCM con derivacion de clave por scrypt y salt aleatorio empaquetado junto al IV y authTag."
+    },
+    "file:backend/src/utils/logger.ts": {
+      "name": "logger.ts",
+      "type": "file",
+      "summary": "Configura el logger centralizado basado en winston con redaccion recursiva in-place de campos sensibles para no filtrar API keys ni credenciales."
+    },
+    "file:backend/src/websocket/socket-server.ts": {
+      "name": "socket-server.ts",
+      "type": "file",
+      "summary": "Configura el servidor Socket.io con autenticacion JWT, validacion de membresia de chat y eventos de union, envio de mensajes y salida en tiempo real."
+    },
+    "file:backend/tests/integration/health.ready.test.ts": {
+      "name": "health.ready.test.ts",
+      "type": "file",
+      "summary": "Prueba de integracion que verifica el endpoint de readiness comprobando el estado reportado de base de datos y Redis."
+    },
+    "file:backend/tests/integration/health.test.ts": {
+      "name": "health.test.ts",
+      "type": "file",
+      "summary": "Prueba de integracion del endpoint de liveness que confirma que la aplicacion responde correctamente."
+    },
+    "file:backend/tests/integration/metrics.test.ts": {
+      "name": "metrics.test.ts",
+      "type": "file",
+      "summary": "Prueba de integracion que valida la exposicion del endpoint de metricas de la aplicacion."
+    },
+    "file:backend/tests/integration/socket.events.test.ts": {
+      "name": "socket.events.test.ts",
+      "type": "file",
+      "summary": "Prueba de integracion del servidor WebSocket que ejercita la autenticacion, la union a salas y el flujo de eventos de chat en tiempo real."
+    },
+    "file:backend/tests/unit/utils.encryption.test.ts": {
+      "name": "utils.encryption.test.ts",
+      "type": "file",
+      "summary": "Prueba unitaria que verifica el ciclo de cifrado y descifrado de la utilidad de encriptacion AES-256-GCM."
+    },
+    "file:backend/src/middleware/auth.ts": {
+      "name": "auth.ts",
+      "type": "file",
+      "summary": "Middleware de Express que valida el token JWT del encabezado Authorization y adjunta la identidad del usuario a la petición, rechazando accesos no autorizados."
+    },
+    "file:backend/src/middleware/rateLimiter.ts": {
+      "name": "rateLimiter.ts",
+      "type": "file",
+      "summary": "Middleware de limitacion de tasa respaldado por Redis que aplica cuotas por usuario y una cuota mas estricta para endpoints publicos de autenticacion, exponiendo cabeceras RateLimit estandar."
+    },
+    "file:backend/src/modules/agents/agents.routes.ts": {
+      "name": "agents.routes.ts",
+      "type": "file",
+      "summary": "Define el router de Express para el modulo de agentes, encadenando autenticacion y rate limiting antes de delegar en el controlador de agentes."
+    },
+    "file:backend/src/modules/billing/billing.controller.ts": {
+      "name": "billing.controller.ts",
+      "type": "file",
+      "summary": "Controlador HTTP del modulo de facturacion que crea sesiones de checkout delegando en el servicio de billing y devuelve la respuesta al cliente."
+    },
+    "file:backend/src/modules/billing/billing.routes.ts": {
+      "name": "billing.routes.ts",
+      "type": "file",
+      "summary": "Router de Express del modulo de facturacion que protege los endpoints con autenticacion y rate limiting antes de invocar al controlador de billing."
+    },
+    "file:backend/src/modules/billing/billing.service.ts": {
+      "name": "billing.service.ts",
+      "type": "file",
+      "summary": "Servicio de facturacion que encapsula la creacion de sesiones de checkout de Stripe a traves del cliente de integracion."
+    },
+    "file:backend/src/modules/chats/chats.controller.ts": {
+      "name": "chats.controller.ts",
+      "type": "file",
+      "summary": "Controlador HTTP del modulo de chats que expone operaciones de crear, listar, obtener por id e invitar miembros, delegando la logica en el servicio de chats."
+    },
+    "file:backend/src/modules/chats/chats.model.ts": {
+      "name": "chats.model.ts",
+      "type": "file",
+      "summary": "Define los esquemas de validacion y tipos del dominio de chats usados por el servicio y el controlador del modulo."
+    },
+    "file:backend/src/modules/chats/chats.routes.ts": {
+      "name": "chats.routes.ts",
+      "type": "file",
+      "summary": "Router de Express del modulo de chats que aplica autenticacion y rate limiting antes de mapear las rutas al controlador de chats."
+    },
+    "file:backend/src/modules/chats/chats.service.ts": {
+      "name": "chats.service.ts",
+      "type": "file",
+      "summary": "Servicio de dominio de chats que gestiona la persistencia con Prisma para crear chats, listarlos por usuario, obtenerlos por id e invitar miembros."
+    },
+    "file:backend/src/modules/messages/messages.routes.ts": {
+      "name": "messages.routes.ts",
+      "type": "file",
+      "summary": "Router de Express del modulo de mensajes que protege los endpoints con autenticacion y rate limiting antes de delegar en el controlador de mensajes."
+    },
+    "file:backend/src/modules/users/users.controller.ts": {
+      "name": "users.controller.ts",
+      "type": "file",
+      "summary": "Controlador HTTP del modulo de usuarios que expone la consulta y actualizacion del perfil propio, delegando en el servicio de usuarios."
+    },
+    "file:backend/src/modules/users/users.model.ts": {
+      "name": "users.model.ts",
+      "type": "file",
+      "summary": "Define los tipos y esquemas del dominio de usuarios utilizados por el servicio y el controlador del modulo."
+    },
+    "file:backend/src/modules/users/users.routes.ts": {
+      "name": "users.routes.ts",
+      "type": "file",
+      "summary": "Router de Express del modulo de usuarios que aplica autenticacion y rate limiting antes de mapear las rutas al controlador de usuarios."
+    },
+    "file:backend/src/modules/users/users.service.ts": {
+      "name": "users.service.ts",
+      "type": "file",
+      "summary": "Servicio de dominio de usuarios que gestiona la lectura y actualizacion de registros de usuario mediante Prisma."
+    },
+    "file:backend/src/utils/errors.ts": {
+      "name": "errors.ts",
+      "type": "file",
+      "summary": "Jerarquia de errores de aplicacion centrada en AppError y subclases especificas (NotFound, Unauthorized, TooManyRequests, ServiceUnavailable, Validation) con codigos de estado HTTP asociados."
+    },
+    "file:backend/tests/unit/middleware.auth.test.ts": {
+      "name": "middleware.auth.test.ts",
+      "type": "file",
+      "summary": "Pruebas unitarias del middleware de autenticacion que verifican la validacion del JWT, el rechazo de tokens invalidos y la ausencia de encabezado Authorization."
+    },
+    "file:backend/tests/unit/middleware.rateLimiter.test.ts": {
+      "name": "middleware.rateLimiter.test.ts",
+      "type": "file",
+      "summary": "Pruebas unitarias del middleware de limitacion de tasa que verifican el conteo en Redis, las cabeceras RateLimit y el bloqueo al superar la cuota."
+    },
+    "file:backend/src/modules/agents/agent-execution.ts": {
+      "name": "agent-execution.ts",
+      "type": "file",
+      "summary": "Orquesta la ejecucion de un agente ante una @mencion: recupera el agente, selecciona el proveedor LLM y ejecuta con timeout de 60s y hasta 3 reintentos."
+    },
+    "file:backend/src/modules/agents/agents.controller.ts": {
+      "name": "agents.controller.ts",
+      "type": "file",
+      "summary": "Controlador HTTP del modulo de agentes; expone endpoints para crear agentes, listarlos por chat y ejecutar una mencion de agente."
+    },
+    "file:backend/src/modules/agents/agents.model.ts": {
+      "name": "agents.model.ts",
+      "type": "file",
+      "summary": "Define los tipos y DTOs del dominio de agentes reutilizando la interfaz Agent compartida."
+    },
+    "file:backend/src/modules/agents/agents.service.ts": {
+      "name": "agents.service.ts",
+      "type": "file",
+      "summary": "Capa de servicio de agentes que encapsula el acceso a datos via Prisma para crear, listar por chat y obtener agentes por id."
+    },
+    "file:backend/src/services/llm/anthropic.service.ts": {
+      "name": "anthropic.service.ts",
+      "type": "file",
+      "summary": "Implementacion del proveedor LLM de Anthropic (Claude) con envio de mensajes, invocacion de herramientas y conteo de tokens."
+    },
+    "file:backend/src/services/llm/google.service.ts": {
+      "name": "google.service.ts",
+      "type": "file",
+      "summary": "Implementacion del proveedor LLM de Google (Gemini) con envio de mensajes, invocacion de herramientas y conteo de tokens."
+    },
+    "file:backend/src/services/llm/llm.interface.ts": {
+      "name": "llm.interface.ts",
+      "type": "file",
+      "summary": "Define la interfaz comun ILLMProvider y un factory que resuelve el proveedor LLM (openai, anthropic, google) a partir de la configuracion del agente."
+    },
+    "file:backend/src/services/llm/openai.service.ts": {
+      "name": "openai.service.ts",
+      "type": "file",
+      "summary": "Implementacion del proveedor LLM de OpenAI (GPT) con envio de mensajes, invocacion de herramientas y conteo de tokens."
+    },
+    "file:backend/src/types/Agent.ts": {
+      "name": "Agent.ts",
+      "type": "file",
+      "summary": "Tipos compartidos del dominio de agentes: el union LLMProvider y la interfaz Agent con su configuracion (handle de mencion, systemPrompt, proveedor)."
+    },
+    "file:frontend/src/components/chat/MessageInput.tsx": {
+      "name": "MessageInput.tsx",
+      "type": "file",
+      "summary": "Componente de entrada de mensajes del chat que autoajusta el textarea, detecta @menciones al enviar y emite eventos de escritura (typing)."
+    },
+    "file:frontend/src/components/common/MentionText.tsx": {
+      "name": "MentionText.tsx",
+      "type": "file",
+      "summary": "Componente de presentacion que segmenta un texto con splitByMentions y resalta visualmente las @menciones dentro del contenido."
+    },
+    "file:frontend/src/components/common/Textarea.tsx": {
+      "name": "Textarea.tsx",
+      "type": "file",
+      "summary": "Componente de textarea reutilizable y estilizado con Tailwind mediante el helper cn, base para entradas multilinea de la UI."
+    },
+    "file:frontend/src/hooks/useMentions.ts": {
+      "name": "useMentions.ts",
+      "type": "file",
+      "summary": "Hook personalizado que memoriza el resultado de parseMentions para exponer las @menciones extraidas de un texto dado."
+    },
+    "file:frontend/src/utils/mentions.ts": {
+      "name": "mentions.ts",
+      "type": "file",
+      "summary": "Utilidades de parsing de @menciones: expone el regex compartido, extrae handles unicos y segmenta un texto en partes de texto y mencion."
+    },
+    "file:frontend/tests/unit/MessageInput.test.tsx": {
+      "name": "MessageInput.test.tsx",
+      "type": "file",
+      "summary": "Pruebas unitarias del componente MessageInput que verifican el envio de mensajes, la deteccion de menciones y el comportamiento de la entrada."
+    },
+    "file:frontend/tests/unit/mentions.test.ts": {
+      "name": "mentions.test.ts",
+      "type": "file",
+      "summary": "Pruebas unitarias de las utilidades de menciones que validan parseMentions y splitByMentions ante distintos textos de entrada."
+    },
+    "file:frontend/tests/unit/useMentions.test.ts": {
+      "name": "useMentions.test.ts",
+      "type": "file",
+      "summary": "Pruebas unitarias del hook useMentions que comprueban la extraccion memorizada de menciones a partir de un texto."
+    },
+    "file:frontend/src/context/SocketProvider.tsx": {
+      "name": "SocketProvider.tsx",
+      "type": "file",
+      "summary": "Componente de contexto React que gestiona el ciclo de vida del socket de Socket.io (conexión, desconexión y estado de conexión) y lo expone a la app mediante un context provider."
+    },
+    "file:frontend/src/hooks/useSocket.ts": {
+      "name": "useSocket.ts",
+      "type": "file",
+      "summary": "Hook custom que consume SocketContext para exponer el socket activo y su estado de conexión a cualquier componente."
+    },
+    "file:frontend/src/lib/logger.ts": {
+      "name": "logger.ts",
+      "type": "file",
+      "summary": "Utilidad de logging centralizada del frontend usada para registrar errores y eventos relevantes de forma consistente."
+    },
+    "file:frontend/src/main.tsx": {
+      "name": "main.tsx",
+      "type": "file",
+      "summary": "Punto de entrada de la aplicación React: monta App dentro de SocketProvider e importa los estilos globales."
+    },
+    "file:frontend/src/services/socket.ts": {
+      "name": "socket.ts",
+      "type": "file",
+      "summary": "Servicio que crea y gestiona la instancia singleton del cliente Socket.io autenticado con un token, y expone funciones para obtener o desconectar el socket."
+    },
+    "file:frontend/src/types/api.ts": {
+      "name": "api.ts",
+      "type": "file",
+      "summary": "Definiciones de tipos TypeScript para las estructuras de datos usadas en la comunicación con la API del backend."
+    },
+    "file:backend/src/modules/messages/messages.controller.ts": {
+      "name": "messages.controller.ts",
+      "type": "file",
+      "summary": "Controller HTTP del módulo de mensajes: expone endpoints para crear un mensaje y listar mensajes de un chat, delegando la lógica al service."
+    },
+    "file:backend/src/modules/messages/messages.model.ts": {
+      "name": "messages.model.ts",
+      "type": "file",
+      "summary": "Modelo de datos del dominio de mensajes usado por el service para tipar la entidad Message."
+    },
+    "file:backend/src/modules/messages/messages.service.ts": {
+      "name": "messages.service.ts",
+      "type": "file",
+      "summary": "Capa de servicio que implementa la lógica de negocio de mensajes, interactuando con Prisma para crear y listar mensajes de un chat."
+    },
+    "file:backend/src/utils/validators.ts": {
+      "name": "validators.ts",
+      "type": "file",
+      "summary": "Esquemas de validación reutilizables (email, password, paginación) construidos con Zod para validar inputs en toda la aplicación backend."
+    },
+    "file:backend/tests/unit/utils.validators.test.ts": {
+      "name": "utils.validators.test.ts",
+      "type": "file",
+      "summary": "Suite de tests unitarios que verifica el comportamiento de los esquemas de validación definidos en validators.ts."
+    },
+    "file:backend/src/services/storage/google-drive.service.ts": {
+      "name": "google-drive.service.ts",
+      "type": "file",
+      "summary": "Implementación de la interfaz de almacenamiento que integra Google Drive para subir, descargar y eliminar archivos, usada por los agentes que acceden a esta integración externa."
+    },
+    "file:backend/src/services/storage/s3.service.ts": {
+      "name": "s3.service.ts",
+      "type": "file",
+      "summary": "Implementación de la interfaz de almacenamiento basada en Amazon S3 para subir, descargar y eliminar archivos."
+    },
+    "file:backend/src/services/storage/storage.interface.ts": {
+      "name": "storage.interface.ts",
+      "type": "file",
+      "summary": "Interfaz TypeScript que define el contrato común (upload, download, delete) que deben cumplir todos los proveedores de almacenamiento (Google Drive, S3, etc.)."
+    },
+    "pipeline:.github/workflows/build.yml": {
+      "name": "build.yml",
+      "type": "pipeline",
+      "summary": "Workflow de GitHub Actions que verifica que backend y frontend compilan y construye las imágenes Docker de producción al hacer merge a main."
+    },
+    "step:.github/workflows/build.yml:build-apps": {
+      "name": "build-apps",
+      "type": "resource",
+      "summary": "Job que instala dependencias, genera el cliente Prisma y compila backend y frontend con npm."
+    },
+    "step:.github/workflows/build.yml:build-docker": {
+      "name": "build-docker",
+      "type": "resource",
+      "summary": "Job que construye las imágenes Docker de producción del backend y el frontend usando docker/build-push-action."
+    },
+    "pipeline:.github/workflows/ci.yml": {
+      "name": "ci.yml",
+      "type": "pipeline",
+      "summary": "Workflow principal de integración continua que ejecuta lint, build y tests con cobertura para backend y frontend, levantando Postgres y Redis como servicios efímeros."
+    },
+    "step:.github/workflows/ci.yml:backend": {
+      "name": "backend",
+      "type": "resource",
+      "summary": "Job que levanta Postgres y Redis como servicios, aplica migraciones de Prisma, hace lint, build y corre tests del backend con cobertura."
+    },
+    "step:.github/workflows/ci.yml:frontend": {
+      "name": "frontend",
+      "type": "resource",
+      "summary": "Job que instala dependencias, hace lint y corre los tests del frontend."
+    },
+    "pipeline:.github/workflows/deploy-production.yml": {
+      "name": "deploy-production.yml",
+      "type": "pipeline",
+      "summary": "Workflow de despliegue a producción que se dispara al hacer push a main; actualmente contiene un placeholder para construir imágenes y desplegar al entorno de producción."
+    },
+    "step:.github/workflows/deploy-production.yml:deploy": {
+      "name": "deploy",
+      "type": "resource",
+      "summary": "Job placeholder (TODO) que debería construir imágenes y desplegarlas al entorno de producción."
+    },
+    "pipeline:.github/workflows/deploy-staging.yml": {
+      "name": "deploy-staging.yml",
+      "type": "pipeline",
+      "summary": "Workflow de despliegue a staging que se dispara al hacer push a la rama staging; actualmente contiene un placeholder para construir imágenes y desplegar al entorno de staging."
+    },
+    "step:.github/workflows/deploy-staging.yml:deploy": {
+      "name": "deploy",
+      "type": "resource",
+      "summary": "Job placeholder (TODO) que debería construir imágenes y desplegarlas al entorno de staging."
+    },
+    "pipeline:.github/workflows/format.yml": {
+      "name": "format.yml",
+      "type": "pipeline",
+      "summary": "Workflow que verifica que el código respeta el formato de Prettier en cada pull request."
+    },
+    "step:.github/workflows/format.yml:format": {
+      "name": "format",
+      "type": "resource",
+      "summary": "Job que instala dependencias y ejecuta la verificación de formato con Prettier (npm run format:check)."
+    },
+    "pipeline:.github/workflows/security-scan.yml": {
+      "name": "security-scan.yml",
+      "type": "pipeline",
+      "summary": "Workflow de escaneo de seguridad programado semanalmente y en pull requests; actualmente contiene un placeholder para escaneo de dependencias y secretos."
+    },
+    "step:.github/workflows/security-scan.yml:scan": {
+      "name": "scan",
+      "type": "resource",
+      "summary": "Job placeholder (TODO) que debería ejecutar escaneo de dependencias y secretos (npm audit, gitleaks)."
+    },
+    "config:.dockerignore": {
+      "name": ".dockerignore",
+      "type": "config",
+      "summary": "Lista de archivos y carpetas excluidos del contexto de build de Docker (node_modules, artefactos de build, archivos de entorno, etc.) para acelerar y asegurar las imágenes."
+    },
+    "config:.env.example": {
+      "name": ".env.example",
+      "type": "config",
+      "summary": "Plantilla de variables de entorno requeridas por el proyecto: base de datos, Redis, JWT, encriptación, integraciones (SendGrid, Stripe, Google Drive) y URLs del frontend."
+    },
+    "document:CHANGELOG.md": {
+      "name": "CHANGELOG.md",
+      "type": "document",
+      "summary": "Registro de cambios del proyecto siguiendo el formato Keep a Changelog, actualmente con una sección Unreleased vacía."
+    },
+    "document:CLAUDE.md": {
+      "name": "CLAUDE.md",
+      "type": "document",
+      "summary": "Guía para Claude Code con el resumen del proyecto, stack tecnológico, estructura del repositorio, convenciones de commits/ramas y decisiones arquitectónicas confirmadas (comunicación entre agentes, límites de ejecución, webhooks, confirmaciones en tiempo real y versionado de agentes)."
+    },
+    "service:Makefile": {
+      "name": "Makefile",
+      "type": "service",
+      "summary": "Conjunto de targets make para simplificar tareas comunes de desarrollo: setup, levantar/parar servicios Docker, ver logs, resetear/seedear la base de datos, correr tests, lint y format."
+    },
+    "document:README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Documentación principal del proyecto con instrucciones de instalación, levantamiento de servicios (Postgres, Redis), ejecución de backend y frontend, tests E2E y cobertura."
+    },
+    "service:docker-compose.yml": {
+      "name": "docker-compose.yml",
+      "type": "service",
+      "summary": "Orquestación local de desarrollo con cuatro servicios (postgres, redis, backend, frontend), healthchecks, dependencias entre servicios y hot-reload de código mediante bind mounts."
+    },
+    "service:docker-compose.yml:postgres": {
+      "name": "postgres",
+      "type": "service",
+      "summary": "Servicio de base de datos PostgreSQL 15 con healthcheck vía pg_isready y volumen persistente, incluyendo script de inicialización."
+    },
+    "service:docker-compose.yml:redis": {
+      "name": "redis",
+      "type": "service",
+      "summary": "Servicio de caché/broker Redis 7 con healthcheck vía redis-cli ping y volumen persistente."
+    },
+    "service:docker-compose.yml:backend": {
+      "name": "backend",
+      "type": "service",
+      "summary": "Servicio del backend Node.js construido desde Dockerfile.backend en target development, con hot-reload, migraciones automáticas de Prisma al iniciar y dependencia de salud de postgres y redis."
+    },
+    "service:docker-compose.yml:frontend": {
+      "name": "frontend",
+      "type": "service",
+      "summary": "Servicio del frontend Vite construido desde Dockerfile.frontend en target development, con hot-reload y dependencia de salud del backend."
+    },
+    "config:package.json": {
+      "name": "package.json",
+      "type": "config",
+      "summary": "Manifiesto raíz del monorepo (workspaces backend/frontend) con scripts npm para desarrollo, build, lint, tests y generación de Prisma."
+    },
+    "config:tsconfig.json": {
+      "name": "tsconfig.json",
+      "type": "config",
+      "summary": "Configuración raíz de TypeScript con referencias de proyecto (project references) hacia los tsconfig de backend y frontend del monorepo."
+    },
+    "config:backend/.env.example": {
+      "name": ".env.example",
+      "type": "config",
+      "summary": "Plantilla de variables de entorno del backend: entorno, puerto, conexiones a base de datos y Redis, secretos JWT, clave de encriptación e integraciones con SendGrid y Stripe."
+    },
+    "document:backend/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Guía de inicio del backend: requisitos, arranque local, chat en tiempo real, comandos habituales, calidad/cobertura de tests, relaciones de datos y seguridad HTTP base."
+    },
+    "config:backend/package.json": {
+      "name": "package.json",
+      "type": "config",
+      "summary": "Manifiesto npm del backend: define scripts de build/dev/test, dependencias (Express, Prisma, etc.) y configuración de Prisma."
+    },
+    "config:backend/tsconfig.json": {
+      "name": "tsconfig.json",
+      "type": "config",
+      "summary": "Configuración del compilador TypeScript para el backend, incluyendo rutas incluidas/excluidas del build."
+    },
+    "document:docs/API.md": {
+      "name": "API.md",
+      "type": "document",
+      "summary": "Referencia de la API REST del proyecto, organizada por dominio: autenticación, usuarios, chats, agentes, mensajes, billing y webhooks."
+    },
+    "document:docs/ARCHITECTURE.md": {
+      "name": "ARCHITECTURE.md",
+      "type": "document",
+      "summary": "Documento de arquitectura que describe los componentes principales, el diagrama de infraestructura local, los puertos usados y el flujo de ejecución de un agente."
+    },
+    "document:docs/CONTRIBUTING.md": {
+      "name": "CONTRIBUTING.md",
+      "type": "document",
+      "summary": "Guía de contribución con flujo de ramas, convenciones de commits, estilo de código, requisitos de tests y checklist previo a abrir un PR."
+    },
+    "document:docs/DEPLOYMENT.md": {
+      "name": "DEPLOYMENT.md",
+      "type": "document",
+      "summary": "Guía de despliegue que cubre entornos y ramas, build de imágenes Docker, staging en Vercel/Railway, producción y pipeline de CI/CD."
+    },
+    "document:docs/ESTRUCTURA_PROYECTO.md": {
+      "name": "ESTRUCTURA_PROYECTO.md",
+      "type": "document",
+      "summary": "Documento de referencia extenso con el árbol de carpetas recomendado, descripción de directorios clave, dependencias del MVP y flujo de trabajo de Git."
+    },
+    "document:docs/REQUISITOS_AGENTES_CHAT.md": {
+      "name": "REQUISITOS_AGENTES_CHAT.md",
+      "type": "document",
+      "summary": "Especificación funcional completa de la plataforma: actores, casos de uso, requisitos funcionales y no funcionales, stack tecnológico, roadmap y criterios de éxito."
+    },
+    "document:docs/RUNBOOK.md": {
+      "name": "RUNBOOK.md",
+      "type": "document",
+      "summary": "Runbook operativo con procedimientos para verificar el estado del stack, revisar logs, health checks, recuperación de servicios caídos, backup/restore de base de datos y rollback."
+    },
+    "document:docs/SECURITY.md": {
+      "name": "SECURITY.md",
+      "type": "document",
+      "summary": "Documento de seguridad que cubre gestión de secretos, GitHub Secrets, CORS, rate limiting, headers de seguridad y HTTPS/TLS."
+    },
+    "document:docs/SETUP.md": {
+      "name": "SETUP.md",
+      "type": "document",
+      "summary": "Guía de configuración de entorno de desarrollo con quickstart vía Docker, servicios y puertos, variables de entorno, comandos útiles, Prisma y troubleshooting."
+    },
+    "document:docs/cyber-neo-report-CHAT_AGENTES-2026-07-17.md": {
+      "name": "cyber-neo-report-CHAT_AGENTES-2026-07-17.md",
+      "type": "document",
+      "summary": "Informe de auditoría de seguridad (Cyber Neo) con hallazgos priorizados (medium/low/informational), vulnerabilidades de dependencias, evaluación de supply chain/CI-CD y controles positivos observados."
+    },
+    "document:docs/setup-local.sh": {
+      "name": "setup-local.sh",
+      "type": "document",
+      "summary": "Script shell de configuración local que automatiza el arranque del entorno de desarrollo (dependencias, servicios, variables de entorno) sin funciones top-level, ejecutado linealmente."
+    },
+    "document:docs/sprint_1/AGENT_BACKEND_SPRINT1.md": {
+      "name": "AGENT_BACKEND_SPRINT1.md",
+      "type": "document",
+      "summary": "Plan de tareas del Sprint 1 para el agente de backend: inicialización del proyecto Node.js, esquema Prisma, middleware de autenticación JWT, base de Socket.io y testing con Jest/Supertest, todas marcadas como completadas."
+    },
+    "document:docs/sprint_1/AGENT_DEVOPS_SPRINT1.md": {
+      "name": "AGENT_DEVOPS_SPRINT1.md",
+      "type": "document",
+      "summary": "Plan de tareas del Sprint 1 para el agente DevOps/infraestructura: Docker y docker-compose, scripts de setup, CI/CD con GitHub Actions, documentación de infraestructura, health checks/monitoring y seguridad de red/secretos, todas completadas."
+    },
+    "document:docs/sprint_1/AGENT_FRONTEND_SPRINT1.md": {
+      "name": "AGENT_FRONTEND_SPRINT1.md",
+      "type": "document",
+      "summary": "Plan de tareas del Sprint 1 para el agente frontend: inicialización de React, layout principal, estado global con Zustand, componentes de chat, hooks custom con Socket.io, routing y testing/Storybook."
+    },
+    "document:docs/sprint_2/AGENT_BACKEND_SPRINT2.md": {
+      "name": "AGENT_BACKEND_SPRINT2.md",
+      "type": "document",
+      "summary": "Plan de tareas del Sprint 2 para el agente backend: modelo de datos de chats/mensajes, servicio y controlador de chats, mensajería vía Socket.io, historial/paginación, rate limiting/validación y testing."
+    },
+    "document:docs/sprint_2/AGENT_DEVOPS_SPRINT2.md": {
+      "name": "AGENT_DEVOPS_SPRINT2.md",
+      "type": "document",
+      "summary": "Plan de tareas del Sprint 2 para el agente DevOps: escalabilidad de Socket.io, CI/CD para el módulo de chats, observabilidad, pruebas de carga y entorno de staging."
+    },
+    "document:docs/sprint_2/AGENT_FRONTEND_SPRINT2.md": {
+      "name": "AGENT_FRONTEND_SPRINT2.md",
+      "type": "document",
+      "summary": "Plan de tareas del Sprint 2 para el agente frontend: chatStore de Zustand, cliente Socket.io, sidebar de lista de chats, vista de conversación, input de mensaje con threads, miembros del chat y testing."
+    },
+    "config:frontend/.env.example": {
+      "name": ".env.example",
+      "type": "config",
+      "summary": "Plantilla de variables de entorno del frontend Vite: URL de la API y URL del servidor de Socket.io."
+    },
+    "document:frontend/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Guía de inicio del frontend: requisitos, puesta en marcha, variables de entorno, scripts npm, estructura de carpetas, convenciones y testing."
+    },
+    "file:frontend/index.html": {
+      "name": "index.html",
+      "type": "file",
+      "summary": "Documento HTML raíz de la aplicación Vite/React que monta el árbol de componentes en el div #root y carga el punto de entrada src/main.tsx como módulo."
+    },
+    "config:frontend/package.json": {
+      "name": "package.json",
+      "type": "config",
+      "summary": "Manifiesto npm del frontend: scripts de build/dev/test y dependencias (React, Vite, Zustand, Socket.io-client, etc.)."
+    },
+    "config:frontend/tsconfig.json": {
+      "name": "tsconfig.json",
+      "type": "config",
+      "summary": "Configuración del compilador TypeScript para el frontend, con rutas incluidas y excluidas del build."
+    },
+    "service:infra/docker/Dockerfile.backend": {
+      "name": "Dockerfile.backend",
+      "type": "service",
+      "summary": "Dockerfile multi-stage para el backend Node.js/TypeScript: compila con Prisma en la etapa builder, ofrece un entorno de desarrollo con hot-reload (ts-node-dev) y produce una imagen mínima de producción que ejecuta dist/server.js."
+    },
+    "service:infra/docker/Dockerfile.frontend": {
+      "name": "Dockerfile.frontend",
+      "type": "service",
+      "summary": "Dockerfile multi-stage para el frontend Vite/React: compila los estáticos en la etapa builder, expone un servidor de desarrollo con hot-reload y sirve los estáticos de producción a través de nginx."
+    },
+    "service:infra/docker/Dockerfile.nginx": {
+      "name": "Dockerfile.nginx",
+      "type": "service",
+      "summary": "Dockerfile mínimo basado en nginx:alpine que copia nginx.conf y sirve como imagen standalone de proxy/servidor estático para el stack."
+    },
+    "service:infra/kubernetes/deployment.yaml": {
+      "name": "deployment.yaml",
+      "type": "service",
+      "summary": "Manifiesto de Deployment de Kubernetes que despliega 2 réplicas del backend agentes-chat-backend, exponiendo el puerto 4000 e inyectando variables de entorno desde el secret agentes-chat-secrets."
+    },
+    "service:infra/kubernetes/ingress.yaml": {
+      "name": "ingress.yaml",
+      "type": "service",
+      "summary": "Ingress de Kubernetes que enruta el tráfico HTTP del host api.agentes-chat.example.com hacia el Service agentes-chat-backend en el puerto 80."
+    },
+    "service:infra/kubernetes/service.yaml": {
+      "name": "service.yaml",
+      "type": "service",
+      "summary": "Service de Kubernetes que expone el puerto 80 y enruta hacia el puerto 4000 de los pods con la etiqueta app: agentes-chat-backend."
+    },
+    "file:infra/scripts/backup.sh": {
+      "name": "backup.sh",
+      "type": "file",
+      "summary": "Script placeholder que documenta el respaldo de la base de datos vía pg_dump con marca de tiempo; la lógica real de volcado y subida a almacenamiento de backups queda pendiente (TODO)."
+    },
+    "file:infra/scripts/deploy.sh": {
+      "name": "deploy.sh",
+      "type": "file",
+      "summary": "Script de despliegue que construye las imágenes Docker del backend y del frontend a partir de los Dockerfiles del proyecto; el push de imágenes y el disparo del despliegue al entorno objetivo quedan pendientes (TODO)."
+    },
+    "file:infra/scripts/rollback.sh": {
+      "name": "rollback.sh",
+      "type": "file",
+      "summary": "Script placeholder para revertir el entorno objetivo a la última versión estable conocida; la lógica de rollback está pendiente de implementación (TODO)."
+    },
+    "resource:infra/terraform/iam.tf": {
+      "name": "iam.tf",
+      "type": "resource",
+      "summary": "Define el rol IAM de AWS (agentes-chat-<environment>-task) que ECS Tasks puede asumir, usado como rol de ejecución para las tareas del backend."
+    },
+    "resource:infra/terraform/iam.tf:aws_iam_role.agentes_chat_task": {
+      "name": "aws_iam_role.agentes_chat_task",
+      "type": "resource",
+      "summary": "Rol IAM que otorga a ecs-tasks.amazonaws.com permiso para asumir el rol de ejecución del backend de agentes-chat."
+    },
+    "resource:infra/terraform/main.tf": {
+      "name": "main.tf",
+      "type": "resource",
+      "summary": "Configuración raíz de Terraform: declara el provider de AWS (~> 5.0) y fija la región a partir de la variable aws_region."
+    },
+    "resource:infra/terraform/rds.tf": {
+      "name": "rds.tf",
+      "type": "resource",
+      "summary": "Provisiona la instancia RDS de PostgreSQL 15 (db.t3.micro, 20GB) de agentes-chat, con contraseña maestra gestionada por AWS y sin snapshot final al destruir."
+    },
+    "resource:infra/terraform/rds.tf:aws_db_instance.agentes_chat": {
+      "name": "aws_db_instance.agentes_chat",
+      "type": "resource",
+      "summary": "Instancia de base de datos RDS PostgreSQL para agentes-chat, usada para persistir usuarios, chats y configuración de agentes."
+    },
+    "resource:infra/terraform/redis.tf": {
+      "name": "redis.tf",
+      "type": "resource",
+      "summary": "Provisiona el cluster de AWS ElastiCache (Redis 7, cache.t3.micro, un solo nodo) usado por agentes-chat para sesiones, rate limiting y memoria de agentes."
+    },
+    "resource:infra/terraform/redis.tf:aws_elasticache_cluster.agentes_chat": {
+      "name": "aws_elasticache_cluster.agentes_chat",
+      "type": "resource",
+      "summary": "Cluster de ElastiCache Redis de un solo nodo para agentes-chat."
+    },
+    "resource:infra/terraform/variables.tf": {
+      "name": "variables.tf",
+      "type": "resource",
+      "summary": "Declara las variables de entrada de Terraform aws_region (default us-east-1) y environment (default staging), reutilizadas por el resto de los recursos del módulo."
+    },
+    "file:scripts/db-reset.sh": {
+      "name": "db-reset.sh",
+      "type": "file",
+      "summary": "Script que resetea completamente la base de datos de desarrollo ejecutando prisma migrate reset dentro del contenedor backend; borra todos los datos existentes antes de reaplicar migraciones y seeds."
+    },
+    "file:scripts/db-seed.sh": {
+      "name": "db-seed.sh",
+      "type": "file",
+      "summary": "Script que puebla la base de datos de desarrollo con datos de prueba ejecutando el seed de Prisma dentro del contenedor backend."
+    },
+    "file:scripts/dev.sh": {
+      "name": "dev.sh",
+      "type": "file",
+      "summary": "Script que levanta el stack Docker completo en segundo plano y sigue los logs de todos los servicios para el flujo de desarrollo local."
+    },
+    "file:scripts/logs.sh": {
+      "name": "logs.sh",
+      "type": "file",
+      "summary": "Script utilitario que sigue los logs de un servicio Docker específico (backend, frontend, postgres, redis) o de todos si no se especifica argumento."
+    },
+    "file:scripts/setup.sh": {
+      "name": "setup.sh",
+      "type": "file",
+      "summary": "Script de inicialización del entorno de desarrollo local: crea .env desde la plantilla, instala dependencias vía npm workspaces, levanta los servicios Docker y espera a que PostgreSQL esté saludable antes de finalizar."
+    },
+    "file:scripts/stop.sh": {
+      "name": "stop.sh",
+      "type": "file",
+      "summary": "Script que detiene los servicios Docker del stack de desarrollo sin eliminar los volúmenes de datos persistentes."
+    },
+    "file:scripts/test-local.sh": {
+      "name": "test-local.sh",
+      "type": "file",
+      "summary": "Script que ejecuta localmente, en secuencia, las suites de tests de backend y frontend."
+    },
+    "file:.gitattributes": {
+      "name": ".gitattributes",
+      "type": "file",
+      "summary": "Configuración de atributos de Git para normalizar finales de línea y tratamiento de archivos binarios en el repositorio."
+    },
+    "document:.github/ISSUE_TEMPLATE/bug_report.md": {
+      "name": "bug_report.md",
+      "type": "document",
+      "summary": "Plantilla de GitHub Issues para reportar bugs, con secciones estructuradas para pasos de reproducción y comportamiento esperado."
+    },
+    "file:.ua/.understandignore": {
+      "name": ".understandignore",
+      "type": "file",
+      "summary": "Lista de patrones de exclusión usados por la herramienta Understand-Anything para omitir archivos irrelevantes al construir el grafo de conocimiento del proyecto."
+    },
+    "config:.ua/config.json": {
+      "name": "config.json",
+      "type": "config",
+      "summary": "Configuración de la herramienta Understand-Anything que define el idioma de salida para el contenido textual generado (español)."
+    },
+    "config:backend/jest.config.js": {
+      "name": "jest.config.js",
+      "type": "config",
+      "summary": "Configuración de Jest para el backend, definiendo el entorno de pruebas, transformadores TypeScript y rutas de test."
+    },
+    "table:backend/prisma/migrations/20260717124954_init/migration.sql:User": {
+      "name": "User",
+      "type": "table",
+      "summary": "Tabla inicial de usuarios con email, hash de contraseña, nombre y timestamps de auditoría."
+    },
+    "table:backend/prisma/migrations/20260717124954_init/migration.sql:Chat": {
+      "name": "Chat",
+      "type": "table",
+      "summary": "Tabla de chats que referencia al usuario propietario y almacena metadata básica del chat."
+    },
+    "table:backend/prisma/migrations/20260717124954_init/migration.sql:ChatMember": {
+      "name": "ChatMember",
+      "type": "table",
+      "summary": "Tabla intermedia que relaciona usuarios con chats y define su rol de membresía."
+    },
+    "table:backend/prisma/migrations/20260717124954_init/migration.sql:Agent": {
+      "name": "Agent",
+      "type": "table",
+      "summary": "Tabla de agentes de IA asociados a un chat, con handle de mención, proveedor LLM y prompt de sistema."
+    },
+    "table:backend/prisma/migrations/20260717124954_init/migration.sql:Message": {
+      "name": "Message",
+      "type": "table",
+      "summary": "Tabla de mensajes de chat, con autor tipado (usuario o agente) y contenido del mensaje."
+    },
+    "file:backend/prisma/migrations/20260717124954_init/migration.sql": {
+      "name": "migration.sql",
+      "type": "file",
+      "summary": "Migración inicial de Prisma que crea el esquema base de la base de datos: usuarios, chats, miembros, agentes y mensajes."
+    },
+    "table:backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql:ChatAgentLink": {
+      "name": "ChatAgentLink",
+      "type": "table",
+      "summary": "Tabla de relación muchos-a-muchos entre chats y agentes, permitiendo que un agente participe en varios chats."
+    },
+    "file:backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql": {
+      "name": "migration.sql",
+      "type": "file",
+      "summary": "Migración que añade la tabla de vínculos agente-chat (ChatAgentLink) e índices de rendimiento adicionales sobre las tablas existentes."
+    },
+    "config:backend/prisma/migrations/migration_lock.toml": {
+      "name": "migration_lock.toml",
+      "type": "config",
+      "summary": "Archivo de bloqueo de Prisma Migrate que fija el proveedor de base de datos (PostgreSQL) usado por las migraciones."
+    },
+    "schema:backend/prisma/schema.prisma": {
+      "name": "schema.prisma",
+      "type": "schema",
+      "summary": "Esquema de Prisma que define los modelos de datos (User, Chat, ChatMember, Agent, ChatAgentLink, Message) y sus relaciones para PostgreSQL."
+    },
+    "file:backend/prisma/seed.ts": {
+      "name": "seed.ts",
+      "type": "file",
+      "summary": "Script de seed de Prisma que crea usuarios, chats y agentes de ejemplo con contraseñas hasheadas para desarrollo local."
+    },
+    "file:backend/src/config/constants.ts": {
+      "name": "constants.ts",
+      "type": "file",
+      "summary": "Define constantes globales de la aplicación backend: nombre de la app, puerto por defecto y prefijo de API."
+    },
+    "file:backend/src/index.ts": {
+      "name": "index.ts",
+      "type": "file",
+      "summary": "Punto de entrada del backend que reexporta la función createApp desde el módulo de aplicación Express."
+    },
+    "file:backend/src/middleware/logging.ts": {
+      "name": "logging.ts",
+      "type": "file",
+      "summary": "Reexporta el middleware requestLogger encargado del logging centralizado de peticiones HTTP."
+    },
+    "file:backend/src/types/api-responses.ts": {
+      "name": "api-responses.ts",
+      "type": "file",
+      "summary": "Define los tipos TypeScript para el envelope estándar de respuestas de la API (success, data, error, meta)."
+    },
+    "file:backend/src/types/Chat.ts": {
+      "name": "Chat.ts",
+      "type": "file",
+      "summary": "Define los tipos TypeScript para la entidad Chat usados a través del backend."
+    },
+    "file:backend/src/types/index.ts": {
+      "name": "index.ts",
+      "type": "file",
+      "summary": "Barrel que reexporta todos los tipos del dominio (User, Chat, Agent, Message, api-responses) para importación centralizada."
+    },
+    "file:backend/src/types/Message.ts": {
+      "name": "Message.ts",
+      "type": "file",
+      "summary": "Define los tipos TypeScript para la entidad Message, incluyendo el tipo de autor (usuario o agente)."
+    },
+    "file:backend/src/types/User.ts": {
+      "name": "User.ts",
+      "type": "file",
+      "summary": "Define el tipo TypeScript para la entidad User usado en el backend."
+    },
+    "file:backend/src/utils/helpers.ts": {
+      "name": "helpers.ts",
+      "type": "file",
+      "summary": "Provee funciones utilitarias genéricas: omit para excluir claves de un objeto y sleep para pausas asíncronas."
+    },
+    "file:backend/tests/fixtures/seed-data.ts": {
+      "name": "seed-data.ts",
+      "type": "file",
+      "summary": "Fixture de datos de prueba que exporta un usuario de ejemplo (seedUser) reutilizable en los tests del backend."
+    },
+    "file:backend/tests/integration/agent-execution.test.ts": {
+      "name": "agent-execution.test.ts",
+      "type": "file",
+      "summary": "Prueba de integración placeholder para el flujo de ejecución de agentes de IA."
+    },
+    "file:backend/tests/integration/chat-flow.test.ts": {
+      "name": "chat-flow.test.ts",
+      "type": "file",
+      "summary": "Prueba de integración placeholder para el flujo de mensajería de chat en tiempo real."
+    },
+    "file:backend/tests/unit/agents.test.ts": {
+      "name": "agents.test.ts",
+      "type": "file",
+      "summary": "Prueba unitaria placeholder para la lógica de agentes del backend."
+    },
+    "file:backend/tests/unit/auth.test.ts": {
+      "name": "auth.test.ts",
+      "type": "file",
+      "summary": "Prueba unitaria placeholder para la lógica de autenticación del backend."
+    },
+    "file:bash.exe.stackdump": {
+      "name": "bash.exe.stackdump",
+      "type": "file",
+      "summary": "Volcado de pila (crash dump) generado por bash.exe, artefacto residual no relacionado con el código fuente del proyecto."
+    },
+    "document:docs/git/GIT_SETUP_RAPIDO.md": {
+      "name": "GIT_SETUP_RAPIDO.md",
+      "type": "document",
+      "summary": "Guía rápida de 5 minutos con comandos exactos para configurar las ramas locales de Git conectadas al repositorio remoto, incluyendo checklist y solución de problemas comunes."
+    },
+    "document:docs/git/GIT_WORKFLOW.md": {
+      "name": "GIT_WORKFLOW.md",
+      "type": "document",
+      "summary": "Documento extenso que define el flujo de trabajo Git del proyecto agentes-chat: estructura de ramas, setup inicial, flujo por rol (backend, frontend, DevOps), sincronización, protecciones de rama y convenciones de commits."
+    },
+    "config:frontend/postcss.config.cjs": {
+      "name": "postcss.config.cjs",
+      "type": "config",
+      "summary": "Configuración de PostCSS del frontend que habilita los plugins Tailwind CSS y Autoprefixer en el pipeline de build de Vite."
+    },
+    "file:frontend/src/styles/globals.css": {
+      "name": "globals.css",
+      "type": "file",
+      "summary": "Hoja de estilos global del frontend que importa las capas de Tailwind CSS y define estilos base compartidos por toda la aplicación."
+    },
+    "file:frontend/src/vite-env.d.ts": {
+      "name": "vite-env.d.ts",
+      "type": "file",
+      "summary": "Declaraciones de tipos ambientales de Vite que habilitan el tipado de variables de entorno (import.meta.env) en TypeScript."
+    },
+    "config:frontend/tailwind.config.cjs": {
+      "name": "tailwind.config.cjs",
+      "type": "config",
+      "summary": "Configuración de Tailwind CSS que define las rutas de contenido a escanear, extensiones del tema y plugins usados en el frontend."
+    },
+    "file:frontend/tests/e2e/agent-execution.spec.ts": {
+      "name": "agent-execution.spec.ts",
+      "type": "file",
+      "summary": "Prueba end-to-end placeholder con Playwright para el flujo de ejecución de agentes desde la interfaz de usuario."
+    },
+    "file:frontend/tests/e2e/chat-flow.spec.ts": {
+      "name": "chat-flow.spec.ts",
+      "type": "file",
+      "summary": "Prueba end-to-end placeholder con Playwright para el flujo completo de chat en tiempo real desde la interfaz de usuario."
+    },
+    "file:frontend/tests/setup.ts": {
+      "name": "setup.ts",
+      "type": "file",
+      "summary": "Configuración global de setup para el entorno de pruebas del frontend (Vitest/RTL), preparando mocks y matchers antes de ejecutar los tests."
+    },
+    "config:frontend/vite.config.ts": {
+      "name": "vite.config.ts",
+      "type": "config",
+      "summary": "Configuración de Vite para el frontend: plugin de React, alias de rutas y ajustes del servidor de desarrollo."
+    },
+    "file:infra/db/init.sql": {
+      "name": "init.sql",
+      "type": "file",
+      "summary": "Script de inicialización de PostgreSQL ejecutado una sola vez al crear el volumen de datos; habilita las extensiones pgcrypto y pg_trgm requeridas antes de aplicar las migraciones de Prisma."
+    },
+    "service:infra/docker/nginx.conf": {
+      "name": "nginx.conf",
+      "type": "service",
+      "summary": "Configuración de nginx para producción que sirve el frontend SPA con fallback a index.html, hace proxy de /api y /socket.io hacia el backend, aplica rate limiting (100 req/min) y cabeceras de seguridad."
+    }
+  },
+  "totalNodes": 233,
+  "totalEdges": 584
+}

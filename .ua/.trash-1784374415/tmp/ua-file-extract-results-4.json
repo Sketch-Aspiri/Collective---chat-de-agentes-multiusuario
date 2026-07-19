@@ -1,0 +1,391 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "backend/src/modules/agents/agent-execution.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "executeAgentMention",
+          "startLine": 10,
+          "endLine": 36,
+          "params": [
+            "agentId",
+            "prompt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "executeAgentMention",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "AGENT_EXECUTION_LIMITS",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "executeAgentMention",
+          "callee": "prisma.agent.findUnique",
+          "lineNumber": 11
+        },
+        {
+          "caller": "executeAgentMention",
+          "callee": "getLLMProvider",
+          "lineNumber": 16
+        },
+        {
+          "caller": "executeAgentMention",
+          "callee": "Promise.race",
+          "lineNumber": 23
+        },
+        {
+          "caller": "executeAgentMention",
+          "callee": "provider.sendMessage",
+          "lineNumber": 24
+        },
+        {
+          "caller": "executeAgentMention",
+          "callee": "setTimeout",
+          "lineNumber": 26
+        },
+        {
+          "caller": "executeAgentMention",
+          "callee": "reject",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/modules/agents/agents.controller.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "AgentsController",
+          "startLine": 5,
+          "endLine": 20,
+          "methods": [
+            "create",
+            "listForChat",
+            "execute"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AgentsController",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "agentsController",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create",
+          "callee": "agentsService.create",
+          "lineNumber": 7
+        },
+        {
+          "caller": "create",
+          "callee": "res.status(201).json",
+          "lineNumber": 8
+        },
+        {
+          "caller": "create",
+          "callee": "res.status",
+          "lineNumber": 8
+        },
+        {
+          "caller": "listForChat",
+          "callee": "agentsService.listForChat",
+          "lineNumber": 12
+        },
+        {
+          "caller": "listForChat",
+          "callee": "res.status(200).json",
+          "lineNumber": 13
+        },
+        {
+          "caller": "listForChat",
+          "callee": "res.status",
+          "lineNumber": 13
+        },
+        {
+          "caller": "execute",
+          "callee": "executeAgentMention",
+          "lineNumber": 17
+        },
+        {
+          "caller": "execute",
+          "callee": "res.status(200).json",
+          "lineNumber": 18
+        },
+        {
+          "caller": "execute",
+          "callee": "res.status",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/src/modules/agents/agents.model.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/modules/agents/agents.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "AgentsService",
+          "startLine": 5,
+          "endLine": 21,
+          "methods": [
+            "create",
+            "listForChat",
+            "getById"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AgentsService",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "agentsService",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create",
+          "callee": "prisma.agent.create",
+          "lineNumber": 7
+        },
+        {
+          "caller": "listForChat",
+          "callee": "prisma.agent.findMany",
+          "lineNumber": 11
+        },
+        {
+          "caller": "getById",
+          "callee": "prisma.agent.findUnique",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/src/services/llm/anthropic.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "AnthropicService",
+          "startLine": 3,
+          "endLine": 15,
+          "methods": [
+            "sendMessage",
+            "callTool",
+            "getTokenCount"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AnthropicService",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTokenCount",
+          "callee": "Math.ceil",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/src/services/llm/google.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "GoogleService",
+          "startLine": 3,
+          "endLine": 15,
+          "methods": [
+            "sendMessage",
+            "callTool",
+            "getTokenCount"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "GoogleService",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTokenCount",
+          "callee": "Math.ceil",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/src/services/llm/llm.interface.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "getLLMProvider",
+          "startLine": 22,
+          "endLine": 24,
+          "params": [
+            "provider"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getLLMProvider",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/services/llm/openai.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "OpenAIService",
+          "startLine": 3,
+          "endLine": 15,
+          "methods": [
+            "sendMessage",
+            "callTool",
+            "getTokenCount"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OpenAIService",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTokenCount",
+          "callee": "Math.ceil",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/src/types/Agent.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

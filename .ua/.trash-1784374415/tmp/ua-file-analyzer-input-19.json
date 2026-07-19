@@ -1,0 +1,11 @@
+{
+  "projectRoot": "C:/Users/Andre/OneDrive/Escritorio/CHAT_AGENTES",
+  "batchFiles": [
+    {"path": "infra/terraform/iam.tf", "language": "terraform", "sizeLines": 12, "fileCategory": "infra"},
+    {"path": "infra/terraform/main.tf", "language": "terraform", "sizeLines": 12, "fileCategory": "infra"},
+    {"path": "infra/terraform/rds.tf", "language": "terraform", "sizeLines": 11, "fileCategory": "infra"},
+    {"path": "infra/terraform/redis.tf", "language": "terraform", "sizeLines": 7, "fileCategory": "infra"},
+    {"path": "infra/terraform/variables.tf", "language": "terraform", "sizeLines": 9, "fileCategory": "infra"}
+  ],
+  "batchImportData": {"infra/terraform/iam.tf":[],"infra/terraform/main.tf":[],"infra/terraform/rds.tf":[],"infra/terraform/redis.tf":[],"infra/terraform/variables.tf":[]}
+}

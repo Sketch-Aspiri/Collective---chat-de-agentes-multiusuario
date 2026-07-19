@@ -1,0 +1,347 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 8,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "frontend/src/components/chat/MessageInput.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "MessageInput",
+          "startLine": 21,
+          "endLine": 89,
+          "params": [
+            "{ onSend, onTyping, disabled = false }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MessageInput",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "MessageInput",
+          "callee": "useState",
+          "lineNumber": 22
+        },
+        {
+          "caller": "MessageInput",
+          "callee": "useRef",
+          "lineNumber": 23
+        },
+        {
+          "caller": "MessageInput",
+          "callee": "useEffect",
+          "lineNumber": 26
+        },
+        {
+          "caller": "MessageInput",
+          "callee": "Math.min",
+          "lineNumber": 30
+        },
+        {
+          "caller": "MessageInput",
+          "callee": "value.trim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "MessageInput",
+          "callee": "parseMentions",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handleSend",
+          "callee": "onSend",
+          "lineNumber": 39
+        },
+        {
+          "caller": "handleSend",
+          "callee": "setValue",
+          "lineNumber": 40
+        },
+        {
+          "caller": "handleKeyDown",
+          "callee": "event.preventDefault",
+          "lineNumber": 46
+        },
+        {
+          "caller": "handleKeyDown",
+          "callee": "handleSend",
+          "lineNumber": 47
+        },
+        {
+          "caller": "MessageInput",
+          "callee": "setValue",
+          "lineNumber": 63
+        },
+        {
+          "caller": "MessageInput",
+          "callee": "event.target.value.slice",
+          "lineNumber": 63
+        },
+        {
+          "caller": "MessageInput",
+          "callee": "onTyping",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/common/MentionText.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "MentionText",
+          "startLine": 13,
+          "endLine": 31,
+          "params": [
+            "{ text, className }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MentionText",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "MentionText",
+          "callee": "splitByMentions",
+          "lineNumber": 14
+        },
+        {
+          "caller": "MentionText",
+          "callee": "segments.map",
+          "lineNumber": 17
+        },
+        {
+          "caller": "MentionText",
+          "callee": "cn",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/common/Textarea.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 22,
+      "exports": [
+        {
+          "name": "Textarea",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/hooks/useMentions.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 8,
+      "functions": [
+        {
+          "name": "useMentions",
+          "startLine": 7,
+          "endLine": 9,
+          "params": [
+            "text"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "useMentions",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useMentions",
+          "callee": "useMemo",
+          "lineNumber": 8
+        },
+        {
+          "caller": "useMentions",
+          "callee": "parseMentions",
+          "lineNumber": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/utils/mentions.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "parseMentions",
+          "startLine": 7,
+          "endLine": 17,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "splitByMentions",
+          "startLine": 28,
+          "endLine": 46,
+          "params": [
+            "text"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MENTION_REGEX",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "parseMentions",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "splitByMentions",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseMentions",
+          "callee": "text.matchAll",
+          "lineNumber": 8
+        },
+        {
+          "caller": "parseMentions",
+          "callee": "handles.includes",
+          "lineNumber": 12
+        },
+        {
+          "caller": "parseMentions",
+          "callee": "handles.push",
+          "lineNumber": 13
+        },
+        {
+          "caller": "splitByMentions",
+          "callee": "text.matchAll",
+          "lineNumber": 32
+        },
+        {
+          "caller": "splitByMentions",
+          "callee": "segments.push",
+          "lineNumber": 35
+        },
+        {
+          "caller": "splitByMentions",
+          "callee": "text.slice",
+          "lineNumber": 35
+        },
+        {
+          "caller": "splitByMentions",
+          "callee": "segments.push",
+          "lineNumber": 37
+        },
+        {
+          "caller": "splitByMentions",
+          "callee": "segments.push",
+          "lineNumber": 42
+        },
+        {
+          "caller": "splitByMentions",
+          "callee": "text.slice",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/tests/unit/MessageInput.test.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 40,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/tests/unit/mentions.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 30,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/tests/unit/useMentions.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

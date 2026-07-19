@@ -1,0 +1,47 @@
+{
+  "nodes": [
+    {
+      "id": "file:infra/scripts/backup.sh",
+      "type": "file",
+      "name": "backup.sh",
+      "filePath": "infra/scripts/backup.sh",
+      "summary": "Script placeholder que documenta el respaldo de la base de datos vía pg_dump con marca de tiempo; la lógica real de volcado y subida a almacenamiento de backups queda pendiente (TODO).",
+      "tags": ["deployment", "database", "backup", "script", "placeholder"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:infra/scripts/deploy.sh",
+      "type": "file",
+      "name": "deploy.sh",
+      "filePath": "infra/scripts/deploy.sh",
+      "summary": "Script de despliegue que construye las imágenes Docker del backend y del frontend a partir de los Dockerfiles del proyecto; el push de imágenes y el disparo del despliegue al entorno objetivo quedan pendientes (TODO).",
+      "tags": ["deployment", "containerization", "script", "ci-cd"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:infra/scripts/rollback.sh",
+      "type": "file",
+      "name": "rollback.sh",
+      "filePath": "infra/scripts/rollback.sh",
+      "summary": "Script placeholder para revertir el entorno objetivo a la última versión estable conocida; la lógica de rollback está pendiente de implementación (TODO).",
+      "tags": ["deployment", "rollback", "script", "placeholder"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:infra/scripts/deploy.sh",
+      "target": "service:infra/docker/Dockerfile.backend",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:infra/scripts/deploy.sh",
+      "target": "service:infra/docker/Dockerfile.frontend",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "nodes": [
+    {
+      "id": "service:infra/docker/Dockerfile.backend",
+      "type": "service",
+      "name": "Dockerfile.backend",
+      "filePath": "infra/docker/Dockerfile.backend",
+      "summary": "Dockerfile multi-stage para el backend Node.js/TypeScript: compila con Prisma en la etapa builder, ofrece un entorno de desarrollo con hot-reload (ts-node-dev) y produce una imagen mínima de producción que ejecuta dist/server.js.",
+      "tags": ["containerization", "infrastructure", "deployment", "backend", "multi-stage-build"],
+      "complexity": "moderate",
+      "languageNotes": "Multi-stage build (builder/development/production) separa dependencias de compilación de las de runtime; usa --legacy-peer-deps por un conflicto de peer dependency entre bullmq y redis@^4."
+    },
+    {
+      "id": "service:infra/docker/Dockerfile.frontend",
+      "type": "service",
+      "name": "Dockerfile.frontend",
+      "filePath": "infra/docker/Dockerfile.frontend",
+      "summary": "Dockerfile multi-stage para el frontend Vite/React: compila los estáticos en la etapa builder, expone un servidor de desarrollo con hot-reload y sirve los estáticos de producción a través de nginx.",
+      "tags": ["containerization", "infrastructure", "deployment", "frontend", "multi-stage-build"],
+      "complexity": "moderate",
+      "languageNotes": "La etapa de producción usa nginx:alpine como imagen base final, reutilizando infra/docker/nginx.conf para servir los estáticos generados por Vite."
+    },
+    {
+      "id": "service:infra/docker/Dockerfile.nginx",
+      "type": "service",
+      "name": "Dockerfile.nginx",
+      "filePath": "infra/docker/Dockerfile.nginx",
+      "summary": "Dockerfile mínimo basado en nginx:alpine que copia nginx.conf y sirve como imagen standalone de proxy/servidor estático para el stack.",
+      "tags": ["containerization", "infrastructure", "nginx", "deployment"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "service:infra/docker/Dockerfile.frontend",
+      "target": "service:infra/docker/Dockerfile.nginx",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

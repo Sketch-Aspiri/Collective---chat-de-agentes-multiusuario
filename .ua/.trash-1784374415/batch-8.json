@@ -1,0 +1,61 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/src/services/storage/google-drive.service.ts",
+      "type": "file",
+      "name": "google-drive.service.ts",
+      "filePath": "backend/src/services/storage/google-drive.service.ts",
+      "summary": "Implementación de la interfaz de almacenamiento que integra Google Drive para subir, descargar y eliminar archivos, usada por los agentes que acceden a esta integración externa.",
+      "tags": ["service", "integration", "storage"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/src/services/storage/google-drive.service.ts:GoogleDriveService",
+      "type": "class",
+      "name": "GoogleDriveService",
+      "filePath": "backend/src/services/storage/google-drive.service.ts",
+      "lineRange": [3, 15],
+      "summary": "Clase que implementa upload, download y delete contra la API de Google Drive, cumpliendo el contrato definido en storage.interface.ts.",
+      "tags": ["service", "implements", "integration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/src/services/storage/s3.service.ts",
+      "type": "file",
+      "name": "s3.service.ts",
+      "filePath": "backend/src/services/storage/s3.service.ts",
+      "summary": "Implementación de la interfaz de almacenamiento basada en Amazon S3 para subir, descargar y eliminar archivos.",
+      "tags": ["service", "integration", "storage"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/src/services/storage/s3.service.ts:S3Service",
+      "type": "class",
+      "name": "S3Service",
+      "filePath": "backend/src/services/storage/s3.service.ts",
+      "lineRange": [4, 16],
+      "summary": "Clase que implementa upload, download y delete contra Amazon S3, cumpliendo el contrato definido en storage.interface.ts.",
+      "tags": ["service", "implements", "integration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/src/services/storage/storage.interface.ts",
+      "type": "file",
+      "name": "storage.interface.ts",
+      "filePath": "backend/src/services/storage/storage.interface.ts",
+      "summary": "Interfaz TypeScript que define el contrato común (upload, download, delete) que deben cumplir todos los proveedores de almacenamiento (Google Drive, S3, etc.).",
+      "tags": ["type-definition", "storage", "abstraction"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:backend/src/services/storage/google-drive.service.ts", "target": "file:backend/src/services/storage/storage.interface.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:backend/src/services/storage/s3.service.ts", "target": "file:backend/src/services/storage/storage.interface.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:backend/src/services/storage/google-drive.service.ts", "target": "class:backend/src/services/storage/google-drive.service.ts:GoogleDriveService", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:backend/src/services/storage/google-drive.service.ts", "target": "class:backend/src/services/storage/google-drive.service.ts:GoogleDriveService", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:backend/src/services/storage/s3.service.ts", "target": "class:backend/src/services/storage/s3.service.ts:S3Service", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:backend/src/services/storage/s3.service.ts", "target": "class:backend/src/services/storage/s3.service.ts:S3Service", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "class:backend/src/services/storage/google-drive.service.ts:GoogleDriveService", "target": "file:backend/src/services/storage/storage.interface.ts", "type": "implements", "direction": "forward", "weight": 0.9},
+    {"source": "class:backend/src/services/storage/s3.service.ts:S3Service", "target": "file:backend/src/services/storage/storage.interface.ts", "type": "implements", "direction": "forward", "weight": 0.9}
+  ]
+}

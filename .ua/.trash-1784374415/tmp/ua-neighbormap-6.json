@@ -1,0 +1,53 @@
+{
+  "frontend/src/context/SocketProvider.tsx": [
+    {
+      "path": "frontend/src/store/authStore.ts",
+      "batchIndex": 1,
+      "symbols": [
+        "useAuthStore"
+      ]
+    },
+    {
+      "path": "frontend/tests/unit/ChatWindow.test.tsx",
+      "batchIndex": 1,
+      "symbols": []
+    }
+  ],
+  "frontend/src/hooks/useSocket.ts": [
+    {
+      "path": "frontend/src/components/layout/MainLayout.tsx",
+      "batchIndex": 1,
+      "symbols": [
+        "MainLayout"
+      ]
+    },
+    {
+      "path": "frontend/src/hooks/useChat.ts",
+      "batchIndex": 1,
+      "symbols": [
+        "useChat"
+      ]
+    }
+  ],
+  "frontend/src/main.tsx": [
+    {
+      "path": "frontend/src/App.tsx",
+      "batchIndex": 1,
+      "symbols": [
+        "App"
+      ]
+    },
+    {
+      "path": "frontend/src/styles/globals.css",
+      "batchIndex": 22,
+      "symbols": []
+    }
+  ],
+  "frontend/src/types/api.ts": [
+    {
+      "path": "frontend/src/types/index.ts",
+      "batchIndex": 1,
+      "symbols": []
+    }
+  ]
+}

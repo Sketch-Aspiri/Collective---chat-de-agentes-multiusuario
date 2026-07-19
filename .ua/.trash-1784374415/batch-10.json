@@ -1,0 +1,137 @@
+{
+  "nodes": [
+    {
+      "id": "config:.dockerignore",
+      "type": "config",
+      "name": ".dockerignore",
+      "filePath": ".dockerignore",
+      "summary": "Lista de archivos y carpetas excluidos del contexto de build de Docker (node_modules, artefactos de build, archivos de entorno, etc.) para acelerar y asegurar las imágenes.",
+      "tags": ["configuration", "containerization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": ".env.example",
+      "summary": "Plantilla de variables de entorno requeridas por el proyecto: base de datos, Redis, JWT, encriptación, integraciones (SendGrid, Stripe, Google Drive) y URLs del frontend.",
+      "tags": ["configuration", "environment-variables", "secrets-template"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CHANGELOG.md",
+      "type": "document",
+      "name": "CHANGELOG.md",
+      "filePath": "CHANGELOG.md",
+      "summary": "Registro de cambios del proyecto siguiendo el formato Keep a Changelog, actualmente con una sección Unreleased vacía.",
+      "tags": ["documentation", "changelog"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "Guía para Claude Code con el resumen del proyecto, stack tecnológico, estructura del repositorio, convenciones de commits/ramas y decisiones arquitectónicas confirmadas (comunicación entre agentes, límites de ejecución, webhooks, confirmaciones en tiempo real y versionado de agentes).",
+      "tags": ["documentation", "architecture", "guidelines"],
+      "complexity": "complex"
+    },
+    {
+      "id": "service:Makefile",
+      "type": "service",
+      "name": "Makefile",
+      "filePath": "Makefile",
+      "summary": "Conjunto de targets make para simplificar tareas comunes de desarrollo: setup, levantar/parar servicios Docker, ver logs, resetear/seedear la base de datos, correr tests, lint y format.",
+      "tags": ["infrastructure", "build-system", "developer-tooling"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Documentación principal del proyecto con instrucciones de instalación, levantamiento de servicios (Postgres, Redis), ejecución de backend y frontend, tests E2E y cobertura.",
+      "tags": ["documentation", "entry-point", "overview"],
+      "complexity": "complex"
+    },
+    {
+      "id": "service:docker-compose.yml",
+      "type": "service",
+      "name": "docker-compose.yml",
+      "filePath": "docker-compose.yml",
+      "summary": "Orquestación local de desarrollo con cuatro servicios (postgres, redis, backend, frontend), healthchecks, dependencias entre servicios y hot-reload de código mediante bind mounts.",
+      "tags": ["orchestration", "infrastructure", "docker-compose"],
+      "complexity": "complex"
+    },
+    {
+      "id": "service:docker-compose.yml:postgres",
+      "type": "service",
+      "name": "postgres",
+      "filePath": "docker-compose.yml",
+      "summary": "Servicio de base de datos PostgreSQL 15 con healthcheck vía pg_isready y volumen persistente, incluyendo script de inicialización.",
+      "tags": ["database", "orchestration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:docker-compose.yml:redis",
+      "type": "service",
+      "name": "redis",
+      "filePath": "docker-compose.yml",
+      "summary": "Servicio de caché/broker Redis 7 con healthcheck vía redis-cli ping y volumen persistente.",
+      "tags": ["database", "orchestration", "cache"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:docker-compose.yml:backend",
+      "type": "service",
+      "name": "backend",
+      "filePath": "docker-compose.yml",
+      "summary": "Servicio del backend Node.js construido desde Dockerfile.backend en target development, con hot-reload, migraciones automáticas de Prisma al iniciar y dependencia de salud de postgres y redis.",
+      "tags": ["orchestration", "backend", "hot-reload"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:docker-compose.yml:frontend",
+      "type": "service",
+      "name": "frontend",
+      "filePath": "docker-compose.yml",
+      "summary": "Servicio del frontend Vite construido desde Dockerfile.frontend en target development, con hot-reload y dependencia de salud del backend.",
+      "tags": ["orchestration", "frontend", "hot-reload"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "Manifiesto raíz del monorepo (workspaces backend/frontend) con scripts npm para desarrollo, build, lint, tests y generación de Prisma.",
+      "tags": ["configuration", "build-system", "monorepo"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "Configuración raíz de TypeScript con referencias de proyecto (project references) hacia los tsconfig de backend y frontend del monorepo.",
+      "tags": ["configuration", "typescript", "build-system"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "config:.dockerignore", "target": "service:docker-compose.yml", "type": "configures", "direction": "forward", "weight": 0.6},
+    {"source": "config:.env.example", "target": "service:docker-compose.yml", "type": "configures", "direction": "forward", "weight": 0.6},
+    {"source": "config:package.json", "target": "service:Makefile", "type": "configures", "direction": "forward", "weight": 0.6},
+    {"source": "config:tsconfig.json", "target": "config:package.json", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "document:README.md", "target": "service:docker-compose.yml", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:README.md", "target": "service:Makefile", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:CLAUDE.md", "target": "config:package.json", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "service:docker-compose.yml", "target": "service:docker-compose.yml:postgres", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "service:docker-compose.yml", "target": "service:docker-compose.yml:redis", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "service:docker-compose.yml", "target": "service:docker-compose.yml:backend", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "service:docker-compose.yml", "target": "service:docker-compose.yml:frontend", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "service:docker-compose.yml:backend", "target": "service:docker-compose.yml:postgres", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "service:docker-compose.yml:backend", "target": "service:docker-compose.yml:redis", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "service:docker-compose.yml:frontend", "target": "service:docker-compose.yml:backend", "type": "depends_on", "direction": "forward", "weight": 0.6}
+  ]
+}

@@ -1,0 +1,933 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 18,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "backend/src/middleware/auth.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "authMiddleware",
+          "startLine": 17,
+          "endLine": 47,
+          "params": [
+            "req",
+            "_res",
+            "next"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "authMiddleware",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authMiddleware",
+          "callee": "header?.match",
+          "lineNumber": 19
+        },
+        {
+          "caller": "authMiddleware",
+          "callee": "logger.warn",
+          "lineNumber": 22
+        },
+        {
+          "caller": "authMiddleware",
+          "callee": "jwt.verify",
+          "lineNumber": 27
+        },
+        {
+          "caller": "authMiddleware",
+          "callee": "next",
+          "lineNumber": 39
+        },
+        {
+          "caller": "authMiddleware",
+          "callee": "logger.warn",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/middleware/rateLimiter.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 92,
+      "functions": [
+        {
+          "name": "rateLimiter",
+          "startLine": 20,
+          "endLine": 26,
+          "params": [
+            "req",
+            "res",
+            "next"
+          ]
+        },
+        {
+          "name": "enforceRateLimit",
+          "startLine": 28,
+          "endLine": 44,
+          "params": [
+            "req",
+            "res",
+            "next"
+          ]
+        },
+        {
+          "name": "publicAuthRateLimiter",
+          "startLine": 46,
+          "endLine": 48,
+          "params": [
+            "req",
+            "res",
+            "next"
+          ]
+        },
+        {
+          "name": "enforcePublicAuthRateLimit",
+          "startLine": 50,
+          "endLine": 63,
+          "params": [
+            "req",
+            "res",
+            "next"
+          ]
+        },
+        {
+          "name": "enforceRedisLimit",
+          "startLine": 65,
+          "endLine": 104,
+          "params": [
+            "key",
+            "maxRequests",
+            "path",
+            "res",
+            "next"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RATE_LIMIT_WINDOW_MS",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "RATE_LIMIT_MAX_REQUESTS",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "AUTH_RATE_LIMIT_MAX_REQUESTS",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "rateLimiter",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "enforceRateLimit",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "publicAuthRateLimiter",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "enforcePublicAuthRateLimit",
+          "line": 50,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "rateLimiter",
+          "callee": "enforceRateLimit(req, res, next).catch",
+          "lineNumber": 25
+        },
+        {
+          "caller": "rateLimiter",
+          "callee": "enforceRateLimit",
+          "lineNumber": 25
+        },
+        {
+          "caller": "enforceRateLimit",
+          "callee": "enforceRedisLimit",
+          "lineNumber": 37
+        },
+        {
+          "caller": "publicAuthRateLimiter",
+          "callee": "enforcePublicAuthRateLimit(req, res, next).catch",
+          "lineNumber": 47
+        },
+        {
+          "caller": "publicAuthRateLimiter",
+          "callee": "enforcePublicAuthRateLimit",
+          "lineNumber": 47
+        },
+        {
+          "caller": "enforcePublicAuthRateLimit",
+          "callee": "enforceRedisLimit",
+          "lineNumber": 56
+        },
+        {
+          "caller": "enforceRedisLimit",
+          "callee": "logger.error",
+          "lineNumber": 73
+        },
+        {
+          "caller": "enforceRedisLimit",
+          "callee": "redisClient.eval",
+          "lineNumber": 78
+        },
+        {
+          "caller": "enforceRedisLimit",
+          "callee": "String",
+          "lineNumber": 80
+        },
+        {
+          "caller": "enforceRedisLimit",
+          "callee": "Math.max",
+          "lineNumber": 83
+        },
+        {
+          "caller": "enforceRedisLimit",
+          "callee": "Math.max",
+          "lineNumber": 84
+        },
+        {
+          "caller": "enforceRedisLimit",
+          "callee": "Math.ceil",
+          "lineNumber": 84
+        },
+        {
+          "caller": "enforceRedisLimit",
+          "callee": "res.setHeader",
+          "lineNumber": 86
+        },
+        {
+          "caller": "enforceRedisLimit",
+          "callee": "res.setHeader",
+          "lineNumber": 87
+        },
+        {
+          "caller": "enforceRedisLimit",
+          "callee": "res.setHeader",
+          "lineNumber": 88
+        },
+        {
+          "caller": "enforceRedisLimit",
+          "callee": "res.setHeader",
+          "lineNumber": 91
+        },
+        {
+          "caller": "enforceRedisLimit",
+          "callee": "logger.warn",
+          "lineNumber": 92
+        },
+        {
+          "caller": "enforceRedisLimit",
+          "callee": "next",
+          "lineNumber": 96
+        },
+        {
+          "caller": "enforceRedisLimit",
+          "callee": "logger.error",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 7,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/modules/agents/agents.routes.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "exports": [
+        {
+          "name": "agentsRoutes",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/modules/billing/billing.controller.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "BillingController",
+          "startLine": 4,
+          "endLine": 12,
+          "methods": [
+            "createCheckoutSession"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BillingController",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "billingController",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createCheckoutSession",
+          "callee": "billingService.createCheckoutSession",
+          "lineNumber": 6
+        },
+        {
+          "caller": "createCheckoutSession",
+          "callee": "res.status(201).json",
+          "lineNumber": 10
+        },
+        {
+          "caller": "createCheckoutSession",
+          "callee": "res.status",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/src/modules/billing/billing.routes.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 9,
+      "exports": [
+        {
+          "name": "billingRoutes",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/modules/billing/billing.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "BillingService",
+          "startLine": 3,
+          "endLine": 13,
+          "methods": [
+            "createCheckoutSession"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BillingService",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "billingService",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createCheckoutSession",
+          "callee": "stripeClient.checkout.sessions.create",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/src/modules/chats/chats.controller.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "ChatsController",
+          "startLine": 6,
+          "endLine": 28,
+          "methods": [
+            "create",
+            "list",
+            "getById",
+            "inviteMember"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChatsController",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "chatsController",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create",
+          "callee": "chatsService.create",
+          "lineNumber": 9
+        },
+        {
+          "caller": "create",
+          "callee": "res.status(201).json",
+          "lineNumber": 10
+        },
+        {
+          "caller": "create",
+          "callee": "res.status",
+          "lineNumber": 10
+        },
+        {
+          "caller": "list",
+          "callee": "chatsService.listForUser",
+          "lineNumber": 15
+        },
+        {
+          "caller": "list",
+          "callee": "res.status(200).json",
+          "lineNumber": 16
+        },
+        {
+          "caller": "list",
+          "callee": "res.status",
+          "lineNumber": 16
+        },
+        {
+          "caller": "getById",
+          "callee": "chatsService.getById",
+          "lineNumber": 20
+        },
+        {
+          "caller": "getById",
+          "callee": "res.status(200).json",
+          "lineNumber": 21
+        },
+        {
+          "caller": "getById",
+          "callee": "res.status",
+          "lineNumber": 21
+        },
+        {
+          "caller": "inviteMember",
+          "callee": "chatsService.inviteMember",
+          "lineNumber": 25
+        },
+        {
+          "caller": "inviteMember",
+          "callee": "res.status(201).json",
+          "lineNumber": 26
+        },
+        {
+          "caller": "inviteMember",
+          "callee": "res.status",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/src/modules/chats/chats.model.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/modules/chats/chats.routes.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "exports": [
+        {
+          "name": "chatsRoutes",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/modules/chats/chats.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "ChatsService",
+          "startLine": 5,
+          "endLine": 34,
+          "methods": [
+            "create",
+            "listForUser",
+            "getById",
+            "inviteMember"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChatsService",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "chatsService",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create",
+          "callee": "prisma.chat.create",
+          "lineNumber": 7
+        },
+        {
+          "caller": "listForUser",
+          "callee": "prisma.chat.findMany",
+          "lineNumber": 17
+        },
+        {
+          "caller": "getById",
+          "callee": "prisma.chat.findUnique",
+          "lineNumber": 21
+        },
+        {
+          "caller": "inviteMember",
+          "callee": "this.getById",
+          "lineNumber": 29
+        },
+        {
+          "caller": "inviteMember",
+          "callee": "prisma.chatMember.create",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/src/modules/messages/messages.routes.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 10,
+      "exports": [
+        {
+          "name": "messagesRoutes",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/modules/users/users.controller.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "UsersController",
+          "startLine": 6,
+          "endLine": 18,
+          "methods": [
+            "me",
+            "updateMe"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "UsersController",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "usersController",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "me",
+          "callee": "usersService.getById",
+          "lineNumber": 9
+        },
+        {
+          "caller": "me",
+          "callee": "res.status(200).json",
+          "lineNumber": 10
+        },
+        {
+          "caller": "me",
+          "callee": "res.status",
+          "lineNumber": 10
+        },
+        {
+          "caller": "updateMe",
+          "callee": "usersService.update",
+          "lineNumber": 15
+        },
+        {
+          "caller": "updateMe",
+          "callee": "res.status(200).json",
+          "lineNumber": 16
+        },
+        {
+          "caller": "updateMe",
+          "callee": "res.status",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/src/modules/users/users.model.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/modules/users/users.routes.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "exports": [
+        {
+          "name": "usersRoutes",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/modules/users/users.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "UsersService",
+          "startLine": 5,
+          "endLine": 17,
+          "methods": [
+            "getById",
+            "update"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "UsersService",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "usersService",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getById",
+          "callee": "prisma.user.findUnique",
+          "lineNumber": 7
+        },
+        {
+          "caller": "update",
+          "callee": "prisma.user.update",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/src/utils/errors.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "AppError",
+          "startLine": 1,
+          "endLine": 10,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "NotFoundError",
+          "startLine": 12,
+          "endLine": 16,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "UnauthorizedError",
+          "startLine": 18,
+          "endLine": 22,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TooManyRequestsError",
+          "startLine": 24,
+          "endLine": 28,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ServiceUnavailableError",
+          "startLine": 30,
+          "endLine": 34,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ValidationError",
+          "startLine": 36,
+          "endLine": 40,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppError",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "NotFoundError",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "UnauthorizedError",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "TooManyRequestsError",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "ServiceUnavailableError",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "ValidationError",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 7
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 14
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 20
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 26
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 32
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 0,
+        "classCount": 6
+      }
+    },
+    {
+      "path": "backend/tests/unit/middleware.auth.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 62,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/unit/middleware.rateLimiter.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 112,
+      "nonEmptyLines": 92,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

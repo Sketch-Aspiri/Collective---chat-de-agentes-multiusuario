@@ -1,0 +1,154 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/API.md",
+      "type": "document",
+      "name": "API.md",
+      "filePath": "docs/API.md",
+      "summary": "Referencia de la API REST del proyecto, organizada por dominio: autenticación, usuarios, chats, agentes, mensajes, billing y webhooks.",
+      "tags": ["documentation", "api-schema", "reference"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/ARCHITECTURE.md",
+      "type": "document",
+      "name": "ARCHITECTURE.md",
+      "filePath": "docs/ARCHITECTURE.md",
+      "summary": "Documento de arquitectura que describe los componentes principales, el diagrama de infraestructura local, los puertos usados y el flujo de ejecución de un agente.",
+      "tags": ["documentation", "architecture", "infrastructure"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING.md",
+      "filePath": "docs/CONTRIBUTING.md",
+      "summary": "Guía de contribución con flujo de ramas, convenciones de commits, estilo de código, requisitos de tests y checklist previo a abrir un PR.",
+      "tags": ["documentation", "development", "contributing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/DEPLOYMENT.md",
+      "type": "document",
+      "name": "DEPLOYMENT.md",
+      "filePath": "docs/DEPLOYMENT.md",
+      "summary": "Guía de despliegue que cubre entornos y ramas, build de imágenes Docker, staging en Vercel/Railway, producción y pipeline de CI/CD.",
+      "tags": ["documentation", "deployment", "ci-cd"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/ESTRUCTURA_PROYECTO.md",
+      "type": "document",
+      "name": "ESTRUCTURA_PROYECTO.md",
+      "filePath": "docs/ESTRUCTURA_PROYECTO.md",
+      "summary": "Documento de referencia extenso con el árbol de carpetas recomendado, descripción de directorios clave, dependencias del MVP y flujo de trabajo de Git.",
+      "tags": ["documentation", "architecture", "project-structure"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/REQUISITOS_AGENTES_CHAT.md",
+      "type": "document",
+      "name": "REQUISITOS_AGENTES_CHAT.md",
+      "filePath": "docs/REQUISITOS_AGENTES_CHAT.md",
+      "summary": "Especificación funcional completa de la plataforma: actores, casos de uso, requisitos funcionales y no funcionales, stack tecnológico, roadmap y criterios de éxito.",
+      "tags": ["documentation", "requirements", "product-spec"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/RUNBOOK.md",
+      "type": "document",
+      "name": "RUNBOOK.md",
+      "filePath": "docs/RUNBOOK.md",
+      "summary": "Runbook operativo con procedimientos para verificar el estado del stack, revisar logs, health checks, recuperación de servicios caídos, backup/restore de base de datos y rollback.",
+      "tags": ["documentation", "operations", "runbook"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/SECURITY.md",
+      "type": "document",
+      "name": "SECURITY.md",
+      "filePath": "docs/SECURITY.md",
+      "summary": "Documento de seguridad que cubre gestión de secretos, GitHub Secrets, CORS, rate limiting, headers de seguridad y HTTPS/TLS.",
+      "tags": ["documentation", "security", "operations"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/SETUP.md",
+      "type": "document",
+      "name": "SETUP.md",
+      "filePath": "docs/SETUP.md",
+      "summary": "Guía de configuración de entorno de desarrollo con quickstart vía Docker, servicios y puertos, variables de entorno, comandos útiles, Prisma y troubleshooting.",
+      "tags": ["documentation", "setup", "development"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/cyber-neo-report-CHAT_AGENTES-2026-07-17.md",
+      "type": "document",
+      "name": "cyber-neo-report-CHAT_AGENTES-2026-07-17.md",
+      "filePath": "docs/cyber-neo-report-CHAT_AGENTES-2026-07-17.md",
+      "summary": "Informe de auditoría de seguridad (Cyber Neo) con hallazgos priorizados (medium/low/informational), vulnerabilidades de dependencias, evaluación de supply chain/CI-CD y controles positivos observados.",
+      "tags": ["documentation", "security", "audit-report"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/setup-local.sh",
+      "type": "document",
+      "name": "setup-local.sh",
+      "filePath": "docs/setup-local.sh",
+      "summary": "Script shell de configuración local que automatiza el arranque del entorno de desarrollo (dependencias, servicios, variables de entorno) sin funciones top-level, ejecutado linealmente.",
+      "tags": ["script", "setup", "automation"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "document:docs/API.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/SETUP.md",
+      "target": "document:docs/setup-local.sh",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/DEPLOYMENT.md",
+      "target": "document:docs/SECURITY.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/RUNBOOK.md",
+      "target": "document:docs/DEPLOYMENT.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/CONTRIBUTING.md",
+      "target": "document:docs/ESTRUCTURA_PROYECTO.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ESTRUCTURA_PROYECTO.md",
+      "target": "document:docs/REQUISITOS_AGENTES_CHAT.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/cyber-neo-report-CHAT_AGENTES-2026-07-17.md",
+      "target": "document:docs/SECURITY.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

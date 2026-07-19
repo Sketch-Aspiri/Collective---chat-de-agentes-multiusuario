@@ -1,0 +1,20 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 0,
+  "edgesRestored": 0,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 0,
+  "complexityRemapped": 0,
+  "notes": [
+    "Input (328 nodes, 584 edges) equals output (328 nodes, 584 edges) — no nodes/edges were dropped or deduplicated during merge, indicating batch outputs were already well-formed and non-overlapping.",
+    "All 328 nodes have a valid 'id' field; 0 missing-id nodes found across the assembled graph.",
+    "All node types are from the known set (file, function, class, pipeline, resource, config, document, service, table, schema) — no unknown/unmappable types found.",
+    "All complexity values are valid (simple: 250, moderate: 68, complex: 10) — no unknown complexity values found.",
+    "0 dangling edges (all edge source/target ids resolve to existing nodes); 0 duplicate node ids.",
+    "8 nodes use a 'step:' ID prefix (type='resource') for CI workflow steps (e.g. step:.github/workflows/build.yml:build-apps) — this is an intentional sub-type convention for CI pipeline steps, not a normalization error; left as-is.",
+    "Cross-checked all 236 non-empty importMap entries (94 files with imports, out of 212 scanned files) against assembled 'imports' edges: 100% coverage, 0 missing edges. This explains the merge script's 'Recovered 0 imports edges' line — it is not a bug; the file-analyzers already emitted all import edges directly during batch analysis, so the importMap recovery supplement pass correctly found nothing left to add.",
+    "14 production nodes tagged 'tested' by the tested-by linker; 17 tested_by edges present in the output edge set.",
+    "No 'func:' / 'doc:' / 'svc:' or double-colon malformed ids found — ID normalization by the merge script looks complete and consistent.",
+    "Conclusion: no fixes were required. The assembled graph is internally consistent and import coverage is complete."
+  ]
+}

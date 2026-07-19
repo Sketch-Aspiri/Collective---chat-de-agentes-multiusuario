@@ -1,0 +1,31 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "infra/docker/Dockerfile.backend",
+      "language": "dockerfile",
+      "fileCategory": "infra",
+      "totalLines": 47,
+      "nonEmptyLines": 44,
+      "metrics": {}
+    },
+    {
+      "path": "infra/docker/Dockerfile.frontend",
+      "language": "dockerfile",
+      "fileCategory": "infra",
+      "totalLines": 30,
+      "nonEmptyLines": 27,
+      "metrics": {}
+    },
+    {
+      "path": "infra/docker/Dockerfile.nginx",
+      "language": "dockerfile",
+      "fileCategory": "infra",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {}
+    }
+  ]
+}

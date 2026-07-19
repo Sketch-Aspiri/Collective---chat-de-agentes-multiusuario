@@ -1,0 +1,280 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "docs/sprint_2/AGENT_BACKEND_SPRINT2.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 83,
+      "nonEmptyLines": 68,
+      "sections": [
+        {
+          "heading": "🚀 Sprint 2: Agente Backend",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Objetivo General",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Contexto (ya resuelto en Sprint 1)",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "📌 Tareas principales",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Tarea 1 — Modelo de datos de chats y mensajes",
+          "level": 3,
+          "line": 16
+        },
+        {
+          "heading": "Tarea 2 — Servicio y controlador de chats (`modules/chats`)",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "Tarea 3 — Mensajería vía Socket.io",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "Tarea 4 — Historial y paginación",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "Tarea 5 — Rate limiting y validación",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "Tarea 6 — Testing",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "🚫 No toca en este sprint",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "📌 Dependencias y Orden",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "🔍 Criterios de Aceptación",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "📚 Referencias",
+          "level": 2,
+          "line": 74
+        },
+        {
+          "heading": "⚠️ Notas Importantes",
+          "level": 2,
+          "line": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": "docs/sprint_2/AGENT_DEVOPS_SPRINT2.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 71,
+      "nonEmptyLines": 57,
+      "sections": [
+        {
+          "heading": "⚙️ Sprint 2: Agente DevOps",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Objetivo General",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Contexto (ya resuelto en Sprint 1)",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "📌 Tareas principales",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Tarea 1 — Escalabilidad de Socket.io",
+          "level": 3,
+          "line": 16
+        },
+        {
+          "heading": "Tarea 2 — CI/CD para el módulo de chats",
+          "level": 3,
+          "line": 21
+        },
+        {
+          "heading": "Tarea 3 — Observabilidad",
+          "level": 3,
+          "line": 26
+        },
+        {
+          "heading": "Tarea 4 — Pruebas de carga",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Tarea 5 — Entorno de staging",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "🚫 No toca en este sprint",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "📌 Dependencias y Orden",
+          "level": 2,
+          "line": 47
+        },
+        {
+          "heading": "🔍 Criterios de Aceptación",
+          "level": 2,
+          "line": 54
+        },
+        {
+          "heading": "📚 Referencias",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "⚠️ Notas Importantes",
+          "level": 2,
+          "line": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "docs/sprint_2/AGENT_FRONTEND_SPRINT2.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 82,
+      "nonEmptyLines": 66,
+      "sections": [
+        {
+          "heading": "🎨 Sprint 2: Agente Frontend",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Objetivo General",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Contexto (ya resuelto en Sprint 1)",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "📌 Tareas principales",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Tarea 1 — `chatStore` (Zustand)",
+          "level": 3,
+          "line": 15
+        },
+        {
+          "heading": "Tarea 2 — Cliente Socket.io",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "Tarea 3 — Lista de chats (sidebar)",
+          "level": 3,
+          "line": 26
+        },
+        {
+          "heading": "Tarea 4 — Vista de conversación",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Tarea 5 — Input de mensaje y threads",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "Tarea 6 — Miembros del chat",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "Tarea 7 — Testing",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "🚫 No toca en este sprint",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "📌 Dependencias y Orden",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "🔍 Criterios de Aceptación",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "📚 Referencias",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "⚠️ Notas Importantes",
+          "level": 2,
+          "line": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    }
+  ]
+}

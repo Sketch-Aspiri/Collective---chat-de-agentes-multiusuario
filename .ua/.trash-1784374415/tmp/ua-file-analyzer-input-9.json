@@ -1,0 +1,49 @@
+{
+  "projectRoot": "C:/Users/Andre/OneDrive/Escritorio/CHAT_AGENTES",
+  "batchFiles": [
+    {
+      "path": ".github/workflows/build.yml",
+      "language": "yaml",
+      "sizeLines": 48,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "language": "yaml",
+      "sizeLines": 60,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/deploy-production.yml",
+      "language": "yaml",
+      "sizeLines": 12,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/deploy-staging.yml",
+      "language": "yaml",
+      "sizeLines": 12,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/format.yml",
+      "language": "yaml",
+      "sizeLines": 19,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/security-scan.yml",
+      "language": "yaml",
+      "sizeLines": 13,
+      "fileCategory": "infra"
+    }
+  ],
+  "batchImportData": {
+    ".github/workflows/build.yml": [],
+    ".github/workflows/ci.yml": [],
+    ".github/workflows/deploy-production.yml": [],
+    ".github/workflows/deploy-staging.yml": [],
+    ".github/workflows/format.yml": [],
+    ".github/workflows/security-scan.yml": []
+  }
+}

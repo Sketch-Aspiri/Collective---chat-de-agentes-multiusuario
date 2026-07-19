@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "file:scripts/db-reset.sh",
+      "type": "file",
+      "name": "db-reset.sh",
+      "filePath": "scripts/db-reset.sh",
+      "summary": "Script que resetea completamente la base de datos de desarrollo ejecutando prisma migrate reset dentro del contenedor backend; borra todos los datos existentes antes de reaplicar migraciones y seeds.",
+      "tags": ["database", "migration", "script", "development"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/db-seed.sh",
+      "type": "file",
+      "name": "db-seed.sh",
+      "filePath": "scripts/db-seed.sh",
+      "summary": "Script que puebla la base de datos de desarrollo con datos de prueba ejecutando el seed de Prisma dentro del contenedor backend.",
+      "tags": ["database", "seed", "script", "development"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/dev.sh",
+      "type": "file",
+      "name": "dev.sh",
+      "filePath": "scripts/dev.sh",
+      "summary": "Script que levanta el stack Docker completo en segundo plano y sigue los logs de todos los servicios para el flujo de desarrollo local.",
+      "tags": ["development", "docker", "script", "orchestration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/logs.sh",
+      "type": "file",
+      "name": "logs.sh",
+      "filePath": "scripts/logs.sh",
+      "summary": "Script utilitario que sigue los logs de un servicio Docker específico (backend, frontend, postgres, redis) o de todos si no se especifica argumento.",
+      "tags": ["development", "docker", "logging", "script"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/setup.sh",
+      "type": "file",
+      "name": "setup.sh",
+      "filePath": "scripts/setup.sh",
+      "summary": "Script de inicialización del entorno de desarrollo local: crea .env desde la plantilla, instala dependencias vía npm workspaces, levanta los servicios Docker y espera a que PostgreSQL esté saludable antes de finalizar.",
+      "tags": ["setup", "development", "docker", "script", "onboarding"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/stop.sh",
+      "type": "file",
+      "name": "stop.sh",
+      "filePath": "scripts/stop.sh",
+      "summary": "Script que detiene los servicios Docker del stack de desarrollo sin eliminar los volúmenes de datos persistentes.",
+      "tags": ["development", "docker", "script"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/test-local.sh",
+      "type": "file",
+      "name": "test-local.sh",
+      "filePath": "scripts/test-local.sh",
+      "summary": "Script que ejecuta localmente, en secuencia, las suites de tests de backend y frontend.",
+      "tags": ["test", "script", "development", "ci-cd"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:scripts/setup.sh",
+      "target": "file:scripts/logs.sh",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

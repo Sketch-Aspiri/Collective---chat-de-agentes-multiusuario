@@ -1,0 +1,130 @@
+{
+  "nodes": [
+    {
+      "id": "resource:infra/terraform/iam.tf",
+      "type": "resource",
+      "name": "iam.tf",
+      "filePath": "infra/terraform/iam.tf",
+      "summary": "Define el rol IAM de AWS (agentes-chat-<environment>-task) que ECS Tasks puede asumir, usado como rol de ejecución para las tareas del backend.",
+      "tags": ["infrastructure", "deployment", "aws", "iam", "terraform"],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:infra/terraform/iam.tf:aws_iam_role.agentes_chat_task",
+      "type": "resource",
+      "name": "aws_iam_role.agentes_chat_task",
+      "filePath": "infra/terraform/iam.tf",
+      "lineRange": [1, 12],
+      "summary": "Rol IAM que otorga a ecs-tasks.amazonaws.com permiso para asumir el rol de ejecución del backend de agentes-chat.",
+      "tags": ["iam", "aws", "terraform", "role"],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:infra/terraform/main.tf",
+      "type": "resource",
+      "name": "main.tf",
+      "filePath": "infra/terraform/main.tf",
+      "summary": "Configuración raíz de Terraform: declara el provider de AWS (~> 5.0) y fija la región a partir de la variable aws_region.",
+      "tags": ["infrastructure", "deployment", "terraform", "aws", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:infra/terraform/rds.tf",
+      "type": "resource",
+      "name": "rds.tf",
+      "filePath": "infra/terraform/rds.tf",
+      "summary": "Provisiona la instancia RDS de PostgreSQL 15 (db.t3.micro, 20GB) de agentes-chat, con contraseña maestra gestionada por AWS y sin snapshot final al destruir.",
+      "tags": ["infrastructure", "database", "aws", "terraform", "postgresql"],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:infra/terraform/rds.tf:aws_db_instance.agentes_chat",
+      "type": "resource",
+      "name": "aws_db_instance.agentes_chat",
+      "filePath": "infra/terraform/rds.tf",
+      "lineRange": [1, 11],
+      "summary": "Instancia de base de datos RDS PostgreSQL para agentes-chat, usada para persistir usuarios, chats y configuración de agentes.",
+      "tags": ["database", "aws", "terraform", "postgresql"],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:infra/terraform/redis.tf",
+      "type": "resource",
+      "name": "redis.tf",
+      "filePath": "infra/terraform/redis.tf",
+      "summary": "Provisiona el cluster de AWS ElastiCache (Redis 7, cache.t3.micro, un solo nodo) usado por agentes-chat para sesiones, rate limiting y memoria de agentes.",
+      "tags": ["infrastructure", "cache", "aws", "terraform", "redis"],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:infra/terraform/redis.tf:aws_elasticache_cluster.agentes_chat",
+      "type": "resource",
+      "name": "aws_elasticache_cluster.agentes_chat",
+      "filePath": "infra/terraform/redis.tf",
+      "lineRange": [1, 7],
+      "summary": "Cluster de ElastiCache Redis de un solo nodo para agentes-chat.",
+      "tags": ["cache", "aws", "terraform", "redis"],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:infra/terraform/variables.tf",
+      "type": "resource",
+      "name": "variables.tf",
+      "filePath": "infra/terraform/variables.tf",
+      "summary": "Declara las variables de entrada de Terraform aws_region (default us-east-1) y environment (default staging), reutilizadas por el resto de los recursos del módulo.",
+      "tags": ["infrastructure", "terraform", "configuration", "variables"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "resource:infra/terraform/iam.tf",
+      "target": "resource:infra/terraform/iam.tf:aws_iam_role.agentes_chat_task",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "resource:infra/terraform/rds.tf",
+      "target": "resource:infra/terraform/rds.tf:aws_db_instance.agentes_chat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "resource:infra/terraform/redis.tf",
+      "target": "resource:infra/terraform/redis.tf:aws_elasticache_cluster.agentes_chat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "resource:infra/terraform/iam.tf",
+      "target": "resource:infra/terraform/variables.tf",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "resource:infra/terraform/rds.tf",
+      "target": "resource:infra/terraform/variables.tf",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "resource:infra/terraform/redis.tf",
+      "target": "resource:infra/terraform/variables.tf",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "resource:infra/terraform/main.tf",
+      "target": "resource:infra/terraform/variables.tf",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

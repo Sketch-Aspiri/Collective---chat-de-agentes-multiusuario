@@ -1,0 +1,526 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".dockerignore",
+      "language": "unknown",
+      "fileCategory": "infra",
+      "totalLines": 32,
+      "nonEmptyLines": 26,
+      "metrics": {}
+    },
+    {
+      "path": ".env.example",
+      "language": "config",
+      "fileCategory": "config",
+      "totalLines": 25,
+      "nonEmptyLines": 23,
+      "definitions": [
+        {
+          "name": "NODE_ENV",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 2,
+          "endLine": 2
+        },
+        {
+          "name": "PORT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "name": "DATABASE_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 4,
+          "endLine": 4
+        },
+        {
+          "name": "REDIS_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 5,
+          "endLine": 5
+        },
+        {
+          "name": "JWT_SECRET",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 6,
+          "endLine": 6
+        },
+        {
+          "name": "JWT_EXPIRES_IN",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 7,
+          "endLine": 7
+        },
+        {
+          "name": "ENCRYPTION_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 8,
+          "endLine": 8
+        },
+        {
+          "name": "FRONTEND_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 10,
+          "endLine": 10
+        },
+        {
+          "name": "DB_USER",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 13,
+          "endLine": 13
+        },
+        {
+          "name": "DB_PASSWORD",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 14,
+          "endLine": 14
+        },
+        {
+          "name": "DB_NAME",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 15,
+          "endLine": 15
+        },
+        {
+          "name": "SENDGRID_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 16,
+          "endLine": 16
+        },
+        {
+          "name": "STRIPE_SECRET_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 17,
+          "endLine": 17
+        },
+        {
+          "name": "STRIPE_WEBHOOK_SECRET",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 18,
+          "endLine": 18
+        },
+        {
+          "name": "GOOGLE_DRIVE_CLIENT_ID",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 19,
+          "endLine": 19
+        },
+        {
+          "name": "GOOGLE_DRIVE_CLIENT_SECRET",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 20,
+          "endLine": 20
+        },
+        {
+          "name": "GOOGLE_DRIVE_REDIRECT_URI",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 21,
+          "endLine": 21
+        },
+        {
+          "name": "VITE_API_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 24,
+          "endLine": 24
+        },
+        {
+          "name": "VITE_SOCKET_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 25,
+          "endLine": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 19
+      }
+    },
+    {
+      "path": "CHANGELOG.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 6,
+      "nonEmptyLines": 4,
+      "sections": [
+        {
+          "heading": "Changelog",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "[Unreleased]",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Added",
+          "level": 3,
+          "line": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 144,
+      "nonEmptyLines": 112,
+      "sections": [
+        {
+          "heading": "CLAUDE.md",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Resumen del proyecto",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Stack tecnológico",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Estructura del repositorio",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "Comandos habituales",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "Convenciones",
+          "level": 2,
+          "line": 75
+        },
+        {
+          "heading": "Decisiones arquitectónicas ya tomadas",
+          "level": 2,
+          "line": 90
+        },
+        {
+          "heading": "Requisitos no funcionales a tener en cuenta",
+          "level": 2,
+          "line": 107
+        },
+        {
+          "heading": "Detalles de implementación (basado en decisiones confirmadas)",
+          "level": 2,
+          "line": 114
+        },
+        {
+          "heading": "Comunicación entre agentes",
+          "level": 3,
+          "line": 116
+        },
+        {
+          "heading": "Ejecución de agentes",
+          "level": 3,
+          "line": 122
+        },
+        {
+          "heading": "Webhooks y triggers externos",
+          "level": 3,
+          "line": 128
+        },
+        {
+          "heading": "Confirmación en tiempo real (Opción A)",
+          "level": 3,
+          "line": 134
+        },
+        {
+          "heading": "Versionado y rollback de agentes",
+          "level": 3,
+          "line": 140
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "Makefile",
+      "language": "makefile",
+      "fileCategory": "infra",
+      "totalLines": 57,
+      "nonEmptyLines": 41,
+      "steps": [
+        {
+          "name": "help",
+          "startLine": 9,
+          "endLine": 12
+        },
+        {
+          "name": "setup",
+          "startLine": 13,
+          "endLine": 15
+        },
+        {
+          "name": "dev",
+          "startLine": 16,
+          "endLine": 18
+        },
+        {
+          "name": "up",
+          "startLine": 19,
+          "endLine": 21
+        },
+        {
+          "name": "stop",
+          "startLine": 22,
+          "endLine": 24
+        },
+        {
+          "name": "ps",
+          "startLine": 25,
+          "endLine": 27
+        },
+        {
+          "name": "logs",
+          "startLine": 28,
+          "endLine": 30
+        },
+        {
+          "name": "logs-backend",
+          "startLine": 31,
+          "endLine": 33
+        },
+        {
+          "name": "logs-frontend",
+          "startLine": 34,
+          "endLine": 36
+        },
+        {
+          "name": "logs-db",
+          "startLine": 37,
+          "endLine": 39
+        },
+        {
+          "name": "db-reset",
+          "startLine": 40,
+          "endLine": 42
+        },
+        {
+          "name": "db-seed",
+          "startLine": 43,
+          "endLine": 45
+        },
+        {
+          "name": "test",
+          "startLine": 46,
+          "endLine": 48
+        },
+        {
+          "name": "lint",
+          "startLine": 49,
+          "endLine": 51
+        },
+        {
+          "name": "format",
+          "startLine": 52,
+          "endLine": 54
+        },
+        {
+          "name": "clean",
+          "startLine": 55,
+          "endLine": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "stepCount": 16
+      }
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 362,
+      "nonEmptyLines": 207,
+      "sections": [
+        {
+          "heading": "agentes-chat",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Levantar servicios (PostgreSQL, Redis)",
+          "level": 1,
+          "line": 221
+        },
+        {
+          "heading": "Inicializar base de datos",
+          "level": 1,
+          "line": 224
+        },
+        {
+          "heading": "Frontend",
+          "level": 1,
+          "line": 233
+        },
+        {
+          "heading": "Ambos juntos (en la raíz)",
+          "level": 1,
+          "line": 236
+        },
+        {
+          "heading": "Tests E2E frontend",
+          "level": 1,
+          "line": 244
+        },
+        {
+          "heading": "Coverage",
+          "level": 1,
+          "line": 247
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "docker-compose.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 97,
+      "nonEmptyLines": 93,
+      "sections": [
+        {
+          "heading": "services",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "volumes",
+          "level": 1,
+          "line": 95
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 28,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "private",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "workspaces",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "scripts",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "devDependencies",
+          "level": 1,
+          "line": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 16,
+      "nonEmptyLines": 16,
+      "sections": [
+        {
+          "heading": "compilerOptions",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "references",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    }
+  ]
+}

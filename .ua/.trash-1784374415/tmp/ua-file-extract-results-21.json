@@ -1,0 +1,605 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".gitattributes",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 10,
+      "metrics": {}
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 17,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": ".ua/.understandignore",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 51,
+      "metrics": {}
+    },
+    {
+      "path": ".ua/config.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "sections": [
+        {
+          "heading": "outputLanguage",
+          "level": 1,
+          "line": 2
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "backend/jest.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 20,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/prisma/migrations/20260717124954_init/migration.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 79,
+      "nonEmptyLines": 63,
+      "definitions": [
+        {
+          "name": "User",
+          "kind": "table",
+          "fields": [
+            "id",
+            "email",
+            "passwordHash",
+            "name",
+            "createdAt",
+            "updatedAt"
+          ],
+          "startLine": 2,
+          "endLine": 11
+        },
+        {
+          "name": "Chat",
+          "kind": "table",
+          "fields": [
+            "id",
+            "name",
+            "ownerId",
+            "createdAt",
+            "updatedAt"
+          ],
+          "startLine": 14,
+          "endLine": 22
+        },
+        {
+          "name": "ChatMember",
+          "kind": "table",
+          "fields": [
+            "chatId",
+            "userId",
+            "role",
+            "joinedAt"
+          ],
+          "startLine": 25,
+          "endLine": 32
+        },
+        {
+          "name": "Agent",
+          "kind": "table",
+          "fields": [
+            "id",
+            "chatId",
+            "name",
+            "mentionHandle",
+            "provider",
+            "systemPrompt",
+            "createdAt",
+            "updatedAt"
+          ],
+          "startLine": 35,
+          "endLine": 46
+        },
+        {
+          "name": "Message",
+          "kind": "table",
+          "fields": [
+            "id",
+            "chatId",
+            "authorId",
+            "authorType",
+            "content",
+            "createdAt"
+          ],
+          "startLine": 49,
+          "endLine": 58
+        },
+        {
+          "name": "User_email_key",
+          "kind": "index",
+          "fields": [],
+          "startLine": 61,
+          "endLine": 61
+        },
+        {
+          "name": "Agent_chatId_mentionHandle_key",
+          "kind": "index",
+          "fields": [],
+          "startLine": 64,
+          "endLine": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 7
+      }
+    },
+    {
+      "path": "backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 46,
+      "nonEmptyLines": 39,
+      "definitions": [
+        {
+          "name": "ChatAgentLink",
+          "kind": "table",
+          "fields": [
+            "id",
+            "chatId",
+            "agentId",
+            "joinedAt"
+          ],
+          "startLine": 18,
+          "endLine": 24
+        },
+        {
+          "name": "Chat_ownerId_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 26,
+          "endLine": 26
+        },
+        {
+          "name": "ChatMember_userId_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 27,
+          "endLine": 27
+        },
+        {
+          "name": "Agent_chatId_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 28,
+          "endLine": 28
+        },
+        {
+          "name": "Agent_creatorId_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 29,
+          "endLine": 29
+        },
+        {
+          "name": "ChatAgentLink_chatId_agentId_key",
+          "kind": "index",
+          "fields": [],
+          "startLine": 30,
+          "endLine": 30
+        },
+        {
+          "name": "ChatAgentLink_chatId_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 31,
+          "endLine": 31
+        },
+        {
+          "name": "ChatAgentLink_agentId_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 32,
+          "endLine": 32
+        },
+        {
+          "name": "Message_chatId_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 33,
+          "endLine": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 9
+      }
+    },
+    {
+      "path": "backend/prisma/migrations/migration_lock.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "backend/prisma/schema.prisma",
+      "language": "prisma",
+      "fileCategory": "data",
+      "totalLines": 98,
+      "nonEmptyLines": 86,
+      "metrics": {}
+    },
+    {
+      "path": "backend/prisma/seed.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 8,
+          "endLine": 84,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "bcrypt.hash",
+          "lineNumber": 9
+        },
+        {
+          "caller": "main",
+          "callee": "Promise.all",
+          "lineNumber": 11
+        },
+        {
+          "caller": "main",
+          "callee": "[\n      { email: 'andre@example.local', name: 'Andre' },\n      { email: 'sofia@example.local', name: 'Sofia' },\n      { email: 'mateo@example.local', name: 'Mateo' },\n    ].map",
+          "lineNumber": 12
+        },
+        {
+          "caller": "main",
+          "callee": "prisma.user.upsert",
+          "lineNumber": 17
+        },
+        {
+          "caller": "main",
+          "callee": "prisma.chat.upsert",
+          "lineNumber": 25
+        },
+        {
+          "caller": "main",
+          "callee": "prisma.chat.upsert",
+          "lineNumber": 41
+        },
+        {
+          "caller": "main",
+          "callee": "prisma.agent.upsert",
+          "lineNumber": 57
+        },
+        {
+          "caller": "main",
+          "callee": "prisma.chatAgentLink.upsert",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/config/constants.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "exports": [
+        {
+          "name": "APP_NAME",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_PORT",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "API_PREFIX",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "exports": [
+        {
+          "name": "createApp",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/middleware/logging.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "exports": [
+        {
+          "name": "requestLogger",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/types/api-responses.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/types/Chat.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/types/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/types/Message.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/types/User.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 7,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/utils/helpers.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "omit",
+          "startLine": 1,
+          "endLine": 7,
+          "params": [
+            "obj",
+            "keys"
+          ]
+        },
+        {
+          "name": "sleep",
+          "startLine": 9,
+          "endLine": 11,
+          "params": [
+            "ms"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "omit",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "sleep",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sleep",
+          "callee": "setTimeout",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/fixtures/seed-data.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "exports": [
+        {
+          "name": "seedUser",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/integration/agent-execution.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/integration/chat-flow.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/unit/agents.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/unit/auth.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "bash.exe.stackdump",
+      "language": "stackdump",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 28,
+      "metrics": {}
+    }
+  ]
+}

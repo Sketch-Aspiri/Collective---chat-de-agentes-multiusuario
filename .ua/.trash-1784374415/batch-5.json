@@ -1,0 +1,333 @@
+{
+  "nodes": [
+    {
+      "id": "file:frontend/src/components/chat/MessageInput.tsx",
+      "type": "file",
+      "name": "MessageInput.tsx",
+      "filePath": "frontend/src/components/chat/MessageInput.tsx",
+      "summary": "Componente de entrada de mensajes del chat que autoajusta el textarea, detecta @menciones al enviar y emite eventos de escritura (typing).",
+      "tags": ["component", "chat", "input", "mentions", "event-handler"],
+      "complexity": "moderate",
+      "languageNotes": "Componente React funcional con useState/useRef/useEffect; autoajuste de altura via scrollHeight y envio con Enter."
+    },
+    {
+      "id": "function:frontend/src/components/chat/MessageInput.tsx:MessageInput",
+      "type": "function",
+      "name": "MessageInput",
+      "filePath": "frontend/src/components/chat/MessageInput.tsx",
+      "lineRange": [21, 89],
+      "summary": "Renderiza el area de texto del chat, gestiona el estado del borrador, parsea menciones con parseMentions y dispara onSend/onTyping.",
+      "tags": ["component", "input", "mentions", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:frontend/src/components/common/MentionText.tsx",
+      "type": "file",
+      "name": "MentionText.tsx",
+      "filePath": "frontend/src/components/common/MentionText.tsx",
+      "summary": "Componente de presentacion que segmenta un texto con splitByMentions y resalta visualmente las @menciones dentro del contenido.",
+      "tags": ["component", "mentions", "rendering", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/components/common/MentionText.tsx:MentionText",
+      "type": "function",
+      "name": "MentionText",
+      "filePath": "frontend/src/components/common/MentionText.tsx",
+      "lineRange": [13, 31],
+      "summary": "Divide el texto en segmentos de mencion y texto plano, aplicando estilos con cn a cada @mencion detectada.",
+      "tags": ["component", "mentions", "rendering"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/common/Textarea.tsx",
+      "type": "file",
+      "name": "Textarea.tsx",
+      "filePath": "frontend/src/components/common/Textarea.tsx",
+      "summary": "Componente de textarea reutilizable y estilizado con Tailwind mediante el helper cn, base para entradas multilinea de la UI.",
+      "tags": ["component", "form", "ui", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/hooks/useMentions.ts",
+      "type": "file",
+      "name": "useMentions.ts",
+      "filePath": "frontend/src/hooks/useMentions.ts",
+      "summary": "Hook personalizado que memoriza el resultado de parseMentions para exponer las @menciones extraidas de un texto dado.",
+      "tags": ["hook", "mentions", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/hooks/useMentions.ts:useMentions",
+      "type": "function",
+      "name": "useMentions",
+      "filePath": "frontend/src/hooks/useMentions.ts",
+      "lineRange": [7, 9],
+      "summary": "Hook que envuelve parseMentions en useMemo para devolver de forma memorizada la lista de menciones de un texto.",
+      "tags": ["hook", "mentions", "memoization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/utils/mentions.ts",
+      "type": "file",
+      "name": "mentions.ts",
+      "filePath": "frontend/src/utils/mentions.ts",
+      "summary": "Utilidades de parsing de @menciones: expone el regex compartido, extrae handles unicos y segmenta un texto en partes de texto y mencion.",
+      "tags": ["utility", "mentions", "parsing", "regex"],
+      "complexity": "simple",
+      "languageNotes": "Usa matchAll con un MENTION_REGEX global para iterar coincidencias sin dependencias externas."
+    },
+    {
+      "id": "function:frontend/src/utils/mentions.ts:parseMentions",
+      "type": "function",
+      "name": "parseMentions",
+      "filePath": "frontend/src/utils/mentions.ts",
+      "lineRange": [7, 17],
+      "summary": "Recorre las coincidencias del regex de menciones y devuelve una lista deduplicada de handles presentes en el texto.",
+      "tags": ["utility", "mentions", "parsing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/utils/mentions.ts:splitByMentions",
+      "type": "function",
+      "name": "splitByMentions",
+      "filePath": "frontend/src/utils/mentions.ts",
+      "lineRange": [28, 46],
+      "summary": "Segmenta un texto en tramos de texto plano y tramos de mencion para permitir su renderizado diferenciado en la UI.",
+      "tags": ["utility", "mentions", "parsing", "serialization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/tests/unit/MessageInput.test.tsx",
+      "type": "file",
+      "name": "MessageInput.test.tsx",
+      "filePath": "frontend/tests/unit/MessageInput.test.tsx",
+      "summary": "Pruebas unitarias del componente MessageInput que verifican el envio de mensajes, la deteccion de menciones y el comportamiento de la entrada.",
+      "tags": ["test", "component", "unit-test", "chat"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/tests/unit/mentions.test.ts",
+      "type": "file",
+      "name": "mentions.test.ts",
+      "filePath": "frontend/tests/unit/mentions.test.ts",
+      "summary": "Pruebas unitarias de las utilidades de menciones que validan parseMentions y splitByMentions ante distintos textos de entrada.",
+      "tags": ["test", "utility", "unit-test", "mentions"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/tests/unit/useMentions.test.ts",
+      "type": "file",
+      "name": "useMentions.test.ts",
+      "filePath": "frontend/tests/unit/useMentions.test.ts",
+      "summary": "Pruebas unitarias del hook useMentions que comprueban la extraccion memorizada de menciones a partir de un texto.",
+      "tags": ["test", "hook", "unit-test", "mentions"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:frontend/src/components/chat/MessageInput.tsx",
+      "target": "file:frontend/src/components/common/Button.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/components/chat/MessageInput.tsx",
+      "target": "file:frontend/src/components/common/icons.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/components/chat/MessageInput.tsx",
+      "target": "file:frontend/src/components/common/MentionText.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/components/chat/MessageInput.tsx",
+      "target": "file:frontend/src/components/common/Textarea.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/components/chat/MessageInput.tsx",
+      "target": "file:frontend/src/utils/mentions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/components/common/MentionText.tsx",
+      "target": "file:frontend/src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/components/common/MentionText.tsx",
+      "target": "file:frontend/src/utils/mentions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/components/common/Textarea.tsx",
+      "target": "file:frontend/src/lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/hooks/useMentions.ts",
+      "target": "file:frontend/src/utils/mentions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/tests/unit/MessageInput.test.tsx",
+      "target": "file:frontend/src/components/chat/MessageInput.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/tests/unit/mentions.test.ts",
+      "target": "file:frontend/src/utils/mentions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/tests/unit/useMentions.test.ts",
+      "target": "file:frontend/src/hooks/useMentions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/components/chat/MessageInput.tsx",
+      "target": "function:frontend/src/components/chat/MessageInput.tsx:MessageInput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:frontend/src/components/chat/MessageInput.tsx",
+      "target": "function:frontend/src/components/chat/MessageInput.tsx:MessageInput",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/components/common/MentionText.tsx",
+      "target": "function:frontend/src/components/common/MentionText.tsx:MentionText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:frontend/src/components/common/MentionText.tsx",
+      "target": "function:frontend/src/components/common/MentionText.tsx:MentionText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/hooks/useMentions.ts",
+      "target": "function:frontend/src/hooks/useMentions.ts:useMentions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:frontend/src/hooks/useMentions.ts",
+      "target": "function:frontend/src/hooks/useMentions.ts:useMentions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/utils/mentions.ts",
+      "target": "function:frontend/src/utils/mentions.ts:parseMentions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:frontend/src/utils/mentions.ts",
+      "target": "function:frontend/src/utils/mentions.ts:parseMentions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/utils/mentions.ts",
+      "target": "function:frontend/src/utils/mentions.ts:splitByMentions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:frontend/src/utils/mentions.ts",
+      "target": "function:frontend/src/utils/mentions.ts:splitByMentions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:frontend/src/components/chat/MessageInput.tsx:MessageInput",
+      "target": "function:frontend/src/utils/mentions.ts:parseMentions",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:frontend/src/components/common/MentionText.tsx:MentionText",
+      "target": "function:frontend/src/utils/mentions.ts:splitByMentions",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:frontend/src/hooks/useMentions.ts:useMentions",
+      "target": "function:frontend/src/utils/mentions.ts:parseMentions",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:frontend/src/components/common/MentionText.tsx:MentionText",
+      "target": "function:frontend/src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/components/chat/MessageInput.tsx",
+      "target": "file:frontend/tests/unit/MessageInput.test.tsx",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:frontend/src/utils/mentions.ts",
+      "target": "file:frontend/tests/unit/mentions.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:frontend/src/hooks/useMentions.ts",
+      "target": "file:frontend/tests/unit/useMentions.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

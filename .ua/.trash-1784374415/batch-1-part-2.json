@@ -1,0 +1,387 @@
+{
+  "nodes": [
+    {
+      "id": "file:frontend/src/components/modals/NewChatModal.tsx",
+      "type": "file",
+      "name": "NewChatModal.tsx",
+      "filePath": "frontend/src/components/modals/NewChatModal.tsx",
+      "summary": "Modal para crear un chat nuevo, generando su id y estableciéndolo como chat actual.",
+      "tags": ["component", "modal", "chat"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/components/modals/NewChatModal.tsx:NewChatModal",
+      "type": "function",
+      "name": "NewChatModal",
+      "filePath": "frontend/src/components/modals/NewChatModal.tsx",
+      "lineRange": [18, 78],
+      "summary": "Formulario modal que valida el título, crea un chat con id único y lo selecciona en el chatStore.",
+      "tags": ["component", "modal", "chat"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:frontend/src/hooks/useAuth.ts",
+      "type": "file",
+      "name": "useAuth.ts",
+      "filePath": "frontend/src/hooks/useAuth.ts",
+      "summary": "Hook que expone el estado de autenticación y las acciones de login/logout desde el authStore.",
+      "tags": ["hook", "auth", "state"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/hooks/useAuth.ts:useAuth",
+      "type": "function",
+      "name": "useAuth",
+      "filePath": "frontend/src/hooks/useAuth.ts",
+      "lineRange": [10, 29],
+      "summary": "Selecciona usuario y token del authStore y memoiza las acciones de login y logout.",
+      "tags": ["hook", "auth", "state"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/hooks/useChat.ts",
+      "type": "file",
+      "name": "useChat.ts",
+      "filePath": "frontend/src/hooks/useChat.ts",
+      "summary": "Hook que gestiona los eventos de socket del chat, el envío de mensajes y las notificaciones de entrada/salida.",
+      "tags": ["hook", "chat", "websocket"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/hooks/useChat.ts:useChat",
+      "type": "function",
+      "name": "useChat",
+      "filePath": "frontend/src/hooks/useChat.ts",
+      "lineRange": [25, 92],
+      "summary": "Suscribe los handlers de socket (nuevo mensaje, join, leave), emite eventos de sala y expone sendMessage con optimistic update.",
+      "tags": ["hook", "chat", "websocket"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:frontend/src/lib/mockData.ts",
+      "type": "file",
+      "name": "mockData.ts",
+      "filePath": "frontend/src/lib/mockData.ts",
+      "summary": "Datos simulados (usuario, token, chats, agentes y mensajes) usados durante el desarrollo del frontend antes de conectar el backend.",
+      "tags": ["mock-data", "fixtures", "development"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:frontend/src/lib/utils.ts",
+      "type": "file",
+      "name": "utils.ts",
+      "filePath": "frontend/src/lib/utils.ts",
+      "summary": "Utilidades del frontend; expone cn para combinar clases de Tailwind de forma segura.",
+      "tags": ["utility", "styling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/utils.ts:cn",
+      "type": "function",
+      "name": "cn",
+      "filePath": "frontend/src/lib/utils.ts",
+      "lineRange": [8, 10],
+      "summary": "Combina y deduplica clases CSS condicionales mediante clsx (patrón habitual con Tailwind/Shadcn).",
+      "tags": ["utility", "styling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/pages/ChatPage.tsx",
+      "type": "file",
+      "name": "ChatPage.tsx",
+      "filePath": "frontend/src/pages/ChatPage.tsx",
+      "summary": "Página de chat que sincroniza el parámetro de ruta con el chat actual y renderiza ChatWindow.",
+      "tags": ["page", "chat", "routing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/pages/ChatPage.tsx:ChatPage",
+      "type": "function",
+      "name": "ChatPage",
+      "filePath": "frontend/src/pages/ChatPage.tsx",
+      "lineRange": [11, 38],
+      "summary": "Lee el chatId de la URL, valida su existencia y actualiza el chat actual o redirige si no existe.",
+      "tags": ["page", "chat", "routing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/pages/HomePage.tsx",
+      "type": "file",
+      "name": "HomePage.tsx",
+      "filePath": "frontend/src/pages/HomePage.tsx",
+      "summary": "Página de inicio que invita a crear el primer chat cuando no existe ninguno.",
+      "tags": ["page", "home"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/pages/HomePage.tsx:HomePage",
+      "type": "function",
+      "name": "HomePage",
+      "filePath": "frontend/src/pages/HomePage.tsx",
+      "lineRange": [11, 31],
+      "summary": "Muestra un estado vacío con acción para abrir el modal de nuevo chat mediante uiStore.",
+      "tags": ["page", "home"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/pages/NotFoundPage.tsx",
+      "type": "file",
+      "name": "NotFoundPage.tsx",
+      "filePath": "frontend/src/pages/NotFoundPage.tsx",
+      "summary": "Página 404 con enlace de regreso al inicio.",
+      "tags": ["page", "error-handling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/pages/NotFoundPage.tsx:NotFoundPage",
+      "type": "function",
+      "name": "NotFoundPage",
+      "filePath": "frontend/src/pages/NotFoundPage.tsx",
+      "lineRange": [5, 18],
+      "summary": "Renderiza el mensaje de ruta no encontrada y navega al home al pulsar el botón.",
+      "tags": ["page", "error-handling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/store/agentStore.ts",
+      "type": "file",
+      "name": "agentStore.ts",
+      "filePath": "frontend/src/store/agentStore.ts",
+      "summary": "Store de Zustand para los agentes disponibles y los agentes presentes en cada chat.",
+      "tags": ["store", "state-management", "agents"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/store/agentStore.ts:useAgentStore",
+      "type": "function",
+      "name": "useAgentStore",
+      "filePath": "frontend/src/store/agentStore.ts",
+      "lineRange": [17, 35],
+      "summary": "Hook de store Zustand que mantiene los agentes disponibles y las acciones para añadirlos a un chat.",
+      "tags": ["store", "state-management", "agents"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/store/authStore.ts",
+      "type": "file",
+      "name": "authStore.ts",
+      "filePath": "frontend/src/store/authStore.ts",
+      "summary": "Store de Zustand que persiste el usuario y el token de autenticación.",
+      "tags": ["store", "state-management", "auth"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/store/authStore.ts:useAuthStore",
+      "type": "function",
+      "name": "useAuthStore",
+      "filePath": "frontend/src/store/authStore.ts",
+      "lineRange": [22, 41],
+      "summary": "Hook de store Zustand con el usuario, token y setters de sesión, con persistencia.",
+      "tags": ["store", "state-management", "auth"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/store/chatStore.ts",
+      "type": "file",
+      "name": "chatStore.ts",
+      "filePath": "frontend/src/store/chatStore.ts",
+      "summary": "Store de Zustand para chats, mensajes y chat actual, con selector de mensajes por chat.",
+      "tags": ["store", "state-management", "chat"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/store/chatStore.ts:useChatStore",
+      "type": "function",
+      "name": "useChatStore",
+      "filePath": "frontend/src/store/chatStore.ts",
+      "lineRange": [19, 43],
+      "summary": "Hook de store Zustand que gestiona la lista de chats, los mensajes por chat y el chat activo.",
+      "tags": ["store", "state-management", "chat"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/store/chatStore.ts:selectMessages",
+      "type": "function",
+      "name": "selectMessages",
+      "filePath": "frontend/src/store/chatStore.ts",
+      "lineRange": [44, 47],
+      "summary": "Selector que devuelve los mensajes asociados a un chatId concreto desde el estado del store.",
+      "tags": ["selector", "state-management", "chat"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/store/uiStore.ts",
+      "type": "file",
+      "name": "uiStore.ts",
+      "filePath": "frontend/src/store/uiStore.ts",
+      "summary": "Store de Zustand para el estado de UI: sidebar, modales y notificaciones.",
+      "tags": ["store", "state-management", "ui"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/store/uiStore.ts:useUIStore",
+      "type": "function",
+      "name": "useUIStore",
+      "filePath": "frontend/src/store/uiStore.ts",
+      "lineRange": [23, 43],
+      "summary": "Hook de store Zustand que controla la visibilidad del sidebar, el modal activo y la cola de notificaciones.",
+      "tags": ["store", "state-management", "ui"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/types/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "frontend/src/types/index.ts",
+      "summary": "Definiciones de tipos compartidas del frontend (User, Chat, Agent, Message y afines).",
+      "tags": ["type-definition", "types", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/utils/formatting.ts",
+      "type": "file",
+      "name": "formatting.ts",
+      "filePath": "frontend/src/utils/formatting.ts",
+      "summary": "Utilidades de formato: hora localizada e iniciales a partir de un nombre.",
+      "tags": ["utility", "formatting"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/utils/formatting.ts:formatTime",
+      "type": "function",
+      "name": "formatTime",
+      "filePath": "frontend/src/utils/formatting.ts",
+      "lineRange": [2, 6],
+      "summary": "Convierte una fecha ISO en una hora local legible, tolerando valores inválidos.",
+      "tags": ["utility", "formatting", "date"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/utils/formatting.ts:getInitials",
+      "type": "function",
+      "name": "getInitials",
+      "filePath": "frontend/src/utils/formatting.ts",
+      "lineRange": [9, 14],
+      "summary": "Deriva hasta dos iniciales en mayúscula a partir de un nombre para usarlas en avatares.",
+      "tags": ["utility", "formatting"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/tests/unit/ChatWindow.test.tsx",
+      "type": "file",
+      "name": "ChatWindow.test.tsx",
+      "filePath": "frontend/tests/unit/ChatWindow.test.tsx",
+      "summary": "Pruebas unitarias del componente ChatWindow con React Testing Library, usando datos simulados y el SocketProvider.",
+      "tags": ["test", "unit-test", "react"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/tests/unit/stores.test.ts",
+      "type": "file",
+      "name": "stores.test.ts",
+      "filePath": "frontend/tests/unit/stores.test.ts",
+      "summary": "Pruebas unitarias de los stores de Zustand (agent, auth, chat y ui) verificando sus acciones y estado.",
+      "tags": ["test", "unit-test", "state-management"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {"source": "file:frontend/src/components/modals/NewChatModal.tsx", "target": "function:frontend/src/components/modals/NewChatModal.tsx:NewChatModal", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/modals/NewChatModal.tsx", "target": "function:frontend/src/components/modals/NewChatModal.tsx:NewChatModal", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/modals/NewChatModal.tsx", "target": "file:frontend/src/components/common/Button.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/modals/NewChatModal.tsx", "target": "file:frontend/src/components/common/Dialog.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/modals/NewChatModal.tsx", "target": "file:frontend/src/components/common/Input.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/modals/NewChatModal.tsx", "target": "file:frontend/src/lib/mockData.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/modals/NewChatModal.tsx", "target": "file:frontend/src/store/authStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/modals/NewChatModal.tsx", "target": "file:frontend/src/store/chatStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/modals/NewChatModal.tsx", "target": "file:frontend/src/store/uiStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/modals/NewChatModal.tsx", "target": "file:frontend/src/types/index.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/components/modals/NewChatModal.tsx:NewChatModal", "target": "function:frontend/src/store/chatStore.ts:useChatStore", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:frontend/src/components/modals/NewChatModal.tsx:NewChatModal", "target": "function:frontend/src/store/authStore.ts:useAuthStore", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:frontend/src/components/modals/NewChatModal.tsx:NewChatModal", "target": "function:frontend/src/store/uiStore.ts:useUIStore", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/hooks/useAuth.ts", "target": "function:frontend/src/hooks/useAuth.ts:useAuth", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/hooks/useAuth.ts", "target": "function:frontend/src/hooks/useAuth.ts:useAuth", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/hooks/useAuth.ts", "target": "file:frontend/src/lib/mockData.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/hooks/useAuth.ts", "target": "file:frontend/src/store/authStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/hooks/useAuth.ts:useAuth", "target": "function:frontend/src/store/authStore.ts:useAuthStore", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/hooks/useChat.ts", "target": "function:frontend/src/hooks/useChat.ts:useChat", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/hooks/useChat.ts", "target": "function:frontend/src/hooks/useChat.ts:useChat", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/hooks/useChat.ts", "target": "file:frontend/src/hooks/useSocket.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/hooks/useChat.ts", "target": "file:frontend/src/lib/mockData.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/hooks/useChat.ts", "target": "file:frontend/src/store/authStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/hooks/useChat.ts", "target": "file:frontend/src/store/chatStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/hooks/useChat.ts", "target": "file:frontend/src/store/uiStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/hooks/useChat.ts", "target": "file:frontend/src/types/index.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/hooks/useChat.ts:useChat", "target": "function:frontend/src/store/chatStore.ts:useChatStore", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:frontend/src/hooks/useChat.ts:useChat", "target": "function:frontend/src/store/uiStore.ts:useUIStore", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:frontend/src/hooks/useChat.ts:useChat", "target": "function:frontend/src/store/authStore.ts:useAuthStore", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/lib/mockData.ts", "target": "file:frontend/src/types/index.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:frontend/src/lib/utils.ts", "target": "function:frontend/src/lib/utils.ts:cn", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/lib/utils.ts", "target": "function:frontend/src/lib/utils.ts:cn", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/pages/ChatPage.tsx", "target": "function:frontend/src/pages/ChatPage.tsx:ChatPage", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/pages/ChatPage.tsx", "target": "function:frontend/src/pages/ChatPage.tsx:ChatPage", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/pages/ChatPage.tsx", "target": "file:frontend/src/components/chat/ChatWindow.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/pages/ChatPage.tsx", "target": "file:frontend/src/components/common/Button.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/pages/ChatPage.tsx", "target": "file:frontend/src/store/chatStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/pages/ChatPage.tsx:ChatPage", "target": "function:frontend/src/store/chatStore.ts:useChatStore", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/pages/HomePage.tsx", "target": "function:frontend/src/pages/HomePage.tsx:HomePage", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/pages/HomePage.tsx", "target": "function:frontend/src/pages/HomePage.tsx:HomePage", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/pages/HomePage.tsx", "target": "file:frontend/src/components/common/Button.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/pages/HomePage.tsx", "target": "file:frontend/src/components/common/icons.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/pages/HomePage.tsx", "target": "file:frontend/src/store/chatStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/pages/HomePage.tsx", "target": "file:frontend/src/store/uiStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/pages/HomePage.tsx:HomePage", "target": "function:frontend/src/store/chatStore.ts:useChatStore", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:frontend/src/pages/HomePage.tsx:HomePage", "target": "function:frontend/src/store/uiStore.ts:useUIStore", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/pages/NotFoundPage.tsx", "target": "function:frontend/src/pages/NotFoundPage.tsx:NotFoundPage", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/pages/NotFoundPage.tsx", "target": "function:frontend/src/pages/NotFoundPage.tsx:NotFoundPage", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/pages/NotFoundPage.tsx", "target": "file:frontend/src/components/common/Button.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:frontend/src/store/agentStore.ts", "target": "function:frontend/src/store/agentStore.ts:useAgentStore", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/store/agentStore.ts", "target": "function:frontend/src/store/agentStore.ts:useAgentStore", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/store/agentStore.ts", "target": "file:frontend/src/lib/mockData.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/store/agentStore.ts", "target": "file:frontend/src/types/index.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/store/agentStore.ts", "target": "file:frontend/tests/unit/stores.test.ts", "type": "tested_by", "direction": "forward", "weight": 0.5},
+
+    {"source": "file:frontend/src/store/authStore.ts", "target": "function:frontend/src/store/authStore.ts:useAuthStore", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/store/authStore.ts", "target": "function:frontend/src/store/authStore.ts:useAuthStore", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/store/authStore.ts", "target": "file:frontend/src/types/index.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/store/authStore.ts", "target": "file:frontend/tests/unit/stores.test.ts", "type": "tested_by", "direction": "forward", "weight": 0.5},
+
+    {"source": "file:frontend/src/store/chatStore.ts", "target": "function:frontend/src/store/chatStore.ts:useChatStore", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/store/chatStore.ts", "target": "function:frontend/src/store/chatStore.ts:selectMessages", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/store/chatStore.ts", "target": "function:frontend/src/store/chatStore.ts:useChatStore", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/store/chatStore.ts", "target": "function:frontend/src/store/chatStore.ts:selectMessages", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/store/chatStore.ts", "target": "file:frontend/src/lib/mockData.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/store/chatStore.ts", "target": "file:frontend/src/types/index.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/store/chatStore.ts", "target": "file:frontend/tests/unit/stores.test.ts", "type": "tested_by", "direction": "forward", "weight": 0.5},
+    {"source": "file:frontend/src/store/chatStore.ts", "target": "file:frontend/tests/unit/ChatWindow.test.tsx", "type": "tested_by", "direction": "forward", "weight": 0.5},
+
+    {"source": "file:frontend/src/store/uiStore.ts", "target": "function:frontend/src/store/uiStore.ts:useUIStore", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/store/uiStore.ts", "target": "function:frontend/src/store/uiStore.ts:useUIStore", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/store/uiStore.ts", "target": "file:frontend/src/types/index.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/store/uiStore.ts", "target": "file:frontend/tests/unit/stores.test.ts", "type": "tested_by", "direction": "forward", "weight": 0.5},
+
+    {"source": "file:frontend/src/utils/formatting.ts", "target": "function:frontend/src/utils/formatting.ts:formatTime", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/utils/formatting.ts", "target": "function:frontend/src/utils/formatting.ts:getInitials", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/utils/formatting.ts", "target": "function:frontend/src/utils/formatting.ts:formatTime", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/utils/formatting.ts", "target": "function:frontend/src/utils/formatting.ts:getInitials", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/tests/unit/ChatWindow.test.tsx", "target": "file:frontend/src/components/chat/ChatWindow.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/tests/unit/ChatWindow.test.tsx", "target": "file:frontend/src/context/SocketProvider.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/tests/unit/ChatWindow.test.tsx", "target": "file:frontend/src/lib/mockData.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/tests/unit/ChatWindow.test.tsx", "target": "file:frontend/src/store/chatStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:frontend/tests/unit/stores.test.ts", "target": "file:frontend/src/store/agentStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/tests/unit/stores.test.ts", "target": "file:frontend/src/store/authStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/tests/unit/stores.test.ts", "target": "file:frontend/src/store/chatStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/tests/unit/stores.test.ts", "target": "file:frontend/src/store/uiStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/tests/unit/stores.test.ts", "target": "file:frontend/src/types/index.ts", "type": "imports", "direction": "forward", "weight": 0.7}
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "batchIndex": 21,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "language": "unknown",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "language": "markdown",
+      "sizeLines": 17,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".ua/.understandignore",
+      "language": "unknown",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/config.json",
+      "language": "json",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": "backend/jest.config.js",
+      "language": "javascript",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/prisma/migrations/20260717124954_init/migration.sql",
+      "language": "sql",
+      "sizeLines": 79,
+      "fileCategory": "data"
+    },
+    {
+      "path": "backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql",
+      "language": "sql",
+      "sizeLines": 46,
+      "fileCategory": "data"
+    },
+    {
+      "path": "backend/prisma/migrations/migration_lock.toml",
+      "language": "toml",
+      "sizeLines": 2,
+      "fileCategory": "config"
+    },
+    {
+      "path": "backend/prisma/schema.prisma",
+      "language": "prisma",
+      "sizeLines": 98,
+      "fileCategory": "data"
+    },
+    {
+      "path": "backend/prisma/seed.ts",
+      "language": "typescript",
+      "sizeLines": 93,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/config/constants.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/index.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/middleware/logging.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/types/api-responses.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/types/Chat.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/types/index.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/types/Message.ts",
+      "language": "typescript",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/types/User.ts",
+      "language": "typescript",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/utils/helpers.ts",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/fixtures/seed-data.ts",
+      "language": "typescript",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/integration/agent-execution.test.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/integration/chat-flow.test.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/unit/agents.test.ts",
+      "language": "typescript",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/unit/auth.test.ts",
+      "language": "typescript",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "bash.exe.stackdump",
+      "language": "stackdump",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    ".gitattributes": [],
+    ".github/ISSUE_TEMPLATE/bug_report.md": [],
+    ".ua/.understandignore": [],
+    ".ua/config.json": [],
+    "backend/jest.config.js": [],
+    "backend/prisma/migrations/20260717124954_init/migration.sql": [],
+    "backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql": [],
+    "backend/prisma/migrations/migration_lock.toml": [],
+    "backend/prisma/schema.prisma": [],
+    "backend/prisma/seed.ts": [],
+    "backend/src/config/constants.ts": [],
+    "backend/src/index.ts": [],
+    "backend/src/middleware/logging.ts": [],
+    "backend/src/types/api-responses.ts": [],
+    "backend/src/types/Chat.ts": [],
+    "backend/src/types/index.ts": [],
+    "backend/src/types/Message.ts": [],
+    "backend/src/types/User.ts": [],
+    "backend/src/utils/helpers.ts": [],
+    "backend/tests/fixtures/seed-data.ts": [],
+    "backend/tests/integration/agent-execution.test.ts": [],
+    "backend/tests/integration/chat-flow.test.ts": [],
+    "backend/tests/unit/agents.test.ts": [],
+    "backend/tests/unit/auth.test.ts": [],
+    "bash.exe.stackdump": []
+  },
+  "neighborMap": {}
+}

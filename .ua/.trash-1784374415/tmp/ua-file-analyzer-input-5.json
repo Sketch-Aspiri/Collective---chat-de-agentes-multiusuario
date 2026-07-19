@@ -1,0 +1,23 @@
+{
+  "projectRoot": "C:/Users/Andre/OneDrive/Escritorio/CHAT_AGENTES",
+  "batchFiles": [
+    {"path": "frontend/src/components/chat/MessageInput.tsx", "language": "typescript", "sizeLines": 89, "fileCategory": "code"},
+    {"path": "frontend/src/components/common/MentionText.tsx", "language": "typescript", "sizeLines": 31, "fileCategory": "code"},
+    {"path": "frontend/src/components/common/Textarea.tsx", "language": "typescript", "sizeLines": 24, "fileCategory": "code"},
+    {"path": "frontend/src/hooks/useMentions.ts", "language": "typescript", "sizeLines": 9, "fileCategory": "code"},
+    {"path": "frontend/src/utils/mentions.ts", "language": "typescript", "sizeLines": 46, "fileCategory": "code"},
+    {"path": "frontend/tests/unit/MessageInput.test.tsx", "language": "typescript", "sizeLines": 49, "fileCategory": "code"},
+    {"path": "frontend/tests/unit/mentions.test.ts", "language": "typescript", "sizeLines": 36, "fileCategory": "code"},
+    {"path": "frontend/tests/unit/useMentions.test.ts", "language": "typescript", "sizeLines": 19, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "frontend/src/components/chat/MessageInput.tsx": ["frontend/src/components/common/Button.tsx", "frontend/src/components/common/icons.tsx", "frontend/src/components/common/MentionText.tsx", "frontend/src/components/common/Textarea.tsx", "frontend/src/utils/mentions.ts"],
+    "frontend/src/components/common/MentionText.tsx": ["frontend/src/lib/utils.ts", "frontend/src/utils/mentions.ts"],
+    "frontend/src/components/common/Textarea.tsx": ["frontend/src/lib/utils.ts"],
+    "frontend/src/hooks/useMentions.ts": ["frontend/src/utils/mentions.ts"],
+    "frontend/src/utils/mentions.ts": [],
+    "frontend/tests/unit/MessageInput.test.tsx": ["frontend/src/components/chat/MessageInput.tsx"],
+    "frontend/tests/unit/mentions.test.ts": ["frontend/src/utils/mentions.ts"],
+    "frontend/tests/unit/useMentions.test.ts": ["frontend/src/hooks/useMentions.ts"]
+  }
+}

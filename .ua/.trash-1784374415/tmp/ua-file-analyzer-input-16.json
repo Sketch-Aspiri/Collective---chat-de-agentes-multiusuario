@@ -1,0 +1,9 @@
+{
+  "projectRoot": "C:/Users/Andre/OneDrive/Escritorio/CHAT_AGENTES",
+  "batchFiles": [
+    {"path": "infra/docker/Dockerfile.backend", "language": "dockerfile", "sizeLines": 47, "fileCategory": "infra"},
+    {"path": "infra/docker/Dockerfile.frontend", "language": "dockerfile", "sizeLines": 30, "fileCategory": "infra"},
+    {"path": "infra/docker/Dockerfile.nginx", "language": "dockerfile", "sizeLines": 4, "fileCategory": "infra"}
+  ],
+  "batchImportData": {"infra/docker/Dockerfile.backend":[],"infra/docker/Dockerfile.frontend":[],"infra/docker/Dockerfile.nginx":[]}
+}

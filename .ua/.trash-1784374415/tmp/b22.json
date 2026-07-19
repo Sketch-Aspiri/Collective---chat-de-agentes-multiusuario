@@ -1,0 +1,100 @@
+{
+  "batchIndex": 22,
+  "files": [
+    {
+      "path": "docs/git/GIT_SETUP_RAPIDO.md",
+      "language": "markdown",
+      "sizeLines": 156,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/git/GIT_WORKFLOW.md",
+      "language": "markdown",
+      "sizeLines": 428,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/postcss.config.cjs",
+      "language": "javascript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/styles/globals.css",
+      "language": "css",
+      "sizeLines": 53,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/vite-env.d.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tailwind.config.cjs",
+      "language": "javascript",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tests/e2e/agent-execution.spec.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tests/e2e/chat-flow.spec.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tests/setup.ts",
+      "language": "typescript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/vite.config.ts",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "infra/db/init.sql",
+      "language": "sql",
+      "sizeLines": 15,
+      "fileCategory": "data"
+    },
+    {
+      "path": "infra/docker/nginx.conf",
+      "language": "conf",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "docs/git/GIT_SETUP_RAPIDO.md": [],
+    "docs/git/GIT_WORKFLOW.md": [],
+    "frontend/postcss.config.cjs": [],
+    "frontend/src/styles/globals.css": [],
+    "frontend/src/vite-env.d.ts": [],
+    "frontend/tailwind.config.cjs": [],
+    "frontend/tests/e2e/agent-execution.spec.ts": [],
+    "frontend/tests/e2e/chat-flow.spec.ts": [],
+    "frontend/tests/setup.ts": [],
+    "frontend/vite.config.ts": [],
+    "infra/db/init.sql": [],
+    "infra/docker/nginx.conf": []
+  },
+  "neighborMap": {
+    "frontend/src/styles/globals.css": [
+      {
+        "path": "frontend/src/main.tsx",
+        "batchIndex": 6,
+        "symbols": []
+      }
+    ]
+  }
+}

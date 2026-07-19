@@ -1,0 +1,930 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 11,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "docs/API.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 40,
+      "nonEmptyLines": 29,
+      "sections": [
+        {
+          "heading": "API",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Auth",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "Users",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Chats",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Agents",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "Messages",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "Billing",
+          "level": 2,
+          "line": 34
+        },
+        {
+          "heading": "Webhooks",
+          "level": 2,
+          "line": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 71,
+      "nonEmptyLines": 54,
+      "sections": [
+        {
+          "heading": "Arquitectura",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Tabla de contenidos",
+          "level": 2,
+          "line": 6
+        },
+        {
+          "heading": "Componentes principales",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Diagrama de infraestructura (local)",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Puertos",
+          "level": 2,
+          "line": 51
+        },
+        {
+          "heading": "Flujo de ejecución de un agente",
+          "level": 2,
+          "line": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "docs/CONTRIBUTING.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 83,
+      "nonEmptyLines": 61,
+      "sections": [
+        {
+          "heading": "Contribuir",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Tabla de contenidos",
+          "level": 2,
+          "line": 6
+        },
+        {
+          "heading": "Flujo de ramas",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Commits",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Estilo de código",
+          "level": 2,
+          "line": 48
+        },
+        {
+          "heading": "Tests",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "Checklist antes de abrir un PR",
+          "level": 2,
+          "line": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 107,
+      "nonEmptyLines": 77,
+      "sections": [
+        {
+          "heading": "Deployment",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Tabla de contenidos",
+          "level": 2,
+          "line": 6
+        },
+        {
+          "heading": "Entornos y ramas",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Build de imágenes Docker",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "Fase 1 — Staging",
+          "level": 2,
+          "line": 48
+        },
+        {
+          "heading": "Vercel (frontend)",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "Railway (backend)",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "Fase 2 — Production",
+          "level": 2,
+          "line": 71
+        },
+        {
+          "heading": "Variables de entorno requeridas",
+          "level": 2,
+          "line": 84
+        },
+        {
+          "heading": "CI/CD",
+          "level": 2,
+          "line": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "docs/ESTRUCTURA_PROYECTO.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 407,
+      "nonEmptyLines": 384,
+      "sections": [
+        {
+          "heading": "ESTRUCTURA DE PROYECTO RECOMENDADA",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "DESCRIPCIÓN DE DIRECTORIOS CLAVE",
+          "level": 2,
+          "line": 274
+        },
+        {
+          "heading": "`/backend/src/modules/`",
+          "level": 3,
+          "line": 276
+        },
+        {
+          "heading": "`/backend/src/services/llm/`",
+          "level": 3,
+          "line": 285
+        },
+        {
+          "heading": "`/frontend/store/`",
+          "level": 3,
+          "line": 304
+        },
+        {
+          "heading": "`/infra/`",
+          "level": 3,
+          "line": 313
+        },
+        {
+          "heading": "DEPENDENCIAS RECOMENDADAS (MVP)",
+          "level": 2,
+          "line": 322
+        },
+        {
+          "heading": "Backend",
+          "level": 3,
+          "line": 324
+        },
+        {
+          "heading": "Frontend",
+          "level": 3,
+          "line": 356
+        },
+        {
+          "heading": "FLUJO DE TRABAJO (Git)",
+          "level": 2,
+          "line": 379
+        },
+        {
+          "heading": "Ramas",
+          "level": 3,
+          "line": 381
+        },
+        {
+          "heading": "Commit format",
+          "level": 3,
+          "line": 390
+        },
+        {
+          "heading": "PRÓXIMOS PASOS",
+          "level": 2,
+          "line": 400
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "docs/REQUISITOS_AGENTES_CHAT.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 531,
+      "nonEmptyLines": 436,
+      "sections": [
+        {
+          "heading": "ESPECIFICACIÓN DE REQUISITOS - PLATAFORMA DE CHAT CON AGENTES IA",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. RESUMEN EJECUTIVO",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "2. ACTORES Y ROLES",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "2.1 Roles de Usuario",
+          "level": 3,
+          "line": 17
+        },
+        {
+          "heading": "3. CASOS DE USO PRINCIPALES",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "3.1 Crear y Gestionar un Chat",
+          "level": 3,
+          "line": 30
+        },
+        {
+          "heading": "3.2 Crear y Conectar Agentes",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "3.3 Interactuar con Agentes en Chat",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "3.4 Historial con Threads",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "3.5 Integración Google Drive/OneDrive",
+          "level": 3,
+          "line": 99
+        },
+        {
+          "heading": "3.6 Memoria Persistente del Agente",
+          "level": 3,
+          "line": 119
+        },
+        {
+          "heading": "4. REQUISITOS FUNCIONALES",
+          "level": 2,
+          "line": 132
+        },
+        {
+          "heading": "4.1 Módulo de Chat",
+          "level": 3,
+          "line": 134
+        },
+        {
+          "heading": "4.1.1 Crear/Editar/Eliminar Chat",
+          "level": 4,
+          "line": 136
+        },
+        {
+          "heading": "4.1.2 Gestión de Miembros",
+          "level": 4,
+          "line": 143
+        },
+        {
+          "heading": "4.1.3 Chat en Tiempo Real",
+          "level": 4,
+          "line": 151
+        },
+        {
+          "heading": "4.1.4 Historial y Búsqueda",
+          "level": 4,
+          "line": 160
+        },
+        {
+          "heading": "4.1.5 Threads (Conversaciones Anidadas)",
+          "level": 4,
+          "line": 168
+        },
+        {
+          "heading": "4.2 Módulo de Agentes",
+          "level": 3,
+          "line": 178
+        },
+        {
+          "heading": "4.2.1 Crear/Editar Agentes",
+          "level": 4,
+          "line": 180
+        },
+        {
+          "heading": "4.2.2 Ejecución de Agentes",
+          "level": 4,
+          "line": 203
+        },
+        {
+          "heading": "4.2.3 Respuestas de Agente",
+          "level": 4,
+          "line": 217
+        },
+        {
+          "heading": "4.2.4 Supervisión en Tiempo Real",
+          "level": 4,
+          "line": 229
+        },
+        {
+          "heading": "4.3 Módulo de Memoria del Agente",
+          "level": 3,
+          "line": 241
+        },
+        {
+          "heading": "4.3.1 Almacenamiento de Memoria",
+          "level": 4,
+          "line": 243
+        },
+        {
+          "heading": "4.3.2 Recuperación de Memoria",
+          "level": 4,
+          "line": 270
+        },
+        {
+          "heading": "4.3.3 Learning from Feedback",
+          "level": 4,
+          "line": 276
+        },
+        {
+          "heading": "4.4 Módulo de Integraciones",
+          "level": 3,
+          "line": 283
+        },
+        {
+          "heading": "4.4.1 Google Drive",
+          "level": 4,
+          "line": 285
+        },
+        {
+          "heading": "4.4.2 OneDrive (Roadmap Fase 2)",
+          "level": 4,
+          "line": 295
+        },
+        {
+          "heading": "4.4.3 Slack/Teams Integration (Roadmap Fase 2)",
+          "level": 4,
+          "line": 300
+        },
+        {
+          "heading": "4.5 Módulo de Autenticación y Seguridad",
+          "level": 3,
+          "line": 306
+        },
+        {
+          "heading": "4.5.1 Autenticación de Usuario",
+          "level": 4,
+          "line": 308
+        },
+        {
+          "heading": "4.5.2 Seguridad de API Keys",
+          "level": 4,
+          "line": 314
+        },
+        {
+          "heading": "4.5.3 Autorización por Rol",
+          "level": 4,
+          "line": 320
+        },
+        {
+          "heading": "4.6 Módulo de Suscripción y Billing",
+          "level": 3,
+          "line": 329
+        },
+        {
+          "heading": "4.6.1 Planes",
+          "level": 4,
+          "line": 331
+        },
+        {
+          "heading": "4.6.2 Gestión de Suscripción",
+          "level": 4,
+          "line": 336
+        },
+        {
+          "heading": "4.6.3 Uso y Límites",
+          "level": 4,
+          "line": 344
+        },
+        {
+          "heading": "5. REQUISITOS NO FUNCIONALES",
+          "level": 2,
+          "line": 354
+        },
+        {
+          "heading": "5.1 Performance",
+          "level": 3,
+          "line": 356
+        },
+        {
+          "heading": "5.2 Escalabilidad",
+          "level": 3,
+          "line": 362
+        },
+        {
+          "heading": "5.3 Seguridad",
+          "level": 3,
+          "line": 369
+        },
+        {
+          "heading": "5.4 Disponibilidad",
+          "level": 3,
+          "line": 378
+        },
+        {
+          "heading": "5.5 Observabilidad",
+          "level": 3,
+          "line": 385
+        },
+        {
+          "heading": "6. STACK TECNOLÓGICO RECOMENDADO",
+          "level": 2,
+          "line": 393
+        },
+        {
+          "heading": "6.1 Frontend",
+          "level": 3,
+          "line": 395
+        },
+        {
+          "heading": "6.2 Backend",
+          "level": 3,
+          "line": 403
+        },
+        {
+          "heading": "6.3 Infrastructure",
+          "level": 3,
+          "line": 412
+        },
+        {
+          "heading": "6.4 DevOps",
+          "level": 3,
+          "line": 421
+        },
+        {
+          "heading": "7. ROADMAP DE DESARROLLO",
+          "level": 2,
+          "line": 429
+        },
+        {
+          "heading": "**Fase 1: MVP (Semanas 1-8)**",
+          "level": 3,
+          "line": 431
+        },
+        {
+          "heading": "**Fase 2: Estabilidad (Semanas 9-12)**",
+          "level": 3,
+          "line": 442
+        },
+        {
+          "heading": "**Fase 3: Expansión (Semanas 13-20)**",
+          "level": 3,
+          "line": 453
+        },
+        {
+          "heading": "**Fase 4: Optimización (Semanas 21+)**",
+          "level": 3,
+          "line": 464
+        },
+        {
+          "heading": "8. CRITERIOS DE ÉXITO",
+          "level": 2,
+          "line": 475
+        },
+        {
+          "heading": "MVP",
+          "level": 3,
+          "line": 477
+        },
+        {
+          "heading": "Post-MVP",
+          "level": 3,
+          "line": 487
+        },
+        {
+          "heading": "9. RIESGOS Y MITIGACIÓN",
+          "level": 2,
+          "line": 496
+        },
+        {
+          "heading": "10. PREGUNTAS ABIERTAS A RESOLVER",
+          "level": 2,
+          "line": 508
+        },
+        {
+          "heading": "11. SIGUIENTE PASO",
+          "level": 2,
+          "line": 519
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 61
+      }
+    },
+    {
+      "path": "docs/RUNBOOK.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 117,
+      "nonEmptyLines": 83,
+      "sections": [
+        {
+          "heading": "Runbook",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Tabla de contenidos",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Estado del stack",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Logs",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Health check",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "Servicio caído",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "Base de datos: backup y restore",
+          "level": 2,
+          "line": 72
+        },
+        {
+          "heading": "Base de datos: reset y seed",
+          "level": 2,
+          "line": 84
+        },
+        {
+          "heading": "Escalado",
+          "level": 2,
+          "line": 93
+        },
+        {
+          "heading": "Rollback",
+          "level": 2,
+          "line": 104
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 83,
+      "nonEmptyLines": 59,
+      "sections": [
+        {
+          "heading": "Seguridad de red y secretos",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Tabla de contenidos",
+          "level": 2,
+          "line": 6
+        },
+        {
+          "heading": "Gestión de secretos",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "GitHub Secrets",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "CORS",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "Rate limiting",
+          "level": 2,
+          "line": 60
+        },
+        {
+          "heading": "Headers de seguridad",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "HTTPS / TLS",
+          "level": 2,
+          "line": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "docs/SETUP.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 188,
+      "nonEmptyLines": 140,
+      "sections": [
+        {
+          "heading": "Development Setup",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Tabla de contenidos",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Prerequisitos",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Quickstart (Docker)",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "Servicios y puertos",
+          "level": 2,
+          "line": 59
+        },
+        {
+          "heading": "Variables de entorno",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "Comandos útiles",
+          "level": 2,
+          "line": 95
+        },
+        {
+          "heading": "Base de datos (Prisma)",
+          "level": 2,
+          "line": 120
+        },
+        {
+          "heading": "Modo sin Docker (opcional)",
+          "level": 2,
+          "line": 139
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 159
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "docs/cyber-neo-report-CHAT_AGENTES-2026-07-17.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 143,
+      "nonEmptyLines": 110,
+      "sections": [
+        {
+          "heading": "🛡️ Cyber Neo — Security Audit Report",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. Executive Summary",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "Top 3 priority actions",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "2. Medium Findings",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "CN-001 — Container images run as root",
+          "level": 3,
+          "line": 32
+        },
+        {
+          "heading": "3. Low Findings",
+          "level": 2,
+          "line": 49
+        },
+        {
+          "heading": "CN-002 — GitHub Actions workflows have no explicit `permissions`",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "CN-003 — Third-party actions pinned to mutable tags, not commit SHA",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "CN-004 — nginx drops security headers inside `/assets/`",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "4. Informational",
+          "level": 2,
+          "line": 81
+        },
+        {
+          "heading": "CN-005 — Weak default secrets in `docker-compose.yml`",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "CN-006 — Local `.env` files contain default dev credentials",
+          "level": 3,
+          "line": 88
+        },
+        {
+          "heading": "CN-007 — Placeholder connection string in `README.md`",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "5. Dependency Vulnerabilities (SCA)",
+          "level": 2,
+          "line": 99
+        },
+        {
+          "heading": "6. Supply Chain & CI/CD Assessment",
+          "level": 2,
+          "line": 110
+        },
+        {
+          "heading": "7. Positive Controls Observed (added/confirmed this sprint)",
+          "level": 2,
+          "line": 120
+        },
+        {
+          "heading": "8. Scan Metadata",
+          "level": 2,
+          "line": 132
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "docs/setup-local.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 184,
+      "nonEmptyLines": 157,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

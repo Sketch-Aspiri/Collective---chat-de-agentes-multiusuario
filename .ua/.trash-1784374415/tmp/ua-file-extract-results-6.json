@@ -1,0 +1,273 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "frontend/src/context/SocketProvider.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "SocketProvider",
+          "startLine": 20,
+          "endLine": 60,
+          "params": [
+            "{ children }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SocketContext",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "SocketProvider",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SocketProvider",
+          "callee": "useAuthStore",
+          "lineNumber": 21
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "useState",
+          "lineNumber": 22
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "useState",
+          "lineNumber": 23
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "useEffect",
+          "lineNumber": 25
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "getSocket",
+          "lineNumber": 26
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "setSocket",
+          "lineNumber": 27
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "setIsConnected",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handleConnect",
+          "callee": "setIsConnected",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handleDisconnect",
+          "callee": "setIsConnected",
+          "lineNumber": 36
+        },
+        {
+          "caller": "handleError",
+          "callee": "logger.error",
+          "lineNumber": 38
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "activeSocket.on",
+          "lineNumber": 41
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "activeSocket.on",
+          "lineNumber": 42
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "activeSocket.on",
+          "lineNumber": 43
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "activeSocket.connect",
+          "lineNumber": 44
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "activeSocket.off",
+          "lineNumber": 47
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "activeSocket.off",
+          "lineNumber": 48
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "activeSocket.off",
+          "lineNumber": 49
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "activeSocket.disconnect",
+          "lineNumber": 50
+        },
+        {
+          "caller": "SocketProvider",
+          "callee": "useMemo",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/hooks/useSocket.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "functions": [
+        {
+          "name": "useSocket",
+          "startLine": 8,
+          "endLine": 10,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "useSocket",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useSocket",
+          "callee": "useContext",
+          "lineNumber": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/lib/logger.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 18,
+      "exports": [
+        {
+          "name": "logger",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/main.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 19,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/services/socket.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "getSocket",
+          "startLine": 15,
+          "endLine": 27,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "disconnectSocket",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getSocket",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "disconnectSocket",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSocket",
+          "callee": "io",
+          "lineNumber": 17
+        },
+        {
+          "caller": "disconnectSocket",
+          "callee": "socket?.disconnect",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/types/api.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 24,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

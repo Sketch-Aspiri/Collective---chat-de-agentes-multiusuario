@@ -1,0 +1,1908 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 33,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "frontend/src/App.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "App",
+          "startLine": 13,
+          "endLine": 29,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "App",
+          "line": 13,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/auth/RequireAuth.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "RequireAuth",
+          "startLine": 9,
+          "endLine": 29,
+          "params": [
+            "{ children }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RequireAuth",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RequireAuth",
+          "callee": "useAuth",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/chat/ChatWindow.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "ChatWindow",
+          "startLine": 15,
+          "endLine": 28,
+          "params": [
+            "{ chatId }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChatWindow",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ChatWindow",
+          "callee": "useChatStore",
+          "lineNumber": 16
+        },
+        {
+          "caller": "ChatWindow",
+          "callee": "selectMessages",
+          "lineNumber": 16
+        },
+        {
+          "caller": "ChatWindow",
+          "callee": "useChatStore",
+          "lineNumber": 17
+        },
+        {
+          "caller": "ChatWindow",
+          "callee": "useChat",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/chat/Message.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "Message",
+          "startLine": 17,
+          "endLine": 49,
+          "params": [
+            "{ message, avatarColor }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Message",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Message",
+          "callee": "formatTime",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Message",
+          "callee": "cn",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/chat/MessageList.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "MessageList",
+          "startLine": 16,
+          "endLine": 61,
+          "params": [
+            "{ messages, isLoading = false }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MessageList",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "MessageList",
+          "callee": "useRef",
+          "lineNumber": 17
+        },
+        {
+          "caller": "MessageList",
+          "callee": "useAgentStore",
+          "lineNumber": 18
+        },
+        {
+          "caller": "MessageList",
+          "callee": "useAgentStore",
+          "lineNumber": 19
+        },
+        {
+          "caller": "MessageList",
+          "callee": "useMemo",
+          "lineNumber": 21
+        },
+        {
+          "caller": "MessageList",
+          "callee": "useEffect",
+          "lineNumber": 29
+        },
+        {
+          "caller": "MessageList",
+          "callee": "bottomRef.current?.scrollIntoView",
+          "lineNumber": 30
+        },
+        {
+          "caller": "MessageList",
+          "callee": "messages.map",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/common/Avatar.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "Avatar",
+          "startLine": 11,
+          "endLine": 24,
+          "params": [
+            "{ name, color, className }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Avatar",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Avatar",
+          "callee": "cn",
+          "lineNumber": 14
+        },
+        {
+          "caller": "Avatar",
+          "callee": "getInitials",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/common/Button.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 44,
+      "exports": [
+        {
+          "name": "Button",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/common/ConnectionBadge.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "ConnectionBadge",
+          "startLine": 8,
+          "endLine": 26,
+          "params": [
+            "{ isConnected }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ConnectionBadge",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ConnectionBadge",
+          "callee": "cn",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/common/Dialog.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 77,
+      "functions": [
+        {
+          "name": "Dialog",
+          "startLine": 18,
+          "endLine": 86,
+          "params": [
+            "{ open, onClose, title, description, children, footer }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Dialog",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Dialog",
+          "callee": "useId",
+          "lineNumber": 19
+        },
+        {
+          "caller": "Dialog",
+          "callee": "useId",
+          "lineNumber": 20
+        },
+        {
+          "caller": "Dialog",
+          "callee": "useRef",
+          "lineNumber": 21
+        },
+        {
+          "caller": "Dialog",
+          "callee": "useEffect",
+          "lineNumber": 23
+        },
+        {
+          "caller": "handleKeyDown",
+          "callee": "onClose",
+          "lineNumber": 28
+        },
+        {
+          "caller": "Dialog",
+          "callee": "document.addEventListener",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Dialog",
+          "callee": "panelRef.current?.focus",
+          "lineNumber": 33
+        },
+        {
+          "caller": "Dialog",
+          "callee": "document.removeEventListener",
+          "lineNumber": 35
+        },
+        {
+          "caller": "Dialog",
+          "callee": "cn",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/common/ErrorBanner.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "ErrorBanner",
+          "startLine": 11,
+          "endLine": 33,
+          "params": [
+            "{ message, onDismiss, className }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErrorBanner",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ErrorBanner",
+          "callee": "cn",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/common/Input.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 23,
+      "exports": [
+        {
+          "name": "Input",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/common/LoadingSpinner.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "LoadingSpinner",
+          "startLine": 9,
+          "endLine": 28,
+          "params": [
+            "{ className, label = 'Cargando' }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LoadingSpinner",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "LoadingSpinner",
+          "callee": "cn",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/common/icons.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 99,
+      "functions": [
+        {
+          "name": "base",
+          "startLine": 9,
+          "endLine": 21,
+          "params": [
+            "props"
+          ]
+        },
+        {
+          "name": "MenuIcon",
+          "startLine": 23,
+          "endLine": 31,
+          "params": [
+            "props"
+          ]
+        },
+        {
+          "name": "PlusIcon",
+          "startLine": 33,
+          "endLine": 40,
+          "params": [
+            "props"
+          ]
+        },
+        {
+          "name": "CloseIcon",
+          "startLine": 42,
+          "endLine": 49,
+          "params": [
+            "props"
+          ]
+        },
+        {
+          "name": "SettingsIcon",
+          "startLine": 51,
+          "endLine": 58,
+          "params": [
+            "props"
+          ]
+        },
+        {
+          "name": "UsersIcon",
+          "startLine": 60,
+          "endLine": 69,
+          "params": [
+            "props"
+          ]
+        },
+        {
+          "name": "MessageIcon",
+          "startLine": 71,
+          "endLine": 77,
+          "params": [
+            "props"
+          ]
+        },
+        {
+          "name": "SendIcon",
+          "startLine": 79,
+          "endLine": 86,
+          "params": [
+            "props"
+          ]
+        },
+        {
+          "name": "SunIcon",
+          "startLine": 88,
+          "endLine": 102,
+          "params": [
+            "props"
+          ]
+        },
+        {
+          "name": "MoonIcon",
+          "startLine": 104,
+          "endLine": 110,
+          "params": [
+            "props"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MenuIcon",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "PlusIcon",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "CloseIcon",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "SettingsIcon",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "UsersIcon",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "MessageIcon",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "SendIcon",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "SunIcon",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "MoonIcon",
+          "line": 104,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "MenuIcon",
+          "callee": "base",
+          "lineNumber": 25
+        },
+        {
+          "caller": "PlusIcon",
+          "callee": "base",
+          "lineNumber": 35
+        },
+        {
+          "caller": "CloseIcon",
+          "callee": "base",
+          "lineNumber": 44
+        },
+        {
+          "caller": "SettingsIcon",
+          "callee": "base",
+          "lineNumber": 53
+        },
+        {
+          "caller": "UsersIcon",
+          "callee": "base",
+          "lineNumber": 62
+        },
+        {
+          "caller": "MessageIcon",
+          "callee": "base",
+          "lineNumber": 73
+        },
+        {
+          "caller": "SendIcon",
+          "callee": "base",
+          "lineNumber": 81
+        },
+        {
+          "caller": "SunIcon",
+          "callee": "base",
+          "lineNumber": 90
+        },
+        {
+          "caller": "MoonIcon",
+          "callee": "base",
+          "lineNumber": 106
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/layout/Header.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "Header",
+          "startLine": 17,
+          "endLine": 58,
+          "params": [
+            "{ title, onToggleSidebar, onInviteAgent, connectionSlot }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Header",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Header",
+          "callee": "useState",
+          "lineNumber": 18
+        },
+        {
+          "caller": "Header",
+          "callee": "document.documentElement.classList.contains",
+          "lineNumber": 19
+        },
+        {
+          "caller": "Header",
+          "callee": "useEffect",
+          "lineNumber": 22
+        },
+        {
+          "caller": "Header",
+          "callee": "document.documentElement.classList.toggle",
+          "lineNumber": 23
+        },
+        {
+          "caller": "Header",
+          "callee": "setIsDark",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/layout/MainLayout.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "MainLayout",
+          "startLine": 17,
+          "endLine": 78,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MainLayout",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "MainLayout",
+          "callee": "useNavigate",
+          "lineNumber": 18
+        },
+        {
+          "caller": "MainLayout",
+          "callee": "useChatStore",
+          "lineNumber": 19
+        },
+        {
+          "caller": "MainLayout",
+          "callee": "useChatStore",
+          "lineNumber": 20
+        },
+        {
+          "caller": "MainLayout",
+          "callee": "useChatStore",
+          "lineNumber": 21
+        },
+        {
+          "caller": "MainLayout",
+          "callee": "useUIStore",
+          "lineNumber": 23
+        },
+        {
+          "caller": "MainLayout",
+          "callee": "useUIStore",
+          "lineNumber": 24
+        },
+        {
+          "caller": "MainLayout",
+          "callee": "useUIStore",
+          "lineNumber": 25
+        },
+        {
+          "caller": "MainLayout",
+          "callee": "useUIStore",
+          "lineNumber": 26
+        },
+        {
+          "caller": "MainLayout",
+          "callee": "useSocket",
+          "lineNumber": 28
+        },
+        {
+          "caller": "MainLayout",
+          "callee": "chats.find",
+          "lineNumber": 30
+        },
+        {
+          "caller": "handleSelectChat",
+          "callee": "setCurrentChat",
+          "lineNumber": 33
+        },
+        {
+          "caller": "handleSelectChat",
+          "callee": "setSidebarOpen",
+          "lineNumber": 34
+        },
+        {
+          "caller": "handleSelectChat",
+          "callee": "navigate",
+          "lineNumber": 35
+        },
+        {
+          "caller": "MainLayout",
+          "callee": "setSidebarOpen",
+          "lineNumber": 43
+        },
+        {
+          "caller": "MainLayout",
+          "callee": "cn",
+          "lineNumber": 49
+        },
+        {
+          "caller": "MainLayout",
+          "callee": "openModal",
+          "lineNumber": 58
+        },
+        {
+          "caller": "MainLayout",
+          "callee": "openModal",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/layout/Sidebar.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "Sidebar",
+          "startLine": 17,
+          "endLine": 69,
+          "params": [
+            "{ chats, currentChatId, onSelectChat, onNewChat }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Sidebar",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Sidebar",
+          "callee": "chats.map",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "onSelectChat",
+          "lineNumber": 38
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "cn",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/modals/InviteAgentModal.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "InviteAgentModal",
+          "startLine": 11,
+          "endLine": 85,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "InviteAgentModal",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "InviteAgentModal",
+          "callee": "useUIStore",
+          "lineNumber": 12
+        },
+        {
+          "caller": "InviteAgentModal",
+          "callee": "useUIStore",
+          "lineNumber": 13
+        },
+        {
+          "caller": "InviteAgentModal",
+          "callee": "useUIStore",
+          "lineNumber": 14
+        },
+        {
+          "caller": "InviteAgentModal",
+          "callee": "useAgentStore",
+          "lineNumber": 16
+        },
+        {
+          "caller": "InviteAgentModal",
+          "callee": "useAgentStore",
+          "lineNumber": 17
+        },
+        {
+          "caller": "InviteAgentModal",
+          "callee": "useAgentStore",
+          "lineNumber": 18
+        },
+        {
+          "caller": "InviteAgentModal",
+          "callee": "useState",
+          "lineNumber": 20
+        },
+        {
+          "caller": "InviteAgentModal",
+          "callee": "useMemo",
+          "lineNumber": 22
+        },
+        {
+          "caller": "InviteAgentModal",
+          "callee": "availableAgents.filter",
+          "lineNumber": 23
+        },
+        {
+          "caller": "InviteAgentModal",
+          "callee": "chatAgents.some",
+          "lineNumber": 23
+        },
+        {
+          "caller": "handleClose",
+          "callee": "setSelectedId",
+          "lineNumber": 28
+        },
+        {
+          "caller": "handleClose",
+          "callee": "closeModal",
+          "lineNumber": 29
+        },
+        {
+          "caller": "handleAdd",
+          "callee": "invitable.find",
+          "lineNumber": 33
+        },
+        {
+          "caller": "handleAdd",
+          "callee": "addAgentToChat",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handleAdd",
+          "callee": "addNotification",
+          "lineNumber": 36
+        },
+        {
+          "caller": "handleAdd",
+          "callee": "handleClose",
+          "lineNumber": 37
+        },
+        {
+          "caller": "InviteAgentModal",
+          "callee": "setSelectedId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "InviteAgentModal",
+          "callee": "invitable.map",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/modals/NewChatModal.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 72,
+      "functions": [
+        {
+          "name": "createId",
+          "startLine": 11,
+          "endLine": 13,
+          "params": []
+        },
+        {
+          "name": "NewChatModal",
+          "startLine": 18,
+          "endLine": 78,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewChatModal",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createId",
+          "callee": "globalThis.crypto?.randomUUID",
+          "lineNumber": 12
+        },
+        {
+          "caller": "createId",
+          "callee": "Date.now",
+          "lineNumber": 12
+        },
+        {
+          "caller": "NewChatModal",
+          "callee": "useUIStore",
+          "lineNumber": 19
+        },
+        {
+          "caller": "NewChatModal",
+          "callee": "useUIStore",
+          "lineNumber": 20
+        },
+        {
+          "caller": "NewChatModal",
+          "callee": "useChatStore",
+          "lineNumber": 21
+        },
+        {
+          "caller": "NewChatModal",
+          "callee": "useChatStore",
+          "lineNumber": 22
+        },
+        {
+          "caller": "NewChatModal",
+          "callee": "useAuthStore",
+          "lineNumber": 23
+        },
+        {
+          "caller": "NewChatModal",
+          "callee": "useState",
+          "lineNumber": 25
+        },
+        {
+          "caller": "handleClose",
+          "callee": "setTitle",
+          "lineNumber": 28
+        },
+        {
+          "caller": "handleClose",
+          "callee": "closeModal",
+          "lineNumber": 29
+        },
+        {
+          "caller": "handleCreate",
+          "callee": "title.trim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "handleCreate",
+          "callee": "createId",
+          "lineNumber": 36
+        },
+        {
+          "caller": "handleCreate",
+          "callee": "new Date().toISOString",
+          "lineNumber": 39
+        },
+        {
+          "caller": "handleCreate",
+          "callee": "addChat",
+          "lineNumber": 41
+        },
+        {
+          "caller": "handleCreate",
+          "callee": "setCurrentChat",
+          "lineNumber": 42
+        },
+        {
+          "caller": "handleCreate",
+          "callee": "handleClose",
+          "lineNumber": 43
+        },
+        {
+          "caller": "NewChatModal",
+          "callee": "title.trim",
+          "lineNumber": 57
+        },
+        {
+          "caller": "NewChatModal",
+          "callee": "setTitle",
+          "lineNumber": 70
+        },
+        {
+          "caller": "NewChatModal",
+          "callee": "handleCreate",
+          "lineNumber": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/hooks/useAuth.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "useAuth",
+          "startLine": 10,
+          "endLine": 29,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "useAuth",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useAuth",
+          "callee": "useAuthStore",
+          "lineNumber": 11
+        },
+        {
+          "caller": "useAuth",
+          "callee": "useAuthStore",
+          "lineNumber": 12
+        },
+        {
+          "caller": "useAuth",
+          "callee": "useAuthStore",
+          "lineNumber": 13
+        },
+        {
+          "caller": "useAuth",
+          "callee": "useAuthStore",
+          "lineNumber": 14
+        },
+        {
+          "caller": "useAuth",
+          "callee": "useAuthStore",
+          "lineNumber": 15
+        },
+        {
+          "caller": "useAuth",
+          "callee": "useCallback",
+          "lineNumber": 17
+        },
+        {
+          "caller": "useAuth",
+          "callee": "setUser",
+          "lineNumber": 18
+        },
+        {
+          "caller": "useAuth",
+          "callee": "setToken",
+          "lineNumber": 19
+        },
+        {
+          "caller": "useAuth",
+          "callee": "Boolean",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/hooks/useChat.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "createId",
+          "startLine": 9,
+          "endLine": 11,
+          "params": []
+        },
+        {
+          "name": "useChat",
+          "startLine": 25,
+          "endLine": 92,
+          "params": [
+            "chatId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "useChat",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createId",
+          "callee": "globalThis.crypto?.randomUUID",
+          "lineNumber": 10
+        },
+        {
+          "caller": "createId",
+          "callee": "Date.now",
+          "lineNumber": 10
+        },
+        {
+          "caller": "useChat",
+          "callee": "useSocket",
+          "lineNumber": 26
+        },
+        {
+          "caller": "useChat",
+          "callee": "useChatStore",
+          "lineNumber": 27
+        },
+        {
+          "caller": "useChat",
+          "callee": "useUIStore",
+          "lineNumber": 28
+        },
+        {
+          "caller": "useChat",
+          "callee": "useAuthStore",
+          "lineNumber": 29
+        },
+        {
+          "caller": "useChat",
+          "callee": "useEffect",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handleNewMessage",
+          "callee": "addMessage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "handleUserJoined",
+          "callee": "addNotification",
+          "lineNumber": 41
+        },
+        {
+          "caller": "handleUserLeft",
+          "callee": "addNotification",
+          "lineNumber": 46
+        },
+        {
+          "caller": "useChat",
+          "callee": "socket.on",
+          "lineNumber": 50
+        },
+        {
+          "caller": "useChat",
+          "callee": "socket.on",
+          "lineNumber": 51
+        },
+        {
+          "caller": "useChat",
+          "callee": "socket.on",
+          "lineNumber": 52
+        },
+        {
+          "caller": "useChat",
+          "callee": "socket.emit",
+          "lineNumber": 53
+        },
+        {
+          "caller": "useChat",
+          "callee": "socket.emit",
+          "lineNumber": 56
+        },
+        {
+          "caller": "useChat",
+          "callee": "socket.off",
+          "lineNumber": 57
+        },
+        {
+          "caller": "useChat",
+          "callee": "socket.off",
+          "lineNumber": 58
+        },
+        {
+          "caller": "useChat",
+          "callee": "socket.off",
+          "lineNumber": 59
+        },
+        {
+          "caller": "useChat",
+          "callee": "useCallback",
+          "lineNumber": 63
+        },
+        {
+          "caller": "useChat",
+          "callee": "content.trim",
+          "lineNumber": 65
+        },
+        {
+          "caller": "useChat",
+          "callee": "socket.emit",
+          "lineNumber": 72
+        },
+        {
+          "caller": "useChat",
+          "callee": "createId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "useChat",
+          "callee": "new Date().toISOString",
+          "lineNumber": 84
+        },
+        {
+          "caller": "useChat",
+          "callee": "addMessage",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/lib/mockData.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 88,
+      "exports": [
+        {
+          "name": "MOCK_USER",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "MOCK_TOKEN",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "MOCK_CHATS",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "MOCK_AGENTS",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "MOCK_MESSAGES",
+          "line": 61,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/lib/utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "functions": [
+        {
+          "name": "cn",
+          "startLine": 8,
+          "endLine": 10,
+          "params": [
+            "...inputs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "cn",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cn",
+          "callee": "clsx",
+          "lineNumber": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/pages/ChatPage.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "ChatPage",
+          "startLine": 11,
+          "endLine": 38,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChatPage",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ChatPage",
+          "callee": "useParams",
+          "lineNumber": 12
+        },
+        {
+          "caller": "ChatPage",
+          "callee": "useNavigate",
+          "lineNumber": 13
+        },
+        {
+          "caller": "ChatPage",
+          "callee": "useChatStore",
+          "lineNumber": 14
+        },
+        {
+          "caller": "ChatPage",
+          "callee": "useChatStore",
+          "lineNumber": 15
+        },
+        {
+          "caller": "ChatPage",
+          "callee": "Boolean",
+          "lineNumber": 17
+        },
+        {
+          "caller": "ChatPage",
+          "callee": "chats.some",
+          "lineNumber": 17
+        },
+        {
+          "caller": "ChatPage",
+          "callee": "useEffect",
+          "lineNumber": 19
+        },
+        {
+          "caller": "ChatPage",
+          "callee": "setCurrentChat",
+          "lineNumber": 21
+        },
+        {
+          "caller": "ChatPage",
+          "callee": "navigate",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/pages/HomePage.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "HomePage",
+          "startLine": 11,
+          "endLine": 31,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "HomePage",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "HomePage",
+          "callee": "useChatStore",
+          "lineNumber": 12
+        },
+        {
+          "caller": "HomePage",
+          "callee": "useUIStore",
+          "lineNumber": 13
+        },
+        {
+          "caller": "HomePage",
+          "callee": "openModal",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/pages/NotFoundPage.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 16,
+      "functions": [
+        {
+          "name": "NotFoundPage",
+          "startLine": 5,
+          "endLine": 18,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotFoundPage",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "NotFoundPage",
+          "callee": "useNavigate",
+          "lineNumber": 6
+        },
+        {
+          "caller": "NotFoundPage",
+          "callee": "navigate",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/store/agentStore.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 31,
+      "exports": [
+        {
+          "name": "useAgentStore",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/store/authStore.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 37,
+      "exports": [
+        {
+          "name": "useAuthStore",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/store/chatStore.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "selectMessages",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "chatId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "useChatStore",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "selectMessages",
+          "line": 44,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/store/uiStore.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "createId",
+          "startLine": 19,
+          "endLine": 21,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "useUIStore",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createId",
+          "callee": "globalThis.crypto?.randomUUID",
+          "lineNumber": 20
+        },
+        {
+          "caller": "createId",
+          "callee": "Date.now",
+          "lineNumber": 20
+        },
+        {
+          "caller": "createId",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 20
+        },
+        {
+          "caller": "createId",
+          "callee": "Math.random().toString",
+          "lineNumber": 20
+        },
+        {
+          "caller": "createId",
+          "callee": "Math.random",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/types/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 51,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/utils/formatting.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "formatTime",
+          "startLine": 2,
+          "endLine": 6,
+          "params": [
+            "iso"
+          ]
+        },
+        {
+          "name": "getInitials",
+          "startLine": 9,
+          "endLine": 14,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "formatTime",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "getInitials",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "formatTime",
+          "callee": "Number.isNaN",
+          "lineNumber": 4
+        },
+        {
+          "caller": "formatTime",
+          "callee": "date.getTime",
+          "lineNumber": 4
+        },
+        {
+          "caller": "formatTime",
+          "callee": "date.toLocaleTimeString",
+          "lineNumber": 5
+        },
+        {
+          "caller": "getInitials",
+          "callee": "name.trim().split(/\\s+/).filter",
+          "lineNumber": 10
+        },
+        {
+          "caller": "getInitials",
+          "callee": "name.trim().split",
+          "lineNumber": 10
+        },
+        {
+          "caller": "getInitials",
+          "callee": "name.trim",
+          "lineNumber": 10
+        },
+        {
+          "caller": "getInitials",
+          "callee": "parts[0].slice(0, 2).toUpperCase",
+          "lineNumber": 12
+        },
+        {
+          "caller": "getInitials",
+          "callee": "parts[0].slice",
+          "lineNumber": 12
+        },
+        {
+          "caller": "getInitials",
+          "callee": "(parts[0][0] + parts[parts.length - 1][0]).toUpperCase",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/tests/unit/ChatWindow.test.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "renderChatWindow",
+          "startLine": 10,
+          "endLine": 16,
+          "params": [
+            "chatId"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "renderChatWindow",
+          "callee": "render",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/tests/unit/stores.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 83,
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

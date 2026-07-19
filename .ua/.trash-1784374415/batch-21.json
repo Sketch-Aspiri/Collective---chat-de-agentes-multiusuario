@@ -1,0 +1,499 @@
+{
+  "nodes": [
+    {
+      "id": "file:.gitattributes",
+      "type": "file",
+      "name": ".gitattributes",
+      "filePath": ".gitattributes",
+      "summary": "Configuración de atributos de Git para normalizar finales de línea y tratamiento de archivos binarios en el repositorio.",
+      "tags": ["configuration", "git", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.github/ISSUE_TEMPLATE/bug_report.md",
+      "type": "document",
+      "name": "bug_report.md",
+      "filePath": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "summary": "Plantilla de GitHub Issues para reportar bugs, con secciones estructuradas para pasos de reproducción y comportamiento esperado.",
+      "tags": ["documentation", "github", "templates"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.ua/.understandignore",
+      "type": "file",
+      "name": ".understandignore",
+      "filePath": ".ua/.understandignore",
+      "summary": "Lista de patrones de exclusión usados por la herramienta Understand-Anything para omitir archivos irrelevantes al construir el grafo de conocimiento del proyecto.",
+      "tags": ["configuration", "tooling", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/config.json",
+      "type": "config",
+      "name": "config.json",
+      "filePath": ".ua/config.json",
+      "summary": "Configuración de la herramienta Understand-Anything que define el idioma de salida para el contenido textual generado (español).",
+      "tags": ["configuration", "tooling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:backend/jest.config.js",
+      "type": "config",
+      "name": "jest.config.js",
+      "filePath": "backend/jest.config.js",
+      "summary": "Configuración de Jest para el backend, definiendo el entorno de pruebas, transformadores TypeScript y rutas de test.",
+      "tags": ["configuration", "testing", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/prisma/migrations/20260717124954_init/migration.sql:User",
+      "type": "table",
+      "name": "User",
+      "summary": "Tabla inicial de usuarios con email, hash de contraseña, nombre y timestamps de auditoría.",
+      "tags": ["database", "migration", "users"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/prisma/migrations/20260717124954_init/migration.sql:Chat",
+      "type": "table",
+      "name": "Chat",
+      "summary": "Tabla de chats que referencia al usuario propietario y almacena metadata básica del chat.",
+      "tags": ["database", "migration", "chat"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/prisma/migrations/20260717124954_init/migration.sql:ChatMember",
+      "type": "table",
+      "name": "ChatMember",
+      "summary": "Tabla intermedia que relaciona usuarios con chats y define su rol de membresía.",
+      "tags": ["database", "migration", "chat"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/prisma/migrations/20260717124954_init/migration.sql:Agent",
+      "type": "table",
+      "name": "Agent",
+      "summary": "Tabla de agentes de IA asociados a un chat, con handle de mención, proveedor LLM y prompt de sistema.",
+      "tags": ["database", "migration", "agents"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:backend/prisma/migrations/20260717124954_init/migration.sql:Message",
+      "type": "table",
+      "name": "Message",
+      "summary": "Tabla de mensajes de chat, con autor tipado (usuario o agente) y contenido del mensaje.",
+      "tags": ["database", "migration", "chat"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/prisma/migrations/20260717124954_init/migration.sql",
+      "type": "file",
+      "name": "migration.sql",
+      "filePath": "backend/prisma/migrations/20260717124954_init/migration.sql",
+      "summary": "Migración inicial de Prisma que crea el esquema base de la base de datos: usuarios, chats, miembros, agentes y mensajes.",
+      "tags": ["database", "migration", "schema-definition"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql:ChatAgentLink",
+      "type": "table",
+      "name": "ChatAgentLink",
+      "summary": "Tabla de relación muchos-a-muchos entre chats y agentes, permitiendo que un agente participe en varios chats.",
+      "tags": ["database", "migration", "agents"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql",
+      "type": "file",
+      "name": "migration.sql",
+      "filePath": "backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql",
+      "summary": "Migración que añade la tabla de vínculos agente-chat (ChatAgentLink) e índices de rendimiento adicionales sobre las tablas existentes.",
+      "tags": ["database", "migration", "schema-definition"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:backend/prisma/migrations/migration_lock.toml",
+      "type": "config",
+      "name": "migration_lock.toml",
+      "filePath": "backend/prisma/migrations/migration_lock.toml",
+      "summary": "Archivo de bloqueo de Prisma Migrate que fija el proveedor de base de datos (PostgreSQL) usado por las migraciones.",
+      "tags": ["configuration", "database", "prisma"],
+      "complexity": "simple"
+    },
+    {
+      "id": "schema:backend/prisma/schema.prisma",
+      "type": "schema",
+      "name": "schema.prisma",
+      "filePath": "backend/prisma/schema.prisma",
+      "summary": "Esquema de Prisma que define los modelos de datos (User, Chat, ChatMember, Agent, ChatAgentLink, Message) y sus relaciones para PostgreSQL.",
+      "tags": ["schema-definition", "database", "prisma"],
+      "complexity": "moderate",
+      "languageNotes": "Usa binaryTargets nativo y musl-openssl para soportar tanto desarrollo local como imágenes Docker Alpine."
+    },
+    {
+      "id": "file:backend/prisma/seed.ts",
+      "type": "file",
+      "name": "seed.ts",
+      "filePath": "backend/prisma/seed.ts",
+      "summary": "Script de seed de Prisma que crea usuarios, chats y agentes de ejemplo con contraseñas hasheadas para desarrollo local.",
+      "tags": ["database", "seed", "utility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/prisma/seed.ts:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "backend/prisma/seed.ts",
+      "lineRange": [8, 84],
+      "summary": "Función principal que crea usuarios, chats y agentes de ejemplo mediante operaciones upsert de Prisma.",
+      "tags": ["seed", "database", "async"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/src/config/constants.ts",
+      "type": "file",
+      "name": "constants.ts",
+      "filePath": "backend/src/config/constants.ts",
+      "summary": "Define constantes globales de la aplicación backend: nombre de la app, puerto por defecto y prefijo de API.",
+      "tags": ["configuration", "constants", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/src/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "backend/src/index.ts",
+      "summary": "Punto de entrada del backend que reexporta la función createApp desde el módulo de aplicación Express.",
+      "tags": ["entry-point", "barrel", "backend"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/src/middleware/logging.ts",
+      "type": "file",
+      "name": "logging.ts",
+      "filePath": "backend/src/middleware/logging.ts",
+      "summary": "Reexporta el middleware requestLogger encargado del logging centralizado de peticiones HTTP.",
+      "tags": ["middleware", "barrel", "logging"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/src/types/api-responses.ts",
+      "type": "file",
+      "name": "api-responses.ts",
+      "filePath": "backend/src/types/api-responses.ts",
+      "summary": "Define los tipos TypeScript para el envelope estándar de respuestas de la API (success, data, error, meta).",
+      "tags": ["type-definition", "api-handler", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/src/types/Chat.ts",
+      "type": "file",
+      "name": "Chat.ts",
+      "filePath": "backend/src/types/Chat.ts",
+      "summary": "Define los tipos TypeScript para la entidad Chat usados a través del backend.",
+      "tags": ["type-definition", "chat", "data-model"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/src/types/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "backend/src/types/index.ts",
+      "summary": "Barrel que reexporta todos los tipos del dominio (User, Chat, Agent, Message, api-responses) para importación centralizada.",
+      "tags": ["barrel", "type-definition", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/src/types/Message.ts",
+      "type": "file",
+      "name": "Message.ts",
+      "filePath": "backend/src/types/Message.ts",
+      "summary": "Define los tipos TypeScript para la entidad Message, incluyendo el tipo de autor (usuario o agente).",
+      "tags": ["type-definition", "chat", "data-model"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/src/types/User.ts",
+      "type": "file",
+      "name": "User.ts",
+      "filePath": "backend/src/types/User.ts",
+      "summary": "Define el tipo TypeScript para la entidad User usado en el backend.",
+      "tags": ["type-definition", "users", "data-model"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/src/utils/helpers.ts",
+      "type": "file",
+      "name": "helpers.ts",
+      "filePath": "backend/src/utils/helpers.ts",
+      "summary": "Provee funciones utilitarias genéricas: omit para excluir claves de un objeto y sleep para pausas asíncronas.",
+      "tags": ["utility", "helpers"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/src/utils/helpers.ts:omit",
+      "type": "function",
+      "name": "omit",
+      "filePath": "backend/src/utils/helpers.ts",
+      "lineRange": [1, 7],
+      "summary": "Devuelve una copia de un objeto excluyendo las claves especificadas, sin mutar el original.",
+      "tags": ["utility", "immutability"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/src/utils/helpers.ts:sleep",
+      "type": "function",
+      "name": "sleep",
+      "filePath": "backend/src/utils/helpers.ts",
+      "lineRange": [9, 11],
+      "summary": "Función auxiliar que retorna una promesa resuelta tras el número de milisegundos indicado.",
+      "tags": ["utility", "async"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/fixtures/seed-data.ts",
+      "type": "file",
+      "name": "seed-data.ts",
+      "filePath": "backend/tests/fixtures/seed-data.ts",
+      "summary": "Fixture de datos de prueba que exporta un usuario de ejemplo (seedUser) reutilizable en los tests del backend.",
+      "tags": ["test", "fixtures", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/integration/agent-execution.test.ts",
+      "type": "file",
+      "name": "agent-execution.test.ts",
+      "filePath": "backend/tests/integration/agent-execution.test.ts",
+      "summary": "Prueba de integración placeholder para el flujo de ejecución de agentes de IA.",
+      "tags": ["test", "integration", "agents"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/integration/chat-flow.test.ts",
+      "type": "file",
+      "name": "chat-flow.test.ts",
+      "filePath": "backend/tests/integration/chat-flow.test.ts",
+      "summary": "Prueba de integración placeholder para el flujo de mensajería de chat en tiempo real.",
+      "tags": ["test", "integration", "chat"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/unit/agents.test.ts",
+      "type": "file",
+      "name": "agents.test.ts",
+      "filePath": "backend/tests/unit/agents.test.ts",
+      "summary": "Prueba unitaria placeholder para la lógica de agentes del backend.",
+      "tags": ["test", "unit", "agents"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/unit/auth.test.ts",
+      "type": "file",
+      "name": "auth.test.ts",
+      "filePath": "backend/tests/unit/auth.test.ts",
+      "summary": "Prueba unitaria placeholder para la lógica de autenticación del backend.",
+      "tags": ["test", "unit", "auth"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:bash.exe.stackdump",
+      "type": "file",
+      "name": "bash.exe.stackdump",
+      "filePath": "bash.exe.stackdump",
+      "summary": "Volcado de pila (crash dump) generado por bash.exe, artefacto residual no relacionado con el código fuente del proyecto.",
+      "tags": ["artifact", "debug"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/prisma/migrations/20260717124954_init/migration.sql",
+      "target": "table:backend/prisma/migrations/20260717124954_init/migration.sql:User",
+      "type": "migrates",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/prisma/migrations/20260717124954_init/migration.sql",
+      "target": "table:backend/prisma/migrations/20260717124954_init/migration.sql:Chat",
+      "type": "migrates",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/prisma/migrations/20260717124954_init/migration.sql",
+      "target": "table:backend/prisma/migrations/20260717124954_init/migration.sql:ChatMember",
+      "type": "migrates",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/prisma/migrations/20260717124954_init/migration.sql",
+      "target": "table:backend/prisma/migrations/20260717124954_init/migration.sql:Agent",
+      "type": "migrates",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/prisma/migrations/20260717124954_init/migration.sql",
+      "target": "table:backend/prisma/migrations/20260717124954_init/migration.sql:Message",
+      "type": "migrates",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql",
+      "target": "table:backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql:ChatAgentLink",
+      "type": "migrates",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql",
+      "target": "table:backend/prisma/migrations/20260717124954_init/migration.sql:Chat",
+      "type": "migrates",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql",
+      "target": "table:backend/prisma/migrations/20260717124954_init/migration.sql:Agent",
+      "type": "migrates",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql",
+      "target": "table:backend/prisma/migrations/20260717124954_init/migration.sql:Message",
+      "type": "migrates",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "schema:backend/prisma/schema.prisma",
+      "target": "file:backend/prisma/migrations/20260717124954_init/migration.sql",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "schema:backend/prisma/schema.prisma",
+      "target": "file:backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:backend/prisma/migrations/migration_lock.toml",
+      "target": "schema:backend/prisma/schema.prisma",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:backend/prisma/seed.ts",
+      "target": "function:backend/prisma/seed.ts:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/prisma/seed.ts",
+      "target": "schema:backend/prisma/schema.prisma",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:backend/src/utils/helpers.ts",
+      "target": "function:backend/src/utils/helpers.ts:omit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/src/utils/helpers.ts",
+      "target": "function:backend/src/utils/helpers.ts:sleep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/src/utils/helpers.ts",
+      "target": "function:backend/src/utils/helpers.ts:omit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/src/utils/helpers.ts",
+      "target": "function:backend/src/utils/helpers.ts:sleep",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/src/types/index.ts",
+      "target": "file:backend/src/types/User.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/src/types/index.ts",
+      "target": "file:backend/src/types/Chat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/src/types/index.ts",
+      "target": "file:backend/src/types/Message.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/src/types/index.ts",
+      "target": "file:backend/src/types/api-responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/fixtures/seed-data.ts",
+      "target": "file:backend/src/types/User.ts",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "config:backend/jest.config.js",
+      "target": "file:backend/tests/unit/agents.test.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:backend/jest.config.js",
+      "target": "file:backend/tests/unit/auth.test.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:backend/jest.config.js",
+      "target": "file:backend/tests/integration/agent-execution.test.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:backend/jest.config.js",
+      "target": "file:backend/tests/integration/chat-flow.test.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

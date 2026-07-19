@@ -1,0 +1,22 @@
+{
+  "backend/src/modules/messages/messages.controller.ts": [
+    {
+      "path": "backend/src/modules/messages/messages.routes.ts",
+      "batchIndex": 3,
+      "symbols": [
+        "messagesRoutes"
+      ]
+    }
+  ],
+  "backend/src/modules/messages/messages.service.ts": [
+    {
+      "path": "backend/src/config/database.ts",
+      "batchIndex": 2,
+      "symbols": [
+        "prisma",
+        "connectDatabase",
+        "disconnectDatabase"
+      ]
+    }
+  ]
+}

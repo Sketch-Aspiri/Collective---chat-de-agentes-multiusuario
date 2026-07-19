@@ -1,0 +1,178 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/git/GIT_SETUP_RAPIDO.md",
+      "type": "document",
+      "name": "GIT_SETUP_RAPIDO.md",
+      "filePath": "docs/git/GIT_SETUP_RAPIDO.md",
+      "summary": "Guía rápida de 5 minutos con comandos exactos para configurar las ramas locales de Git conectadas al repositorio remoto, incluyendo checklist y solución de problemas comunes.",
+      "tags": ["documentation", "git", "onboarding"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/git/GIT_WORKFLOW.md",
+      "type": "document",
+      "name": "GIT_WORKFLOW.md",
+      "filePath": "docs/git/GIT_WORKFLOW.md",
+      "summary": "Documento extenso que define el flujo de trabajo Git del proyecto agentes-chat: estructura de ramas, setup inicial, flujo por rol (backend, frontend, DevOps), sincronización, protecciones de rama y convenciones de commits.",
+      "tags": ["documentation", "git", "development"],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:frontend/postcss.config.cjs",
+      "type": "config",
+      "name": "postcss.config.cjs",
+      "filePath": "frontend/postcss.config.cjs",
+      "summary": "Configuración de PostCSS del frontend que habilita los plugins Tailwind CSS y Autoprefixer en el pipeline de build de Vite.",
+      "tags": ["configuration", "build-system", "css"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/styles/globals.css",
+      "type": "file",
+      "name": "globals.css",
+      "filePath": "frontend/src/styles/globals.css",
+      "summary": "Hoja de estilos global del frontend que importa las capas de Tailwind CSS y define estilos base compartidos por toda la aplicación.",
+      "tags": ["css", "styling", "global"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/vite-env.d.ts",
+      "type": "file",
+      "name": "vite-env.d.ts",
+      "filePath": "frontend/src/vite-env.d.ts",
+      "summary": "Declaraciones de tipos ambientales de Vite que habilitan el tipado de variables de entorno (import.meta.env) en TypeScript.",
+      "tags": ["type-definition", "vite", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:frontend/tailwind.config.cjs",
+      "type": "config",
+      "name": "tailwind.config.cjs",
+      "filePath": "frontend/tailwind.config.cjs",
+      "summary": "Configuración de Tailwind CSS que define las rutas de contenido a escanear, extensiones del tema y plugins usados en el frontend.",
+      "tags": ["configuration", "css", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/tests/e2e/agent-execution.spec.ts",
+      "type": "file",
+      "name": "agent-execution.spec.ts",
+      "filePath": "frontend/tests/e2e/agent-execution.spec.ts",
+      "summary": "Prueba end-to-end placeholder con Playwright para el flujo de ejecución de agentes desde la interfaz de usuario.",
+      "tags": ["test", "e2e", "agents"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/tests/e2e/chat-flow.spec.ts",
+      "type": "file",
+      "name": "chat-flow.spec.ts",
+      "filePath": "frontend/tests/e2e/chat-flow.spec.ts",
+      "summary": "Prueba end-to-end placeholder con Playwright para el flujo completo de chat en tiempo real desde la interfaz de usuario.",
+      "tags": ["test", "e2e", "chat"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/tests/setup.ts",
+      "type": "file",
+      "name": "setup.ts",
+      "filePath": "frontend/tests/setup.ts",
+      "summary": "Configuración global de setup para el entorno de pruebas del frontend (Vitest/RTL), preparando mocks y matchers antes de ejecutar los tests.",
+      "tags": ["test", "configuration", "setup"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:frontend/vite.config.ts",
+      "type": "config",
+      "name": "vite.config.ts",
+      "filePath": "frontend/vite.config.ts",
+      "summary": "Configuración de Vite para el frontend: plugin de React, alias de rutas y ajustes del servidor de desarrollo.",
+      "tags": ["configuration", "build-system", "vite"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:infra/db/init.sql",
+      "type": "file",
+      "name": "init.sql",
+      "filePath": "infra/db/init.sql",
+      "summary": "Script de inicialización de PostgreSQL ejecutado una sola vez al crear el volumen de datos; habilita las extensiones pgcrypto y pg_trgm requeridas antes de aplicar las migraciones de Prisma.",
+      "tags": ["database", "infrastructure", "postgresql"],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:infra/docker/nginx.conf",
+      "type": "service",
+      "name": "nginx.conf",
+      "filePath": "infra/docker/nginx.conf",
+      "summary": "Configuración de nginx para producción que sirve el frontend SPA con fallback a index.html, hace proxy de /api y /socket.io hacia el backend, aplica rate limiting (100 req/min) y cabeceras de seguridad.",
+      "tags": ["infrastructure", "reverse-proxy", "deployment"],
+      "complexity": "moderate",
+      "languageNotes": "Configura upgrade de conexión HTTP para soportar WebSockets de Socket.io en /socket.io/."
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:frontend/postcss.config.cjs",
+      "target": "config:frontend/tailwind.config.cjs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:frontend/tailwind.config.cjs",
+      "target": "file:frontend/src/styles/globals.css",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:frontend/postcss.config.cjs",
+      "target": "file:frontend/src/styles/globals.css",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:frontend/vite.config.ts",
+      "target": "file:frontend/src/styles/globals.css",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:frontend/vite.config.ts",
+      "target": "file:frontend/src/vite-env.d.ts",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:frontend/tests/setup.ts",
+      "target": "file:frontend/tests/e2e/agent-execution.spec.ts",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "file:frontend/tests/setup.ts",
+      "target": "file:frontend/tests/e2e/chat-flow.spec.ts",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "service:infra/docker/nginx.conf",
+      "target": "file:frontend/src/styles/globals.css",
+      "type": "deploys",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:docs/git/GIT_SETUP_RAPIDO.md",
+      "target": "document:docs/git/GIT_WORKFLOW.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

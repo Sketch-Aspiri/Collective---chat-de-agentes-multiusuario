@@ -1,0 +1,3066 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 212,
+  "totalBatches": 22,
+  "exportsByPath": {
+    ".gitattributes": [],
+    ".ua/.understandignore": [],
+    "backend/jest.config.js": [],
+    "backend/prisma/seed.ts": [],
+    "backend/src/app.ts": [
+      "createApp"
+    ],
+    "backend/src/config/constants.ts": [
+      "APP_NAME",
+      "DEFAULT_PORT",
+      "API_PREFIX"
+    ],
+    "backend/src/config/database.ts": [
+      "prisma",
+      "connectDatabase",
+      "disconnectDatabase"
+    ],
+    "backend/src/config/env.ts": [
+      "env"
+    ],
+    "backend/src/config/environment.ts": [
+      "env"
+    ],
+    "backend/src/config/redis.ts": [
+      "redisClient",
+      "connectRedis",
+      "disconnectRedis"
+    ],
+    "backend/src/index.ts": [
+      "createApp"
+    ],
+    "backend/src/middleware/auth.ts": [
+      "authMiddleware"
+    ],
+    "backend/src/middleware/errorHandler.ts": [
+      "errorHandler"
+    ],
+    "backend/src/middleware/logger.ts": [
+      "requestLogger"
+    ],
+    "backend/src/middleware/logging.ts": [
+      "requestLogger"
+    ],
+    "backend/src/middleware/metrics.ts": [
+      "metricsMiddleware",
+      "getMetrics"
+    ],
+    "backend/src/middleware/rateLimiter.ts": [
+      "RATE_LIMIT_WINDOW_MS",
+      "RATE_LIMIT_MAX_REQUESTS",
+      "AUTH_RATE_LIMIT_MAX_REQUESTS",
+      "rateLimiter",
+      "enforceRateLimit",
+      "publicAuthRateLimiter",
+      "enforcePublicAuthRateLimit"
+    ],
+    "backend/src/modules/agents/agent-execution.ts": [
+      "executeAgentMention",
+      "AGENT_EXECUTION_LIMITS"
+    ],
+    "backend/src/modules/agents/agents.controller.ts": [
+      "AgentsController",
+      "agentsController"
+    ],
+    "backend/src/modules/agents/agents.model.ts": [],
+    "backend/src/modules/agents/agents.routes.ts": [
+      "agentsRoutes"
+    ],
+    "backend/src/modules/agents/agents.service.ts": [
+      "AgentsService",
+      "agentsService"
+    ],
+    "backend/src/modules/auth/auth.controller.ts": [
+      "AuthController",
+      "authController"
+    ],
+    "backend/src/modules/auth/auth.model.ts": [],
+    "backend/src/modules/auth/auth.routes.ts": [
+      "authRoutes"
+    ],
+    "backend/src/modules/auth/auth.service.ts": [
+      "AuthService",
+      "authService"
+    ],
+    "backend/src/modules/billing/billing.controller.ts": [
+      "BillingController",
+      "billingController"
+    ],
+    "backend/src/modules/billing/billing.routes.ts": [
+      "billingRoutes"
+    ],
+    "backend/src/modules/billing/billing.service.ts": [
+      "BillingService",
+      "billingService"
+    ],
+    "backend/src/modules/billing/stripe.integration.ts": [
+      "stripeClient"
+    ],
+    "backend/src/modules/chats/chats.controller.ts": [
+      "ChatsController",
+      "chatsController"
+    ],
+    "backend/src/modules/chats/chats.model.ts": [],
+    "backend/src/modules/chats/chats.routes.ts": [
+      "chatsRoutes"
+    ],
+    "backend/src/modules/chats/chats.service.ts": [
+      "ChatsService",
+      "chatsService"
+    ],
+    "backend/src/modules/health/health.routes.ts": [
+      "healthRoutes"
+    ],
+    "backend/src/modules/health/health.service.ts": [
+      "getReadiness"
+    ],
+    "backend/src/modules/messages/messages.controller.ts": [
+      "MessagesController",
+      "messagesController"
+    ],
+    "backend/src/modules/messages/messages.model.ts": [],
+    "backend/src/modules/messages/messages.routes.ts": [
+      "messagesRoutes"
+    ],
+    "backend/src/modules/messages/messages.service.ts": [
+      "MessagesService",
+      "messagesService"
+    ],
+    "backend/src/modules/users/users.controller.ts": [
+      "UsersController",
+      "usersController"
+    ],
+    "backend/src/modules/users/users.model.ts": [],
+    "backend/src/modules/users/users.routes.ts": [
+      "usersRoutes"
+    ],
+    "backend/src/modules/users/users.service.ts": [
+      "UsersService",
+      "usersService"
+    ],
+    "backend/src/modules/webhooks/webhooks.controller.ts": [
+      "WebhooksController",
+      "webhooksController"
+    ],
+    "backend/src/modules/webhooks/webhooks.routes.ts": [
+      "webhooksRoutes"
+    ],
+    "backend/src/server.ts": [],
+    "backend/src/services/email/sendgrid.service.ts": [
+      "SendgridService",
+      "sendgridService"
+    ],
+    "backend/src/services/encryption/crypto.service.ts": [
+      "encrypt",
+      "decrypt"
+    ],
+    "backend/src/services/job-queue/bull.service.ts": [
+      "agentExecutionQueue",
+      "createAgentExecutionWorker"
+    ],
+    "backend/src/services/llm/anthropic.service.ts": [
+      "AnthropicService"
+    ],
+    "backend/src/services/llm/google.service.ts": [
+      "GoogleService"
+    ],
+    "backend/src/services/llm/llm.interface.ts": [
+      "getLLMProvider"
+    ],
+    "backend/src/services/llm/openai.service.ts": [
+      "OpenAIService"
+    ],
+    "backend/src/services/memory/agent-memory.service.ts": [
+      "AgentMemoryService",
+      "agentMemoryService"
+    ],
+    "backend/src/services/memory/memory.interface.ts": [],
+    "backend/src/services/storage/google-drive.service.ts": [
+      "GoogleDriveService"
+    ],
+    "backend/src/services/storage/s3.service.ts": [
+      "S3Service"
+    ],
+    "backend/src/services/storage/storage.interface.ts": [],
+    "backend/src/types/Agent.ts": [],
+    "backend/src/types/api-responses.ts": [],
+    "backend/src/types/Chat.ts": [],
+    "backend/src/types/index.ts": [],
+    "backend/src/types/Message.ts": [],
+    "backend/src/types/User.ts": [],
+    "backend/src/utils/encryption.ts": [
+      "ENCRYPTION_ALGORITHM",
+      "encrypt",
+      "decrypt"
+    ],
+    "backend/src/utils/errors.ts": [
+      "AppError",
+      "NotFoundError",
+      "UnauthorizedError",
+      "TooManyRequestsError",
+      "ServiceUnavailableError",
+      "ValidationError"
+    ],
+    "backend/src/utils/helpers.ts": [
+      "omit",
+      "sleep"
+    ],
+    "backend/src/utils/logger.ts": [
+      "logger"
+    ],
+    "backend/src/utils/validators.ts": [
+      "emailSchema",
+      "passwordSchema",
+      "paginationSchema"
+    ],
+    "backend/src/websocket/socket-server.ts": [
+      "createSocketServer"
+    ],
+    "backend/tests/fixtures/seed-data.ts": [
+      "seedUser"
+    ],
+    "backend/tests/integration/agent-execution.test.ts": [],
+    "backend/tests/integration/chat-flow.test.ts": [],
+    "backend/tests/integration/health.ready.test.ts": [],
+    "backend/tests/integration/health.test.ts": [],
+    "backend/tests/integration/metrics.test.ts": [],
+    "backend/tests/integration/socket.events.test.ts": [],
+    "backend/tests/unit/agents.test.ts": [],
+    "backend/tests/unit/auth.test.ts": [],
+    "backend/tests/unit/middleware.auth.test.ts": [],
+    "backend/tests/unit/middleware.rateLimiter.test.ts": [],
+    "backend/tests/unit/utils.encryption.test.ts": [],
+    "backend/tests/unit/utils.validators.test.ts": [],
+    "bash.exe.stackdump": [],
+    "frontend/postcss.config.cjs": [],
+    "frontend/src/App.tsx": [
+      "App"
+    ],
+    "frontend/src/components/auth/RequireAuth.tsx": [
+      "RequireAuth"
+    ],
+    "frontend/src/components/chat/ChatWindow.tsx": [
+      "ChatWindow"
+    ],
+    "frontend/src/components/chat/Message.tsx": [
+      "Message"
+    ],
+    "frontend/src/components/chat/MessageInput.tsx": [
+      "MessageInput"
+    ],
+    "frontend/src/components/chat/MessageList.tsx": [
+      "MessageList"
+    ],
+    "frontend/src/components/common/Avatar.tsx": [
+      "Avatar"
+    ],
+    "frontend/src/components/common/Button.tsx": [
+      "Button"
+    ],
+    "frontend/src/components/common/ConnectionBadge.tsx": [
+      "ConnectionBadge"
+    ],
+    "frontend/src/components/common/Dialog.tsx": [
+      "Dialog"
+    ],
+    "frontend/src/components/common/ErrorBanner.tsx": [
+      "ErrorBanner"
+    ],
+    "frontend/src/components/common/icons.tsx": [
+      "MenuIcon",
+      "PlusIcon",
+      "CloseIcon",
+      "SettingsIcon",
+      "UsersIcon",
+      "MessageIcon",
+      "SendIcon",
+      "SunIcon",
+      "MoonIcon"
+    ],
+    "frontend/src/components/common/Input.tsx": [
+      "Input"
+    ],
+    "frontend/src/components/common/LoadingSpinner.tsx": [
+      "LoadingSpinner"
+    ],
+    "frontend/src/components/common/MentionText.tsx": [
+      "MentionText"
+    ],
+    "frontend/src/components/common/Textarea.tsx": [
+      "Textarea"
+    ],
+    "frontend/src/components/layout/Header.tsx": [
+      "Header"
+    ],
+    "frontend/src/components/layout/MainLayout.tsx": [
+      "MainLayout"
+    ],
+    "frontend/src/components/layout/Sidebar.tsx": [
+      "Sidebar"
+    ],
+    "frontend/src/components/modals/InviteAgentModal.tsx": [
+      "InviteAgentModal"
+    ],
+    "frontend/src/components/modals/NewChatModal.tsx": [
+      "NewChatModal"
+    ],
+    "frontend/src/context/SocketProvider.tsx": [
+      "SocketContext",
+      "SocketProvider"
+    ],
+    "frontend/src/hooks/useAuth.ts": [
+      "useAuth"
+    ],
+    "frontend/src/hooks/useChat.ts": [
+      "useChat"
+    ],
+    "frontend/src/hooks/useMentions.ts": [
+      "useMentions"
+    ],
+    "frontend/src/hooks/useSocket.ts": [
+      "useSocket"
+    ],
+    "frontend/src/lib/logger.ts": [
+      "logger"
+    ],
+    "frontend/src/lib/mockData.ts": [
+      "MOCK_USER",
+      "MOCK_TOKEN",
+      "MOCK_CHATS",
+      "MOCK_AGENTS",
+      "MOCK_MESSAGES"
+    ],
+    "frontend/src/lib/utils.ts": [
+      "cn"
+    ],
+    "frontend/src/main.tsx": [],
+    "frontend/src/pages/ChatPage.tsx": [
+      "ChatPage"
+    ],
+    "frontend/src/pages/HomePage.tsx": [
+      "HomePage"
+    ],
+    "frontend/src/pages/NotFoundPage.tsx": [
+      "NotFoundPage"
+    ],
+    "frontend/src/services/socket.ts": [
+      "getSocket",
+      "disconnectSocket"
+    ],
+    "frontend/src/store/agentStore.ts": [
+      "useAgentStore"
+    ],
+    "frontend/src/store/authStore.ts": [
+      "useAuthStore"
+    ],
+    "frontend/src/store/chatStore.ts": [
+      "useChatStore",
+      "selectMessages"
+    ],
+    "frontend/src/store/uiStore.ts": [
+      "useUIStore"
+    ],
+    "frontend/src/types/api.ts": [],
+    "frontend/src/types/index.ts": [],
+    "frontend/src/utils/formatting.ts": [
+      "formatTime",
+      "getInitials"
+    ],
+    "frontend/src/utils/mentions.ts": [
+      "MENTION_REGEX",
+      "parseMentions",
+      "splitByMentions"
+    ],
+    "frontend/src/vite-env.d.ts": [],
+    "frontend/tailwind.config.cjs": [],
+    "frontend/tests/e2e/agent-execution.spec.ts": [],
+    "frontend/tests/e2e/chat-flow.spec.ts": [],
+    "frontend/tests/setup.ts": [],
+    "frontend/tests/unit/ChatWindow.test.tsx": [],
+    "frontend/tests/unit/mentions.test.ts": [],
+    "frontend/tests/unit/MessageInput.test.tsx": [],
+    "frontend/tests/unit/stores.test.ts": [],
+    "frontend/tests/unit/useMentions.test.ts": [],
+    "frontend/vite.config.ts": [],
+    "infra/docker/nginx.conf": []
+  },
+  "batches": [
+    {
+      "batchIndex": 1,
+      "files": [
+        {
+          "path": "frontend/src/App.tsx",
+          "language": "typescript",
+          "sizeLines": 29,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/auth/RequireAuth.tsx",
+          "language": "typescript",
+          "sizeLines": 29,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/chat/ChatWindow.tsx",
+          "language": "typescript",
+          "sizeLines": 28,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/chat/Message.tsx",
+          "language": "typescript",
+          "sizeLines": 49,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/chat/MessageList.tsx",
+          "language": "typescript",
+          "sizeLines": 61,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/common/Avatar.tsx",
+          "language": "typescript",
+          "sizeLines": 24,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/common/Button.tsx",
+          "language": "typescript",
+          "sizeLines": 49,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/common/ConnectionBadge.tsx",
+          "language": "typescript",
+          "sizeLines": 26,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/common/Dialog.tsx",
+          "language": "typescript",
+          "sizeLines": 86,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/common/ErrorBanner.tsx",
+          "language": "typescript",
+          "sizeLines": 33,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/common/Input.tsx",
+          "language": "typescript",
+          "sizeLines": 25,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/common/LoadingSpinner.tsx",
+          "language": "typescript",
+          "sizeLines": 28,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/common/icons.tsx",
+          "language": "typescript",
+          "sizeLines": 110,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "language": "typescript",
+          "sizeLines": 58,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/layout/MainLayout.tsx",
+          "language": "typescript",
+          "sizeLines": 78,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/layout/Sidebar.tsx",
+          "language": "typescript",
+          "sizeLines": 69,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/modals/InviteAgentModal.tsx",
+          "language": "typescript",
+          "sizeLines": 85,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/modals/NewChatModal.tsx",
+          "language": "typescript",
+          "sizeLines": 78,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/hooks/useAuth.ts",
+          "language": "typescript",
+          "sizeLines": 29,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/hooks/useChat.ts",
+          "language": "typescript",
+          "sizeLines": 92,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/lib/mockData.ts",
+          "language": "typescript",
+          "sizeLines": 94,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/lib/utils.ts",
+          "language": "typescript",
+          "sizeLines": 10,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/pages/ChatPage.tsx",
+          "language": "typescript",
+          "sizeLines": 38,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "language": "typescript",
+          "sizeLines": 31,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/pages/NotFoundPage.tsx",
+          "language": "typescript",
+          "sizeLines": 18,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/store/agentStore.ts",
+          "language": "typescript",
+          "sizeLines": 35,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/store/authStore.ts",
+          "language": "typescript",
+          "sizeLines": 41,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/store/chatStore.ts",
+          "language": "typescript",
+          "sizeLines": 47,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/store/uiStore.ts",
+          "language": "typescript",
+          "sizeLines": 43,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/types/index.ts",
+          "language": "typescript",
+          "sizeLines": 59,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/utils/formatting.ts",
+          "language": "typescript",
+          "sizeLines": 14,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/tests/unit/ChatWindow.test.tsx",
+          "language": "typescript",
+          "sizeLines": 48,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/tests/unit/stores.test.ts",
+          "language": "typescript",
+          "sizeLines": 93,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "frontend/src/App.tsx": [
+          "frontend/src/components/auth/RequireAuth.tsx",
+          "frontend/src/components/layout/MainLayout.tsx",
+          "frontend/src/pages/ChatPage.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/NotFoundPage.tsx"
+        ],
+        "frontend/src/components/auth/RequireAuth.tsx": [
+          "frontend/src/components/common/Button.tsx",
+          "frontend/src/hooks/useAuth.ts"
+        ],
+        "frontend/src/components/chat/ChatWindow.tsx": [
+          "frontend/src/components/chat/MessageInput.tsx",
+          "frontend/src/components/chat/MessageList.tsx",
+          "frontend/src/hooks/useChat.ts",
+          "frontend/src/store/chatStore.ts"
+        ],
+        "frontend/src/components/chat/Message.tsx": [
+          "frontend/src/components/common/Avatar.tsx",
+          "frontend/src/lib/utils.ts",
+          "frontend/src/types/index.ts",
+          "frontend/src/utils/formatting.ts"
+        ],
+        "frontend/src/components/chat/MessageList.tsx": [
+          "frontend/src/components/chat/Message.tsx",
+          "frontend/src/components/common/LoadingSpinner.tsx",
+          "frontend/src/store/agentStore.ts",
+          "frontend/src/types/index.ts"
+        ],
+        "frontend/src/components/common/Avatar.tsx": [
+          "frontend/src/lib/utils.ts",
+          "frontend/src/utils/formatting.ts"
+        ],
+        "frontend/src/components/common/Button.tsx": [
+          "frontend/src/lib/utils.ts"
+        ],
+        "frontend/src/components/common/ConnectionBadge.tsx": [
+          "frontend/src/lib/utils.ts"
+        ],
+        "frontend/src/components/common/Dialog.tsx": [
+          "frontend/src/components/common/icons.tsx",
+          "frontend/src/lib/utils.ts"
+        ],
+        "frontend/src/components/common/ErrorBanner.tsx": [
+          "frontend/src/components/common/icons.tsx",
+          "frontend/src/lib/utils.ts"
+        ],
+        "frontend/src/components/common/Input.tsx": [
+          "frontend/src/lib/utils.ts"
+        ],
+        "frontend/src/components/common/LoadingSpinner.tsx": [
+          "frontend/src/lib/utils.ts"
+        ],
+        "frontend/src/components/common/icons.tsx": [],
+        "frontend/src/components/layout/Header.tsx": [
+          "frontend/src/components/common/Button.tsx",
+          "frontend/src/components/common/icons.tsx"
+        ],
+        "frontend/src/components/layout/MainLayout.tsx": [
+          "frontend/src/components/common/ConnectionBadge.tsx",
+          "frontend/src/components/layout/Header.tsx",
+          "frontend/src/components/layout/Sidebar.tsx",
+          "frontend/src/components/modals/InviteAgentModal.tsx",
+          "frontend/src/components/modals/NewChatModal.tsx",
+          "frontend/src/hooks/useSocket.ts",
+          "frontend/src/lib/utils.ts",
+          "frontend/src/store/chatStore.ts",
+          "frontend/src/store/uiStore.ts"
+        ],
+        "frontend/src/components/layout/Sidebar.tsx": [
+          "frontend/src/components/common/Button.tsx",
+          "frontend/src/components/common/icons.tsx",
+          "frontend/src/lib/utils.ts",
+          "frontend/src/types/index.ts"
+        ],
+        "frontend/src/components/modals/InviteAgentModal.tsx": [
+          "frontend/src/components/common/Button.tsx",
+          "frontend/src/components/common/Dialog.tsx",
+          "frontend/src/store/agentStore.ts",
+          "frontend/src/store/uiStore.ts"
+        ],
+        "frontend/src/components/modals/NewChatModal.tsx": [
+          "frontend/src/components/common/Button.tsx",
+          "frontend/src/components/common/Dialog.tsx",
+          "frontend/src/components/common/Input.tsx",
+          "frontend/src/lib/mockData.ts",
+          "frontend/src/store/authStore.ts",
+          "frontend/src/store/chatStore.ts",
+          "frontend/src/store/uiStore.ts",
+          "frontend/src/types/index.ts"
+        ],
+        "frontend/src/hooks/useAuth.ts": [
+          "frontend/src/lib/mockData.ts",
+          "frontend/src/store/authStore.ts"
+        ],
+        "frontend/src/hooks/useChat.ts": [
+          "frontend/src/hooks/useSocket.ts",
+          "frontend/src/lib/mockData.ts",
+          "frontend/src/store/authStore.ts",
+          "frontend/src/store/chatStore.ts",
+          "frontend/src/store/uiStore.ts",
+          "frontend/src/types/index.ts"
+        ],
+        "frontend/src/lib/mockData.ts": [
+          "frontend/src/types/index.ts"
+        ],
+        "frontend/src/lib/utils.ts": [],
+        "frontend/src/pages/ChatPage.tsx": [
+          "frontend/src/components/chat/ChatWindow.tsx",
+          "frontend/src/components/common/Button.tsx",
+          "frontend/src/store/chatStore.ts"
+        ],
+        "frontend/src/pages/HomePage.tsx": [
+          "frontend/src/components/common/Button.tsx",
+          "frontend/src/components/common/icons.tsx",
+          "frontend/src/store/chatStore.ts",
+          "frontend/src/store/uiStore.ts"
+        ],
+        "frontend/src/pages/NotFoundPage.tsx": [
+          "frontend/src/components/common/Button.tsx"
+        ],
+        "frontend/src/store/agentStore.ts": [
+          "frontend/src/lib/mockData.ts",
+          "frontend/src/types/index.ts"
+        ],
+        "frontend/src/store/authStore.ts": [
+          "frontend/src/types/index.ts"
+        ],
+        "frontend/src/store/chatStore.ts": [
+          "frontend/src/lib/mockData.ts",
+          "frontend/src/types/index.ts"
+        ],
+        "frontend/src/store/uiStore.ts": [
+          "frontend/src/types/index.ts"
+        ],
+        "frontend/src/types/index.ts": [],
+        "frontend/src/utils/formatting.ts": [],
+        "frontend/tests/unit/ChatWindow.test.tsx": [
+          "frontend/src/components/chat/ChatWindow.tsx",
+          "frontend/src/context/SocketProvider.tsx",
+          "frontend/src/lib/mockData.ts",
+          "frontend/src/store/chatStore.ts"
+        ],
+        "frontend/tests/unit/stores.test.ts": [
+          "frontend/src/store/agentStore.ts",
+          "frontend/src/store/authStore.ts",
+          "frontend/src/store/chatStore.ts",
+          "frontend/src/store/uiStore.ts",
+          "frontend/src/types/index.ts"
+        ]
+      },
+      "neighborMap": {
+        "frontend/src/App.tsx": [
+          {
+            "path": "frontend/src/main.tsx",
+            "batchIndex": 6,
+            "symbols": []
+          }
+        ],
+        "frontend/src/components/chat/ChatWindow.tsx": [
+          {
+            "path": "frontend/src/components/chat/MessageInput.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "MessageInput"
+            ]
+          }
+        ],
+        "frontend/src/components/common/Button.tsx": [
+          {
+            "path": "frontend/src/components/chat/MessageInput.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "MessageInput"
+            ]
+          }
+        ],
+        "frontend/src/components/common/icons.tsx": [
+          {
+            "path": "frontend/src/components/chat/MessageInput.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "MessageInput"
+            ]
+          }
+        ],
+        "frontend/src/components/layout/MainLayout.tsx": [
+          {
+            "path": "frontend/src/hooks/useSocket.ts",
+            "batchIndex": 6,
+            "symbols": [
+              "useSocket"
+            ]
+          }
+        ],
+        "frontend/src/hooks/useChat.ts": [
+          {
+            "path": "frontend/src/hooks/useSocket.ts",
+            "batchIndex": 6,
+            "symbols": [
+              "useSocket"
+            ]
+          }
+        ],
+        "frontend/src/lib/utils.ts": [
+          {
+            "path": "frontend/src/components/common/MentionText.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "MentionText"
+            ]
+          },
+          {
+            "path": "frontend/src/components/common/Textarea.tsx",
+            "batchIndex": 5,
+            "symbols": [
+              "Textarea"
+            ]
+          }
+        ],
+        "frontend/src/store/authStore.ts": [
+          {
+            "path": "frontend/src/context/SocketProvider.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "SocketContext",
+              "SocketProvider"
+            ]
+          }
+        ],
+        "frontend/src/types/index.ts": [
+          {
+            "path": "frontend/src/types/api.ts",
+            "batchIndex": 6,
+            "symbols": []
+          }
+        ],
+        "frontend/tests/unit/ChatWindow.test.tsx": [
+          {
+            "path": "frontend/src/context/SocketProvider.tsx",
+            "batchIndex": 6,
+            "symbols": [
+              "SocketContext",
+              "SocketProvider"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 2,
+      "files": [
+        {
+          "path": "backend/src/app.ts",
+          "language": "typescript",
+          "sizeLines": 44,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/config/database.ts",
+          "language": "typescript",
+          "sizeLines": 11,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/config/env.ts",
+          "language": "typescript",
+          "sizeLines": 43,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/config/environment.ts",
+          "language": "typescript",
+          "sizeLines": 2,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/config/redis.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/middleware/errorHandler.ts",
+          "language": "typescript",
+          "sizeLines": 32,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/middleware/logger.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/middleware/metrics.ts",
+          "language": "typescript",
+          "sizeLines": 52,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/auth/auth.controller.ts",
+          "language": "typescript",
+          "sizeLines": 16,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/auth/auth.model.ts",
+          "language": "typescript",
+          "sizeLines": 8,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/auth/auth.routes.ts",
+          "language": "typescript",
+          "sizeLines": 12,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/auth/auth.service.ts",
+          "language": "typescript",
+          "sizeLines": 48,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/billing/stripe.integration.ts",
+          "language": "typescript",
+          "sizeLines": 6,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/health/health.routes.ts",
+          "language": "typescript",
+          "sizeLines": 21,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/health/health.service.ts",
+          "language": "typescript",
+          "sizeLines": 51,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/webhooks/webhooks.controller.ts",
+          "language": "typescript",
+          "sizeLines": 27,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/webhooks/webhooks.routes.ts",
+          "language": "typescript",
+          "sizeLines": 8,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/server.ts",
+          "language": "typescript",
+          "sizeLines": 30,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/services/email/sendgrid.service.ts",
+          "language": "typescript",
+          "sizeLines": 14,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/services/encryption/crypto.service.ts",
+          "language": "typescript",
+          "sizeLines": 28,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/services/job-queue/bull.service.ts",
+          "language": "typescript",
+          "sizeLines": 17,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/services/memory/agent-memory.service.ts",
+          "language": "typescript",
+          "sizeLines": 29,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/services/memory/memory.interface.ts",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/utils/encryption.ts",
+          "language": "typescript",
+          "sizeLines": 38,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/utils/logger.ts",
+          "language": "typescript",
+          "sizeLines": 71,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/websocket/socket-server.ts",
+          "language": "typescript",
+          "sizeLines": 192,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/tests/integration/health.ready.test.ts",
+          "language": "typescript",
+          "sizeLines": 42,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/tests/integration/health.test.ts",
+          "language": "typescript",
+          "sizeLines": 16,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/tests/integration/metrics.test.ts",
+          "language": "typescript",
+          "sizeLines": 20,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/tests/integration/socket.events.test.ts",
+          "language": "typescript",
+          "sizeLines": 187,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/tests/unit/utils.encryption.test.ts",
+          "language": "typescript",
+          "sizeLines": 22,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "backend/src/app.ts": [
+          "backend/src/config/env.ts",
+          "backend/src/middleware/errorHandler.ts",
+          "backend/src/middleware/logger.ts",
+          "backend/src/middleware/metrics.ts",
+          "backend/src/modules/agents/agents.routes.ts",
+          "backend/src/modules/auth/auth.routes.ts",
+          "backend/src/modules/billing/billing.routes.ts",
+          "backend/src/modules/chats/chats.routes.ts",
+          "backend/src/modules/health/health.routes.ts",
+          "backend/src/modules/messages/messages.routes.ts",
+          "backend/src/modules/users/users.routes.ts",
+          "backend/src/modules/webhooks/webhooks.routes.ts"
+        ],
+        "backend/src/config/database.ts": [],
+        "backend/src/config/env.ts": [],
+        "backend/src/config/environment.ts": [],
+        "backend/src/config/redis.ts": [
+          "backend/src/config/env.ts",
+          "backend/src/utils/logger.ts"
+        ],
+        "backend/src/middleware/errorHandler.ts": [
+          "backend/src/utils/errors.ts",
+          "backend/src/utils/logger.ts"
+        ],
+        "backend/src/middleware/logger.ts": [
+          "backend/src/utils/logger.ts"
+        ],
+        "backend/src/middleware/metrics.ts": [],
+        "backend/src/modules/auth/auth.controller.ts": [
+          "backend/src/modules/auth/auth.service.ts"
+        ],
+        "backend/src/modules/auth/auth.model.ts": [],
+        "backend/src/modules/auth/auth.routes.ts": [
+          "backend/src/middleware/rateLimiter.ts",
+          "backend/src/modules/auth/auth.controller.ts"
+        ],
+        "backend/src/modules/auth/auth.service.ts": [
+          "backend/src/config/database.ts",
+          "backend/src/config/env.ts",
+          "backend/src/modules/auth/auth.model.ts",
+          "backend/src/utils/errors.ts"
+        ],
+        "backend/src/modules/billing/stripe.integration.ts": [
+          "backend/src/config/env.ts"
+        ],
+        "backend/src/modules/health/health.routes.ts": [
+          "backend/src/modules/health/health.service.ts"
+        ],
+        "backend/src/modules/health/health.service.ts": [
+          "backend/src/config/database.ts",
+          "backend/src/config/redis.ts",
+          "backend/src/utils/logger.ts"
+        ],
+        "backend/src/modules/webhooks/webhooks.controller.ts": [
+          "backend/src/config/env.ts",
+          "backend/src/modules/billing/stripe.integration.ts",
+          "backend/src/utils/errors.ts",
+          "backend/src/utils/logger.ts"
+        ],
+        "backend/src/modules/webhooks/webhooks.routes.ts": [
+          "backend/src/modules/webhooks/webhooks.controller.ts"
+        ],
+        "backend/src/server.ts": [
+          "backend/src/app.ts",
+          "backend/src/config/database.ts",
+          "backend/src/config/environment.ts",
+          "backend/src/config/redis.ts",
+          "backend/src/utils/logger.ts",
+          "backend/src/websocket/socket-server.ts"
+        ],
+        "backend/src/services/email/sendgrid.service.ts": [
+          "backend/src/config/env.ts",
+          "backend/src/utils/logger.ts"
+        ],
+        "backend/src/services/encryption/crypto.service.ts": [
+          "backend/src/config/env.ts"
+        ],
+        "backend/src/services/job-queue/bull.service.ts": [
+          "backend/src/config/env.ts"
+        ],
+        "backend/src/services/memory/agent-memory.service.ts": [
+          "backend/src/config/redis.ts",
+          "backend/src/services/memory/memory.interface.ts"
+        ],
+        "backend/src/services/memory/memory.interface.ts": [],
+        "backend/src/utils/encryption.ts": [
+          "backend/src/config/env.ts"
+        ],
+        "backend/src/utils/logger.ts": [
+          "backend/src/config/env.ts"
+        ],
+        "backend/src/websocket/socket-server.ts": [
+          "backend/src/config/database.ts",
+          "backend/src/config/env.ts",
+          "backend/src/utils/logger.ts"
+        ],
+        "backend/tests/integration/health.ready.test.ts": [
+          "backend/src/app.ts",
+          "backend/src/config/database.ts",
+          "backend/src/config/redis.ts"
+        ],
+        "backend/tests/integration/health.test.ts": [
+          "backend/src/app.ts"
+        ],
+        "backend/tests/integration/metrics.test.ts": [
+          "backend/src/app.ts"
+        ],
+        "backend/tests/integration/socket.events.test.ts": [
+          "backend/src/config/database.ts",
+          "backend/src/config/env.ts",
+          "backend/src/websocket/socket-server.ts"
+        ],
+        "backend/tests/unit/utils.encryption.test.ts": [
+          "backend/src/utils/encryption.ts"
+        ]
+      },
+      "neighborMap": {
+        "backend/src/app.ts": [
+          {
+            "path": "backend/src/modules/agents/agents.routes.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "agentsRoutes"
+            ]
+          },
+          {
+            "path": "backend/src/modules/billing/billing.routes.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "billingRoutes"
+            ]
+          },
+          {
+            "path": "backend/src/modules/chats/chats.routes.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "chatsRoutes"
+            ]
+          },
+          {
+            "path": "backend/src/modules/messages/messages.routes.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "messagesRoutes"
+            ]
+          },
+          {
+            "path": "backend/src/modules/users/users.routes.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "usersRoutes"
+            ]
+          }
+        ],
+        "backend/src/config/database.ts": [
+          {
+            "path": "backend/src/modules/agents/agent-execution.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "executeAgentMention",
+              "AGENT_EXECUTION_LIMITS"
+            ]
+          },
+          {
+            "path": "backend/src/modules/agents/agents.service.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "AgentsService",
+              "agentsService"
+            ]
+          },
+          {
+            "path": "backend/src/modules/chats/chats.service.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "ChatsService",
+              "chatsService"
+            ]
+          },
+          {
+            "path": "backend/src/modules/messages/messages.service.ts",
+            "batchIndex": 7,
+            "symbols": [
+              "MessagesService",
+              "messagesService"
+            ]
+          },
+          {
+            "path": "backend/src/modules/users/users.service.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "UsersService",
+              "usersService"
+            ]
+          }
+        ],
+        "backend/src/config/env.ts": [
+          {
+            "path": "backend/src/middleware/auth.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "authMiddleware"
+            ]
+          },
+          {
+            "path": "backend/tests/unit/middleware.auth.test.ts",
+            "batchIndex": 3,
+            "symbols": []
+          }
+        ],
+        "backend/src/config/redis.ts": [
+          {
+            "path": "backend/src/middleware/rateLimiter.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "RATE_LIMIT_WINDOW_MS",
+              "RATE_LIMIT_MAX_REQUESTS",
+              "AUTH_RATE_LIMIT_MAX_REQUESTS",
+              "rateLimiter",
+              "enforceRateLimit",
+              "publicAuthRateLimiter",
+              "enforcePublicAuthRateLimit"
+            ]
+          },
+          {
+            "path": "backend/tests/unit/middleware.rateLimiter.test.ts",
+            "batchIndex": 3,
+            "symbols": []
+          }
+        ],
+        "backend/src/middleware/errorHandler.ts": [
+          {
+            "path": "backend/src/utils/errors.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "AppError",
+              "NotFoundError",
+              "UnauthorizedError",
+              "TooManyRequestsError",
+              "ServiceUnavailableError",
+              "ValidationError"
+            ]
+          }
+        ],
+        "backend/src/modules/auth/auth.routes.ts": [
+          {
+            "path": "backend/src/middleware/rateLimiter.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "RATE_LIMIT_WINDOW_MS",
+              "RATE_LIMIT_MAX_REQUESTS",
+              "AUTH_RATE_LIMIT_MAX_REQUESTS",
+              "rateLimiter",
+              "enforceRateLimit",
+              "publicAuthRateLimiter",
+              "enforcePublicAuthRateLimit"
+            ]
+          }
+        ],
+        "backend/src/modules/auth/auth.service.ts": [
+          {
+            "path": "backend/src/utils/errors.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "AppError",
+              "NotFoundError",
+              "UnauthorizedError",
+              "TooManyRequestsError",
+              "ServiceUnavailableError",
+              "ValidationError"
+            ]
+          }
+        ],
+        "backend/src/modules/billing/stripe.integration.ts": [
+          {
+            "path": "backend/src/modules/billing/billing.service.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "BillingService",
+              "billingService"
+            ]
+          }
+        ],
+        "backend/src/modules/webhooks/webhooks.controller.ts": [
+          {
+            "path": "backend/src/utils/errors.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "AppError",
+              "NotFoundError",
+              "UnauthorizedError",
+              "TooManyRequestsError",
+              "ServiceUnavailableError",
+              "ValidationError"
+            ]
+          }
+        ],
+        "backend/src/utils/logger.ts": [
+          {
+            "path": "backend/src/middleware/auth.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "authMiddleware"
+            ]
+          },
+          {
+            "path": "backend/src/middleware/rateLimiter.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "RATE_LIMIT_WINDOW_MS",
+              "RATE_LIMIT_MAX_REQUESTS",
+              "AUTH_RATE_LIMIT_MAX_REQUESTS",
+              "rateLimiter",
+              "enforceRateLimit",
+              "publicAuthRateLimiter",
+              "enforcePublicAuthRateLimit"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 3,
+      "files": [
+        {
+          "path": "backend/src/middleware/auth.ts",
+          "language": "typescript",
+          "sizeLines": 47,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/middleware/rateLimiter.ts",
+          "language": "typescript",
+          "sizeLines": 104,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/agents/agents.routes.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/billing/billing.controller.ts",
+          "language": "typescript",
+          "sizeLines": 14,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/billing/billing.routes.ts",
+          "language": "typescript",
+          "sizeLines": 11,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/billing/billing.service.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/chats/chats.controller.ts",
+          "language": "typescript",
+          "sizeLines": 30,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/chats/chats.model.ts",
+          "language": "typescript",
+          "sizeLines": 7,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/chats/chats.routes.ts",
+          "language": "typescript",
+          "sizeLines": 14,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/chats/chats.service.ts",
+          "language": "typescript",
+          "sizeLines": 36,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/messages/messages.routes.ts",
+          "language": "typescript",
+          "sizeLines": 12,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/users/users.controller.ts",
+          "language": "typescript",
+          "sizeLines": 20,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/users/users.model.ts",
+          "language": "typescript",
+          "sizeLines": 3,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/users/users.routes.ts",
+          "language": "typescript",
+          "sizeLines": 10,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/users/users.service.ts",
+          "language": "typescript",
+          "sizeLines": 19,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/utils/errors.ts",
+          "language": "typescript",
+          "sizeLines": 40,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/tests/unit/middleware.auth.test.ts",
+          "language": "typescript",
+          "sizeLines": 76,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/tests/unit/middleware.rateLimiter.test.ts",
+          "language": "typescript",
+          "sizeLines": 112,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "backend/src/middleware/auth.ts": [
+          "backend/src/config/env.ts",
+          "backend/src/utils/errors.ts",
+          "backend/src/utils/logger.ts"
+        ],
+        "backend/src/middleware/rateLimiter.ts": [
+          "backend/src/config/redis.ts",
+          "backend/src/middleware/auth.ts",
+          "backend/src/utils/errors.ts",
+          "backend/src/utils/logger.ts"
+        ],
+        "backend/src/modules/agents/agents.routes.ts": [
+          "backend/src/middleware/auth.ts",
+          "backend/src/middleware/rateLimiter.ts",
+          "backend/src/modules/agents/agents.controller.ts"
+        ],
+        "backend/src/modules/billing/billing.controller.ts": [
+          "backend/src/modules/billing/billing.service.ts"
+        ],
+        "backend/src/modules/billing/billing.routes.ts": [
+          "backend/src/middleware/auth.ts",
+          "backend/src/middleware/rateLimiter.ts",
+          "backend/src/modules/billing/billing.controller.ts"
+        ],
+        "backend/src/modules/billing/billing.service.ts": [
+          "backend/src/modules/billing/stripe.integration.ts"
+        ],
+        "backend/src/modules/chats/chats.controller.ts": [
+          "backend/src/middleware/auth.ts",
+          "backend/src/modules/chats/chats.service.ts",
+          "backend/src/utils/errors.ts"
+        ],
+        "backend/src/modules/chats/chats.model.ts": [],
+        "backend/src/modules/chats/chats.routes.ts": [
+          "backend/src/middleware/auth.ts",
+          "backend/src/middleware/rateLimiter.ts",
+          "backend/src/modules/chats/chats.controller.ts"
+        ],
+        "backend/src/modules/chats/chats.service.ts": [
+          "backend/src/config/database.ts",
+          "backend/src/modules/chats/chats.model.ts",
+          "backend/src/utils/errors.ts"
+        ],
+        "backend/src/modules/messages/messages.routes.ts": [
+          "backend/src/middleware/auth.ts",
+          "backend/src/middleware/rateLimiter.ts",
+          "backend/src/modules/messages/messages.controller.ts"
+        ],
+        "backend/src/modules/users/users.controller.ts": [
+          "backend/src/middleware/auth.ts",
+          "backend/src/modules/users/users.service.ts",
+          "backend/src/utils/errors.ts"
+        ],
+        "backend/src/modules/users/users.model.ts": [],
+        "backend/src/modules/users/users.routes.ts": [
+          "backend/src/middleware/auth.ts",
+          "backend/src/middleware/rateLimiter.ts",
+          "backend/src/modules/users/users.controller.ts"
+        ],
+        "backend/src/modules/users/users.service.ts": [
+          "backend/src/config/database.ts",
+          "backend/src/modules/users/users.model.ts",
+          "backend/src/utils/errors.ts"
+        ],
+        "backend/src/utils/errors.ts": [],
+        "backend/tests/unit/middleware.auth.test.ts": [
+          "backend/src/config/env.ts",
+          "backend/src/middleware/auth.ts",
+          "backend/src/utils/errors.ts"
+        ],
+        "backend/tests/unit/middleware.rateLimiter.test.ts": [
+          "backend/src/config/redis.ts",
+          "backend/src/middleware/auth.ts",
+          "backend/src/middleware/rateLimiter.ts",
+          "backend/src/utils/errors.ts"
+        ]
+      },
+      "neighborMap": {
+        "backend/src/middleware/auth.ts": [
+          {
+            "path": "backend/src/config/env.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "env"
+            ]
+          },
+          {
+            "path": "backend/src/utils/logger.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "logger"
+            ]
+          }
+        ],
+        "backend/src/middleware/rateLimiter.ts": [
+          {
+            "path": "backend/src/config/redis.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "redisClient",
+              "connectRedis",
+              "disconnectRedis"
+            ]
+          },
+          {
+            "path": "backend/src/utils/logger.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "logger"
+            ]
+          },
+          {
+            "path": "backend/src/modules/auth/auth.routes.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "authRoutes"
+            ]
+          }
+        ],
+        "backend/src/modules/agents/agents.routes.ts": [
+          {
+            "path": "backend/src/modules/agents/agents.controller.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "AgentsController",
+              "agentsController"
+            ]
+          },
+          {
+            "path": "backend/src/app.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "createApp"
+            ]
+          }
+        ],
+        "backend/src/modules/billing/billing.routes.ts": [
+          {
+            "path": "backend/src/app.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "createApp"
+            ]
+          }
+        ],
+        "backend/src/modules/billing/billing.service.ts": [
+          {
+            "path": "backend/src/modules/billing/stripe.integration.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "stripeClient"
+            ]
+          }
+        ],
+        "backend/src/modules/chats/chats.routes.ts": [
+          {
+            "path": "backend/src/app.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "createApp"
+            ]
+          }
+        ],
+        "backend/src/modules/chats/chats.service.ts": [
+          {
+            "path": "backend/src/config/database.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "prisma",
+              "connectDatabase",
+              "disconnectDatabase"
+            ]
+          }
+        ],
+        "backend/src/modules/messages/messages.routes.ts": [
+          {
+            "path": "backend/src/modules/messages/messages.controller.ts",
+            "batchIndex": 7,
+            "symbols": [
+              "MessagesController",
+              "messagesController"
+            ]
+          },
+          {
+            "path": "backend/src/app.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "createApp"
+            ]
+          }
+        ],
+        "backend/src/modules/users/users.routes.ts": [
+          {
+            "path": "backend/src/app.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "createApp"
+            ]
+          }
+        ],
+        "backend/src/modules/users/users.service.ts": [
+          {
+            "path": "backend/src/config/database.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "prisma",
+              "connectDatabase",
+              "disconnectDatabase"
+            ]
+          }
+        ],
+        "backend/src/utils/errors.ts": [
+          {
+            "path": "backend/src/middleware/errorHandler.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "errorHandler"
+            ]
+          },
+          {
+            "path": "backend/src/modules/agents/agent-execution.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "executeAgentMention",
+              "AGENT_EXECUTION_LIMITS"
+            ]
+          },
+          {
+            "path": "backend/src/modules/agents/agents.service.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "AgentsService",
+              "agentsService"
+            ]
+          },
+          {
+            "path": "backend/src/modules/auth/auth.service.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "AuthService",
+              "authService"
+            ]
+          },
+          {
+            "path": "backend/src/modules/webhooks/webhooks.controller.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "WebhooksController",
+              "webhooksController"
+            ]
+          }
+        ],
+        "backend/tests/unit/middleware.auth.test.ts": [
+          {
+            "path": "backend/src/config/env.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "env"
+            ]
+          }
+        ],
+        "backend/tests/unit/middleware.rateLimiter.test.ts": [
+          {
+            "path": "backend/src/config/redis.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "redisClient",
+              "connectRedis",
+              "disconnectRedis"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 4,
+      "files": [
+        {
+          "path": "backend/src/modules/agents/agent-execution.ts",
+          "language": "typescript",
+          "sizeLines": 38,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/agents/agents.controller.ts",
+          "language": "typescript",
+          "sizeLines": 22,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/agents/agents.model.ts",
+          "language": "typescript",
+          "sizeLines": 10,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/agents/agents.service.ts",
+          "language": "typescript",
+          "sizeLines": 23,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/services/llm/anthropic.service.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/services/llm/google.service.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/services/llm/llm.interface.ts",
+          "language": "typescript",
+          "sizeLines": 24,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/services/llm/openai.service.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/types/Agent.ts",
+          "language": "typescript",
+          "sizeLines": 13,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "backend/src/modules/agents/agent-execution.ts": [
+          "backend/src/config/database.ts",
+          "backend/src/services/llm/llm.interface.ts",
+          "backend/src/types/Agent.ts",
+          "backend/src/utils/errors.ts"
+        ],
+        "backend/src/modules/agents/agents.controller.ts": [
+          "backend/src/modules/agents/agent-execution.ts",
+          "backend/src/modules/agents/agents.service.ts"
+        ],
+        "backend/src/modules/agents/agents.model.ts": [
+          "backend/src/types/Agent.ts"
+        ],
+        "backend/src/modules/agents/agents.service.ts": [
+          "backend/src/config/database.ts",
+          "backend/src/modules/agents/agents.model.ts",
+          "backend/src/utils/errors.ts"
+        ],
+        "backend/src/services/llm/anthropic.service.ts": [
+          "backend/src/services/llm/llm.interface.ts"
+        ],
+        "backend/src/services/llm/google.service.ts": [
+          "backend/src/services/llm/llm.interface.ts"
+        ],
+        "backend/src/services/llm/llm.interface.ts": [
+          "backend/src/services/llm/anthropic.service.ts",
+          "backend/src/services/llm/google.service.ts",
+          "backend/src/services/llm/openai.service.ts",
+          "backend/src/types/Agent.ts"
+        ],
+        "backend/src/services/llm/openai.service.ts": [
+          "backend/src/services/llm/llm.interface.ts"
+        ],
+        "backend/src/types/Agent.ts": []
+      },
+      "neighborMap": {
+        "backend/src/modules/agents/agent-execution.ts": [
+          {
+            "path": "backend/src/config/database.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "prisma",
+              "connectDatabase",
+              "disconnectDatabase"
+            ]
+          },
+          {
+            "path": "backend/src/utils/errors.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "AppError",
+              "NotFoundError",
+              "UnauthorizedError",
+              "TooManyRequestsError",
+              "ServiceUnavailableError",
+              "ValidationError"
+            ]
+          }
+        ],
+        "backend/src/modules/agents/agents.controller.ts": [
+          {
+            "path": "backend/src/modules/agents/agents.routes.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "agentsRoutes"
+            ]
+          }
+        ],
+        "backend/src/modules/agents/agents.service.ts": [
+          {
+            "path": "backend/src/config/database.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "prisma",
+              "connectDatabase",
+              "disconnectDatabase"
+            ]
+          },
+          {
+            "path": "backend/src/utils/errors.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "AppError",
+              "NotFoundError",
+              "UnauthorizedError",
+              "TooManyRequestsError",
+              "ServiceUnavailableError",
+              "ValidationError"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 5,
+      "files": [
+        {
+          "path": "frontend/src/components/chat/MessageInput.tsx",
+          "language": "typescript",
+          "sizeLines": 89,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/common/MentionText.tsx",
+          "language": "typescript",
+          "sizeLines": 31,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/components/common/Textarea.tsx",
+          "language": "typescript",
+          "sizeLines": 24,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/hooks/useMentions.ts",
+          "language": "typescript",
+          "sizeLines": 9,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/utils/mentions.ts",
+          "language": "typescript",
+          "sizeLines": 46,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/tests/unit/MessageInput.test.tsx",
+          "language": "typescript",
+          "sizeLines": 49,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/tests/unit/mentions.test.ts",
+          "language": "typescript",
+          "sizeLines": 36,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/tests/unit/useMentions.test.ts",
+          "language": "typescript",
+          "sizeLines": 19,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "frontend/src/components/chat/MessageInput.tsx": [
+          "frontend/src/components/common/Button.tsx",
+          "frontend/src/components/common/icons.tsx",
+          "frontend/src/components/common/MentionText.tsx",
+          "frontend/src/components/common/Textarea.tsx",
+          "frontend/src/utils/mentions.ts"
+        ],
+        "frontend/src/components/common/MentionText.tsx": [
+          "frontend/src/lib/utils.ts",
+          "frontend/src/utils/mentions.ts"
+        ],
+        "frontend/src/components/common/Textarea.tsx": [
+          "frontend/src/lib/utils.ts"
+        ],
+        "frontend/src/hooks/useMentions.ts": [
+          "frontend/src/utils/mentions.ts"
+        ],
+        "frontend/src/utils/mentions.ts": [],
+        "frontend/tests/unit/MessageInput.test.tsx": [
+          "frontend/src/components/chat/MessageInput.tsx"
+        ],
+        "frontend/tests/unit/mentions.test.ts": [
+          "frontend/src/utils/mentions.ts"
+        ],
+        "frontend/tests/unit/useMentions.test.ts": [
+          "frontend/src/hooks/useMentions.ts"
+        ]
+      },
+      "neighborMap": {
+        "frontend/src/components/chat/MessageInput.tsx": [
+          {
+            "path": "frontend/src/components/common/Button.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Button"
+            ]
+          },
+          {
+            "path": "frontend/src/components/common/icons.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "MenuIcon",
+              "PlusIcon",
+              "CloseIcon",
+              "SettingsIcon",
+              "UsersIcon",
+              "MessageIcon",
+              "SendIcon",
+              "SunIcon",
+              "MoonIcon"
+            ]
+          },
+          {
+            "path": "frontend/src/components/chat/ChatWindow.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "ChatWindow"
+            ]
+          }
+        ],
+        "frontend/src/components/common/MentionText.tsx": [
+          {
+            "path": "frontend/src/lib/utils.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "cn"
+            ]
+          }
+        ],
+        "frontend/src/components/common/Textarea.tsx": [
+          {
+            "path": "frontend/src/lib/utils.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "cn"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 6,
+      "files": [
+        {
+          "path": "frontend/src/context/SocketProvider.tsx",
+          "language": "typescript",
+          "sizeLines": 60,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/hooks/useSocket.ts",
+          "language": "typescript",
+          "sizeLines": 10,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/lib/logger.ts",
+          "language": "typescript",
+          "sizeLines": 19,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "language": "typescript",
+          "sizeLines": 21,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/services/socket.ts",
+          "language": "typescript",
+          "sizeLines": 32,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/types/api.ts",
+          "language": "typescript",
+          "sizeLines": 29,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "frontend/src/context/SocketProvider.tsx": [
+          "frontend/src/lib/logger.ts",
+          "frontend/src/services/socket.ts",
+          "frontend/src/store/authStore.ts"
+        ],
+        "frontend/src/hooks/useSocket.ts": [
+          "frontend/src/context/SocketProvider.tsx"
+        ],
+        "frontend/src/lib/logger.ts": [],
+        "frontend/src/main.tsx": [
+          "frontend/src/App.tsx",
+          "frontend/src/context/SocketProvider.tsx",
+          "frontend/src/styles/globals.css"
+        ],
+        "frontend/src/services/socket.ts": [
+          "frontend/src/types/api.ts"
+        ],
+        "frontend/src/types/api.ts": [
+          "frontend/src/types/index.ts"
+        ]
+      },
+      "neighborMap": {
+        "frontend/src/context/SocketProvider.tsx": [
+          {
+            "path": "frontend/src/store/authStore.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "useAuthStore"
+            ]
+          },
+          {
+            "path": "frontend/tests/unit/ChatWindow.test.tsx",
+            "batchIndex": 1,
+            "symbols": []
+          }
+        ],
+        "frontend/src/hooks/useSocket.ts": [
+          {
+            "path": "frontend/src/components/layout/MainLayout.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "MainLayout"
+            ]
+          },
+          {
+            "path": "frontend/src/hooks/useChat.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "useChat"
+            ]
+          }
+        ],
+        "frontend/src/main.tsx": [
+          {
+            "path": "frontend/src/App.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "App"
+            ]
+          },
+          {
+            "path": "frontend/src/styles/globals.css",
+            "batchIndex": 22,
+            "symbols": []
+          }
+        ],
+        "frontend/src/types/api.ts": [
+          {
+            "path": "frontend/src/types/index.ts",
+            "batchIndex": 1,
+            "symbols": []
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 7,
+      "files": [
+        {
+          "path": "backend/src/modules/messages/messages.controller.ts",
+          "language": "typescript",
+          "sizeLines": 18,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/messages/messages.model.ts",
+          "language": "typescript",
+          "sizeLines": 6,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/modules/messages/messages.service.ts",
+          "language": "typescript",
+          "sizeLines": 19,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/utils/validators.ts",
+          "language": "typescript",
+          "sizeLines": 11,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/tests/unit/utils.validators.test.ts",
+          "language": "typescript",
+          "sizeLines": 17,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "backend/src/modules/messages/messages.controller.ts": [
+          "backend/src/modules/messages/messages.service.ts",
+          "backend/src/utils/validators.ts"
+        ],
+        "backend/src/modules/messages/messages.model.ts": [],
+        "backend/src/modules/messages/messages.service.ts": [
+          "backend/src/config/database.ts",
+          "backend/src/modules/messages/messages.model.ts"
+        ],
+        "backend/src/utils/validators.ts": [],
+        "backend/tests/unit/utils.validators.test.ts": [
+          "backend/src/utils/validators.ts"
+        ]
+      },
+      "neighborMap": {
+        "backend/src/modules/messages/messages.controller.ts": [
+          {
+            "path": "backend/src/modules/messages/messages.routes.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "messagesRoutes"
+            ]
+          }
+        ],
+        "backend/src/modules/messages/messages.service.ts": [
+          {
+            "path": "backend/src/config/database.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "prisma",
+              "connectDatabase",
+              "disconnectDatabase"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 8,
+      "files": [
+        {
+          "path": "backend/src/services/storage/google-drive.service.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/services/storage/s3.service.ts",
+          "language": "typescript",
+          "sizeLines": 16,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/services/storage/storage.interface.ts",
+          "language": "typescript",
+          "sizeLines": 11,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "backend/src/services/storage/google-drive.service.ts": [
+          "backend/src/services/storage/storage.interface.ts"
+        ],
+        "backend/src/services/storage/s3.service.ts": [
+          "backend/src/services/storage/storage.interface.ts"
+        ],
+        "backend/src/services/storage/storage.interface.ts": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 9,
+      "files": [
+        {
+          "path": ".github/workflows/build.yml",
+          "language": "yaml",
+          "sizeLines": 48,
+          "fileCategory": "infra"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "language": "yaml",
+          "sizeLines": 60,
+          "fileCategory": "infra"
+        },
+        {
+          "path": ".github/workflows/deploy-production.yml",
+          "language": "yaml",
+          "sizeLines": 12,
+          "fileCategory": "infra"
+        },
+        {
+          "path": ".github/workflows/deploy-staging.yml",
+          "language": "yaml",
+          "sizeLines": 12,
+          "fileCategory": "infra"
+        },
+        {
+          "path": ".github/workflows/format.yml",
+          "language": "yaml",
+          "sizeLines": 19,
+          "fileCategory": "infra"
+        },
+        {
+          "path": ".github/workflows/security-scan.yml",
+          "language": "yaml",
+          "sizeLines": 13,
+          "fileCategory": "infra"
+        }
+      ],
+      "batchImportData": {
+        ".github/workflows/build.yml": [],
+        ".github/workflows/ci.yml": [],
+        ".github/workflows/deploy-production.yml": [],
+        ".github/workflows/deploy-staging.yml": [],
+        ".github/workflows/format.yml": [],
+        ".github/workflows/security-scan.yml": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 10,
+      "files": [
+        {
+          "path": ".dockerignore",
+          "language": "unknown",
+          "sizeLines": 32,
+          "fileCategory": "infra"
+        },
+        {
+          "path": ".env.example",
+          "language": "config",
+          "sizeLines": 25,
+          "fileCategory": "config"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "language": "markdown",
+          "sizeLines": 6,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "CLAUDE.md",
+          "language": "markdown",
+          "sizeLines": 144,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "Makefile",
+          "language": "makefile",
+          "sizeLines": 57,
+          "fileCategory": "infra"
+        },
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "sizeLines": 362,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docker-compose.yml",
+          "language": "yaml",
+          "sizeLines": 97,
+          "fileCategory": "infra"
+        },
+        {
+          "path": "package.json",
+          "language": "json",
+          "sizeLines": 28,
+          "fileCategory": "config"
+        },
+        {
+          "path": "tsconfig.json",
+          "language": "json",
+          "sizeLines": 16,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        ".dockerignore": [],
+        ".env.example": [],
+        "CHANGELOG.md": [],
+        "CLAUDE.md": [],
+        "Makefile": [],
+        "README.md": [],
+        "docker-compose.yml": [],
+        "package.json": [],
+        "tsconfig.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 11,
+      "files": [
+        {
+          "path": "backend/.env.example",
+          "language": "config",
+          "sizeLines": 10,
+          "fileCategory": "config"
+        },
+        {
+          "path": "backend/README.md",
+          "language": "markdown",
+          "sizeLines": 68,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "backend/package.json",
+          "language": "json",
+          "sizeLines": 56,
+          "fileCategory": "config"
+        },
+        {
+          "path": "backend/tsconfig.json",
+          "language": "json",
+          "sizeLines": 21,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        "backend/.env.example": [],
+        "backend/README.md": [],
+        "backend/package.json": [],
+        "backend/tsconfig.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 12,
+      "files": [
+        {
+          "path": "docs/API.md",
+          "language": "markdown",
+          "sizeLines": 40,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "language": "markdown",
+          "sizeLines": 71,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/CONTRIBUTING.md",
+          "language": "markdown",
+          "sizeLines": 83,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/DEPLOYMENT.md",
+          "language": "markdown",
+          "sizeLines": 107,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/ESTRUCTURA_PROYECTO.md",
+          "language": "markdown",
+          "sizeLines": 407,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/REQUISITOS_AGENTES_CHAT.md",
+          "language": "markdown",
+          "sizeLines": 531,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/RUNBOOK.md",
+          "language": "markdown",
+          "sizeLines": 117,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/SECURITY.md",
+          "language": "markdown",
+          "sizeLines": 83,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/SETUP.md",
+          "language": "markdown",
+          "sizeLines": 188,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/cyber-neo-report-CHAT_AGENTES-2026-07-17.md",
+          "language": "markdown",
+          "sizeLines": 143,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/setup-local.sh",
+          "language": "shell",
+          "sizeLines": 184,
+          "fileCategory": "script"
+        }
+      ],
+      "batchImportData": {
+        "docs/API.md": [],
+        "docs/ARCHITECTURE.md": [],
+        "docs/CONTRIBUTING.md": [],
+        "docs/DEPLOYMENT.md": [],
+        "docs/ESTRUCTURA_PROYECTO.md": [],
+        "docs/REQUISITOS_AGENTES_CHAT.md": [],
+        "docs/RUNBOOK.md": [],
+        "docs/SECURITY.md": [],
+        "docs/SETUP.md": [],
+        "docs/cyber-neo-report-CHAT_AGENTES-2026-07-17.md": [],
+        "docs/setup-local.sh": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 13,
+      "files": [
+        {
+          "path": "docs/sprint_1/AGENT_BACKEND_SPRINT1.md",
+          "language": "markdown",
+          "sizeLines": 303,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/sprint_1/AGENT_DEVOPS_SPRINT1.md",
+          "language": "markdown",
+          "sizeLines": 802,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/sprint_1/AGENT_FRONTEND_SPRINT1.md",
+          "language": "markdown",
+          "sizeLines": 524,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        "docs/sprint_1/AGENT_BACKEND_SPRINT1.md": [],
+        "docs/sprint_1/AGENT_DEVOPS_SPRINT1.md": [],
+        "docs/sprint_1/AGENT_FRONTEND_SPRINT1.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 14,
+      "files": [
+        {
+          "path": "docs/sprint_2/AGENT_BACKEND_SPRINT2.md",
+          "language": "markdown",
+          "sizeLines": 83,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/sprint_2/AGENT_DEVOPS_SPRINT2.md",
+          "language": "markdown",
+          "sizeLines": 71,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/sprint_2/AGENT_FRONTEND_SPRINT2.md",
+          "language": "markdown",
+          "sizeLines": 82,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        "docs/sprint_2/AGENT_BACKEND_SPRINT2.md": [],
+        "docs/sprint_2/AGENT_DEVOPS_SPRINT2.md": [],
+        "docs/sprint_2/AGENT_FRONTEND_SPRINT2.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 15,
+      "files": [
+        {
+          "path": "frontend/.env.example",
+          "language": "config",
+          "sizeLines": 5,
+          "fileCategory": "config"
+        },
+        {
+          "path": "frontend/README.md",
+          "language": "markdown",
+          "sizeLines": 85,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "frontend/index.html",
+          "language": "html",
+          "sizeLines": 13,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "frontend/package.json",
+          "language": "json",
+          "sizeLines": 47,
+          "fileCategory": "config"
+        },
+        {
+          "path": "frontend/tsconfig.json",
+          "language": "json",
+          "sizeLines": 26,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        "frontend/.env.example": [],
+        "frontend/README.md": [],
+        "frontend/index.html": [],
+        "frontend/package.json": [],
+        "frontend/tsconfig.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 16,
+      "files": [
+        {
+          "path": "infra/docker/Dockerfile.backend",
+          "language": "dockerfile",
+          "sizeLines": 47,
+          "fileCategory": "infra"
+        },
+        {
+          "path": "infra/docker/Dockerfile.frontend",
+          "language": "dockerfile",
+          "sizeLines": 30,
+          "fileCategory": "infra"
+        },
+        {
+          "path": "infra/docker/Dockerfile.nginx",
+          "language": "dockerfile",
+          "sizeLines": 4,
+          "fileCategory": "infra"
+        }
+      ],
+      "batchImportData": {
+        "infra/docker/Dockerfile.backend": [],
+        "infra/docker/Dockerfile.frontend": [],
+        "infra/docker/Dockerfile.nginx": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 17,
+      "files": [
+        {
+          "path": "infra/kubernetes/deployment.yaml",
+          "language": "yaml",
+          "sizeLines": 22,
+          "fileCategory": "infra"
+        },
+        {
+          "path": "infra/kubernetes/ingress.yaml",
+          "language": "yaml",
+          "sizeLines": 16,
+          "fileCategory": "infra"
+        },
+        {
+          "path": "infra/kubernetes/service.yaml",
+          "language": "yaml",
+          "sizeLines": 10,
+          "fileCategory": "infra"
+        }
+      ],
+      "batchImportData": {
+        "infra/kubernetes/deployment.yaml": [],
+        "infra/kubernetes/ingress.yaml": [],
+        "infra/kubernetes/service.yaml": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 18,
+      "files": [
+        {
+          "path": "infra/scripts/backup.sh",
+          "language": "shell",
+          "sizeLines": 5,
+          "fileCategory": "script"
+        },
+        {
+          "path": "infra/scripts/deploy.sh",
+          "language": "shell",
+          "sizeLines": 8,
+          "fileCategory": "script"
+        },
+        {
+          "path": "infra/scripts/rollback.sh",
+          "language": "shell",
+          "sizeLines": 4,
+          "fileCategory": "script"
+        }
+      ],
+      "batchImportData": {
+        "infra/scripts/backup.sh": [],
+        "infra/scripts/deploy.sh": [],
+        "infra/scripts/rollback.sh": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 19,
+      "files": [
+        {
+          "path": "infra/terraform/iam.tf",
+          "language": "terraform",
+          "sizeLines": 12,
+          "fileCategory": "infra"
+        },
+        {
+          "path": "infra/terraform/main.tf",
+          "language": "terraform",
+          "sizeLines": 12,
+          "fileCategory": "infra"
+        },
+        {
+          "path": "infra/terraform/rds.tf",
+          "language": "terraform",
+          "sizeLines": 11,
+          "fileCategory": "infra"
+        },
+        {
+          "path": "infra/terraform/redis.tf",
+          "language": "terraform",
+          "sizeLines": 7,
+          "fileCategory": "infra"
+        },
+        {
+          "path": "infra/terraform/variables.tf",
+          "language": "terraform",
+          "sizeLines": 9,
+          "fileCategory": "infra"
+        }
+      ],
+      "batchImportData": {
+        "infra/terraform/iam.tf": [],
+        "infra/terraform/main.tf": [],
+        "infra/terraform/rds.tf": [],
+        "infra/terraform/redis.tf": [],
+        "infra/terraform/variables.tf": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 20,
+      "files": [
+        {
+          "path": "scripts/db-reset.sh",
+          "language": "shell",
+          "sizeLines": 10,
+          "fileCategory": "script"
+        },
+        {
+          "path": "scripts/db-seed.sh",
+          "language": "shell",
+          "sizeLines": 8,
+          "fileCategory": "script"
+        },
+        {
+          "path": "scripts/dev.sh",
+          "language": "shell",
+          "sizeLines": 9,
+          "fileCategory": "script"
+        },
+        {
+          "path": "scripts/logs.sh",
+          "language": "shell",
+          "sizeLines": 12,
+          "fileCategory": "script"
+        },
+        {
+          "path": "scripts/setup.sh",
+          "language": "shell",
+          "sizeLines": 47,
+          "fileCategory": "script"
+        },
+        {
+          "path": "scripts/stop.sh",
+          "language": "shell",
+          "sizeLines": 8,
+          "fileCategory": "script"
+        },
+        {
+          "path": "scripts/test-local.sh",
+          "language": "shell",
+          "sizeLines": 12,
+          "fileCategory": "script"
+        }
+      ],
+      "batchImportData": {
+        "scripts/db-reset.sh": [],
+        "scripts/db-seed.sh": [],
+        "scripts/dev.sh": [],
+        "scripts/logs.sh": [],
+        "scripts/setup.sh": [],
+        "scripts/stop.sh": [],
+        "scripts/test-local.sh": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 21,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "language": "unknown",
+          "sizeLines": 11,
+          "fileCategory": "code"
+        },
+        {
+          "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+          "language": "markdown",
+          "sizeLines": 17,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".ua/.understandignore",
+          "language": "unknown",
+          "sizeLines": 57,
+          "fileCategory": "code"
+        },
+        {
+          "path": ".ua/config.json",
+          "language": "json",
+          "sizeLines": 3,
+          "fileCategory": "config"
+        },
+        {
+          "path": "backend/jest.config.js",
+          "language": "javascript",
+          "sizeLines": 20,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/prisma/migrations/20260717124954_init/migration.sql",
+          "language": "sql",
+          "sizeLines": 79,
+          "fileCategory": "data"
+        },
+        {
+          "path": "backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql",
+          "language": "sql",
+          "sizeLines": 46,
+          "fileCategory": "data"
+        },
+        {
+          "path": "backend/prisma/migrations/migration_lock.toml",
+          "language": "toml",
+          "sizeLines": 2,
+          "fileCategory": "config"
+        },
+        {
+          "path": "backend/prisma/schema.prisma",
+          "language": "prisma",
+          "sizeLines": 98,
+          "fileCategory": "data"
+        },
+        {
+          "path": "backend/prisma/seed.ts",
+          "language": "typescript",
+          "sizeLines": 93,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/config/constants.ts",
+          "language": "typescript",
+          "sizeLines": 3,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/index.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/middleware/logging.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/types/api-responses.ts",
+          "language": "typescript",
+          "sizeLines": 10,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/types/Chat.ts",
+          "language": "typescript",
+          "sizeLines": 14,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/types/index.ts",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/types/Message.ts",
+          "language": "typescript",
+          "sizeLines": 8,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/types/User.ts",
+          "language": "typescript",
+          "sizeLines": 7,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/src/utils/helpers.ts",
+          "language": "typescript",
+          "sizeLines": 11,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/tests/fixtures/seed-data.ts",
+          "language": "typescript",
+          "sizeLines": 4,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/tests/integration/agent-execution.test.ts",
+          "language": "typescript",
+          "sizeLines": 3,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/tests/integration/chat-flow.test.ts",
+          "language": "typescript",
+          "sizeLines": 3,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/tests/unit/agents.test.ts",
+          "language": "typescript",
+          "sizeLines": 4,
+          "fileCategory": "code"
+        },
+        {
+          "path": "backend/tests/unit/auth.test.ts",
+          "language": "typescript",
+          "sizeLines": 4,
+          "fileCategory": "code"
+        },
+        {
+          "path": "bash.exe.stackdump",
+          "language": "stackdump",
+          "sizeLines": 28,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        ".gitattributes": [],
+        ".github/ISSUE_TEMPLATE/bug_report.md": [],
+        ".ua/.understandignore": [],
+        ".ua/config.json": [],
+        "backend/jest.config.js": [],
+        "backend/prisma/migrations/20260717124954_init/migration.sql": [],
+        "backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql": [],
+        "backend/prisma/migrations/migration_lock.toml": [],
+        "backend/prisma/schema.prisma": [],
+        "backend/prisma/seed.ts": [],
+        "backend/src/config/constants.ts": [],
+        "backend/src/index.ts": [],
+        "backend/src/middleware/logging.ts": [],
+        "backend/src/types/api-responses.ts": [],
+        "backend/src/types/Chat.ts": [],
+        "backend/src/types/index.ts": [],
+        "backend/src/types/Message.ts": [],
+        "backend/src/types/User.ts": [],
+        "backend/src/utils/helpers.ts": [],
+        "backend/tests/fixtures/seed-data.ts": [],
+        "backend/tests/integration/agent-execution.test.ts": [],
+        "backend/tests/integration/chat-flow.test.ts": [],
+        "backend/tests/unit/agents.test.ts": [],
+        "backend/tests/unit/auth.test.ts": [],
+        "bash.exe.stackdump": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 22,
+      "files": [
+        {
+          "path": "docs/git/GIT_SETUP_RAPIDO.md",
+          "language": "markdown",
+          "sizeLines": 156,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/git/GIT_WORKFLOW.md",
+          "language": "markdown",
+          "sizeLines": 428,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "frontend/postcss.config.cjs",
+          "language": "javascript",
+          "sizeLines": 6,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/src/styles/globals.css",
+          "language": "css",
+          "sizeLines": 53,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "frontend/src/vite-env.d.ts",
+          "language": "typescript",
+          "sizeLines": 10,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/tailwind.config.cjs",
+          "language": "javascript",
+          "sizeLines": 42,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/tests/e2e/agent-execution.spec.ts",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/tests/e2e/chat-flow.spec.ts",
+          "language": "typescript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/tests/setup.ts",
+          "language": "typescript",
+          "sizeLines": 13,
+          "fileCategory": "code"
+        },
+        {
+          "path": "frontend/vite.config.ts",
+          "language": "typescript",
+          "sizeLines": 29,
+          "fileCategory": "code"
+        },
+        {
+          "path": "infra/db/init.sql",
+          "language": "sql",
+          "sizeLines": 15,
+          "fileCategory": "data"
+        },
+        {
+          "path": "infra/docker/nginx.conf",
+          "language": "conf",
+          "sizeLines": 62,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "docs/git/GIT_SETUP_RAPIDO.md": [],
+        "docs/git/GIT_WORKFLOW.md": [],
+        "frontend/postcss.config.cjs": [],
+        "frontend/src/styles/globals.css": [],
+        "frontend/src/vite-env.d.ts": [],
+        "frontend/tailwind.config.cjs": [],
+        "frontend/tests/e2e/agent-execution.spec.ts": [],
+        "frontend/tests/e2e/chat-flow.spec.ts": [],
+        "frontend/tests/setup.ts": [],
+        "frontend/vite.config.ts": [],
+        "infra/db/init.sql": [],
+        "infra/docker/nginx.conf": []
+      },
+      "neighborMap": {
+        "frontend/src/styles/globals.css": [
+          {
+            "path": "frontend/src/main.tsx",
+            "batchIndex": 6,
+            "symbols": []
+          }
+        ]
+      }
+    }
+  ]
+}

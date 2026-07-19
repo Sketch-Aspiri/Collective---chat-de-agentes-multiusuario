@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "config:backend/.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": "backend/.env.example",
+      "summary": "Plantilla de variables de entorno del backend: entorno, puerto, conexiones a base de datos y Redis, secretos JWT, clave de encriptación e integraciones con SendGrid y Stripe.",
+      "tags": ["configuration", "environment-variables", "secrets-template"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:backend/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "backend/README.md",
+      "summary": "Guía de inicio del backend: requisitos, arranque local, chat en tiempo real, comandos habituales, calidad/cobertura de tests, relaciones de datos y seguridad HTTP base.",
+      "tags": ["documentation", "entry-point", "backend"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:backend/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "backend/package.json",
+      "summary": "Manifiesto npm del backend: define scripts de build/dev/test, dependencias (Express, Prisma, etc.) y configuración de Prisma.",
+      "tags": ["configuration", "build-system", "dependencies"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:backend/tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "backend/tsconfig.json",
+      "summary": "Configuración del compilador TypeScript para el backend, incluyendo rutas incluidas/excluidas del build.",
+      "tags": ["configuration", "typescript", "build-system"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:backend/README.md",
+      "target": "config:backend/package.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:backend/README.md",
+      "target": "config:backend/.env.example",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:backend/tsconfig.json",
+      "target": "config:backend/package.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "projectRoot": "C:/Users/Andre/OneDrive/Escritorio/CHAT_AGENTES",
+  "batchFiles": [
+    {"path": "backend/src/middleware/auth.ts", "language": "typescript", "sizeLines": 47, "fileCategory": "code"},
+    {"path": "backend/src/middleware/rateLimiter.ts", "language": "typescript", "sizeLines": 104, "fileCategory": "code"},
+    {"path": "backend/src/modules/agents/agents.routes.ts", "language": "typescript", "sizeLines": 15, "fileCategory": "code"},
+    {"path": "backend/src/modules/billing/billing.controller.ts", "language": "typescript", "sizeLines": 14, "fileCategory": "code"},
+    {"path": "backend/src/modules/billing/billing.routes.ts", "language": "typescript", "sizeLines": 11, "fileCategory": "code"},
+    {"path": "backend/src/modules/billing/billing.service.ts", "language": "typescript", "sizeLines": 15, "fileCategory": "code"},
+    {"path": "backend/src/modules/chats/chats.controller.ts", "language": "typescript", "sizeLines": 30, "fileCategory": "code"},
+    {"path": "backend/src/modules/chats/chats.model.ts", "language": "typescript", "sizeLines": 7, "fileCategory": "code"},
+    {"path": "backend/src/modules/chats/chats.routes.ts", "language": "typescript", "sizeLines": 14, "fileCategory": "code"},
+    {"path": "backend/src/modules/chats/chats.service.ts", "language": "typescript", "sizeLines": 36, "fileCategory": "code"},
+    {"path": "backend/src/modules/messages/messages.routes.ts", "language": "typescript", "sizeLines": 12, "fileCategory": "code"},
+    {"path": "backend/src/modules/users/users.controller.ts", "language": "typescript", "sizeLines": 20, "fileCategory": "code"},
+    {"path": "backend/src/modules/users/users.model.ts", "language": "typescript", "sizeLines": 3, "fileCategory": "code"},
+    {"path": "backend/src/modules/users/users.routes.ts", "language": "typescript", "sizeLines": 10, "fileCategory": "code"},
+    {"path": "backend/src/modules/users/users.service.ts", "language": "typescript", "sizeLines": 19, "fileCategory": "code"},
+    {"path": "backend/src/utils/errors.ts", "language": "typescript", "sizeLines": 40, "fileCategory": "code"},
+    {"path": "backend/tests/unit/middleware.auth.test.ts", "language": "typescript", "sizeLines": 76, "fileCategory": "code"},
+    {"path": "backend/tests/unit/middleware.rateLimiter.test.ts", "language": "typescript", "sizeLines": 112, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "backend/src/middleware/auth.ts": ["backend/src/config/env.ts", "backend/src/utils/errors.ts", "backend/src/utils/logger.ts"],
+    "backend/src/middleware/rateLimiter.ts": ["backend/src/config/redis.ts", "backend/src/middleware/auth.ts", "backend/src/utils/errors.ts", "backend/src/utils/logger.ts"],
+    "backend/src/modules/agents/agents.routes.ts": ["backend/src/middleware/auth.ts", "backend/src/middleware/rateLimiter.ts", "backend/src/modules/agents/agents.controller.ts"],
+    "backend/src/modules/billing/billing.controller.ts": ["backend/src/modules/billing/billing.service.ts"],
+    "backend/src/modules/billing/billing.routes.ts": ["backend/src/middleware/auth.ts", "backend/src/middleware/rateLimiter.ts", "backend/src/modules/billing/billing.controller.ts"],
+    "backend/src/modules/billing/billing.service.ts": ["backend/src/modules/billing/stripe.integration.ts"],
+    "backend/src/modules/chats/chats.controller.ts": ["backend/src/middleware/auth.ts", "backend/src/modules/chats/chats.service.ts", "backend/src/utils/errors.ts"],
+    "backend/src/modules/chats/chats.model.ts": [],
+    "backend/src/modules/chats/chats.routes.ts": ["backend/src/middleware/auth.ts", "backend/src/middleware/rateLimiter.ts", "backend/src/modules/chats/chats.controller.ts"],
+    "backend/src/modules/chats/chats.service.ts": ["backend/src/config/database.ts", "backend/src/modules/chats/chats.model.ts", "backend/src/utils/errors.ts"],
+    "backend/src/modules/messages/messages.routes.ts": ["backend/src/middleware/auth.ts", "backend/src/middleware/rateLimiter.ts", "backend/src/modules/messages/messages.controller.ts"],
+    "backend/src/modules/users/users.controller.ts": ["backend/src/middleware/auth.ts", "backend/src/modules/users/users.service.ts", "backend/src/utils/errors.ts"],
+    "backend/src/modules/users/users.model.ts": [],
+    "backend/src/modules/users/users.routes.ts": ["backend/src/middleware/auth.ts", "backend/src/middleware/rateLimiter.ts", "backend/src/modules/users/users.controller.ts"],
+    "backend/src/modules/users/users.service.ts": ["backend/src/config/database.ts", "backend/src/modules/users/users.model.ts", "backend/src/utils/errors.ts"],
+    "backend/src/utils/errors.ts": [],
+    "backend/tests/unit/middleware.auth.test.ts": ["backend/src/config/env.ts", "backend/src/middleware/auth.ts", "backend/src/utils/errors.ts"],
+    "backend/tests/unit/middleware.rateLimiter.test.ts": ["backend/src/config/redis.ts", "backend/src/middleware/auth.ts", "backend/src/middleware/rateLimiter.ts", "backend/src/utils/errors.ts"]
+  }
+}

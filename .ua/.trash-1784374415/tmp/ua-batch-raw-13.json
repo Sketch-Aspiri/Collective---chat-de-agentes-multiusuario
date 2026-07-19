@@ -1,0 +1,29 @@
+{
+  "batchIndex": 13,
+  "files": [
+    {
+      "path": "docs/sprint_1/AGENT_BACKEND_SPRINT1.md",
+      "language": "markdown",
+      "sizeLines": 303,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/sprint_1/AGENT_DEVOPS_SPRINT1.md",
+      "language": "markdown",
+      "sizeLines": 802,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/sprint_1/AGENT_FRONTEND_SPRINT1.md",
+      "language": "markdown",
+      "sizeLines": 524,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    "docs/sprint_1/AGENT_BACKEND_SPRINT1.md": [],
+    "docs/sprint_1/AGENT_DEVOPS_SPRINT1.md": [],
+    "docs/sprint_1/AGENT_FRONTEND_SPRINT1.md": []
+  },
+  "neighborMap": {}
+}

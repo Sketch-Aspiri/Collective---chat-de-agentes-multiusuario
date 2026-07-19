@@ -1,0 +1,9 @@
+{
+  "projectRoot": "C:/Users/Andre/OneDrive/Escritorio/CHAT_AGENTES",
+  "batchFiles": [
+    {"path": "infra/scripts/backup.sh", "language": "shell", "sizeLines": 5, "fileCategory": "script"},
+    {"path": "infra/scripts/deploy.sh", "language": "shell", "sizeLines": 8, "fileCategory": "script"},
+    {"path": "infra/scripts/rollback.sh", "language": "shell", "sizeLines": 4, "fileCategory": "script"}
+  ],
+  "batchImportData": {"infra/scripts/backup.sh":[],"infra/scripts/deploy.sh":[],"infra/scripts/rollback.sh":[]}
+}

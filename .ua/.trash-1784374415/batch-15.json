@@ -1,0 +1,79 @@
+{
+  "nodes": [
+    {
+      "id": "config:frontend/.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": "frontend/.env.example",
+      "summary": "Plantilla de variables de entorno del frontend Vite: URL de la API y URL del servidor de Socket.io.",
+      "tags": ["configuration", "environment-variables", "frontend"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:frontend/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "frontend/README.md",
+      "summary": "Guía de inicio del frontend: requisitos, puesta en marcha, variables de entorno, scripts npm, estructura de carpetas, convenciones y testing.",
+      "tags": ["documentation", "entry-point", "frontend"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:frontend/index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "frontend/index.html",
+      "summary": "Documento HTML raíz de la aplicación Vite/React que monta el árbol de componentes en el div #root y carga el punto de entrada src/main.tsx como módulo.",
+      "tags": ["entry-point", "html", "vite"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:frontend/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "frontend/package.json",
+      "summary": "Manifiesto npm del frontend: scripts de build/dev/test y dependencias (React, Vite, Zustand, Socket.io-client, etc.).",
+      "tags": ["configuration", "build-system", "dependencies"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:frontend/tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "frontend/tsconfig.json",
+      "summary": "Configuración del compilador TypeScript para el frontend, con rutas incluidas y excluidas del build.",
+      "tags": ["configuration", "typescript", "build-system"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:frontend/README.md",
+      "target": "config:frontend/package.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:frontend/README.md",
+      "target": "config:frontend/.env.example",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:frontend/tsconfig.json",
+      "target": "config:frontend/package.json",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:frontend/index.html",
+      "target": "file:frontend/src/main.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "order": 1,
+    "title": "Visión general del proyecto",
+    "description": "El README presenta agentes-chat: una plataforma de chat multiusuario en tiempo real donde los usuarios invitan agentes de IA personalizables mediante @mención para ejecutar tareas conectadas a LLMs externos (Anthropic, OpenAI, Google) e integraciones como Google Drive. Aquí se explica el stack (Node.js, PostgreSQL, Redis, Docker) y cómo levantar el entorno local, lo cual sirve de mapa para el resto del recorrido.",
+    "nodeIds": ["document:README.md"]
+  },
+  {
+    "order": 2,
+    "title": "Arranque del backend",
+    "description": "server.ts es el punto de entrada real del backend: conecta la base de datos y Redis, crea el servidor HTTP y el servidor de WebSocket, y gestiona el apagado ordenado ante señales del sistema operativo. Es el nodo con mayor puntaje como entry point según el análisis de fan-out/fan-in, y desde aquí se ramifica todo el árbol de dependencias del servidor.",
+    "nodeIds": ["file:backend/src/server.ts"]
+  },
+  {
+    "order": 3,
+    "title": "Ensamblado de la app Express y middleware",
+    "description": "app.ts (el nodo con mayor fan-out de todo el backend, 17 dependencias) construye la aplicación Express aplicando seguridad (helmet, cors), parseo de body y logging, y monta todas las rutas de los módulos. auth.ts protege las rutas verificando el JWT del header Authorization, mientras errors.ts define la jerarquía de errores (AppError y subclases como NotFound o Unauthorized) que usan todos los controladores para responder de forma consistente.",
+    "nodeIds": ["file:backend/src/app.ts", "file:backend/src/middleware/auth.ts", "file:backend/src/utils/errors.ts"],
+    "languageLesson": "Express usa middleware encadenado: cada función recibe (req, res, next) y decide si continúa la cadena o corta la respuesta. Centralizar los errores en una jerarquía de clases (AppError) permite que un único errorHandler final traduzca cualquier excepción a un código HTTP correcto."
+  },
+  {
+    "order": 4,
+    "title": "Arquitectura modular por dominio",
+    "description": "Siguiendo la convención documentada en CLAUDE.md, cada dominio de negocio (agentes, chats, auth, usuarios, mensajes, billing, webhooks) vive en su propio módulo con la estructura routes → controller → service → model. Las rutas de agentes y chats muestran este patrón: reciben la petición HTTP, delegan la autenticación y el rate limiting al middleware, y pasan el control al controller correspondiente.",
+    "nodeIds": ["file:backend/src/modules/agents/agents.routes.ts", "file:backend/src/modules/chats/chats.routes.ts"]
+  },
+  {
+    "order": 5,
+    "title": "Ejecución de agentes y proveedores LLM",
+    "description": "Este es el corazón funcional del producto: agent-execution.ts orquesta lo que pasa cuando alguien menciona a un agente con @, aplicando los límites acordados (timeout de 60s, máximo 10k tokens, hasta 3 reintentos). llm.interface.ts define el contrato común ILLMProvider y un factory que resuelve dinámicamente qué proveedor usar, mientras anthropic.service.ts es una de las implementaciones concretas. El análisis de clusters detectó estos tres archivos como un grupo fuertemente acoplado (8 conexiones internas), junto a los servicios de Google y OpenAI que siguen el mismo patrón.",
+    "nodeIds": ["file:backend/src/modules/agents/agent-execution.ts", "file:backend/src/services/llm/llm.interface.ts", "file:backend/src/services/llm/anthropic.service.ts"],
+    "languageLesson": "El patrón Strategy/Factory en TypeScript: una interfaz (ILLMProvider) define el contrato, y un factory function elige en runtime qué clase concreta instanciar según la configuración del agente. Esto permite agregar un cuarto proveedor LLM sin tocar agent-execution.ts."
+  },
+  {
+    "order": 6,
+    "title": "Modelo de datos con Prisma",
+    "description": "schema.prisma define los modelos que respaldan todo lo visto hasta ahora: User, Chat, ChatMember, Agent, ChatAgentLink y Message, con sus relaciones para PostgreSQL. La tabla User guarda credenciales y perfil, mientras Message enlaza con el autor tipado (usuario o agente) que agent-execution.ts genera en el Paso 5 cada vez que un agente responde en el chat.",
+    "nodeIds": ["schema:backend/prisma/schema.prisma", "table:backend/prisma/migrations/20260717124954_init/migration.sql:User", "table:backend/prisma/migrations/20260717124954_init/migration.sql:Message"],
+    "languageLesson": "Prisma genera un cliente tipado a partir de este esquema declarativo; las migraciones SQL versionadas (como esta migración 'init') aplican los cambios de forma incremental y reproducible en cada entorno."
+  },
+  {
+    "order": 7,
+    "title": "Chat en tiempo real vía WebSocket",
+    "description": "socket-server.ts configura Socket.io con autenticación JWT y validación de membresía de chat antes de aceptar eventos de unión, envío de mensajes o salida en tiempo real. Redis (config/redis.ts) sostiene este canal como broker para sesiones y coordina la comunicación entre agentes descrita en CLAUDE.md, donde un agente crea un job que otro consume vía BullMQ.",
+    "nodeIds": ["file:backend/src/websocket/socket-server.ts", "file:backend/src/config/redis.ts"]
+  },
+  {
+    "order": 8,
+    "title": "Billing y webhooks externos",
+    "description": "stripe.integration.ts inicializa el cliente de Stripe a partir de variables de entorno, y billing.service.ts lo usa para crear sesiones de checkout. webhooks.controller.ts cierra el círculo: verifica la firma de cada webhook entrante de Stripe antes de procesarlo, el mismo mecanismo de webhooks que, según la arquitectura del proyecto, también permite disparar agentes automáticamente ante eventos externos como cambios en Google Drive.",
+    "nodeIds": ["file:backend/src/modules/billing/stripe.integration.ts", "file:backend/src/modules/billing/billing.service.ts", "file:backend/src/modules/webhooks/webhooks.controller.ts"]
+  },
+  {
+    "order": 9,
+    "title": "Arranque del frontend",
+    "description": "main.tsx es el punto de entrada de React: monta el componente App dentro de un SocketProvider e importa los estilos globales, estableciendo la conexión de WebSocket disponible para toda la aplicación desde el primer render. App.tsx define el enrutado con React Router y protege las rutas privadas mediante el guard RequireAuth, que bloquea el acceso hasta que exista sesión.",
+    "nodeIds": ["file:frontend/src/main.tsx", "file:frontend/src/App.tsx"]
+  },
+  {
+    "order": 10,
+    "title": "Estado global con Zustand",
+    "description": "chatStore.ts (con 8 dependencias salientes, uno de los stores más centrales) gestiona chats, mensajes y el chat actual con un selector de mensajes por chat. authStore.ts persiste el usuario y el token, y el hook useChat.ts conecta ambos con los eventos de socket entrantes, siendo el hook con mayor fan-out del frontend al orquestar el envío de mensajes y las notificaciones de entrada/salida.",
+    "nodeIds": ["file:frontend/src/store/chatStore.ts", "file:frontend/src/store/authStore.ts", "file:frontend/src/hooks/useChat.ts"],
+    "languageLesson": "Zustand evita el prop-drilling: cada store es un hook independiente que los componentes consumen selectivamente (useStore(state => state.algo)), re-renderizando solo cuando ese slice cambia, a diferencia de un Context único que re-renderiza todo el árbol."
+  },
+  {
+    "order": 11,
+    "title": "UI de chat y detección de @menciones",
+    "description": "ChatWindow.tsx combina la lista de mensajes y el input de texto, conectándose al chatStore y al hook useChat del paso anterior. mentions.ts implementa el mecanismo central de interacción con agentes: expone el regex compartido para detectar @handle, extrae los handles únicos mencionados y segmenta el texto en partes de texto y mención, lo que dispara la ejecución de agentes vista en el Paso 5.",
+    "nodeIds": ["file:frontend/src/components/chat/ChatWindow.tsx", "file:frontend/src/utils/mentions.ts"]
+  },
+  {
+    "order": 12,
+    "title": "Contenerización con Docker",
+    "description": "Dockerfile.backend usa un build multi-stage: compila con Prisma en la etapa builder, ofrece un target de desarrollo con hot-reload (ts-node-dev) y produce una imagen mínima de producción que ejecuta dist/server.js (el mismo server.ts del Paso 2, ya compilado). docker-compose.yml orquesta este backend junto a postgres, redis y el frontend en desarrollo local, con healthchecks que garantizan el orden de arranque.",
+    "nodeIds": ["service:infra/docker/Dockerfile.backend", "service:docker-compose.yml"],
+    "languageLesson": "Los builds multi-stage de Docker usan varios FROM: la etapa builder incluye dependencias de desarrollo para compilar, y la etapa final solo copia los artefactos compilados, reduciendo drásticamente el tamaño de la imagen de producción. El orden de las capas importa para aprovechar la cache: lo que cambia poco (instalación de dependencias) va antes que el código de la app."
+  },
+  {
+    "order": 13,
+    "title": "Integración continua",
+    "description": "ci.yml es el workflow principal de GitHub Actions: levanta Postgres y Redis como servicios efímeros, aplica las migraciones de Prisma vistas en el Paso 6, y corre lint, build y tests con cobertura tanto para backend como frontend en cada pull request. Es el mecanismo que garantiza que los cambios en cualquiera de las capas recorridas en este tour sigan siendo consistentes entre sí.",
+    "nodeIds": ["pipeline:.github/workflows/ci.yml"],
+    "languageLesson": "GitHub Actions organiza el trabajo en 'jobs' que corren en paralelo por defecto y 'steps' secuenciales dentro de cada job. Declarar postgres y redis como 'services' del workflow levanta contenedores efímeros accesibles por los tests, sin depender de infraestructura externa."
+  },
+  {
+    "order": 14,
+    "title": "Arquitectura y guía de contribución",
+    "description": "ARCHITECTURE.md cierra el recorrido documentando formalmente los componentes que acabamos de explorar en código: el diagrama de infraestructura local, los puertos usados y el flujo completo de ejecución de un agente. CONTRIBUTING.md complementa esto con el flujo de ramas, convenciones de commits y el checklist de tests que cualquier cambio a este código debe cumplir antes de abrir un pull request.",
+    "nodeIds": ["document:docs/ARCHITECTURE.md", "document:docs/CONTRIBUTING.md"]
+  }
+]

@@ -1,0 +1,1855 @@
+{
+  "name": "agentes-chat",
+  "description": "Plataforma de chat multiusuario en tiempo real que integra agentes de IA personalizables, invocables mediante @mención, para ejecutar tareas usando LLMs conectados a integraciones externas como Google Drive. Nota: este proyecto tiene más de 100 archivos fuente; considere acotar el análisis a un subdirectorio para obtener resultados más rápidos.",
+  "languages": [
+    "css",
+    "dockerfile",
+    "html",
+    "javascript",
+    "json",
+    "makefile",
+    "markdown",
+    "prisma",
+    "shell",
+    "sql",
+    "terraform",
+    "toml",
+    "typescript",
+    "yaml"
+  ],
+  "frameworks": [
+    "React",
+    "Vite",
+    "Vitest",
+    "Jest",
+    "Tailwind CSS",
+    "Zustand",
+    "Express",
+    "Prisma",
+    "Docker",
+    "Docker Compose",
+    "Terraform",
+    "GitHub Actions"
+  ],
+  "files": [
+    {
+      "path": ".dockerignore",
+      "language": "unknown",
+      "sizeLines": 32,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".env.example",
+      "language": "config",
+      "sizeLines": 25,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".gitattributes",
+      "language": "unknown",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "language": "markdown",
+      "sizeLines": 17,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".github/workflows/build.yml",
+      "language": "yaml",
+      "sizeLines": 48,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "language": "yaml",
+      "sizeLines": 60,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/deploy-production.yml",
+      "language": "yaml",
+      "sizeLines": 12,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/deploy-staging.yml",
+      "language": "yaml",
+      "sizeLines": 12,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/format.yml",
+      "language": "yaml",
+      "sizeLines": 19,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/security-scan.yml",
+      "language": "yaml",
+      "sizeLines": 13,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".ua/.understandignore",
+      "language": "unknown",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/config.json",
+      "language": "json",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": "backend/.env.example",
+      "language": "config",
+      "sizeLines": 10,
+      "fileCategory": "config"
+    },
+    {
+      "path": "backend/jest.config.js",
+      "language": "javascript",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/package.json",
+      "language": "json",
+      "sizeLines": 56,
+      "fileCategory": "config"
+    },
+    {
+      "path": "backend/prisma/migrations/20260717124954_init/migration.sql",
+      "language": "sql",
+      "sizeLines": 79,
+      "fileCategory": "data"
+    },
+    {
+      "path": "backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql",
+      "language": "sql",
+      "sizeLines": 46,
+      "fileCategory": "data"
+    },
+    {
+      "path": "backend/prisma/migrations/migration_lock.toml",
+      "language": "toml",
+      "sizeLines": 2,
+      "fileCategory": "config"
+    },
+    {
+      "path": "backend/prisma/schema.prisma",
+      "language": "prisma",
+      "sizeLines": 98,
+      "fileCategory": "data"
+    },
+    {
+      "path": "backend/prisma/seed.ts",
+      "language": "typescript",
+      "sizeLines": 93,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/README.md",
+      "language": "markdown",
+      "sizeLines": 68,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "backend/src/app.ts",
+      "language": "typescript",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/config/constants.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/config/database.ts",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/config/env.ts",
+      "language": "typescript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/config/environment.ts",
+      "language": "typescript",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/config/redis.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/index.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/middleware/auth.ts",
+      "language": "typescript",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/middleware/errorHandler.ts",
+      "language": "typescript",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/middleware/logger.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/middleware/logging.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/middleware/metrics.ts",
+      "language": "typescript",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/middleware/rateLimiter.ts",
+      "language": "typescript",
+      "sizeLines": 104,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/agents/agent-execution.ts",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/agents/agents.controller.ts",
+      "language": "typescript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/agents/agents.model.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/agents/agents.routes.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/agents/agents.service.ts",
+      "language": "typescript",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/auth/auth.controller.ts",
+      "language": "typescript",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/auth/auth.model.ts",
+      "language": "typescript",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/auth/auth.routes.ts",
+      "language": "typescript",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/auth/auth.service.ts",
+      "language": "typescript",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/billing/billing.controller.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/billing/billing.routes.ts",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/billing/billing.service.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/billing/stripe.integration.ts",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/chats/chats.controller.ts",
+      "language": "typescript",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/chats/chats.model.ts",
+      "language": "typescript",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/chats/chats.routes.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/chats/chats.service.ts",
+      "language": "typescript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/health/health.routes.ts",
+      "language": "typescript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/health/health.service.ts",
+      "language": "typescript",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/messages/messages.controller.ts",
+      "language": "typescript",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/messages/messages.model.ts",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/messages/messages.routes.ts",
+      "language": "typescript",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/messages/messages.service.ts",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/users/users.controller.ts",
+      "language": "typescript",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/users/users.model.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/users/users.routes.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/users/users.service.ts",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/webhooks/webhooks.controller.ts",
+      "language": "typescript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/webhooks/webhooks.routes.ts",
+      "language": "typescript",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/server.ts",
+      "language": "typescript",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/services/email/sendgrid.service.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/services/encryption/crypto.service.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/services/job-queue/bull.service.ts",
+      "language": "typescript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/services/llm/anthropic.service.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/services/llm/google.service.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/services/llm/llm.interface.ts",
+      "language": "typescript",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/services/llm/openai.service.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/services/memory/agent-memory.service.ts",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/services/memory/memory.interface.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/services/storage/google-drive.service.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/services/storage/s3.service.ts",
+      "language": "typescript",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/services/storage/storage.interface.ts",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/types/Agent.ts",
+      "language": "typescript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/types/api-responses.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/types/Chat.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/types/index.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/types/Message.ts",
+      "language": "typescript",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/types/User.ts",
+      "language": "typescript",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/utils/encryption.ts",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/utils/errors.ts",
+      "language": "typescript",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/utils/helpers.ts",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/utils/logger.ts",
+      "language": "typescript",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/utils/validators.ts",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/websocket/socket-server.ts",
+      "language": "typescript",
+      "sizeLines": 192,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/fixtures/seed-data.ts",
+      "language": "typescript",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/integration/agent-execution.test.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/integration/chat-flow.test.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/integration/health.ready.test.ts",
+      "language": "typescript",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/integration/health.test.ts",
+      "language": "typescript",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/integration/metrics.test.ts",
+      "language": "typescript",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/integration/socket.events.test.ts",
+      "language": "typescript",
+      "sizeLines": 187,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/unit/agents.test.ts",
+      "language": "typescript",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/unit/auth.test.ts",
+      "language": "typescript",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/unit/middleware.auth.test.ts",
+      "language": "typescript",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/unit/middleware.rateLimiter.test.ts",
+      "language": "typescript",
+      "sizeLines": 112,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/unit/utils.encryption.test.ts",
+      "language": "typescript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/unit/utils.validators.test.ts",
+      "language": "typescript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tsconfig.json",
+      "language": "json",
+      "sizeLines": 21,
+      "fileCategory": "config"
+    },
+    {
+      "path": "bash.exe.stackdump",
+      "language": "stackdump",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "language": "markdown",
+      "sizeLines": 6,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "sizeLines": 144,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docker-compose.yml",
+      "language": "yaml",
+      "sizeLines": 97,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "docs/API.md",
+      "language": "markdown",
+      "sizeLines": 40,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "language": "markdown",
+      "sizeLines": 71,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/CONTRIBUTING.md",
+      "language": "markdown",
+      "sizeLines": 83,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/cyber-neo-report-CHAT_AGENTES-2026-07-17.md",
+      "language": "markdown",
+      "sizeLines": 143,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "language": "markdown",
+      "sizeLines": 107,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/ESTRUCTURA_PROYECTO.md",
+      "language": "markdown",
+      "sizeLines": 407,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/git/GIT_SETUP_RAPIDO.md",
+      "language": "markdown",
+      "sizeLines": 156,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/git/GIT_WORKFLOW.md",
+      "language": "markdown",
+      "sizeLines": 428,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/REQUISITOS_AGENTES_CHAT.md",
+      "language": "markdown",
+      "sizeLines": 531,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/RUNBOOK.md",
+      "language": "markdown",
+      "sizeLines": 117,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "language": "markdown",
+      "sizeLines": 83,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/setup-local.sh",
+      "language": "shell",
+      "sizeLines": 184,
+      "fileCategory": "script"
+    },
+    {
+      "path": "docs/SETUP.md",
+      "language": "markdown",
+      "sizeLines": 188,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/sprint_1/AGENT_BACKEND_SPRINT1.md",
+      "language": "markdown",
+      "sizeLines": 303,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/sprint_1/AGENT_DEVOPS_SPRINT1.md",
+      "language": "markdown",
+      "sizeLines": 802,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/sprint_1/AGENT_FRONTEND_SPRINT1.md",
+      "language": "markdown",
+      "sizeLines": 524,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/sprint_2/AGENT_BACKEND_SPRINT2.md",
+      "language": "markdown",
+      "sizeLines": 83,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/sprint_2/AGENT_DEVOPS_SPRINT2.md",
+      "language": "markdown",
+      "sizeLines": 71,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/sprint_2/AGENT_FRONTEND_SPRINT2.md",
+      "language": "markdown",
+      "sizeLines": 82,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/.env.example",
+      "language": "config",
+      "sizeLines": 5,
+      "fileCategory": "config"
+    },
+    {
+      "path": "frontend/index.html",
+      "language": "html",
+      "sizeLines": 13,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/package.json",
+      "language": "json",
+      "sizeLines": 47,
+      "fileCategory": "config"
+    },
+    {
+      "path": "frontend/postcss.config.cjs",
+      "language": "javascript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/README.md",
+      "language": "markdown",
+      "sizeLines": 85,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "frontend/src/App.tsx",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/auth/RequireAuth.tsx",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/chat/ChatWindow.tsx",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/chat/Message.tsx",
+      "language": "typescript",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/chat/MessageInput.tsx",
+      "language": "typescript",
+      "sizeLines": 89,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/chat/MessageList.tsx",
+      "language": "typescript",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/common/Avatar.tsx",
+      "language": "typescript",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/common/Button.tsx",
+      "language": "typescript",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/common/ConnectionBadge.tsx",
+      "language": "typescript",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/common/Dialog.tsx",
+      "language": "typescript",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/common/ErrorBanner.tsx",
+      "language": "typescript",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/common/icons.tsx",
+      "language": "typescript",
+      "sizeLines": 110,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/common/Input.tsx",
+      "language": "typescript",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/common/LoadingSpinner.tsx",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/common/MentionText.tsx",
+      "language": "typescript",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/common/Textarea.tsx",
+      "language": "typescript",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/layout/Header.tsx",
+      "language": "typescript",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/layout/MainLayout.tsx",
+      "language": "typescript",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/layout/Sidebar.tsx",
+      "language": "typescript",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/modals/InviteAgentModal.tsx",
+      "language": "typescript",
+      "sizeLines": 85,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/components/modals/NewChatModal.tsx",
+      "language": "typescript",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/context/SocketProvider.tsx",
+      "language": "typescript",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useAuth.ts",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useChat.ts",
+      "language": "typescript",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useMentions.ts",
+      "language": "typescript",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/hooks/useSocket.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/lib/logger.ts",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/lib/mockData.ts",
+      "language": "typescript",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/lib/utils.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/main.tsx",
+      "language": "typescript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/ChatPage.tsx",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/HomePage.tsx",
+      "language": "typescript",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/pages/NotFoundPage.tsx",
+      "language": "typescript",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/services/socket.ts",
+      "language": "typescript",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/store/agentStore.ts",
+      "language": "typescript",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/store/authStore.ts",
+      "language": "typescript",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/store/chatStore.ts",
+      "language": "typescript",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/store/uiStore.ts",
+      "language": "typescript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/styles/globals.css",
+      "language": "css",
+      "sizeLines": 53,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "frontend/src/types/api.ts",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/types/index.ts",
+      "language": "typescript",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/utils/formatting.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/utils/mentions.ts",
+      "language": "typescript",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/src/vite-env.d.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tailwind.config.cjs",
+      "language": "javascript",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tests/e2e/agent-execution.spec.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tests/e2e/chat-flow.spec.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tests/setup.ts",
+      "language": "typescript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tests/unit/ChatWindow.test.tsx",
+      "language": "typescript",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tests/unit/mentions.test.ts",
+      "language": "typescript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tests/unit/MessageInput.test.tsx",
+      "language": "typescript",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tests/unit/stores.test.ts",
+      "language": "typescript",
+      "sizeLines": 93,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tests/unit/useMentions.test.ts",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "frontend/tsconfig.json",
+      "language": "json",
+      "sizeLines": 26,
+      "fileCategory": "config"
+    },
+    {
+      "path": "frontend/vite.config.ts",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "infra/db/init.sql",
+      "language": "sql",
+      "sizeLines": 15,
+      "fileCategory": "data"
+    },
+    {
+      "path": "infra/docker/Dockerfile.backend",
+      "language": "dockerfile",
+      "sizeLines": 47,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "infra/docker/Dockerfile.frontend",
+      "language": "dockerfile",
+      "sizeLines": 30,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "infra/docker/Dockerfile.nginx",
+      "language": "dockerfile",
+      "sizeLines": 4,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "infra/docker/nginx.conf",
+      "language": "conf",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "infra/kubernetes/deployment.yaml",
+      "language": "yaml",
+      "sizeLines": 22,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "infra/kubernetes/ingress.yaml",
+      "language": "yaml",
+      "sizeLines": 16,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "infra/kubernetes/service.yaml",
+      "language": "yaml",
+      "sizeLines": 10,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "infra/scripts/backup.sh",
+      "language": "shell",
+      "sizeLines": 5,
+      "fileCategory": "script"
+    },
+    {
+      "path": "infra/scripts/deploy.sh",
+      "language": "shell",
+      "sizeLines": 8,
+      "fileCategory": "script"
+    },
+    {
+      "path": "infra/scripts/rollback.sh",
+      "language": "shell",
+      "sizeLines": 4,
+      "fileCategory": "script"
+    },
+    {
+      "path": "infra/terraform/iam.tf",
+      "language": "terraform",
+      "sizeLines": 12,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "infra/terraform/main.tf",
+      "language": "terraform",
+      "sizeLines": 12,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "infra/terraform/rds.tf",
+      "language": "terraform",
+      "sizeLines": 11,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "infra/terraform/redis.tf",
+      "language": "terraform",
+      "sizeLines": 7,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "infra/terraform/variables.tf",
+      "language": "terraform",
+      "sizeLines": 9,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "Makefile",
+      "language": "makefile",
+      "sizeLines": 57,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "sizeLines": 28,
+      "fileCategory": "config"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 362,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "scripts/db-reset.sh",
+      "language": "shell",
+      "sizeLines": 10,
+      "fileCategory": "script"
+    },
+    {
+      "path": "scripts/db-seed.sh",
+      "language": "shell",
+      "sizeLines": 8,
+      "fileCategory": "script"
+    },
+    {
+      "path": "scripts/dev.sh",
+      "language": "shell",
+      "sizeLines": 9,
+      "fileCategory": "script"
+    },
+    {
+      "path": "scripts/logs.sh",
+      "language": "shell",
+      "sizeLines": 12,
+      "fileCategory": "script"
+    },
+    {
+      "path": "scripts/setup.sh",
+      "language": "shell",
+      "sizeLines": 47,
+      "fileCategory": "script"
+    },
+    {
+      "path": "scripts/stop.sh",
+      "language": "shell",
+      "sizeLines": 8,
+      "fileCategory": "script"
+    },
+    {
+      "path": "scripts/test-local.sh",
+      "language": "shell",
+      "sizeLines": 12,
+      "fileCategory": "script"
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "sizeLines": 16,
+      "fileCategory": "config"
+    }
+  ],
+  "totalFiles": 212,
+  "filteredByIgnore": 0,
+  "estimatedComplexity": "large",
+  "importMap": {
+    ".dockerignore": [],
+    ".env.example": [],
+    ".gitattributes": [],
+    ".github/ISSUE_TEMPLATE/bug_report.md": [],
+    ".github/workflows/build.yml": [],
+    ".github/workflows/ci.yml": [],
+    ".github/workflows/deploy-production.yml": [],
+    ".github/workflows/deploy-staging.yml": [],
+    ".github/workflows/format.yml": [],
+    ".github/workflows/security-scan.yml": [],
+    ".ua/.understandignore": [],
+    ".ua/config.json": [],
+    "backend/.env.example": [],
+    "backend/jest.config.js": [],
+    "backend/package.json": [],
+    "backend/prisma/migrations/20260717124954_init/migration.sql": [],
+    "backend/prisma/migrations/20260717153000_agent_links_and_metadata/migration.sql": [],
+    "backend/prisma/migrations/migration_lock.toml": [],
+    "backend/prisma/schema.prisma": [],
+    "backend/prisma/seed.ts": [],
+    "backend/README.md": [],
+    "backend/src/app.ts": [
+      "backend/src/config/env.ts",
+      "backend/src/middleware/errorHandler.ts",
+      "backend/src/middleware/logger.ts",
+      "backend/src/middleware/metrics.ts",
+      "backend/src/modules/agents/agents.routes.ts",
+      "backend/src/modules/auth/auth.routes.ts",
+      "backend/src/modules/billing/billing.routes.ts",
+      "backend/src/modules/chats/chats.routes.ts",
+      "backend/src/modules/health/health.routes.ts",
+      "backend/src/modules/messages/messages.routes.ts",
+      "backend/src/modules/users/users.routes.ts",
+      "backend/src/modules/webhooks/webhooks.routes.ts"
+    ],
+    "backend/src/config/constants.ts": [],
+    "backend/src/config/database.ts": [],
+    "backend/src/config/env.ts": [],
+    "backend/src/config/environment.ts": [],
+    "backend/src/config/redis.ts": [
+      "backend/src/config/env.ts",
+      "backend/src/utils/logger.ts"
+    ],
+    "backend/src/index.ts": [],
+    "backend/src/middleware/auth.ts": [
+      "backend/src/config/env.ts",
+      "backend/src/utils/errors.ts",
+      "backend/src/utils/logger.ts"
+    ],
+    "backend/src/middleware/errorHandler.ts": [
+      "backend/src/utils/errors.ts",
+      "backend/src/utils/logger.ts"
+    ],
+    "backend/src/middleware/logger.ts": [
+      "backend/src/utils/logger.ts"
+    ],
+    "backend/src/middleware/logging.ts": [],
+    "backend/src/middleware/metrics.ts": [],
+    "backend/src/middleware/rateLimiter.ts": [
+      "backend/src/config/redis.ts",
+      "backend/src/middleware/auth.ts",
+      "backend/src/utils/errors.ts",
+      "backend/src/utils/logger.ts"
+    ],
+    "backend/src/modules/agents/agent-execution.ts": [
+      "backend/src/config/database.ts",
+      "backend/src/services/llm/llm.interface.ts",
+      "backend/src/types/Agent.ts",
+      "backend/src/utils/errors.ts"
+    ],
+    "backend/src/modules/agents/agents.controller.ts": [
+      "backend/src/modules/agents/agent-execution.ts",
+      "backend/src/modules/agents/agents.service.ts"
+    ],
+    "backend/src/modules/agents/agents.model.ts": [
+      "backend/src/types/Agent.ts"
+    ],
+    "backend/src/modules/agents/agents.routes.ts": [
+      "backend/src/middleware/auth.ts",
+      "backend/src/middleware/rateLimiter.ts",
+      "backend/src/modules/agents/agents.controller.ts"
+    ],
+    "backend/src/modules/agents/agents.service.ts": [
+      "backend/src/config/database.ts",
+      "backend/src/modules/agents/agents.model.ts",
+      "backend/src/utils/errors.ts"
+    ],
+    "backend/src/modules/auth/auth.controller.ts": [
+      "backend/src/modules/auth/auth.service.ts"
+    ],
+    "backend/src/modules/auth/auth.model.ts": [],
+    "backend/src/modules/auth/auth.routes.ts": [
+      "backend/src/middleware/rateLimiter.ts",
+      "backend/src/modules/auth/auth.controller.ts"
+    ],
+    "backend/src/modules/auth/auth.service.ts": [
+      "backend/src/config/database.ts",
+      "backend/src/config/env.ts",
+      "backend/src/modules/auth/auth.model.ts",
+      "backend/src/utils/errors.ts"
+    ],
+    "backend/src/modules/billing/billing.controller.ts": [
+      "backend/src/modules/billing/billing.service.ts"
+    ],
+    "backend/src/modules/billing/billing.routes.ts": [
+      "backend/src/middleware/auth.ts",
+      "backend/src/middleware/rateLimiter.ts",
+      "backend/src/modules/billing/billing.controller.ts"
+    ],
+    "backend/src/modules/billing/billing.service.ts": [
+      "backend/src/modules/billing/stripe.integration.ts"
+    ],
+    "backend/src/modules/billing/stripe.integration.ts": [
+      "backend/src/config/env.ts"
+    ],
+    "backend/src/modules/chats/chats.controller.ts": [
+      "backend/src/middleware/auth.ts",
+      "backend/src/modules/chats/chats.service.ts",
+      "backend/src/utils/errors.ts"
+    ],
+    "backend/src/modules/chats/chats.model.ts": [],
+    "backend/src/modules/chats/chats.routes.ts": [
+      "backend/src/middleware/auth.ts",
+      "backend/src/middleware/rateLimiter.ts",
+      "backend/src/modules/chats/chats.controller.ts"
+    ],
+    "backend/src/modules/chats/chats.service.ts": [
+      "backend/src/config/database.ts",
+      "backend/src/modules/chats/chats.model.ts",
+      "backend/src/utils/errors.ts"
+    ],
+    "backend/src/modules/health/health.routes.ts": [
+      "backend/src/modules/health/health.service.ts"
+    ],
+    "backend/src/modules/health/health.service.ts": [
+      "backend/src/config/database.ts",
+      "backend/src/config/redis.ts",
+      "backend/src/utils/logger.ts"
+    ],
+    "backend/src/modules/messages/messages.controller.ts": [
+      "backend/src/modules/messages/messages.service.ts",
+      "backend/src/utils/validators.ts"
+    ],
+    "backend/src/modules/messages/messages.model.ts": [],
+    "backend/src/modules/messages/messages.routes.ts": [
+      "backend/src/middleware/auth.ts",
+      "backend/src/middleware/rateLimiter.ts",
+      "backend/src/modules/messages/messages.controller.ts"
+    ],
+    "backend/src/modules/messages/messages.service.ts": [
+      "backend/src/config/database.ts",
+      "backend/src/modules/messages/messages.model.ts"
+    ],
+    "backend/src/modules/users/users.controller.ts": [
+      "backend/src/middleware/auth.ts",
+      "backend/src/modules/users/users.service.ts",
+      "backend/src/utils/errors.ts"
+    ],
+    "backend/src/modules/users/users.model.ts": [],
+    "backend/src/modules/users/users.routes.ts": [
+      "backend/src/middleware/auth.ts",
+      "backend/src/middleware/rateLimiter.ts",
+      "backend/src/modules/users/users.controller.ts"
+    ],
+    "backend/src/modules/users/users.service.ts": [
+      "backend/src/config/database.ts",
+      "backend/src/modules/users/users.model.ts",
+      "backend/src/utils/errors.ts"
+    ],
+    "backend/src/modules/webhooks/webhooks.controller.ts": [
+      "backend/src/config/env.ts",
+      "backend/src/modules/billing/stripe.integration.ts",
+      "backend/src/utils/errors.ts",
+      "backend/src/utils/logger.ts"
+    ],
+    "backend/src/modules/webhooks/webhooks.routes.ts": [
+      "backend/src/modules/webhooks/webhooks.controller.ts"
+    ],
+    "backend/src/server.ts": [
+      "backend/src/app.ts",
+      "backend/src/config/database.ts",
+      "backend/src/config/environment.ts",
+      "backend/src/config/redis.ts",
+      "backend/src/utils/logger.ts",
+      "backend/src/websocket/socket-server.ts"
+    ],
+    "backend/src/services/email/sendgrid.service.ts": [
+      "backend/src/config/env.ts",
+      "backend/src/utils/logger.ts"
+    ],
+    "backend/src/services/encryption/crypto.service.ts": [
+      "backend/src/config/env.ts"
+    ],
+    "backend/src/services/job-queue/bull.service.ts": [
+      "backend/src/config/env.ts"
+    ],
+    "backend/src/services/llm/anthropic.service.ts": [
+      "backend/src/services/llm/llm.interface.ts"
+    ],
+    "backend/src/services/llm/google.service.ts": [
+      "backend/src/services/llm/llm.interface.ts"
+    ],
+    "backend/src/services/llm/llm.interface.ts": [
+      "backend/src/services/llm/anthropic.service.ts",
+      "backend/src/services/llm/google.service.ts",
+      "backend/src/services/llm/openai.service.ts",
+      "backend/src/types/Agent.ts"
+    ],
+    "backend/src/services/llm/openai.service.ts": [
+      "backend/src/services/llm/llm.interface.ts"
+    ],
+    "backend/src/services/memory/agent-memory.service.ts": [
+      "backend/src/config/redis.ts",
+      "backend/src/services/memory/memory.interface.ts"
+    ],
+    "backend/src/services/memory/memory.interface.ts": [],
+    "backend/src/services/storage/google-drive.service.ts": [
+      "backend/src/services/storage/storage.interface.ts"
+    ],
+    "backend/src/services/storage/s3.service.ts": [
+      "backend/src/services/storage/storage.interface.ts"
+    ],
+    "backend/src/services/storage/storage.interface.ts": [],
+    "backend/src/types/Agent.ts": [],
+    "backend/src/types/api-responses.ts": [],
+    "backend/src/types/Chat.ts": [],
+    "backend/src/types/index.ts": [],
+    "backend/src/types/Message.ts": [],
+    "backend/src/types/User.ts": [],
+    "backend/src/utils/encryption.ts": [
+      "backend/src/config/env.ts"
+    ],
+    "backend/src/utils/errors.ts": [],
+    "backend/src/utils/helpers.ts": [],
+    "backend/src/utils/logger.ts": [
+      "backend/src/config/env.ts"
+    ],
+    "backend/src/utils/validators.ts": [],
+    "backend/src/websocket/socket-server.ts": [
+      "backend/src/config/database.ts",
+      "backend/src/config/env.ts",
+      "backend/src/utils/logger.ts"
+    ],
+    "backend/tests/fixtures/seed-data.ts": [],
+    "backend/tests/integration/agent-execution.test.ts": [],
+    "backend/tests/integration/chat-flow.test.ts": [],
+    "backend/tests/integration/health.ready.test.ts": [
+      "backend/src/app.ts",
+      "backend/src/config/database.ts",
+      "backend/src/config/redis.ts"
+    ],
+    "backend/tests/integration/health.test.ts": [
+      "backend/src/app.ts"
+    ],
+    "backend/tests/integration/metrics.test.ts": [
+      "backend/src/app.ts"
+    ],
+    "backend/tests/integration/socket.events.test.ts": [
+      "backend/src/config/database.ts",
+      "backend/src/config/env.ts",
+      "backend/src/websocket/socket-server.ts"
+    ],
+    "backend/tests/unit/agents.test.ts": [],
+    "backend/tests/unit/auth.test.ts": [],
+    "backend/tests/unit/middleware.auth.test.ts": [
+      "backend/src/config/env.ts",
+      "backend/src/middleware/auth.ts",
+      "backend/src/utils/errors.ts"
+    ],
+    "backend/tests/unit/middleware.rateLimiter.test.ts": [
+      "backend/src/config/redis.ts",
+      "backend/src/middleware/auth.ts",
+      "backend/src/middleware/rateLimiter.ts",
+      "backend/src/utils/errors.ts"
+    ],
+    "backend/tests/unit/utils.encryption.test.ts": [
+      "backend/src/utils/encryption.ts"
+    ],
+    "backend/tests/unit/utils.validators.test.ts": [
+      "backend/src/utils/validators.ts"
+    ],
+    "backend/tsconfig.json": [],
+    "bash.exe.stackdump": [],
+    "CHANGELOG.md": [],
+    "CLAUDE.md": [],
+    "docker-compose.yml": [],
+    "docs/API.md": [],
+    "docs/ARCHITECTURE.md": [],
+    "docs/CONTRIBUTING.md": [],
+    "docs/cyber-neo-report-CHAT_AGENTES-2026-07-17.md": [],
+    "docs/DEPLOYMENT.md": [],
+    "docs/ESTRUCTURA_PROYECTO.md": [],
+    "docs/git/GIT_SETUP_RAPIDO.md": [],
+    "docs/git/GIT_WORKFLOW.md": [],
+    "docs/REQUISITOS_AGENTES_CHAT.md": [],
+    "docs/RUNBOOK.md": [],
+    "docs/SECURITY.md": [],
+    "docs/setup-local.sh": [],
+    "docs/SETUP.md": [],
+    "docs/sprint_1/AGENT_BACKEND_SPRINT1.md": [],
+    "docs/sprint_1/AGENT_DEVOPS_SPRINT1.md": [],
+    "docs/sprint_1/AGENT_FRONTEND_SPRINT1.md": [],
+    "docs/sprint_2/AGENT_BACKEND_SPRINT2.md": [],
+    "docs/sprint_2/AGENT_DEVOPS_SPRINT2.md": [],
+    "docs/sprint_2/AGENT_FRONTEND_SPRINT2.md": [],
+    "frontend/.env.example": [],
+    "frontend/index.html": [],
+    "frontend/package.json": [],
+    "frontend/postcss.config.cjs": [],
+    "frontend/README.md": [],
+    "frontend/src/App.tsx": [
+      "frontend/src/components/auth/RequireAuth.tsx",
+      "frontend/src/components/layout/MainLayout.tsx",
+      "frontend/src/pages/ChatPage.tsx",
+      "frontend/src/pages/HomePage.tsx",
+      "frontend/src/pages/NotFoundPage.tsx"
+    ],
+    "frontend/src/components/auth/RequireAuth.tsx": [
+      "frontend/src/components/common/Button.tsx",
+      "frontend/src/hooks/useAuth.ts"
+    ],
+    "frontend/src/components/chat/ChatWindow.tsx": [
+      "frontend/src/components/chat/MessageInput.tsx",
+      "frontend/src/components/chat/MessageList.tsx",
+      "frontend/src/hooks/useChat.ts",
+      "frontend/src/store/chatStore.ts"
+    ],
+    "frontend/src/components/chat/Message.tsx": [
+      "frontend/src/components/common/Avatar.tsx",
+      "frontend/src/lib/utils.ts",
+      "frontend/src/types/index.ts",
+      "frontend/src/utils/formatting.ts"
+    ],
+    "frontend/src/components/chat/MessageInput.tsx": [
+      "frontend/src/components/common/Button.tsx",
+      "frontend/src/components/common/icons.tsx",
+      "frontend/src/components/common/MentionText.tsx",
+      "frontend/src/components/common/Textarea.tsx",
+      "frontend/src/utils/mentions.ts"
+    ],
+    "frontend/src/components/chat/MessageList.tsx": [
+      "frontend/src/components/chat/Message.tsx",
+      "frontend/src/components/common/LoadingSpinner.tsx",
+      "frontend/src/store/agentStore.ts",
+      "frontend/src/types/index.ts"
+    ],
+    "frontend/src/components/common/Avatar.tsx": [
+      "frontend/src/lib/utils.ts",
+      "frontend/src/utils/formatting.ts"
+    ],
+    "frontend/src/components/common/Button.tsx": [
+      "frontend/src/lib/utils.ts"
+    ],
+    "frontend/src/components/common/ConnectionBadge.tsx": [
+      "frontend/src/lib/utils.ts"
+    ],
+    "frontend/src/components/common/Dialog.tsx": [
+      "frontend/src/components/common/icons.tsx",
+      "frontend/src/lib/utils.ts"
+    ],
+    "frontend/src/components/common/ErrorBanner.tsx": [
+      "frontend/src/components/common/icons.tsx",
+      "frontend/src/lib/utils.ts"
+    ],
+    "frontend/src/components/common/icons.tsx": [],
+    "frontend/src/components/common/Input.tsx": [
+      "frontend/src/lib/utils.ts"
+    ],
+    "frontend/src/components/common/LoadingSpinner.tsx": [
+      "frontend/src/lib/utils.ts"
+    ],
+    "frontend/src/components/common/MentionText.tsx": [
+      "frontend/src/lib/utils.ts",
+      "frontend/src/utils/mentions.ts"
+    ],
+    "frontend/src/components/common/Textarea.tsx": [
+      "frontend/src/lib/utils.ts"
+    ],
+    "frontend/src/components/layout/Header.tsx": [
+      "frontend/src/components/common/Button.tsx",
+      "frontend/src/components/common/icons.tsx"
+    ],
+    "frontend/src/components/layout/MainLayout.tsx": [
+      "frontend/src/components/common/ConnectionBadge.tsx",
+      "frontend/src/components/layout/Header.tsx",
+      "frontend/src/components/layout/Sidebar.tsx",
+      "frontend/src/components/modals/InviteAgentModal.tsx",
+      "frontend/src/components/modals/NewChatModal.tsx",
+      "frontend/src/hooks/useSocket.ts",
+      "frontend/src/lib/utils.ts",
+      "frontend/src/store/chatStore.ts",
+      "frontend/src/store/uiStore.ts"
+    ],
+    "frontend/src/components/layout/Sidebar.tsx": [
+      "frontend/src/components/common/Button.tsx",
+      "frontend/src/components/common/icons.tsx",
+      "frontend/src/lib/utils.ts",
+      "frontend/src/types/index.ts"
+    ],
+    "frontend/src/components/modals/InviteAgentModal.tsx": [
+      "frontend/src/components/common/Button.tsx",
+      "frontend/src/components/common/Dialog.tsx",
+      "frontend/src/store/agentStore.ts",
+      "frontend/src/store/uiStore.ts"
+    ],
+    "frontend/src/components/modals/NewChatModal.tsx": [
+      "frontend/src/components/common/Button.tsx",
+      "frontend/src/components/common/Dialog.tsx",
+      "frontend/src/components/common/Input.tsx",
+      "frontend/src/lib/mockData.ts",
+      "frontend/src/store/authStore.ts",
+      "frontend/src/store/chatStore.ts",
+      "frontend/src/store/uiStore.ts",
+      "frontend/src/types/index.ts"
+    ],
+    "frontend/src/context/SocketProvider.tsx": [
+      "frontend/src/lib/logger.ts",
+      "frontend/src/services/socket.ts",
+      "frontend/src/store/authStore.ts"
+    ],
+    "frontend/src/hooks/useAuth.ts": [
+      "frontend/src/lib/mockData.ts",
+      "frontend/src/store/authStore.ts"
+    ],
+    "frontend/src/hooks/useChat.ts": [
+      "frontend/src/hooks/useSocket.ts",
+      "frontend/src/lib/mockData.ts",
+      "frontend/src/store/authStore.ts",
+      "frontend/src/store/chatStore.ts",
+      "frontend/src/store/uiStore.ts",
+      "frontend/src/types/index.ts"
+    ],
+    "frontend/src/hooks/useMentions.ts": [
+      "frontend/src/utils/mentions.ts"
+    ],
+    "frontend/src/hooks/useSocket.ts": [
+      "frontend/src/context/SocketProvider.tsx"
+    ],
+    "frontend/src/lib/logger.ts": [],
+    "frontend/src/lib/mockData.ts": [
+      "frontend/src/types/index.ts"
+    ],
+    "frontend/src/lib/utils.ts": [],
+    "frontend/src/main.tsx": [
+      "frontend/src/App.tsx",
+      "frontend/src/context/SocketProvider.tsx",
+      "frontend/src/styles/globals.css"
+    ],
+    "frontend/src/pages/ChatPage.tsx": [
+      "frontend/src/components/chat/ChatWindow.tsx",
+      "frontend/src/components/common/Button.tsx",
+      "frontend/src/store/chatStore.ts"
+    ],
+    "frontend/src/pages/HomePage.tsx": [
+      "frontend/src/components/common/Button.tsx",
+      "frontend/src/components/common/icons.tsx",
+      "frontend/src/store/chatStore.ts",
+      "frontend/src/store/uiStore.ts"
+    ],
+    "frontend/src/pages/NotFoundPage.tsx": [
+      "frontend/src/components/common/Button.tsx"
+    ],
+    "frontend/src/services/socket.ts": [
+      "frontend/src/types/api.ts"
+    ],
+    "frontend/src/store/agentStore.ts": [
+      "frontend/src/lib/mockData.ts",
+      "frontend/src/types/index.ts"
+    ],
+    "frontend/src/store/authStore.ts": [
+      "frontend/src/types/index.ts"
+    ],
+    "frontend/src/store/chatStore.ts": [
+      "frontend/src/lib/mockData.ts",
+      "frontend/src/types/index.ts"
+    ],
+    "frontend/src/store/uiStore.ts": [
+      "frontend/src/types/index.ts"
+    ],
+    "frontend/src/styles/globals.css": [],
+    "frontend/src/types/api.ts": [
+      "frontend/src/types/index.ts"
+    ],
+    "frontend/src/types/index.ts": [],
+    "frontend/src/utils/formatting.ts": [],
+    "frontend/src/utils/mentions.ts": [],
+    "frontend/src/vite-env.d.ts": [],
+    "frontend/tailwind.config.cjs": [],
+    "frontend/tests/e2e/agent-execution.spec.ts": [],
+    "frontend/tests/e2e/chat-flow.spec.ts": [],
+    "frontend/tests/setup.ts": [],
+    "frontend/tests/unit/ChatWindow.test.tsx": [
+      "frontend/src/components/chat/ChatWindow.tsx",
+      "frontend/src/context/SocketProvider.tsx",
+      "frontend/src/lib/mockData.ts",
+      "frontend/src/store/chatStore.ts"
+    ],
+    "frontend/tests/unit/mentions.test.ts": [
+      "frontend/src/utils/mentions.ts"
+    ],
+    "frontend/tests/unit/MessageInput.test.tsx": [
+      "frontend/src/components/chat/MessageInput.tsx"
+    ],
+    "frontend/tests/unit/stores.test.ts": [
+      "frontend/src/store/agentStore.ts",
+      "frontend/src/store/authStore.ts",
+      "frontend/src/store/chatStore.ts",
+      "frontend/src/store/uiStore.ts",
+      "frontend/src/types/index.ts"
+    ],
+    "frontend/tests/unit/useMentions.test.ts": [
+      "frontend/src/hooks/useMentions.ts"
+    ],
+    "frontend/tsconfig.json": [],
+    "frontend/vite.config.ts": [],
+    "infra/db/init.sql": [],
+    "infra/docker/Dockerfile.backend": [],
+    "infra/docker/Dockerfile.frontend": [],
+    "infra/docker/Dockerfile.nginx": [],
+    "infra/docker/nginx.conf": [],
+    "infra/kubernetes/deployment.yaml": [],
+    "infra/kubernetes/ingress.yaml": [],
+    "infra/kubernetes/service.yaml": [],
+    "infra/scripts/backup.sh": [],
+    "infra/scripts/deploy.sh": [],
+    "infra/scripts/rollback.sh": [],
+    "infra/terraform/iam.tf": [],
+    "infra/terraform/main.tf": [],
+    "infra/terraform/rds.tf": [],
+    "infra/terraform/redis.tf": [],
+    "infra/terraform/variables.tf": [],
+    "Makefile": [],
+    "package.json": [],
+    "README.md": [],
+    "scripts/db-reset.sh": [],
+    "scripts/db-seed.sh": [],
+    "scripts/dev.sh": [],
+    "scripts/logs.sh": [],
+    "scripts/setup.sh": [],
+    "scripts/stop.sh": [],
+    "scripts/test-local.sh": [],
+    "tsconfig.json": []
+  }
+}

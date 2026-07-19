@@ -1,0 +1,84 @@
+{
+  "projectRoot": "C:/Users/Andre/OneDrive/Escritorio/CHAT_AGENTES",
+  "batchFiles": [
+    {
+      "path": "docs/API.md",
+      "language": "markdown",
+      "sizeLines": 40,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "language": "markdown",
+      "sizeLines": 71,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/CONTRIBUTING.md",
+      "language": "markdown",
+      "sizeLines": 83,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "language": "markdown",
+      "sizeLines": 107,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/ESTRUCTURA_PROYECTO.md",
+      "language": "markdown",
+      "sizeLines": 407,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/REQUISITOS_AGENTES_CHAT.md",
+      "language": "markdown",
+      "sizeLines": 531,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/RUNBOOK.md",
+      "language": "markdown",
+      "sizeLines": 117,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "language": "markdown",
+      "sizeLines": 83,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/SETUP.md",
+      "language": "markdown",
+      "sizeLines": 188,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/cyber-neo-report-CHAT_AGENTES-2026-07-17.md",
+      "language": "markdown",
+      "sizeLines": 143,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/setup-local.sh",
+      "language": "shell",
+      "sizeLines": 184,
+      "fileCategory": "script"
+    }
+  ],
+  "batchImportData": {
+    "docs/API.md": [],
+    "docs/ARCHITECTURE.md": [],
+    "docs/CONTRIBUTING.md": [],
+    "docs/DEPLOYMENT.md": [],
+    "docs/ESTRUCTURA_PROYECTO.md": [],
+    "docs/REQUISITOS_AGENTES_CHAT.md": [],
+    "docs/RUNBOOK.md": [],
+    "docs/SECURITY.md": [],
+    "docs/SETUP.md": [],
+    "docs/cyber-neo-report-CHAT_AGENTES-2026-07-17.md": [],
+    "docs/setup-local.sh": []
+  }
+}

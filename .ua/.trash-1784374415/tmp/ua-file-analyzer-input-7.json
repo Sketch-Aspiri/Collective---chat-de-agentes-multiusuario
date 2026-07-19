@@ -1,0 +1,50 @@
+{
+  "projectRoot": "C:/Users/Andre/OneDrive/Escritorio/CHAT_AGENTES",
+  "batchFiles": [
+    {
+      "path": "backend/src/modules/messages/messages.controller.ts",
+      "language": "typescript",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/messages/messages.model.ts",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/modules/messages/messages.service.ts",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/src/utils/validators.ts",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/unit/utils.validators.test.ts",
+      "language": "typescript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "backend/src/modules/messages/messages.controller.ts": [
+      "backend/src/modules/messages/messages.service.ts",
+      "backend/src/utils/validators.ts"
+    ],
+    "backend/src/modules/messages/messages.model.ts": [],
+    "backend/src/modules/messages/messages.service.ts": [
+      "backend/src/config/database.ts",
+      "backend/src/modules/messages/messages.model.ts"
+    ],
+    "backend/src/utils/validators.ts": [],
+    "backend/tests/unit/utils.validators.test.ts": [
+      "backend/src/utils/validators.ts"
+    ]
+  }
+}

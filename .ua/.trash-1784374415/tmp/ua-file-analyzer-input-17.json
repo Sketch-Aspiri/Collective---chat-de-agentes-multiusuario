@@ -1,0 +1,9 @@
+{
+  "projectRoot": "C:/Users/Andre/OneDrive/Escritorio/CHAT_AGENTES",
+  "batchFiles": [
+    {"path": "infra/kubernetes/deployment.yaml", "language": "yaml", "sizeLines": 22, "fileCategory": "infra"},
+    {"path": "infra/kubernetes/ingress.yaml", "language": "yaml", "sizeLines": 16, "fileCategory": "infra"},
+    {"path": "infra/kubernetes/service.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "infra"}
+  ],
+  "batchImportData": {"infra/kubernetes/deployment.yaml":[],"infra/kubernetes/ingress.yaml":[],"infra/kubernetes/service.yaml":[]}
+}

@@ -1,0 +1,50 @@
+{
+  "projectRoot": "C:/Users/Andre/OneDrive/Escritorio/CHAT_AGENTES",
+  "batchFiles": [
+    {"path": "backend/src/modules/agents/agent-execution.ts", "language": "typescript", "sizeLines": 38, "fileCategory": "code"},
+    {"path": "backend/src/modules/agents/agents.controller.ts", "language": "typescript", "sizeLines": 22, "fileCategory": "code"},
+    {"path": "backend/src/modules/agents/agents.model.ts", "language": "typescript", "sizeLines": 10, "fileCategory": "code"},
+    {"path": "backend/src/modules/agents/agents.service.ts", "language": "typescript", "sizeLines": 23, "fileCategory": "code"},
+    {"path": "backend/src/services/llm/anthropic.service.ts", "language": "typescript", "sizeLines": 15, "fileCategory": "code"},
+    {"path": "backend/src/services/llm/google.service.ts", "language": "typescript", "sizeLines": 15, "fileCategory": "code"},
+    {"path": "backend/src/services/llm/llm.interface.ts", "language": "typescript", "sizeLines": 24, "fileCategory": "code"},
+    {"path": "backend/src/services/llm/openai.service.ts", "language": "typescript", "sizeLines": 15, "fileCategory": "code"},
+    {"path": "backend/src/types/Agent.ts", "language": "typescript", "sizeLines": 13, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "backend/src/modules/agents/agent-execution.ts": [
+      "backend/src/config/database.ts",
+      "backend/src/services/llm/llm.interface.ts",
+      "backend/src/types/Agent.ts",
+      "backend/src/utils/errors.ts"
+    ],
+    "backend/src/modules/agents/agents.controller.ts": [
+      "backend/src/modules/agents/agent-execution.ts",
+      "backend/src/modules/agents/agents.service.ts"
+    ],
+    "backend/src/modules/agents/agents.model.ts": [
+      "backend/src/types/Agent.ts"
+    ],
+    "backend/src/modules/agents/agents.service.ts": [
+      "backend/src/config/database.ts",
+      "backend/src/modules/agents/agents.model.ts",
+      "backend/src/utils/errors.ts"
+    ],
+    "backend/src/services/llm/anthropic.service.ts": [
+      "backend/src/services/llm/llm.interface.ts"
+    ],
+    "backend/src/services/llm/google.service.ts": [
+      "backend/src/services/llm/llm.interface.ts"
+    ],
+    "backend/src/services/llm/llm.interface.ts": [
+      "backend/src/services/llm/anthropic.service.ts",
+      "backend/src/services/llm/google.service.ts",
+      "backend/src/services/llm/openai.service.ts",
+      "backend/src/types/Agent.ts"
+    ],
+    "backend/src/services/llm/openai.service.ts": [
+      "backend/src/services/llm/llm.interface.ts"
+    ],
+    "backend/src/types/Agent.ts": []
+  }
+}

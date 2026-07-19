@@ -1,0 +1,435 @@
+{
+  "nodes": [
+    {
+      "id": "file:frontend/src/App.tsx",
+      "type": "file",
+      "name": "App.tsx",
+      "filePath": "frontend/src/App.tsx",
+      "summary": "Componente raíz que define el enrutado de la aplicación con React Router y protege las rutas privadas mediante RequireAuth.",
+      "tags": ["entry-point", "routing", "component", "react"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/App.tsx:App",
+      "type": "function",
+      "name": "App",
+      "filePath": "frontend/src/App.tsx",
+      "lineRange": [13, 29],
+      "summary": "Define el árbol de rutas de la SPA, envolviendo las páginas protegidas en el layout principal y el guard de autenticación.",
+      "tags": ["routing", "component", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/auth/RequireAuth.tsx",
+      "type": "file",
+      "name": "RequireAuth.tsx",
+      "filePath": "frontend/src/components/auth/RequireAuth.tsx",
+      "summary": "Componente guard que bloquea el acceso y muestra el login cuando el usuario no está autenticado.",
+      "tags": ["auth", "guard", "component", "routing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/components/auth/RequireAuth.tsx:RequireAuth",
+      "type": "function",
+      "name": "RequireAuth",
+      "filePath": "frontend/src/components/auth/RequireAuth.tsx",
+      "lineRange": [9, 29],
+      "summary": "Consulta useAuth y renderiza los hijos solo si hay sesión; en caso contrario ofrece iniciar sesión.",
+      "tags": ["auth", "guard", "component"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/chat/ChatWindow.tsx",
+      "type": "file",
+      "name": "ChatWindow.tsx",
+      "filePath": "frontend/src/components/chat/ChatWindow.tsx",
+      "summary": "Contenedor del chat que combina la lista de mensajes y el input, conectándose al chatStore y al hook useChat.",
+      "tags": ["component", "chat", "container"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/components/chat/ChatWindow.tsx:ChatWindow",
+      "type": "function",
+      "name": "ChatWindow",
+      "filePath": "frontend/src/components/chat/ChatWindow.tsx",
+      "lineRange": [15, 28],
+      "summary": "Obtiene los mensajes del chat desde el store y compone MessageList con MessageInput usando el hook useChat.",
+      "tags": ["component", "chat", "container"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/chat/Message.tsx",
+      "type": "file",
+      "name": "Message.tsx",
+      "filePath": "frontend/src/components/chat/Message.tsx",
+      "summary": "Renderiza un mensaje individual del chat con avatar, autor y hora formateada.",
+      "tags": ["component", "chat", "presentation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/components/chat/Message.tsx:Message",
+      "type": "function",
+      "name": "Message",
+      "filePath": "frontend/src/components/chat/Message.tsx",
+      "lineRange": [17, 49],
+      "summary": "Presenta un mensaje con su avatar y marca de tiempo formateada, aplicando estilos condicionales según el remitente.",
+      "tags": ["component", "chat", "presentation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/chat/MessageList.tsx",
+      "type": "file",
+      "name": "MessageList.tsx",
+      "filePath": "frontend/src/components/chat/MessageList.tsx",
+      "summary": "Lista scrollable de mensajes con autoscroll al final y resolución de color de avatar por agente.",
+      "tags": ["component", "chat", "list"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/components/chat/MessageList.tsx:MessageList",
+      "type": "function",
+      "name": "MessageList",
+      "filePath": "frontend/src/components/chat/MessageList.tsx",
+      "lineRange": [16, 61],
+      "summary": "Mapea los mensajes a componentes Message, resuelve colores de agente con useAgentStore y hace scroll automático al último mensaje.",
+      "tags": ["component", "chat", "list"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:frontend/src/components/common/Avatar.tsx",
+      "type": "file",
+      "name": "Avatar.tsx",
+      "filePath": "frontend/src/components/common/Avatar.tsx",
+      "summary": "Componente de avatar que muestra las iniciales del usuario o agente sobre un color de fondo.",
+      "tags": ["component", "ui", "presentation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/components/common/Avatar.tsx:Avatar",
+      "type": "function",
+      "name": "Avatar",
+      "filePath": "frontend/src/components/common/Avatar.tsx",
+      "lineRange": [11, 24],
+      "summary": "Genera un avatar circular con las iniciales derivadas del nombre mediante getInitials y un color configurable.",
+      "tags": ["component", "ui", "presentation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/common/Button.tsx",
+      "type": "file",
+      "name": "Button.tsx",
+      "filePath": "frontend/src/components/common/Button.tsx",
+      "summary": "Botón reutilizable con variantes de estilo y tamaños, base del sistema de UI del frontend.",
+      "tags": ["component", "ui", "button", "design-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/components/common/Button.tsx:Button",
+      "type": "function",
+      "name": "Button",
+      "filePath": "frontend/src/components/common/Button.tsx",
+      "lineRange": [30, 49],
+      "summary": "Botón con variantes (primario, secundario, etc.) que compone clases con cn y reenvía props nativas.",
+      "tags": ["component", "ui", "button"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/common/ConnectionBadge.tsx",
+      "type": "file",
+      "name": "ConnectionBadge.tsx",
+      "filePath": "frontend/src/components/common/ConnectionBadge.tsx",
+      "summary": "Indicador visual del estado de conexión del WebSocket (conectado/desconectado).",
+      "tags": ["component", "ui", "status", "websocket"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/components/common/ConnectionBadge.tsx:ConnectionBadge",
+      "type": "function",
+      "name": "ConnectionBadge",
+      "filePath": "frontend/src/components/common/ConnectionBadge.tsx",
+      "lineRange": [8, 26],
+      "summary": "Muestra una insignia de color según el flag isConnected para reflejar el estado del socket.",
+      "tags": ["component", "ui", "status"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/common/Dialog.tsx",
+      "type": "file",
+      "name": "Dialog.tsx",
+      "filePath": "frontend/src/components/common/Dialog.tsx",
+      "summary": "Modal accesible con gestión de foco, cierre por tecla Escape y roles ARIA.",
+      "tags": ["component", "ui", "modal", "accessibility"],
+      "complexity": "moderate",
+      "languageNotes": "Usa useId, useRef y useEffect para accesibilidad (focus trap y aria-labelledby/aria-describedby)."
+    },
+    {
+      "id": "function:frontend/src/components/common/Dialog.tsx:Dialog",
+      "type": "function",
+      "name": "Dialog",
+      "filePath": "frontend/src/components/common/Dialog.tsx",
+      "lineRange": [18, 86],
+      "summary": "Renderiza un diálogo modal con título, descripción y footer, registrando listeners de teclado y enfocando el panel al abrir.",
+      "tags": ["component", "ui", "modal", "accessibility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:frontend/src/components/common/ErrorBanner.tsx",
+      "type": "file",
+      "name": "ErrorBanner.tsx",
+      "filePath": "frontend/src/components/common/ErrorBanner.tsx",
+      "summary": "Banner de error descartable para mostrar mensajes de fallo al usuario.",
+      "tags": ["component", "ui", "error-handling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/components/common/ErrorBanner.tsx:ErrorBanner",
+      "type": "function",
+      "name": "ErrorBanner",
+      "filePath": "frontend/src/components/common/ErrorBanner.tsx",
+      "lineRange": [11, 33],
+      "summary": "Muestra un mensaje de error con icono y botón opcional de descarte.",
+      "tags": ["component", "ui", "error-handling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/common/Input.tsx",
+      "type": "file",
+      "name": "Input.tsx",
+      "filePath": "frontend/src/components/common/Input.tsx",
+      "summary": "Campo de entrada de texto reutilizable con estilos del sistema de diseño.",
+      "tags": ["component", "ui", "form", "design-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/components/common/Input.tsx:Input",
+      "type": "function",
+      "name": "Input",
+      "filePath": "frontend/src/components/common/Input.tsx",
+      "lineRange": [7, 25],
+      "summary": "Input estilizado que reenvía props nativas y compone clases con cn.",
+      "tags": ["component", "ui", "form"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/common/LoadingSpinner.tsx",
+      "type": "file",
+      "name": "LoadingSpinner.tsx",
+      "filePath": "frontend/src/components/common/LoadingSpinner.tsx",
+      "summary": "Indicador de carga animado con etiqueta accesible.",
+      "tags": ["component", "ui", "loading"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/components/common/LoadingSpinner.tsx:LoadingSpinner",
+      "type": "function",
+      "name": "LoadingSpinner",
+      "filePath": "frontend/src/components/common/LoadingSpinner.tsx",
+      "lineRange": [9, 28],
+      "summary": "Spinner giratorio con etiqueta accesible por defecto 'Cargando'.",
+      "tags": ["component", "ui", "loading"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/components/common/icons.tsx",
+      "type": "file",
+      "name": "icons.tsx",
+      "filePath": "frontend/src/components/common/icons.tsx",
+      "summary": "Colección de iconos SVG reutilizables (menú, cerrar, ajustes, usuarios, tema, etc.) construidos sobre una función base común.",
+      "tags": ["ui", "icons", "presentation", "barrel"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:frontend/src/components/layout/Header.tsx",
+      "type": "file",
+      "name": "Header.tsx",
+      "filePath": "frontend/src/components/layout/Header.tsx",
+      "summary": "Cabecera de la aplicación con título del chat, alternador de tema claro/oscuro y acciones de sidebar e invitar agente.",
+      "tags": ["component", "layout", "header"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/components/layout/Header.tsx:Header",
+      "type": "function",
+      "name": "Header",
+      "filePath": "frontend/src/components/layout/Header.tsx",
+      "lineRange": [17, 58],
+      "summary": "Barra superior que gestiona el modo oscuro sobre documentElement y expone acciones de menú e invitación de agentes.",
+      "tags": ["component", "layout", "header"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:frontend/src/components/layout/MainLayout.tsx",
+      "type": "file",
+      "name": "MainLayout.tsx",
+      "filePath": "frontend/src/components/layout/MainLayout.tsx",
+      "summary": "Layout principal que orquesta sidebar, header, modales y la conexión de socket para la vista de chat.",
+      "tags": ["component", "layout", "container"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/components/layout/MainLayout.tsx:MainLayout",
+      "type": "function",
+      "name": "MainLayout",
+      "filePath": "frontend/src/components/layout/MainLayout.tsx",
+      "lineRange": [17, 78],
+      "summary": "Coordina chatStore y uiStore para gestionar selección de chat, apertura de modales y navegación, inicializando el socket con useSocket.",
+      "tags": ["component", "layout", "container"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:frontend/src/components/layout/Sidebar.tsx",
+      "type": "file",
+      "name": "Sidebar.tsx",
+      "filePath": "frontend/src/components/layout/Sidebar.tsx",
+      "summary": "Barra lateral con la lista de chats y acción para crear un chat nuevo.",
+      "tags": ["component", "layout", "navigation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/components/layout/Sidebar.tsx:Sidebar",
+      "type": "function",
+      "name": "Sidebar",
+      "filePath": "frontend/src/components/layout/Sidebar.tsx",
+      "lineRange": [17, 69],
+      "summary": "Lista los chats resaltando el activo y dispara callbacks para seleccionar o crear chats.",
+      "tags": ["component", "layout", "navigation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:frontend/src/components/modals/InviteAgentModal.tsx",
+      "type": "file",
+      "name": "InviteAgentModal.tsx",
+      "filePath": "frontend/src/components/modals/InviteAgentModal.tsx",
+      "summary": "Modal para invitar agentes disponibles a un chat, filtrando los que ya están presentes.",
+      "tags": ["component", "modal", "agents"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/components/modals/InviteAgentModal.tsx:InviteAgentModal",
+      "type": "function",
+      "name": "InviteAgentModal",
+      "filePath": "frontend/src/components/modals/InviteAgentModal.tsx",
+      "lineRange": [11, 85],
+      "summary": "Selecciona un agente invitable desde useAgentStore, lo añade al chat y emite una notificación, coordinado por uiStore.",
+      "tags": ["component", "modal", "agents"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {"source": "file:frontend/src/App.tsx", "target": "function:frontend/src/App.tsx:App", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/App.tsx", "target": "function:frontend/src/App.tsx:App", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/App.tsx", "target": "file:frontend/src/components/auth/RequireAuth.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/App.tsx", "target": "file:frontend/src/components/layout/MainLayout.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/App.tsx", "target": "file:frontend/src/pages/ChatPage.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/App.tsx", "target": "file:frontend/src/pages/HomePage.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/App.tsx", "target": "file:frontend/src/pages/NotFoundPage.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:frontend/src/components/auth/RequireAuth.tsx", "target": "function:frontend/src/components/auth/RequireAuth.tsx:RequireAuth", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/auth/RequireAuth.tsx", "target": "function:frontend/src/components/auth/RequireAuth.tsx:RequireAuth", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/auth/RequireAuth.tsx", "target": "file:frontend/src/components/common/Button.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/auth/RequireAuth.tsx", "target": "file:frontend/src/hooks/useAuth.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/components/auth/RequireAuth.tsx:RequireAuth", "target": "function:frontend/src/hooks/useAuth.ts:useAuth", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/components/chat/ChatWindow.tsx", "target": "function:frontend/src/components/chat/ChatWindow.tsx:ChatWindow", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/chat/ChatWindow.tsx", "target": "function:frontend/src/components/chat/ChatWindow.tsx:ChatWindow", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/chat/ChatWindow.tsx", "target": "file:frontend/src/components/chat/MessageInput.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/chat/ChatWindow.tsx", "target": "file:frontend/src/components/chat/MessageList.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/chat/ChatWindow.tsx", "target": "file:frontend/src/hooks/useChat.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/chat/ChatWindow.tsx", "target": "file:frontend/src/store/chatStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/components/chat/ChatWindow.tsx:ChatWindow", "target": "function:frontend/src/hooks/useChat.ts:useChat", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:frontend/src/components/chat/ChatWindow.tsx:ChatWindow", "target": "function:frontend/src/store/chatStore.ts:useChatStore", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:frontend/src/components/chat/ChatWindow.tsx:ChatWindow", "target": "function:frontend/src/store/chatStore.ts:selectMessages", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/chat/ChatWindow.tsx", "target": "file:frontend/tests/unit/ChatWindow.test.tsx", "type": "tested_by", "direction": "forward", "weight": 0.5},
+
+    {"source": "file:frontend/src/components/chat/Message.tsx", "target": "function:frontend/src/components/chat/Message.tsx:Message", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/chat/Message.tsx", "target": "function:frontend/src/components/chat/Message.tsx:Message", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/chat/Message.tsx", "target": "file:frontend/src/components/common/Avatar.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/chat/Message.tsx", "target": "file:frontend/src/lib/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/chat/Message.tsx", "target": "file:frontend/src/types/index.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/chat/Message.tsx", "target": "file:frontend/src/utils/formatting.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/components/chat/Message.tsx:Message", "target": "function:frontend/src/utils/formatting.ts:formatTime", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:frontend/src/components/chat/Message.tsx:Message", "target": "function:frontend/src/lib/utils.ts:cn", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/components/chat/MessageList.tsx", "target": "function:frontend/src/components/chat/MessageList.tsx:MessageList", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/chat/MessageList.tsx", "target": "function:frontend/src/components/chat/MessageList.tsx:MessageList", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/chat/MessageList.tsx", "target": "file:frontend/src/components/chat/Message.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/chat/MessageList.tsx", "target": "file:frontend/src/components/common/LoadingSpinner.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/chat/MessageList.tsx", "target": "file:frontend/src/store/agentStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/chat/MessageList.tsx", "target": "file:frontend/src/types/index.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/components/chat/MessageList.tsx:MessageList", "target": "function:frontend/src/store/agentStore.ts:useAgentStore", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/components/common/Avatar.tsx", "target": "function:frontend/src/components/common/Avatar.tsx:Avatar", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/common/Avatar.tsx", "target": "function:frontend/src/components/common/Avatar.tsx:Avatar", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/common/Avatar.tsx", "target": "file:frontend/src/lib/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/common/Avatar.tsx", "target": "file:frontend/src/utils/formatting.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/components/common/Avatar.tsx:Avatar", "target": "function:frontend/src/lib/utils.ts:cn", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:frontend/src/components/common/Avatar.tsx:Avatar", "target": "function:frontend/src/utils/formatting.ts:getInitials", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/components/common/Button.tsx", "target": "function:frontend/src/components/common/Button.tsx:Button", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/common/Button.tsx", "target": "function:frontend/src/components/common/Button.tsx:Button", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/common/Button.tsx", "target": "file:frontend/src/lib/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:frontend/src/components/common/ConnectionBadge.tsx", "target": "function:frontend/src/components/common/ConnectionBadge.tsx:ConnectionBadge", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/common/ConnectionBadge.tsx", "target": "function:frontend/src/components/common/ConnectionBadge.tsx:ConnectionBadge", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/common/ConnectionBadge.tsx", "target": "file:frontend/src/lib/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/components/common/ConnectionBadge.tsx:ConnectionBadge", "target": "function:frontend/src/lib/utils.ts:cn", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/components/common/Dialog.tsx", "target": "function:frontend/src/components/common/Dialog.tsx:Dialog", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/common/Dialog.tsx", "target": "function:frontend/src/components/common/Dialog.tsx:Dialog", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/common/Dialog.tsx", "target": "file:frontend/src/components/common/icons.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/common/Dialog.tsx", "target": "file:frontend/src/lib/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/components/common/Dialog.tsx:Dialog", "target": "function:frontend/src/lib/utils.ts:cn", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/components/common/ErrorBanner.tsx", "target": "function:frontend/src/components/common/ErrorBanner.tsx:ErrorBanner", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/common/ErrorBanner.tsx", "target": "function:frontend/src/components/common/ErrorBanner.tsx:ErrorBanner", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/common/ErrorBanner.tsx", "target": "file:frontend/src/components/common/icons.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/common/ErrorBanner.tsx", "target": "file:frontend/src/lib/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/components/common/ErrorBanner.tsx:ErrorBanner", "target": "function:frontend/src/lib/utils.ts:cn", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/components/common/Input.tsx", "target": "function:frontend/src/components/common/Input.tsx:Input", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/common/Input.tsx", "target": "function:frontend/src/components/common/Input.tsx:Input", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/common/Input.tsx", "target": "file:frontend/src/lib/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:frontend/src/components/common/LoadingSpinner.tsx", "target": "function:frontend/src/components/common/LoadingSpinner.tsx:LoadingSpinner", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/common/LoadingSpinner.tsx", "target": "function:frontend/src/components/common/LoadingSpinner.tsx:LoadingSpinner", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/common/LoadingSpinner.tsx", "target": "file:frontend/src/lib/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/components/common/LoadingSpinner.tsx:LoadingSpinner", "target": "function:frontend/src/lib/utils.ts:cn", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/components/layout/Header.tsx", "target": "function:frontend/src/components/layout/Header.tsx:Header", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/layout/Header.tsx", "target": "function:frontend/src/components/layout/Header.tsx:Header", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/layout/Header.tsx", "target": "file:frontend/src/components/common/Button.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/layout/Header.tsx", "target": "file:frontend/src/components/common/icons.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:frontend/src/components/layout/MainLayout.tsx", "target": "function:frontend/src/components/layout/MainLayout.tsx:MainLayout", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/layout/MainLayout.tsx", "target": "function:frontend/src/components/layout/MainLayout.tsx:MainLayout", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/layout/MainLayout.tsx", "target": "file:frontend/src/components/common/ConnectionBadge.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/layout/MainLayout.tsx", "target": "file:frontend/src/components/layout/Header.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/layout/MainLayout.tsx", "target": "file:frontend/src/components/layout/Sidebar.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/layout/MainLayout.tsx", "target": "file:frontend/src/components/modals/InviteAgentModal.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/layout/MainLayout.tsx", "target": "file:frontend/src/components/modals/NewChatModal.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/layout/MainLayout.tsx", "target": "file:frontend/src/hooks/useSocket.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/layout/MainLayout.tsx", "target": "file:frontend/src/lib/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/layout/MainLayout.tsx", "target": "file:frontend/src/store/chatStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/layout/MainLayout.tsx", "target": "file:frontend/src/store/uiStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/components/layout/MainLayout.tsx:MainLayout", "target": "function:frontend/src/lib/utils.ts:cn", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:frontend/src/components/layout/MainLayout.tsx:MainLayout", "target": "function:frontend/src/store/chatStore.ts:useChatStore", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:frontend/src/components/layout/MainLayout.tsx:MainLayout", "target": "function:frontend/src/store/uiStore.ts:useUIStore", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/components/layout/Sidebar.tsx", "target": "function:frontend/src/components/layout/Sidebar.tsx:Sidebar", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/layout/Sidebar.tsx", "target": "function:frontend/src/components/layout/Sidebar.tsx:Sidebar", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/layout/Sidebar.tsx", "target": "file:frontend/src/components/common/Button.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/layout/Sidebar.tsx", "target": "file:frontend/src/components/common/icons.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/layout/Sidebar.tsx", "target": "file:frontend/src/lib/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/layout/Sidebar.tsx", "target": "file:frontend/src/types/index.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/components/layout/Sidebar.tsx:Sidebar", "target": "function:frontend/src/lib/utils.ts:cn", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:frontend/src/components/modals/InviteAgentModal.tsx", "target": "function:frontend/src/components/modals/InviteAgentModal.tsx:InviteAgentModal", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:frontend/src/components/modals/InviteAgentModal.tsx", "target": "function:frontend/src/components/modals/InviteAgentModal.tsx:InviteAgentModal", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:frontend/src/components/modals/InviteAgentModal.tsx", "target": "file:frontend/src/components/common/Button.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/modals/InviteAgentModal.tsx", "target": "file:frontend/src/components/common/Dialog.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/modals/InviteAgentModal.tsx", "target": "file:frontend/src/store/agentStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:frontend/src/components/modals/InviteAgentModal.tsx", "target": "file:frontend/src/store/uiStore.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "function:frontend/src/components/modals/InviteAgentModal.tsx:InviteAgentModal", "target": "function:frontend/src/store/agentStore.ts:useAgentStore", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:frontend/src/components/modals/InviteAgentModal.tsx:InviteAgentModal", "target": "function:frontend/src/store/uiStore.ts:useUIStore", "type": "calls", "direction": "forward", "weight": 0.8}
+  ]
+}

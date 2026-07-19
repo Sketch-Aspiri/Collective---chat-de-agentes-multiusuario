@@ -1,0 +1,13 @@
+{
+  "projectRoot": "C:/Users/Andre/OneDrive/Escritorio/CHAT_AGENTES",
+  "batchFiles": [
+    {"path": "scripts/db-reset.sh", "language": "shell", "sizeLines": 10, "fileCategory": "script"},
+    {"path": "scripts/db-seed.sh", "language": "shell", "sizeLines": 8, "fileCategory": "script"},
+    {"path": "scripts/dev.sh", "language": "shell", "sizeLines": 9, "fileCategory": "script"},
+    {"path": "scripts/logs.sh", "language": "shell", "sizeLines": 12, "fileCategory": "script"},
+    {"path": "scripts/setup.sh", "language": "shell", "sizeLines": 47, "fileCategory": "script"},
+    {"path": "scripts/stop.sh", "language": "shell", "sizeLines": 8, "fileCategory": "script"},
+    {"path": "scripts/test-local.sh", "language": "shell", "sizeLines": 12, "fileCategory": "script"}
+  ],
+  "batchImportData": {"scripts/db-reset.sh":[],"scripts/db-seed.sh":[],"scripts/dev.sh":[],"scripts/logs.sh":[],"scripts/setup.sh":[],"scripts/stop.sh":[],"scripts/test-local.sh":[]}
+}

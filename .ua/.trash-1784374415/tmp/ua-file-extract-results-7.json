@@ -1,0 +1,186 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "backend/src/modules/messages/messages.controller.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "MessagesController",
+          "startLine": 5,
+          "endLine": 16,
+          "methods": [
+            "create",
+            "listForChat"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MessagesController",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "messagesController",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create",
+          "callee": "messagesService.create",
+          "lineNumber": 7
+        },
+        {
+          "caller": "create",
+          "callee": "res.status(201).json",
+          "lineNumber": 8
+        },
+        {
+          "caller": "create",
+          "callee": "res.status",
+          "lineNumber": 8
+        },
+        {
+          "caller": "listForChat",
+          "callee": "paginationSchema.parse",
+          "lineNumber": 12
+        },
+        {
+          "caller": "listForChat",
+          "callee": "messagesService.listForChat",
+          "lineNumber": 13
+        },
+        {
+          "caller": "listForChat",
+          "callee": "res.status(200).json",
+          "lineNumber": 14
+        },
+        {
+          "caller": "listForChat",
+          "callee": "res.status",
+          "lineNumber": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/src/modules/messages/messages.model.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/src/modules/messages/messages.service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "MessagesService",
+          "startLine": 4,
+          "endLine": 17,
+          "methods": [
+            "create",
+            "listForChat"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MessagesService",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "messagesService",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "create",
+          "callee": "prisma.message.create",
+          "lineNumber": 6
+        },
+        {
+          "caller": "listForChat",
+          "callee": "prisma.message.findMany",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/src/utils/validators.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 8,
+      "exports": [
+        {
+          "name": "emailSchema",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "passwordSchema",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "paginationSchema",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/unit/utils.validators.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "docs/sprint_1/AGENT_BACKEND_SPRINT1.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 303,
+      "nonEmptyLines": 247,
+      "sections": [
+        {
+          "heading": "🚀 Sprint 1: Agente Backend",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Objetivo General",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "📋 Tareas Prioritarias",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "1️⃣ **Inicializar proyecto Node.js + Stack base** [2-3 días] — ✅ COMPLETADA",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "2️⃣ **Esquema de Base de Datos (Prisma)** [1-2 días] — ✅ COMPLETADA",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "3️⃣ **Middleware de Autenticación (JWT + básico)** [2 días] — ✅ COMPLETADA",
+          "level": 3,
+          "line": 142
+        },
+        {
+          "heading": "4️⃣ **Socket.io Base + Eventos de Chat** [2 días] — ✅ COMPLETADA",
+          "level": 3,
+          "line": 183
+        },
+        {
+          "heading": "5️⃣ **Testing Base (Jest + Supertest)** [1-2 días] — ✅ COMPLETADA",
+          "level": 3,
+          "line": 229
+        },
+        {
+          "heading": "📌 Dependencias y Orden",
+          "level": 2,
+          "line": 265
+        },
+        {
+          "heading": "🔍 Criterios de Aceptación",
+          "level": 2,
+          "line": 274
+        },
+        {
+          "heading": "📚 Referencias",
+          "level": 2,
+          "line": 288
+        },
+        {
+          "heading": "⚠️ Notas Importantes",
+          "level": 2,
+          "line": 297
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "docs/sprint_1/AGENT_DEVOPS_SPRINT1.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 802,
+      "nonEmptyLines": 645,
+      "sections": [
+        {
+          "heading": "⚙️ Sprint 1: Agente DevOps / Infraestructura",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Objetivo General",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "📋 Tareas Prioritarias",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "1️⃣ **Docker & docker-compose para desarrollo local** [2 días] — ✅ COMPLETADO",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "2️⃣ **Scripts de Setup y Utilidad** [1 día] — ✅ COMPLETADO",
+          "level": 3,
+          "line": 197
+        },
+        {
+          "heading": "3️⃣ **CI/CD con GitHub Actions** [2 días] — ✅ COMPLETADO",
+          "level": 3,
+          "line": 303
+        },
+        {
+          "heading": "4️⃣ **Documentación de Infraestructura** [1-2 días] — ✅ COMPLETADO",
+          "level": 3,
+          "line": 464
+        },
+        {
+          "heading": "5️⃣ **Health Checks y Monitoring Base** [1-2 días] — ✅ COMPLETADO",
+          "level": 3,
+          "line": 609
+        },
+        {
+          "heading": "6️⃣ **Network Security y Secrets** [1 día] — ✅ COMPLETADO",
+          "level": 3,
+          "line": 694
+        },
+        {
+          "heading": "📌 Dependencias y Orden",
+          "level": 2,
+          "line": 753
+        },
+        {
+          "heading": "🔍 Criterios de Aceptación",
+          "level": 2,
+          "line": 764
+        },
+        {
+          "heading": "📚 Referencias",
+          "level": 2,
+          "line": 782
+        },
+        {
+          "heading": "⚠️ Notas Importantes",
+          "level": 2,
+          "line": 793
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "docs/sprint_1/AGENT_FRONTEND_SPRINT1.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 524,
+      "nonEmptyLines": 432,
+      "sections": [
+        {
+          "heading": "🎨 Sprint 1: Agente Frontend",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Objetivo General",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "📋 Tareas Prioritarias",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "1️⃣ **Inicializar proyecto React + Stack** [2-3 días]",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "2️⃣ **Diseño del Layout Principal** [2-3 días]",
+          "level": 3,
+          "line": 109
+        },
+        {
+          "heading": "3️⃣ **Gestión de Estado Global (Zustand)** [2 días]",
+          "level": 3,
+          "line": 170
+        },
+        {
+          "heading": "4️⃣ **Componentes de Chat (UI)** [3 días]",
+          "level": 3,
+          "line": 270
+        },
+        {
+          "heading": "5️⃣ **Hooks Custom + Socket.io Integration** [2-3 días]",
+          "level": 3,
+          "line": 327
+        },
+        {
+          "heading": "6️⃣ **Routing y Pages Base** [1-2 días]",
+          "level": 3,
+          "line": 405
+        },
+        {
+          "heading": "7️⃣ **Testing + Storybook (opcional)** [1-2 días]",
+          "level": 3,
+          "line": 446
+        },
+        {
+          "heading": "📌 Dependencias y Orden",
+          "level": 2,
+          "line": 477
+        },
+        {
+          "heading": "🔍 Criterios de Aceptación",
+          "level": 2,
+          "line": 489
+        },
+        {
+          "heading": "📚 Referencias",
+          "level": 2,
+          "line": 504
+        },
+        {
+          "heading": "⚠️ Notas Importantes",
+          "level": 2,
+          "line": 517
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    }
+  ]
+}

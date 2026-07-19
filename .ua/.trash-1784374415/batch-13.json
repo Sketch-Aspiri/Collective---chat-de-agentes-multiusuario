@@ -1,0 +1,54 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/sprint_1/AGENT_BACKEND_SPRINT1.md",
+      "type": "document",
+      "name": "AGENT_BACKEND_SPRINT1.md",
+      "filePath": "docs/sprint_1/AGENT_BACKEND_SPRINT1.md",
+      "summary": "Plan de tareas del Sprint 1 para el agente de backend: inicialización del proyecto Node.js, esquema Prisma, middleware de autenticación JWT, base de Socket.io y testing con Jest/Supertest, todas marcadas como completadas.",
+      "tags": ["documentation", "sprint-plan", "backend"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/sprint_1/AGENT_DEVOPS_SPRINT1.md",
+      "type": "document",
+      "name": "AGENT_DEVOPS_SPRINT1.md",
+      "filePath": "docs/sprint_1/AGENT_DEVOPS_SPRINT1.md",
+      "summary": "Plan de tareas del Sprint 1 para el agente DevOps/infraestructura: Docker y docker-compose, scripts de setup, CI/CD con GitHub Actions, documentación de infraestructura, health checks/monitoring y seguridad de red/secretos, todas completadas.",
+      "tags": ["documentation", "sprint-plan", "devops"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/sprint_1/AGENT_FRONTEND_SPRINT1.md",
+      "type": "document",
+      "name": "AGENT_FRONTEND_SPRINT1.md",
+      "filePath": "docs/sprint_1/AGENT_FRONTEND_SPRINT1.md",
+      "summary": "Plan de tareas del Sprint 1 para el agente frontend: inicialización de React, layout principal, estado global con Zustand, componentes de chat, hooks custom con Socket.io, routing y testing/Storybook.",
+      "tags": ["documentation", "sprint-plan", "frontend"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:docs/sprint_1/AGENT_BACKEND_SPRINT1.md",
+      "target": "document:docs/sprint_1/AGENT_DEVOPS_SPRINT1.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/sprint_1/AGENT_FRONTEND_SPRINT1.md",
+      "target": "document:docs/sprint_1/AGENT_BACKEND_SPRINT1.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/sprint_1/AGENT_DEVOPS_SPRINT1.md",
+      "target": "document:docs/sprint_1/AGENT_FRONTEND_SPRINT1.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

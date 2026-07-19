@@ -1,0 +1,68 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/sprint_2/AGENT_BACKEND_SPRINT2.md",
+      "type": "document",
+      "name": "AGENT_BACKEND_SPRINT2.md",
+      "filePath": "docs/sprint_2/AGENT_BACKEND_SPRINT2.md",
+      "summary": "Plan de tareas del Sprint 2 para el agente backend: modelo de datos de chats/mensajes, servicio y controlador de chats, mensajería vía Socket.io, historial/paginación, rate limiting/validación y testing.",
+      "tags": ["documentation", "sprint-plan", "backend"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/sprint_2/AGENT_DEVOPS_SPRINT2.md",
+      "type": "document",
+      "name": "AGENT_DEVOPS_SPRINT2.md",
+      "filePath": "docs/sprint_2/AGENT_DEVOPS_SPRINT2.md",
+      "summary": "Plan de tareas del Sprint 2 para el agente DevOps: escalabilidad de Socket.io, CI/CD para el módulo de chats, observabilidad, pruebas de carga y entorno de staging.",
+      "tags": ["documentation", "sprint-plan", "devops"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/sprint_2/AGENT_FRONTEND_SPRINT2.md",
+      "type": "document",
+      "name": "AGENT_FRONTEND_SPRINT2.md",
+      "filePath": "docs/sprint_2/AGENT_FRONTEND_SPRINT2.md",
+      "summary": "Plan de tareas del Sprint 2 para el agente frontend: chatStore de Zustand, cliente Socket.io, sidebar de lista de chats, vista de conversación, input de mensaje con threads, miembros del chat y testing.",
+      "tags": ["documentation", "sprint-plan", "frontend"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:docs/sprint_2/AGENT_BACKEND_SPRINT2.md",
+      "target": "document:docs/sprint_1/AGENT_BACKEND_SPRINT1.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/sprint_2/AGENT_DEVOPS_SPRINT2.md",
+      "target": "document:docs/sprint_1/AGENT_DEVOPS_SPRINT1.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/sprint_2/AGENT_FRONTEND_SPRINT2.md",
+      "target": "document:docs/sprint_1/AGENT_FRONTEND_SPRINT1.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/sprint_2/AGENT_BACKEND_SPRINT2.md",
+      "target": "document:docs/sprint_2/AGENT_DEVOPS_SPRINT2.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/sprint_2/AGENT_FRONTEND_SPRINT2.md",
+      "target": "document:docs/sprint_2/AGENT_BACKEND_SPRINT2.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

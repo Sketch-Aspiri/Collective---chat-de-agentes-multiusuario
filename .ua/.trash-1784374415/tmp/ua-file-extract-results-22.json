@@ -1,0 +1,395 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 12,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "docs/git/GIT_SETUP_RAPIDO.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 156,
+      "nonEmptyLines": 114,
+      "sections": [
+        {
+          "heading": "⚡ Setup Rápido: Git Local (5 minutos)",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Tu Situación Actual",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "🚀 Comandos Exactos (Copia y Pega)",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "Paso 1: Asegúrate de estar en main",
+          "level": 3,
+          "line": 12
+        },
+        {
+          "heading": "Paso 2: Trae toda la info del repositorio remoto",
+          "level": 3,
+          "line": 17
+        },
+        {
+          "heading": "Paso 3: Crea las 3 ramas locales conectadas a remoto",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "Paso 4: Verifica que todas estén ahí",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "🔄 Cambiar Entre Ramas",
+          "level": 2,
+          "line": 57
+        },
+        {
+          "heading": "📝 Crear una rama de feature desde staging-backend",
+          "level": 2,
+          "line": 78
+        },
+        {
+          "heading": "✅ Checklist",
+          "level": 2,
+          "line": 102
+        },
+        {
+          "heading": "🆘 Si algo sale mal",
+          "level": 2,
+          "line": 113
+        },
+        {
+          "heading": "\"Tengo conflictos\"",
+          "level": 3,
+          "line": 115
+        },
+        {
+          "heading": "\"Quiero empezar de nuevo limpio\"",
+          "level": 3,
+          "line": 127
+        },
+        {
+          "heading": "\"Estoy en rama equivocada\"",
+          "level": 3,
+          "line": 136
+        },
+        {
+          "heading": "🎯 Resumen Ultra-Rápido",
+          "level": 2,
+          "line": 147
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": "docs/git/GIT_WORKFLOW.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 428,
+      "nonEmptyLines": 317,
+      "sections": [
+        {
+          "heading": "📋 Git Workflow - agentes-chat",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "🏗️ Estructura de Ramas",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "🔄 Setup Inicial (Primera Vez)",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "1️⃣ Clonar el repositorio",
+          "level": 3,
+          "line": 16
+        },
+        {
+          "heading": "2️⃣ Ver todas las ramas (locales y remotas)",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "3️⃣ Crear y trackear las ramas de staging localmente",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "4️⃣ Verificar que las ramas están sincronizadas",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "👤 Flujo de Trabajo por Rol",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "🔧 **Backend Developer**",
+          "level": 3,
+          "line": 79
+        },
+        {
+          "heading": "🎨 **Frontend Developer**",
+          "level": 3,
+          "line": 122
+        },
+        {
+          "heading": "⚙️ **DevOps / Infrastructure**",
+          "level": 3,
+          "line": 144
+        },
+        {
+          "heading": "📊 Cambiar Entre Ramas",
+          "level": 2,
+          "line": 166
+        },
+        {
+          "heading": "Ver en qué rama estoy",
+          "level": 3,
+          "line": 168
+        },
+        {
+          "heading": "Cambiar de rama",
+          "level": 3,
+          "line": 174
+        },
+        {
+          "heading": "Cambiar y crear rama simultáneamente",
+          "level": 3,
+          "line": 183
+        },
+        {
+          "heading": "🔄 Sincronizar Cambios Remotos",
+          "level": 2,
+          "line": 192
+        },
+        {
+          "heading": "Traer cambios de la rama remota (SIN mergear)",
+          "level": 3,
+          "line": 194
+        },
+        {
+          "heading": "Ver diferencias antes de actualizar",
+          "level": 3,
+          "line": 199
+        },
+        {
+          "heading": "Actualizar rama local con remota",
+          "level": 3,
+          "line": 205
+        },
+        {
+          "heading": "Si hay conflictos",
+          "level": 3,
+          "line": 213
+        },
+        {
+          "heading": "📋 Comandos Cheat Sheet",
+          "level": 2,
+          "line": 227
+        },
+        {
+          "heading": "🚫 Protecciones de Rama (Setup en GitHub)",
+          "level": 2,
+          "line": 271
+        },
+        {
+          "heading": "🎯 Flujo Diario Típico (Backend Dev)",
+          "level": 2,
+          "line": 295
+        },
+        {
+          "heading": "🐛 Troubleshooting",
+          "level": 2,
+          "line": 330
+        },
+        {
+          "heading": "Error: \"Your branch is ahead of 'origin/staging-backend' by X commits\"",
+          "level": 3,
+          "line": 332
+        },
+        {
+          "heading": "Error: \"fatal: refusing to merge unrelated histories\"",
+          "level": 3,
+          "line": 339
+        },
+        {
+          "heading": "Error: \"The branch is X commits behind\"",
+          "level": 3,
+          "line": 346
+        },
+        {
+          "heading": "Error: conflicto en merge",
+          "level": 3,
+          "line": 353
+        },
+        {
+          "heading": "Limpiar ramas locales que no existen en remoto",
+          "level": 3,
+          "line": 370
+        },
+        {
+          "heading": "📌 Convenciones de Commit (Conventional Commits)",
+          "level": 2,
+          "line": 379
+        },
+        {
+          "heading": "📚 Referencias",
+          "level": 2,
+          "line": 411
+        },
+        {
+          "heading": "✅ Checklist de Setup",
+          "level": 2,
+          "line": 420
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 32
+      }
+    },
+    {
+      "path": "frontend/postcss.config.cjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/styles/globals.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 53,
+      "nonEmptyLines": 49,
+      "metrics": {}
+    },
+    {
+      "path": "frontend/src/vite-env.d.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/tailwind.config.cjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 42,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/tests/e2e/agent-execution.spec.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/tests/e2e/chat-flow.spec.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/tests/setup.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/vite.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 28,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "infra/db/init.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "infra/docker/nginx.conf",
+      "language": "conf",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 53,
+      "metrics": {}
+    }
+  ]
+}

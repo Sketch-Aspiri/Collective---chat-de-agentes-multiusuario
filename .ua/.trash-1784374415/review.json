@@ -1,0 +1,58 @@
+{
+  "issues": [],
+  "warnings": [
+    "Node 'document:CHANGELOG.md' has no edges (orphan)",
+    "Node 'file:infra/scripts/backup.sh' has no edges (orphan)",
+    "Node 'file:infra/scripts/rollback.sh' has no edges (orphan)",
+    "Node 'file:scripts/db-reset.sh' has no edges (orphan)",
+    "Node 'file:scripts/db-seed.sh' has no edges (orphan)",
+    "Node 'file:scripts/dev.sh' has no edges (orphan)",
+    "Node 'file:scripts/stop.sh' has no edges (orphan)",
+    "Node 'file:scripts/test-local.sh' has no edges (orphan)",
+    "Node 'file:.gitattributes' has no edges (orphan)",
+    "Node 'document:.github/ISSUE_TEMPLATE/bug_report.md' has no edges (orphan)",
+    "Node 'file:.ua/.understandignore' has no edges (orphan)",
+    "Node 'config:.ua/config.json' has no edges (orphan)",
+    "Node 'file:backend/src/config/constants.ts' has no edges (orphan)",
+    "Node 'file:backend/src/index.ts' has no edges (orphan)",
+    "Node 'file:backend/src/middleware/logging.ts' has no edges (orphan)",
+    "Node 'file:bash.exe.stackdump' has no edges (orphan)",
+    "Node 'file:infra/db/init.sql' has no edges (orphan)"
+  ],
+  "stats": {
+    "totalNodes": 328,
+    "totalEdges": 584,
+    "totalLayers": 10,
+    "tourSteps": 14,
+    "nodeTypes": {
+      "file": 150,
+      "function": 69,
+      "class": 26,
+      "pipeline": 6,
+      "resource": 16,
+      "config": 16,
+      "document": 25,
+      "service": 13,
+      "table": 6,
+      "schema": 1
+    },
+    "edgeTypes": {
+      "contains": 102,
+      "exports": 90,
+      "imports": 240,
+      "calls": 47,
+      "tested_by": 17,
+      "inherits": 5,
+      "depends_on": 14,
+      "implements": 2,
+      "triggers": 9,
+      "configures": 11,
+      "related": 27,
+      "documents": 7,
+      "routes": 1,
+      "serves": 1,
+      "deploys": 2,
+      "migrates": 9
+    }
+  }
+}
